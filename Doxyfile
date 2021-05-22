@@ -41,3 +41,6 @@ DOT_TRANSPARENT        = YES
 GENERATE_LATEX          = NO
 GENERATE_HTML           = YES
 HTML_OUTPUT             = .
+
+INPUT += doxygen_index.md
+USE_MDFILE_AS_MAINPAGE = doxygen_index.md
