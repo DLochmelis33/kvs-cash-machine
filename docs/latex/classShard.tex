@@ -1,0 +1,162 @@
+\hypertarget{classShard}{}\doxysection{Shard Class Reference}
+\label{classShard}\index{Shard@{Shard}}
+
+
+{\ttfamily \#include $<$Shard.\+h$>$}
+
+
+
+Collaboration diagram for Shard\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classShard__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classShard_ac4c8e698ab12f40623f08f8777c0b29c}{Shard}} (size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index}})
+\item 
+\mbox{\hyperlink{classValue}{Value}} \mbox{\hyperlink{classShard_a0c5ba849d919ae276ff2b2985e582e1a}{read\+Value\+Directly}} (\mbox{\hyperlink{classPtr}{Ptr}} ptr) const
+\begin{DoxyCompactList}\small\item\em Read a value directly from storage. Used when \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is hit. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classValue}{Value}} $>$ \mbox{\hyperlink{classShard_aae37746aba37dc3691c2f3098144e81e}{read\+Value}} (\mbox{\hyperlink{classKey}{Key}} key)
+\item 
+void \mbox{\hyperlink{classShard_a0037fc14121a68f2320549d7e13c3a9e}{write\+Value\+Directly}} (\mbox{\hyperlink{classPtr}{Ptr}} ptr, const \mbox{\hyperlink{classValue}{Value}} \&value)
+\item 
+void \mbox{\hyperlink{classShard_a4425e98c58b969b6b9b7aed7438e8c1d}{increment\+Alive\+Values\+Cnt}} ()
+\begin{DoxyCompactList}\small\item\em Used when a deleted element in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is hit. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static size\+\_\+t \mbox{\hyperlink{classShard_adeb147b5edff8197d52222bda0fed625}{get\+Shard\+Index}} (\mbox{\hyperlink{classKey}{Key}} key)
+\begin{DoxyCompactList}\small\item\em Get the shard index that contains the @key. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classShard}{Shard}} index. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classShard_add9303ccc9ebed081e0d4e2f9ea405a3}{alive\+Values\+Cnt}}
+\begin{DoxyCompactList}\small\item\em Number of values that are stored on disk, but not deleted yet. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ \mbox{\hyperlink{classKey}{Key}} $>$ \mbox{\hyperlink{classShard_a3b161f4b5028fe56c148424358c9bbb6}{filter}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classShard_ac4c8e698ab12f40623f08f8777c0b29c}\label{classShard_ac4c8e698ab12f40623f08f8777c0b29c}} 
+\index{Shard@{Shard}!Shard@{Shard}}
+\index{Shard@{Shard}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{Shard()}{Shard()}}
+{\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShard_adeb147b5edff8197d52222bda0fed625}\label{classShard_adeb147b5edff8197d52222bda0fed625}} 
+\index{Shard@{Shard}!getShardIndex@{getShardIndex}}
+\index{getShardIndex@{getShardIndex}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{getShardIndex()}{getShardIndex()}}
+{\footnotesize\ttfamily static size\+\_\+t Shard\+::get\+Shard\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the shard index that contains the @key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classShard}{Shard}} index. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classShard_a4425e98c58b969b6b9b7aed7438e8c1d}\label{classShard_a4425e98c58b969b6b9b7aed7438e8c1d}} 
+\index{Shard@{Shard}!incrementAliveValuesCnt@{incrementAliveValuesCnt}}
+\index{incrementAliveValuesCnt@{incrementAliveValuesCnt}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{incrementAliveValuesCnt()}{incrementAliveValuesCnt()}}
+{\footnotesize\ttfamily void Shard\+::increment\+Alive\+Values\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Used when a deleted element in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is hit. 
+
+\mbox{\Hypertarget{classShard_aae37746aba37dc3691c2f3098144e81e}\label{classShard_aae37746aba37dc3691c2f3098144e81e}} 
+\index{Shard@{Shard}!readValue@{readValue}}
+\index{readValue@{readValue}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{readValue()}{readValue()}}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classValue}{Value}}$>$ Shard\+::read\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$\+Value$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classShard_a0c5ba849d919ae276ff2b2985e582e1a}\label{classShard_a0c5ba849d919ae276ff2b2985e582e1a}} 
+\index{Shard@{Shard}!readValueDirectly@{readValueDirectly}}
+\index{readValueDirectly@{readValueDirectly}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{readValueDirectly()}{readValueDirectly()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classValue}{Value}} Shard\+::read\+Value\+Directly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPtr}{Ptr}}}]{ptr }\end{DoxyParamCaption}) const}
+
+
+
+Read a value directly from storage. Used when \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is hit. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classValue}{Value}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classShard_a0037fc14121a68f2320549d7e13c3a9e}\label{classShard_a0037fc14121a68f2320549d7e13c3a9e}} 
+\index{Shard@{Shard}!writeValueDirectly@{writeValueDirectly}}
+\index{writeValueDirectly@{writeValueDirectly}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{writeValueDirectly()}{writeValueDirectly()}}
+{\footnotesize\ttfamily void Shard\+::write\+Value\+Directly (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classPtr}{Ptr}}}]{ptr,  }\item[{const \mbox{\hyperlink{classValue}{Value}} \&}]{value }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ptr} & \\
+\hline
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classShard_add9303ccc9ebed081e0d4e2f9ea405a3}\label{classShard_add9303ccc9ebed081e0d4e2f9ea405a3}} 
+\index{Shard@{Shard}!aliveValuesCnt@{aliveValuesCnt}}
+\index{aliveValuesCnt@{aliveValuesCnt}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{aliveValuesCnt}{aliveValuesCnt}}
+{\footnotesize\ttfamily size\+\_\+t Shard\+::alive\+Values\+Cnt\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Number of values that are stored on disk, but not deleted yet. 
+
+\mbox{\Hypertarget{classShard_a3b161f4b5028fe56c148424358c9bbb6}\label{classShard_a3b161f4b5028fe56c148424358c9bbb6}} 
+\index{Shard@{Shard}!filter@{filter}}
+\index{filter@{filter}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{filter}{filter}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$\mbox{\hyperlink{classKey}{Key}}$>$ Shard\+::filter\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classShard_abefece21372068eb7596f90990b71f2d}\label{classShard_abefece21372068eb7596f90990b71f2d}} 
+\index{Shard@{Shard}!index@{index}}
+\index{index@{index}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{index}{index}}
+{\footnotesize\ttfamily size\+\_\+t Shard\+::index\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classShard}{Shard}} index. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Shard_8h}{Shard.\+h}}\end{DoxyCompactItemize}
