@@ -71,14 +71,17 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>The hash table that is stored on disk.  
+ <a href="classStorageHashTable.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="StorageHashTable_8h_source.html">StorageHashTable.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for StorageHashTable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStorageHashTable__coll__graph.png" border="0" usemap="#StorageHashTable_coll__map" alt="Collaboration graph"/></div>
 <map name="StorageHashTable_coll__map" id="StorageHashTable_coll__map">
-<area shape="rect" title=" " alt="" coords="5,204,169,296"/>
-<area shape="rect" href="classStorage.html" title=" " alt="" coords="36,5,139,141"/>
+<area shape="rect" title="The hash table that is stored on disk." alt="" coords="5,204,169,311"/>
+<area shape="rect" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="36,5,139,141"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -87,15 +90,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af27c5f675a8cb917fac758553c4402ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af27c5f675a8cb917fac758553c4402ce">StorageHashTable</a> (const <a class="el" href="classStorage.html">Storage</a> &amp;<a class="el" href="classStorageHashTable.html#afb686fa2878d2e08d6e2c65e39aa342b">storage</a>)</td></tr>
 <tr class="separator:af27c5f675a8cb917fac758553c4402ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a5e893f416b7fe7a9bd88a9fdef79bbd9">get</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html">Ptr</a> associated with the @key.  <a href="classStorageHashTable.html#a5e893f416b7fe7a9bd88a9fdef79bbd9">More...</a><br /></td></tr>
+<tr class="memdesc:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key.  <a href="classStorageHashTable.html#a5e893f416b7fe7a9bd88a9fdef79bbd9">More...</a><br /></td></tr>
 <tr class="separator:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab796361aa122dd9d1711c11d802e64b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#ab796361aa122dd9d1711c11d802e64b6">put</a> (<a class="el" href="classKey.html">Key</a> key, <a class="el" href="classPtr.html">Ptr</a> ptr)</td></tr>
+<tr class="memdesc:ab796361aa122dd9d1711c11d802e64b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the &lt;key, ptr&gt; entry into the table.  <a href="classStorageHashTable.html#ab796361aa122dd9d1711c11d802e64b6">More...</a><br /></td></tr>
+<tr class="separator:ab796361aa122dd9d1711c11d802e64b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:afb686fa2878d2e08d6e2c65e39aa342b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classStorage.html">Storage</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#afb686fa2878d2e08d6e2c65e39aa342b">storage</a></td></tr>
+<tr class="memdesc:afb686fa2878d2e08d6e2c65e39aa342b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk.">Storage</a> that is used for reading and writing hash table files on disk.  <a href="classStorageHashTable.html#afb686fa2878d2e08d6e2c65e39aa342b">More...</a><br /></td></tr>
 <tr class="separator:afb686fa2878d2e08d6e2c65e39aa342b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The hash table that is stored on disk. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af27c5f675a8cb917fac758553c4402ce"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af27c5f675a8cb917fac758553c4402ce">&#9670;&nbsp;</a></span>StorageHashTable()</h2>
 
@@ -139,7 +148,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Find the <a class="el" href="classPtr.html">Ptr</a> associated with the @key. </p>
+<p>Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">key</td><td></td></tr>
@@ -147,6 +156,43 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>std::optional&lt;Ptr&gt; </dd></dl>
+
+</div>
+</div>
+<a id="ab796361aa122dd9d1711c11d802e64b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab796361aa122dd9d1711c11d802e64b6">&#9670;&nbsp;</a></span>put()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void StorageHashTable::put </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classPtr.html">Ptr</a>&#160;</td>
+          <td class="paramname"><em>ptr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Put the &lt;key, ptr&gt; entry into the table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">ptr</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -170,6 +216,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The <a class="el" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk.">Storage</a> that is used for reading and writing hash table files on disk. </p>
 
 </div>
 </div>

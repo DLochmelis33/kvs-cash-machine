@@ -70,13 +70,16 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted.  
+ <a href="classPtr.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="KeyValueTypes_8h_source.html">KeyValueTypes.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for Ptr:</div>
 <div class="dyncontent">
 <div class="center"><img src="classPtr__coll__graph.png" border="0" usemap="#Ptr_coll__map" alt="Collaboration graph"/></div>
 <map name="Ptr_coll__map" id="Ptr_coll__map">
-<area shape="rect" title=" " alt="" coords="5,5,151,112"/>
+<area shape="rect" title="A pointer determining the position of the associated value in the values file. Also stores informatio..." alt="" coords="5,5,157,112"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -84,12 +87,15 @@ Collaboration diagram for Ptr:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a54cc5b2b66127037c2d4dd5a5af3f303"><td class="memItemLeft" align="right" valign="top"><a class="el" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a54cc5b2b66127037c2d4dd5a5af3f303">get</a> () const</td></tr>
 <tr class="separator:a54cc5b2b66127037c2d4dd5a5af3f303"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fdc9e6893ad3184acb8b069b4008023"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a8fdc9e6893ad3184acb8b069b4008023">isValueDeleted</a> () const</td></tr>
-<tr class="separator:a8fdc9e6893ad3184acb8b069b4008023"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eb14c21e43ecd58b7b27a1b197916ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a0eb14c21e43ecd58b7b27a1b197916ef">setValueExists</a> (bool exists)</td></tr>
-<tr class="separator:a0eb14c21e43ecd58b7b27a1b197916ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd729c0d00ddf014afdd41e19cd3213"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a2dd729c0d00ddf014afdd41e19cd3213">isValuePresent</a> () const</td></tr>
+<tr class="memdesc:a2dd729c0d00ddf014afdd41e19cd3213"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a present or deleted value.  <a href="classPtr.html#a2dd729c0d00ddf014afdd41e19cd3213">More...</a><br /></td></tr>
+<tr class="separator:a2dd729c0d00ddf014afdd41e19cd3213"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa666ec5398315bd341ba1a56726b1a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#afa666ec5398315bd341ba1a56726b1a1">setValuePresent</a> (bool isPresent)</td></tr>
+<tr class="separator:afa666ec5398315bd341ba1a56726b1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a54cc5b2b66127037c2d4dd5a5af3f303"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a54cc5b2b66127037c2d4dd5a5af3f303">&#9670;&nbsp;</a></span>get()</h2>
 
@@ -107,14 +113,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8fdc9e6893ad3184acb8b069b4008023"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8fdc9e6893ad3184acb8b069b4008023">&#9670;&nbsp;</a></span>isValueDeleted()</h2>
+<a id="a2dd729c0d00ddf014afdd41e19cd3213"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd729c0d00ddf014afdd41e19cd3213">&#9670;&nbsp;</a></span>isValuePresent()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool Ptr::isValueDeleted </td>
+          <td class="memname">bool Ptr::isValuePresent </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -122,19 +128,21 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Check if this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a present or deleted value. </p>
+
 </div>
 </div>
-<a id="a0eb14c21e43ecd58b7b27a1b197916ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0eb14c21e43ecd58b7b27a1b197916ef">&#9670;&nbsp;</a></span>setValueExists()</h2>
+<a id="afa666ec5398315bd341ba1a56726b1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa666ec5398315bd341ba1a56726b1a1">&#9670;&nbsp;</a></span>setValuePresent()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Ptr::setValueExists </td>
+          <td class="memname">void Ptr::setValuePresent </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>exists</em></td><td>)</td>
+          <td class="paramname"><em>isPresent</em></td><td>)</td>
           <td></td>
         </tr>
       </table>

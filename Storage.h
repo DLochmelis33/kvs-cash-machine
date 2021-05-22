@@ -3,6 +3,10 @@
 #include "KeyValueTypes.h"
 #include <string>
 
+/**
+ * @brief An abstraction for safely opening, reading, writing and closing files on disk.
+ *
+ */
 class Storage {
   public:
     struct ByteArray {
@@ -44,4 +48,5 @@ class Storage {
     void write(size_t offset, size_t length, const char* data); // TODO: exceptions
 
   private:
+    // TODO
 };

@@ -29,7 +29,7 @@ class CacheMap {
      * @brief Find a @ptr by @key.
      *
      * @param key
-     * @return std::optional<Ptr>
+     * @return 
      */
     std::optional<Ptr> get(Key key);
 

@@ -16,24 +16,24 @@ class KVS {
     KVS();
 
     /**
-     * @brief Add @keyValue to the storage.
+     * @brief Add a KeyValue to the storage.
      *
      * @param keyValue
      */
     void add(KeyValue keyValue);
 
     /**
-     * @brief Remove @key and associated value from storage.
+     * @brief Remove the Key and associated Value from storage.
      *
      * @param key
      */
     void remove(Key key);
 
     /**
-     * @brief Get the value associated with the @key.
+     * @brief Get the Value associated with the Key.
      *
      * @param key
-     * @return The value associated with the @key or nothing, if none.
+     * @return The Value associated with the Key or nothing, if none.
      */
     std::optional<Value> get(Key key);
 
@@ -46,10 +46,10 @@ class KVS {
   private:
     using hash_t = uint64_t;
     /**
-     * @brief Hash the @key.
+     * @brief Hash the Key.
      *
      * @param key
-     * @return hash_t
+     * @return 
      */
     hash_t hash(Key key);
 

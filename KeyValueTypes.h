@@ -31,11 +31,21 @@ struct KeyValue {
     Value value;
 };
 
+/**
+ * @brief A pointer determining the position of the associated value in the values file. Also stores
+ * information whether the associated value is present or deleted.
+ *
+ */
 class Ptr {
 
   public:
     ptr_t get() const;
-    bool isValueDeleted() const;
 
-    void setValueExists(bool exists);
+    /**
+     * @brief Check if this Ptr points to a present or deleted value.
+     *
+     */
+    bool isValuePresent() const;
+
+    void setValuePresent(bool isPresent);
 };

@@ -99,24 +99,26 @@ $(function() {
 <div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">   31</a></span>&#160;    <a class="code" href="classValue.html">Value</a> <a class="code" href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">value</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classPtr.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPtr.html">Ptr</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> <a class="code" href="classPtr.html#a54cc5b2b66127037c2d4dd5a5af3f303">get</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPtr.html#a8fdc9e6893ad3184acb8b069b4008023">isValueDeleted</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPtr.html#a0eb14c21e43ecd58b7b27a1b197916ef">setValueExists</a>(<span class="keywordtype">bool</span> exists);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classPtr.html">   39</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPtr.html">Ptr</a> {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> <a class="code" href="classPtr.html#a54cc5b2b66127037c2d4dd5a5af3f303">get</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classPtr.html#a2dd729c0d00ddf014afdd41e19cd3213">isValuePresent</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classPtr.html#afa666ec5398315bd341ba1a56726b1a1">setValuePresent</a>(<span class="keywordtype">bool</span> isPresent);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="astructKeyValue_html_a9fa2e3b8ba94871bcbbc241c9897f15c"><div class="ttname"><a href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">KeyValue::key</a></div><div class="ttdeci">Key key</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:30</div></div>
 <div class="ttc" id="astructKeyValue_html_adbe6e938278033956d991e90c37ba586"><div class="ttname"><a href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">KeyValue::value</a></div><div class="ttdeci">Value value</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:31</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a832b95dd05311cd511428d6a87a864f9"><div class="ttname"><a href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a></div><div class="ttdeci">char * value_t</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:14</div></div>
-<div class="ttc" id="aclassPtr_html_a0eb14c21e43ecd58b7b27a1b197916ef"><div class="ttname"><a href="classPtr.html#a0eb14c21e43ecd58b7b27a1b197916ef">Ptr::setValueExists</a></div><div class="ttdeci">void setValueExists(bool exists)</div></div>
+<div class="ttc" id="aclassPtr_html_a2dd729c0d00ddf014afdd41e19cd3213"><div class="ttname"><a href="classPtr.html#a2dd729c0d00ddf014afdd41e19cd3213">Ptr::isValuePresent</a></div><div class="ttdeci">bool isValuePresent() const</div><div class="ttdoc">Check if this Ptr points to a present or deleted value.</div></div>
 <div class="ttc" id="aclassValue_html"><div class="ttname"><a href="classValue.html">Value</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:23</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a9bf87bf4ed6000dc9d9d900bcb8c61bc"><div class="ttname"><a href="KeyValueTypes_8h.html#a9bf87bf4ed6000dc9d9d900bcb8c61bc">VALUE_SIZE</a></div><div class="ttdeci">constexpr size_t VALUE_SIZE</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:5</div></div>
 <div class="ttc" id="aclassPtr_html_a54cc5b2b66127037c2d4dd5a5af3f303"><div class="ttname"><a href="classPtr.html#a54cc5b2b66127037c2d4dd5a5af3f303">Ptr::get</a></div><div class="ttdeci">ptr_t get() const</div></div>
 <div class="ttc" id="astructKeyValue_html"><div class="ttname"><a href="structKeyValue.html">KeyValue</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:29</div></div>
-<div class="ttc" id="aclassPtr_html"><div class="ttname"><a href="classPtr.html">Ptr</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:34</div></div>
+<div class="ttc" id="aclassPtr_html"><div class="ttname"><a href="classPtr.html">Ptr</a></div><div class="ttdoc">A pointer determining the position of the associated value in the values file. Also stores informatio...</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:39</div></div>
+<div class="ttc" id="aclassPtr_html_afa666ec5398315bd341ba1a56726b1a1"><div class="ttname"><a href="classPtr.html#afa666ec5398315bd341ba1a56726b1a1">Ptr::setValuePresent</a></div><div class="ttdeci">void setValuePresent(bool isPresent)</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a6c1e77a584cf292e416cb08b6446a9fd"><div class="ttname"><a href="KeyValueTypes_8h.html#a6c1e77a584cf292e416cb08b6446a9fd">CACHE_MAP_SIZE</a></div><div class="ttdeci">constexpr size_t CACHE_MAP_SIZE</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:7</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a5ab9602a693dd11c365e308e4f7175ad"><div class="ttname"><a href="KeyValueTypes_8h.html#a5ab9602a693dd11c365e308e4f7175ad">KEY_SIZE</a></div><div class="ttdeci">constexpr size_t KEY_SIZE</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:6</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_abdcd3339f0109c5b85184fc25d914837"><div class="ttname"><a href="KeyValueTypes_8h.html#abdcd3339f0109c5b85184fc25d914837">MAP_LOAD_FACTOR</a></div><div class="ttdeci">constexpr double MAP_LOAD_FACTOR</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:8</div></div>
@@ -128,7 +130,6 @@ $(function() {
 <div class="ttc" id="aclassValue_html_af06763dea7c971525f85ec7b366c5d65"><div class="ttname"><a href="classValue.html#af06763dea7c971525f85ec7b366c5d65">Value::get</a></div><div class="ttdeci">value_t get()</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_ae0a433acbd57c02942b88e8909534db3"><div class="ttname"><a href="KeyValueTypes_8h.html#ae0a433acbd57c02942b88e8909534db3">BLOOM_FILTER_HASH_FUNCTIONS_NUMBER</a></div><div class="ttdeci">constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:11</div></div>
 <div class="ttc" id="aclassKey_html"><div class="ttname"><a href="classKey.html">Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:17</div></div>
-<div class="ttc" id="aclassPtr_html_a8fdc9e6893ad3184acb8b069b4008023"><div class="ttname"><a href="classPtr.html#a8fdc9e6893ad3184acb8b069b4008023">Ptr::isValueDeleted</a></div><div class="ttdeci">bool isValueDeleted() const</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
