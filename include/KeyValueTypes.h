@@ -47,5 +47,10 @@ class Ptr {
      */
     bool isValuePresent() const;
 
+    /**
+     * @brief Set state for the value associated with this Ptr.
+     *
+     * @param isPresent
+     */
     void setValuePresent(bool isPresent);
 };
