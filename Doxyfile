@@ -40,7 +40,7 @@ DOT_TRANSPARENT        = YES
 
 GENERATE_LATEX          = NO
 GENERATE_HTML           = YES
-# HTML_OUTPUT             = .
+HTML_OUTPUT             = .
 
 RECURSIVE               = YES
 INPUT                   = include src
