@@ -1,0 +1,103 @@
+\hypertarget{classStorageHashTable}{}\doxysection{Storage\+Hash\+Table Class Reference}
+\label{classStorageHashTable}\index{StorageHashTable@{StorageHashTable}}
+
+
+The hash table that is stored on disk.  
+
+
+
+
+{\ttfamily \#include $<$Storage\+Hash\+Table.\+h$>$}
+
+
+
+Collaboration diagram for Storage\+Hash\+Table\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=192pt]{classStorageHashTable__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classStorageHashTable_af27c5f675a8cb917fac758553c4402ce}{Storage\+Hash\+Table}} (const \mbox{\hyperlink{classStorage}{Storage}} \&\mbox{\hyperlink{classStorageHashTable_afb686fa2878d2e08d6e2c65e39aa342b}{storage}})
+\item 
+std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classStorageHashTable_a5e893f416b7fe7a9bd88a9fdef79bbd9}{get}} (\mbox{\hyperlink{classKey}{Key}} key)
+\begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classStorageHashTable_ab796361aa122dd9d1711c11d802e64b6}{put}} (\mbox{\hyperlink{classKey}{Key}} key, \mbox{\hyperlink{classPtr}{Ptr}} ptr)
+\begin{DoxyCompactList}\small\item\em Put the $<$key, ptr$>$ entry into the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \mbox{\hyperlink{classStorage}{Storage}} \& \mbox{\hyperlink{classStorageHashTable_afb686fa2878d2e08d6e2c65e39aa342b}{storage}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classStorage}{Storage}} that is used for reading and writing hash table files on disk. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The hash table that is stored on disk. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classStorageHashTable_af27c5f675a8cb917fac758553c4402ce}\label{classStorageHashTable_af27c5f675a8cb917fac758553c4402ce}} 
+\index{StorageHashTable@{StorageHashTable}!StorageHashTable@{StorageHashTable}}
+\index{StorageHashTable@{StorageHashTable}!StorageHashTable@{StorageHashTable}}
+\doxysubsubsection{\texorpdfstring{StorageHashTable()}{StorageHashTable()}}
+{\footnotesize\ttfamily Storage\+Hash\+Table\+::\+Storage\+Hash\+Table (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classStorage}{Storage}} \&}]{storage }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStorageHashTable_a5e893f416b7fe7a9bd88a9fdef79bbd9}\label{classStorageHashTable_a5e893f416b7fe7a9bd88a9fdef79bbd9}} 
+\index{StorageHashTable@{StorageHashTable}!get@{get}}
+\index{get@{get}!StorageHashTable@{StorageHashTable}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classPtr}{Ptr}}$>$ Storage\+Hash\+Table\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::optional$<$\+Ptr$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorageHashTable_ab796361aa122dd9d1711c11d802e64b6}\label{classStorageHashTable_ab796361aa122dd9d1711c11d802e64b6}} 
+\index{StorageHashTable@{StorageHashTable}!put@{put}}
+\index{put@{put}!StorageHashTable@{StorageHashTable}}
+\doxysubsubsection{\texorpdfstring{put()}{put()}}
+{\footnotesize\ttfamily void Storage\+Hash\+Table\+::put (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key,  }\item[{\mbox{\hyperlink{classPtr}{Ptr}}}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Put the $<$key, ptr$>$ entry into the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & \\
+\hline
+{\em ptr} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStorageHashTable_afb686fa2878d2e08d6e2c65e39aa342b}\label{classStorageHashTable_afb686fa2878d2e08d6e2c65e39aa342b}} 
+\index{StorageHashTable@{StorageHashTable}!storage@{storage}}
+\index{storage@{storage}!StorageHashTable@{StorageHashTable}}
+\doxysubsubsection{\texorpdfstring{storage}{storage}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classStorage}{Storage}}\& Storage\+Hash\+Table\+::storage\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The \mbox{\hyperlink{classStorage}{Storage}} that is used for reading and writing hash table files on disk. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{StorageHashTable_8h}{Storage\+Hash\+Table.\+h}}\end{DoxyCompactItemize}
