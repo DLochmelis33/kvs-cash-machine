@@ -40,5 +40,9 @@ class CacheMap {
 
   private:
     char* data;
+    /**
+     * @brief The number of elements present in the map.
+     *
+     */
     size_t size;
 };
