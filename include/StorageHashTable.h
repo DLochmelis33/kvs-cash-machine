@@ -34,4 +34,6 @@ private:
      *
      */
   const Storage& storage;
+
+  void expand(); // TODO: throw
 };
