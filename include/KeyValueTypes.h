@@ -51,4 +51,7 @@ public:
      * @param isPresent
      */
   void setValuePresent(bool isPresent);
+
+private:
+  char ptr;
 };
