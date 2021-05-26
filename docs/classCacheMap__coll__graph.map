@@ -1,5 +1,5 @@
 <map id="CacheMap" name="CacheMap">
-<area shape="rect" id="node1" title="Cache map. Is stored in RAM." alt="" coords="12,145,135,281"/>
+<area shape="rect" id="node1" title="Cache map. Is stored in RAM." alt="" coords="24,145,147,281"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,61,83"/>
-<area shape="rect" id="node3" title=" " alt="" coords="86,5,141,83"/>
+<area shape="rect" id="node3" title=" " alt="" coords="86,5,189,83"/>
 </map>

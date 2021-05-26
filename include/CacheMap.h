@@ -2,47 +2,48 @@
 
 #include "KeyValueTypes.h"
 #include <optional>
+#include <vector>
 
 /**
  * @brief Cache map. Is stored in RAM.
  *
  */
-class CacheMap {
+final class CacheMap {
 
-    using Entry = std::pair<Key, Ptr>;
+  using Entry = std::pair<Key, Ptr>;
 
-  public:
-    explicit CacheMap();
-    ~CacheMap();
+public:
+  CacheMap();
+  ~CacheMap();
 
-    /**
+  /**
      * @brief Put @ptr by @key. If not enough space, displace a random entry and return it. If an
      * entry with the given key already exists, overwrite it.
      *
      * @param entry
      * @return displaced entry, if any
      */
-    std::optional<Entry> putOrDisplace(Entry entry);
+  std::optional<Entry> putOrDisplace(Entry entry);
 
-    /**
+  /**
      * @brief Find a @ptr by @key.
      *
      * @param key
      * @return
      */
-    std::optional<Ptr> get(Key key);
+  std::optional<Ptr> get(Key key) const;
 
-    /**
+  /**
      * @brief Clear the entire map.
      *
      */
-    void clear();
+  void clear();
 
-  private:
-    char* data;
-    /**
+private:
+  std::vector<Key> data;
+  /**
      * @brief The number of elements present in the map.
      *
      */
-    size_t size;
+  size_t size;
 };

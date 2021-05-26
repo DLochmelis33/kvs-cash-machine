@@ -24,7 +24,7 @@ Collaboration diagram for Storage\+Hash\+Table\+:
 \item 
 \mbox{\hyperlink{classStorageHashTable_af27c5f675a8cb917fac758553c4402ce}{Storage\+Hash\+Table}} (const \mbox{\hyperlink{classStorage}{Storage}} \&\mbox{\hyperlink{classStorageHashTable_afb686fa2878d2e08d6e2c65e39aa342b}{storage}})
 \item 
-std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classStorageHashTable_a5e893f416b7fe7a9bd88a9fdef79bbd9}{get}} (\mbox{\hyperlink{classKey}{Key}} key)
+std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classStorageHashTable_a1518de55446e78edcb5d942c4d6228f4}{get}} (\mbox{\hyperlink{classKey}{Key}} key) const
 \begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStorageHashTable_ab796361aa122dd9d1711c11d802e64b6}{put}} (\mbox{\hyperlink{classKey}{Key}} key, \mbox{\hyperlink{classPtr}{Ptr}} ptr)
 \begin{DoxyCompactList}\small\item\em Put the $<$key, ptr$>$ entry into the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -48,11 +48,11 @@ The hash table that is stored on disk.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classStorageHashTable_a5e893f416b7fe7a9bd88a9fdef79bbd9}\label{classStorageHashTable_a5e893f416b7fe7a9bd88a9fdef79bbd9}} 
+\mbox{\Hypertarget{classStorageHashTable_a1518de55446e78edcb5d942c4d6228f4}\label{classStorageHashTable_a1518de55446e78edcb5d942c4d6228f4}} 
 \index{StorageHashTable@{StorageHashTable}!get@{get}}
 \index{get@{get}!StorageHashTable@{StorageHashTable}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
-{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classPtr}{Ptr}}$>$ Storage\+Hash\+Table\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classPtr}{Ptr}}$>$ Storage\+Hash\+Table\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption}) const}
 
 
 

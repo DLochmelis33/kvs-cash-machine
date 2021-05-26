@@ -4,18 +4,19 @@
 #include <bitset>
 
 template <typename T>
-class BloomFilter {
-  public:
-    constexpr BloomFilter();
+final class BloomFilter {
+public:
+  BloomFilter();
 
-    bool checkExist(const T& object);
+  bool checkExist(const T& object) const;
 
-    void add(const T& object);
+  void add(const T& object);
 
-  private:
-    std::bitset<BLOOM_FILTER_SIZE> bitset;
+  void clear();
 
-    // TODO: hash functions
+private:
+  using seed_t = uint64_t;
+
+  std::bitset<BLOOM_FILTER_SIZE> bitset;
+  const std::vector<seed_t> seeds;
 };
-
-// TODO: final classes

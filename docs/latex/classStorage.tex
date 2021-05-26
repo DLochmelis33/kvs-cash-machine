@@ -16,7 +16,7 @@ Collaboration diagram for Storage\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=148pt]{classStorage__coll__graph}
+\includegraphics[width=156pt]{classStorage__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Classes}
@@ -27,9 +27,9 @@ struct \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classStorage_a27a5684200a82b87e1e65a58f0a3c94d}{Storage}} (std\+::string filename)
+\mbox{\hyperlink{classStorage_a27a5684200a82b87e1e65a58f0a3c94d}{Storage}} (std\+::string \mbox{\hyperlink{classStorage_a4baa3ad18d9a813d3b26197fd1a40cfc}{filename}})
 \item 
-\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_aa9dde0f759e9098778393d213f575b3b}{read\+File}} () const
+\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_a3d0ddf5d74f4db788c0cf758cd072fd2}{read\+File}} ()
 \begin{DoxyCompactList}\small\item\em Read the entire file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_a782c7a9f96debf79ea4819874bc35764}{read}} (size\+\_\+t offset, size\+\_\+t length)
 \begin{DoxyCompactList}\small\item\em Read a part of file. \end{DoxyCompactList}\item 
@@ -37,6 +37,11 @@ void \mbox{\hyperlink{classStorage_a6cd6b969a0917e0027b176ce91094066}{write\+Fil
 \begin{DoxyCompactList}\small\item\em Write the entire file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStorage_a1db77d7457ce51f386f4d30b725e8098}{write}} (size\+\_\+t offset, size\+\_\+t length, const char $\ast$data)
 \begin{DoxyCompactList}\small\item\em Write a part of file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classStorage_a4baa3ad18d9a813d3b26197fd1a40cfc}{filename}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -72,11 +77,11 @@ Read a part of file.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classStorage_aa9dde0f759e9098778393d213f575b3b}\label{classStorage_aa9dde0f759e9098778393d213f575b3b}} 
+\mbox{\Hypertarget{classStorage_a3d0ddf5d74f4db788c0cf758cd072fd2}\label{classStorage_a3d0ddf5d74f4db788c0cf758cd072fd2}} 
 \index{Storage@{Storage}!readFile@{readFile}}
 \index{readFile@{readFile}!Storage@{Storage}}
 \doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} Storage\+::read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} Storage\+::read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -115,6 +120,15 @@ Write the entire file.
 \begin{DoxyReturn}{Returns}
 char$\ast$ 
 \end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classStorage_a4baa3ad18d9a813d3b26197fd1a40cfc}\label{classStorage_a4baa3ad18d9a813d3b26197fd1a40cfc}} 
+\index{Storage@{Storage}!filename@{filename}}
+\index{filename@{filename}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{filename}{filename}}
+{\footnotesize\ttfamily std\+::string Storage\+::filename\hspace{0.3cm}{\ttfamily [private]}}
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

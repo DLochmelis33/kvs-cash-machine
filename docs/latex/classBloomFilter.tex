@@ -21,32 +21,51 @@ Collaboration diagram for Bloom\+Filter$<$ T $>$\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=204pt]{classBloomFilter__coll__graph}
+\includegraphics[width=311pt]{classBloomFilter__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{classBloomFilter_a219b6bbb5ec6982e7f974667c100a4e0}{Bloom\+Filter}} ()
+\mbox{\hyperlink{classBloomFilter_a5311d62ea76f2ce827e3ac8f77bf7d40}{Bloom\+Filter}} ()
 \item 
-bool \mbox{\hyperlink{classBloomFilter_aba77110cdc377d75c49dbf2412dc1818}{check\+Exist}} (const T \&object)
+bool \mbox{\hyperlink{classBloomFilter_a823ab0dad65fcc1d9bc83d516b4ac428}{check\+Exist}} (const T \&object) const
 \item 
 void \mbox{\hyperlink{classBloomFilter_abff6ec892906d6aa40c9cc75890202e0}{add}} (const T \&object)
+\item 
+void \mbox{\hyperlink{classBloomFilter_a7b0bdb24702f02dc3947b563c3e49013}{clear}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\+\_\+t}} = uint64\+\_\+t
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::bitset$<$ \mbox{\hyperlink{KeyValueTypes_8h_a9ffa2c6fd8072e2c6b1e46a2f464df12}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} $>$ \mbox{\hyperlink{classBloomFilter_a920967079541858ce55a09961aea319c}{bitset}}
+\item 
+const std\+::vector$<$ \mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\+\_\+t}} $>$ \mbox{\hyperlink{classBloomFilter_a15957332cc96ea223725ad4984928b26}{seeds}}
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}\label{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}} 
+\index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!seed\_t@{seed\_t}}
+\index{seed\_t@{seed\_t}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{seed\_t}{seed\_t}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+using \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::\mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\+\_\+t}} =  uint64\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classBloomFilter_a219b6bbb5ec6982e7f974667c100a4e0}\label{classBloomFilter_a219b6bbb5ec6982e7f974667c100a4e0}} 
+\mbox{\Hypertarget{classBloomFilter_a5311d62ea76f2ce827e3ac8f77bf7d40}\label{classBloomFilter_a5311d62ea76f2ce827e3ac8f77bf7d40}} 
 \index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!BloomFilter@{BloomFilter}}
 \index{BloomFilter@{BloomFilter}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{BloomFilter()}{BloomFilter()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-constexpr \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::\mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [constexpr]}}
+\mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::\mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -58,12 +77,19 @@ constexpr \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::\mbox{\
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{object }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classBloomFilter_aba77110cdc377d75c49dbf2412dc1818}\label{classBloomFilter_aba77110cdc377d75c49dbf2412dc1818}} 
+\mbox{\Hypertarget{classBloomFilter_a823ab0dad65fcc1d9bc83d516b4ac428}\label{classBloomFilter_a823ab0dad65fcc1d9bc83d516b4ac428}} 
 \index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!checkExist@{checkExist}}
 \index{checkExist@{checkExist}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
 \doxysubsubsection{\texorpdfstring{checkExist()}{checkExist()}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
-bool \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::check\+Exist (\begin{DoxyParamCaption}\item[{const T \&}]{object }\end{DoxyParamCaption})}
+bool \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::check\+Exist (\begin{DoxyParamCaption}\item[{const T \&}]{object }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classBloomFilter_a7b0bdb24702f02dc3947b563c3e49013}\label{classBloomFilter_a7b0bdb24702f02dc3947b563c3e49013}} 
+\index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -74,6 +100,13 @@ bool \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::check\+Exist
 \doxysubsubsection{\texorpdfstring{bitset}{bitset}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 std\+::bitset$<$\mbox{\hyperlink{KeyValueTypes_8h_a9ffa2c6fd8072e2c6b1e46a2f464df12}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}}$>$ \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::bitset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBloomFilter_a15957332cc96ea223725ad4984928b26}\label{classBloomFilter_a15957332cc96ea223725ad4984928b26}} 
+\index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!seeds@{seeds}}
+\index{seeds@{seeds}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{seeds}{seeds}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const std\+::vector$<$\mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\+\_\+t}}$>$ \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::seeds\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

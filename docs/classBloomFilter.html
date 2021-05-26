@@ -64,6 +64,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classBloomFilter-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -77,8 +78,8 @@ Inheritance diagram for BloomFilter&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBloomFilter__inherit__graph.png" border="0" usemap="#aBloomFilter_3_01T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aBloomFilter_3_01T_01_4_inherit__map" id="aBloomFilter_3_01T_01_4_inherit__map">
-<area shape="rect" title=" " alt="" coords="12,5,131,112"/>
-<area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="5,175,137,281"/>
+<area shape="rect" title=" " alt="" coords="12,5,131,141"/>
+<area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="5,204,137,340"/>
 </map>
 </div>
 <div class="dynheader">
@@ -86,28 +87,38 @@ Collaboration diagram for BloomFilter&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classBloomFilter__coll__graph.png" border="0" usemap="#aBloomFilter_3_01T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aBloomFilter_3_01T_01_4_coll__map" id="aBloomFilter_3_01T_01_4_coll__map">
-<area shape="rect" title=" " alt="" coords="29,160,147,267"/>
+<area shape="rect" title=" " alt="" coords="111,160,230,281"/>
 <area shape="rect" title=" " alt="" coords="5,5,171,97"/>
+<area shape="rect" title=" " alt="" coords="194,13,313,90"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a219b6bbb5ec6982e7f974667c100a4e0"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#a219b6bbb5ec6982e7f974667c100a4e0">BloomFilter</a> ()</td></tr>
-<tr class="separator:a219b6bbb5ec6982e7f974667c100a4e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba77110cdc377d75c49dbf2412dc1818"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#aba77110cdc377d75c49dbf2412dc1818">checkExist</a> (const T &amp;object)</td></tr>
-<tr class="separator:aba77110cdc377d75c49dbf2412dc1818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5311d62ea76f2ce827e3ac8f77bf7d40"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#a5311d62ea76f2ce827e3ac8f77bf7d40">BloomFilter</a> ()</td></tr>
+<tr class="separator:a5311d62ea76f2ce827e3ac8f77bf7d40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a823ab0dad65fcc1d9bc83d516b4ac428"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#a823ab0dad65fcc1d9bc83d516b4ac428">checkExist</a> (const T &amp;object) const</td></tr>
+<tr class="separator:a823ab0dad65fcc1d9bc83d516b4ac428"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abff6ec892906d6aa40c9cc75890202e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#abff6ec892906d6aa40c9cc75890202e0">add</a> (const T &amp;object)</td></tr>
 <tr class="separator:abff6ec892906d6aa40c9cc75890202e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b0bdb24702f02dc3947b563c3e49013"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#a7b0bdb24702f02dc3947b563c3e49013">clear</a> ()</td></tr>
+<tr class="separator:a7b0bdb24702f02dc3947b563c3e49013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:abdc2884eb81f24a832a13fa7a2431d35"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#abdc2884eb81f24a832a13fa7a2431d35">seed_t</a> = uint64_t</td></tr>
+<tr class="separator:abdc2884eb81f24a832a13fa7a2431d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a920967079541858ce55a09961aea319c"><td class="memItemLeft" align="right" valign="top">std::bitset&lt; <a class="el" href="KeyValueTypes_8h.html#a9ffa2c6fd8072e2c6b1e46a2f464df12">BLOOM_FILTER_SIZE</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#a920967079541858ce55a09961aea319c">bitset</a></td></tr>
 <tr class="separator:a920967079541858ce55a09961aea319c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15957332cc96ea223725ad4984928b26"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classBloomFilter.html#abdc2884eb81f24a832a13fa7a2431d35">seed_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classBloomFilter.html#a15957332cc96ea223725ad4984928b26">seeds</a></td></tr>
+<tr class="separator:a15957332cc96ea223725ad4984928b26"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a219b6bbb5ec6982e7f974667c100a4e0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a219b6bbb5ec6982e7f974667c100a4e0">&#9670;&nbsp;</a></span>BloomFilter()</h2>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="abdc2884eb81f24a832a13fa7a2431d35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdc2884eb81f24a832a13fa7a2431d35">&#9670;&nbsp;</a></span>seed_t</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -118,17 +129,34 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; T &gt;::<a class="el" href="classBloomFilter.html">BloomFilter</a> </td>
+          <td class="memname">using <a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; T &gt;::<a class="el" href="classBloomFilter.html#abdc2884eb81f24a832a13fa7a2431d35">seed_t</a> =  uint64_t</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a5311d62ea76f2ce827e3ac8f77bf7d40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5311d62ea76f2ce827e3ac8f77bf7d40">&#9670;&nbsp;</a></span>BloomFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; T &gt;::<a class="el" href="classBloomFilter.html">BloomFilter</a> </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -154,8 +182,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="aba77110cdc377d75c49dbf2412dc1818"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba77110cdc377d75c49dbf2412dc1818">&#9670;&nbsp;</a></span>checkExist()</h2>
+<a id="a823ab0dad65fcc1d9bc83d516b4ac428"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a823ab0dad65fcc1d9bc83d516b4ac428">&#9670;&nbsp;</a></span>checkExist()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -167,6 +195,25 @@ template&lt;typename T &gt; </div>
           <td>(</td>
           <td class="paramtype">const T &amp;&#160;</td>
           <td class="paramname"><em>object</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7b0bdb24702f02dc3947b563c3e49013"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b0bdb24702f02dc3947b563c3e49013">&#9670;&nbsp;</a></span>clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; T &gt;::clear </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -188,6 +235,30 @@ template&lt;typename T &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::bitset&lt;<a class="el" href="KeyValueTypes_8h.html#a9ffa2c6fd8072e2c6b1e46a2f464df12">BLOOM_FILTER_SIZE</a>&gt; <a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; T &gt;::bitset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a15957332cc96ea223725ad4984928b26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15957332cc96ea223725ad4984928b26">&#9670;&nbsp;</a></span>seeds</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;<a class="el" href="classBloomFilter.html#abdc2884eb81f24a832a13fa7a2431d35">seed_t</a>&gt; <a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; T &gt;::seeds</td>
         </tr>
       </table>
   </td>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "KeyValueTypes.h"
+#include <exception>
 #include <string>
 
 /**
@@ -8,45 +9,46 @@
  *
  */
 class Storage {
-  public:
-    struct ByteArray {
-        const char* data;
-        size_t length;
-    };
+public:
+  struct ByteArray {
+    const char* data;
+    size_t length;
+  };
 
-    explicit Storage(std::string filename);
+  explicit Storage(std::string filename);
 
-    /**
+  /**
      * @brief Read the entire file.
      *
      * @return char*
      */
-    ByteArray readFile() const;
+  ByteArray readFile();
 
-    /**
+  /**
      * @brief Read a part of file.
      *
      * @param offset
      * @param length
      * @return ByteArray
      */
-    ByteArray read(size_t offset, size_t length);
+  ByteArray read(size_t offset, size_t length);
 
-    /**
+  /**
      * @brief Write the entire file.
      *
      * @return char*
      */
-    void writeFile(const char* data) const; // TODO: exceptions
+  void writeFile(const char* data) const; // TODO: exceptions
 
-    /**
+  /**
      * @brief Write a part of file.
      *
      * @param offset
      * @param length
      */
-    void write(size_t offset, size_t length, const char* data); // TODO: exceptions
+  void write(size_t offset, size_t length,
+             const char* data); // TODO: exceptions
 
-  private:
-    // TODO
+private:
+  std::string filename;
 };

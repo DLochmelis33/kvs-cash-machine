@@ -81,9 +81,9 @@ Collaboration diagram for CacheMap:</div>
 <div class="dyncontent">
 <div class="center"><img src="classCacheMap__coll__graph.png" border="0" usemap="#aCacheMap_coll__map" alt="Collaboration graph"/></div>
 <map name="aCacheMap_coll__map" id="aCacheMap_coll__map">
-<area shape="rect" title="Cache map. Is stored in RAM." alt="" coords="12,145,135,281"/>
+<area shape="rect" title="Cache map. Is stored in RAM." alt="" coords="24,145,147,281"/>
 <area shape="rect" title=" " alt="" coords="5,5,61,83"/>
-<area shape="rect" title=" " alt="" coords="86,5,141,83"/>
+<area shape="rect" title=" " alt="" coords="86,5,189,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -96,9 +96,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">putOrDisplace</a> (<a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> entry)</td></tr>
 <tr class="memdesc:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put @ptr by @key. If not enough space, displace a random entry and return it. If an entry with the given key already exists, overwrite it.  <a href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">More...</a><br /></td></tr>
 <tr class="separator:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a400b2eed80e5516d4b07fe10137e19c5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a400b2eed80e5516d4b07fe10137e19c5">get</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:a400b2eed80e5516d4b07fe10137e19c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a @ptr by @key.  <a href="classCacheMap.html#a400b2eed80e5516d4b07fe10137e19c5">More...</a><br /></td></tr>
-<tr class="separator:a400b2eed80e5516d4b07fe10137e19c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a5c3b2cd71e7245bc34cbb17baa0acb"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">get</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
+<tr class="memdesc:a5a5c3b2cd71e7245bc34cbb17baa0acb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a @ptr by @key.  <a href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">More...</a><br /></td></tr>
+<tr class="separator:a5a5c3b2cd71e7245bc34cbb17baa0acb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08010b627a6f55e6eb53d0d60a6f3470"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">clear</a> ()</td></tr>
 <tr class="memdesc:a08010b627a6f55e6eb53d0d60a6f3470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the entire map.  <a href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">More...</a><br /></td></tr>
 <tr class="separator:a08010b627a6f55e6eb53d0d60a6f3470"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -110,8 +110,8 @@ Private Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ab9b0c5bb8ca0bce929fd6479f36b5aee"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#ab9b0c5bb8ca0bce929fd6479f36b5aee">data</a></td></tr>
-<tr class="separator:ab9b0c5bb8ca0bce929fd6479f36b5aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dc961109b3c7f5bd0863dff47bd823d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classKey.html">Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a7dc961109b3c7f5bd0863dff47bd823d">data</a></td></tr>
+<tr class="separator:a7dc961109b3c7f5bd0863dff47bd823d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c9388000fc1d67535c682b15ae4d858"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">size</a></td></tr>
 <tr class="memdesc:a2c9388000fc1d67535c682b15ae4d858"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements present in the map.  <a href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">More...</a><br /></td></tr>
 <tr class="separator:a2c9388000fc1d67535c682b15ae4d858"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,9 +147,6 @@ Private Attributes</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">CacheMap::CacheMap </td>
@@ -158,11 +155,6 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
@@ -204,8 +196,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a400b2eed80e5516d4b07fe10137e19c5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a400b2eed80e5516d4b07fe10137e19c5">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a5a5c3b2cd71e7245bc34cbb17baa0acb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a5c3b2cd71e7245bc34cbb17baa0acb">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -215,7 +207,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -259,8 +251,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ab9b0c5bb8ca0bce929fd6479f36b5aee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab9b0c5bb8ca0bce929fd6479f36b5aee">&#9670;&nbsp;</a></span>data</h2>
+<a id="a7dc961109b3c7f5bd0863dff47bd823d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dc961109b3c7f5bd0863dff47bd823d">&#9670;&nbsp;</a></span>data</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,7 +261,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">char* CacheMap::data</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classKey.html">Key</a>&gt; CacheMap::data</td>
         </tr>
       </table>
   </td>

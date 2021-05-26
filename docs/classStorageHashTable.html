@@ -80,8 +80,9 @@ Collaboration diagram for StorageHashTable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classStorageHashTable__coll__graph.png" border="0" usemap="#aStorageHashTable_coll__map" alt="Collaboration graph"/></div>
 <map name="aStorageHashTable_coll__map" id="aStorageHashTable_coll__map">
-<area shape="rect" title="The hash table that is stored on disk." alt="" coords="5,204,155,311"/>
-<area shape="rect" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="35,5,125,141"/>
+<area shape="rect" title="The hash table that is stored on disk." alt="" coords="5,344,155,451"/>
+<area shape="rect" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="35,145,125,281"/>
+<area shape="rect" title=" " alt="" coords="53,5,107,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -89,9 +90,9 @@ Collaboration diagram for StorageHashTable:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af27c5f675a8cb917fac758553c4402ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af27c5f675a8cb917fac758553c4402ce">StorageHashTable</a> (const <a class="el" href="classStorage.html">Storage</a> &amp;<a class="el" href="classStorageHashTable.html#afb686fa2878d2e08d6e2c65e39aa342b">storage</a>)</td></tr>
 <tr class="separator:af27c5f675a8cb917fac758553c4402ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a5e893f416b7fe7a9bd88a9fdef79bbd9">get</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key.  <a href="classStorageHashTable.html#a5e893f416b7fe7a9bd88a9fdef79bbd9">More...</a><br /></td></tr>
-<tr class="separator:a5e893f416b7fe7a9bd88a9fdef79bbd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1518de55446e78edcb5d942c4d6228f4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a1518de55446e78edcb5d942c4d6228f4">get</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
+<tr class="memdesc:a1518de55446e78edcb5d942c4d6228f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key.  <a href="classStorageHashTable.html#a1518de55446e78edcb5d942c4d6228f4">More...</a><br /></td></tr>
+<tr class="separator:a1518de55446e78edcb5d942c4d6228f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab796361aa122dd9d1711c11d802e64b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#ab796361aa122dd9d1711c11d802e64b6">put</a> (<a class="el" href="classKey.html">Key</a> key, <a class="el" href="classPtr.html">Ptr</a> ptr)</td></tr>
 <tr class="memdesc:ab796361aa122dd9d1711c11d802e64b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the &lt;key, ptr&gt; entry into the table.  <a href="classStorageHashTable.html#ab796361aa122dd9d1711c11d802e64b6">More...</a><br /></td></tr>
 <tr class="separator:ab796361aa122dd9d1711c11d802e64b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,8 +133,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5e893f416b7fe7a9bd88a9fdef79bbd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e893f416b7fe7a9bd88a9fdef79bbd9">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a1518de55446e78edcb5d942c4d6228f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1518de55446e78edcb5d942c4d6228f4">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -143,7 +144,7 @@ Private Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
