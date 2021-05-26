@@ -1,7 +1,7 @@
 var searchData=
 [
   ['key_35',['Key',['../classKey.html',1,'']]],
-  ['key_36',['key',['../structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c',1,'KeyValue::key()'],['../structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6',1,'Entry::key()']]],
+  ['key_36',['key',['../classKey.html#a70439140082f54c874000e9d41d950b6',1,'Key::key()'],['../structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c',1,'KeyValue::key()'],['../structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6',1,'Entry::key()']]],
   ['key_5fsize_37',['KEY_SIZE',['../KeyValueTypes_8h.html#a5ab9602a693dd11c365e308e4f7175ad',1,'KeyValueTypes.h']]],
   ['key_5ft_38',['key_t',['../KeyValueTypes_8h.html#ab66cbe59b6fe4b8170fcd8e964254fab',1,'KeyValueTypes.h']]],
   ['keyvalue_39',['KeyValue',['../structKeyValue.html',1,'']]],

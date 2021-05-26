@@ -8,7 +8,7 @@
  * @brief The hash table that is stored on disk.
  *
  */
-final class StorageHashTable {
+class StorageHashTable final {
 public:
   explicit StorageHashTable(const Storage& storage);
 
@@ -18,7 +18,7 @@ public:
      * @param key
      * @return std::optional<Ptr>
      */
-  std::optional<Ptr> get(Key key) const;
+  std::optional<Ptr> get(Key key) const noexcept;
 
   /**
      * @brief Put the <key, ptr> entry into the table.
@@ -29,11 +29,12 @@ public:
   void put(Key key, Ptr ptr);
 
 private:
+  void expand();
+
+private:
   /**
      * @brief The Storage that is used for reading and writing hash table files on disk.
      *
      */
   const Storage& storage;
-
-  void expand(); // TODO: throw
 };

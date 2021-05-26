@@ -14,17 +14,23 @@ using key_t = __uint128_t;
 using value_t = char*;
 using ptr_t = char;
 
-final class Key {
+class Key final {
 public:
-  key_t get();
+  key_t get() noexcept;
+
+private:
+  key_t key;
 };
 
-final class Value {
+class Value final {
 public:
-  value_t get();
+  value_t get() noexcept;
+
+private:
+  value_t value;
 };
 
-final struct KeyValue {
+struct KeyValue final {
   Key key;
   Value value;
 };
@@ -34,33 +40,31 @@ final struct KeyValue {
  * information whether the associated value is present or deleted.
  *
  */
-final class Ptr {
+class Ptr final {
 
 public:
   static constexpr ptr_t EMPTY_PTR = 0b11111111;
 
-  ptr_t get() const;
+  ptr_t get() const noexcept;
 
   /**
      * @brief Check if this Ptr points to a present or deleted value.
      *
      */
-  bool isValuePresent() const;
+  bool isValuePresent() const noexcept;
 
   /**
      * @brief Set state for the value associated with this Ptr.
      *
      * @param isPresent
      */
-  void setValuePresent(bool isPresent);
+  void setValuePresent(bool isPresent) noexcept;
 
 private:
   ptr_t ptr;
 };
 
-final struct Entry {
+struct Entry final {
   Key key;
   Ptr ptr;
 };
-
-

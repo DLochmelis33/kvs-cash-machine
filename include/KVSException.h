@@ -2,8 +2,9 @@
 
 #include <exception>
 
-enum class KVSErrorType { 
-  SHARD_OVERFLOW, IO_ERROR  // TODO: different types of io errors
+enum class KVSErrorType {
+  SHARD_OVERFLOW,
+  IO_ERROR // TODO: different types of io errors
 };
 
 class KVSException final : public std::exception {

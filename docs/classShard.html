@@ -69,7 +69,7 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classShard-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">Shard Class Reference</div>  </div>
+<div class="title">Shard Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -111,26 +111,26 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0037fc14121a68f2320549d7e13c3a9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a0037fc14121a68f2320549d7e13c3a9e">writeValueDirectly</a> (<a class="el" href="classPtr.html">Ptr</a> ptr, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
 <tr class="memdesc:a0037fc14121a68f2320549d7e13c3a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <a class="el" href="classValue.html">Value</a> directly to disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit.  <a href="classShard.html#a0037fc14121a68f2320549d7e13c3a9e">More...</a><br /></td></tr>
 <tr class="separator:a0037fc14121a68f2320549d7e13c3a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4425e98c58b969b6b9b7aed7438e8c1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a4425e98c58b969b6b9b7aed7438e8c1d">incrementAliveValuesCnt</a> ()</td></tr>
-<tr class="memdesc:a4425e98c58b969b6b9b7aed7438e8c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the counter of non-deleted elements in this shard.  <a href="classShard.html#a4425e98c58b969b6b9b7aed7438e8c1d">More...</a><br /></td></tr>
-<tr class="separator:a4425e98c58b969b6b9b7aed7438e8c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1c7c403980e689ac31e3929955dbb66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#aa1c7c403980e689ac31e3929955dbb66">decrementAliveValuesCnt</a> ()</td></tr>
-<tr class="memdesc:aa1c7c403980e689ac31e3929955dbb66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the counter of non-deleted elements in this shard.  <a href="classShard.html#aa1c7c403980e689ac31e3929955dbb66">More...</a><br /></td></tr>
-<tr class="separator:aa1c7c403980e689ac31e3929955dbb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5245cd459207d51d155f919d156ca04"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ab5245cd459207d51d155f919d156ca04">isRebuildRequired</a> () const</td></tr>
-<tr class="memdesc:ab5245cd459207d51d155f919d156ca04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a rebuild needs to be called.  <a href="classShard.html#ab5245cd459207d51d155f919d156ca04">More...</a><br /></td></tr>
-<tr class="separator:ab5245cd459207d51d155f919d156ca04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8fd5e8b49213a66affc2bc8ffaeadab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ad8fd5e8b49213a66affc2bc8ffaeadab">incrementAliveValuesCnt</a> () noexcept</td></tr>
+<tr class="memdesc:ad8fd5e8b49213a66affc2bc8ffaeadab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the counter of non-deleted elements in this shard.  <a href="classShard.html#ad8fd5e8b49213a66affc2bc8ffaeadab">More...</a><br /></td></tr>
+<tr class="separator:ad8fd5e8b49213a66affc2bc8ffaeadab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a986026ea972175ef7d174cdf0c7ea631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a986026ea972175ef7d174cdf0c7ea631">decrementAliveValuesCnt</a> () noexcept</td></tr>
+<tr class="memdesc:a986026ea972175ef7d174cdf0c7ea631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the counter of non-deleted elements in this shard.  <a href="classShard.html#a986026ea972175ef7d174cdf0c7ea631">More...</a><br /></td></tr>
+<tr class="separator:a986026ea972175ef7d174cdf0c7ea631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7dcb8c5e3e998662dc0659efb978c405"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a7dcb8c5e3e998662dc0659efb978c405">isRebuildRequired</a> () const noexcept</td></tr>
+<tr class="memdesc:a7dcb8c5e3e998662dc0659efb978c405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a rebuild needs to be called.  <a href="classShard.html#a7dcb8c5e3e998662dc0659efb978c405">More...</a><br /></td></tr>
+<tr class="separator:a7dcb8c5e3e998662dc0659efb978c405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:adeb147b5edff8197d52222bda0fed625"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#adeb147b5edff8197d52222bda0fed625">getShardIndex</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:adeb147b5edff8197d52222bda0fed625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shard index that contains the <a class="el" href="classKey.html">Key</a>.  <a href="classShard.html#adeb147b5edff8197d52222bda0fed625">More...</a><br /></td></tr>
-<tr class="separator:adeb147b5edff8197d52222bda0fed625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f">getShardIndex</a> (<a class="el" href="classKey.html">Key</a> key) noexcept</td></tr>
+<tr class="memdesc:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shard index that contains the <a class="el" href="classKey.html">Key</a>.  <a href="classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f">More...</a><br /></td></tr>
+<tr class="separator:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:ac4c8e698ab12f40623f08f8777c0b29c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ac4c8e698ab12f40623f08f8777c0b29c">Shard</a> (size_t <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a>)</td></tr>
-<tr class="separator:ac4c8e698ab12f40623f08f8777c0b29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20ff309054d160c0a3d208dd0939b48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ad20ff309054d160c0a3d208dd0939b48">Shard</a> (size_t <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a>) noexcept</td></tr>
+<tr class="separator:ad20ff309054d160c0a3d208dd0939b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -174,8 +174,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ac4c8e698ab12f40623f08f8777c0b29c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4c8e698ab12f40623f08f8777c0b29c">&#9670;&nbsp;</a></span>Shard() <span class="overload">[2/2]</span></h2>
+<a id="ad20ff309054d160c0a3d208dd0939b48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20ff309054d160c0a3d208dd0939b48">&#9670;&nbsp;</a></span>Shard() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -193,7 +193,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">private</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -201,11 +201,14 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa1c7c403980e689ac31e3929955dbb66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1c7c403980e689ac31e3929955dbb66">&#9670;&nbsp;</a></span>decrementAliveValuesCnt()</h2>
+<a id="a986026ea972175ef7d174cdf0c7ea631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a986026ea972175ef7d174cdf0c7ea631">&#9670;&nbsp;</a></span>decrementAliveValuesCnt()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Shard::decrementAliveValuesCnt </td>
@@ -214,6 +217,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Decrease the counter of non-deleted elements in this shard. </p>
@@ -221,8 +229,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="adeb147b5edff8197d52222bda0fed625"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeb147b5edff8197d52222bda0fed625">&#9670;&nbsp;</a></span>getShardIndex()</h2>
+<a id="a939e90e4cdd274cc1d8fa202912f0f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a939e90e4cdd274cc1d8fa202912f0f4f">&#9670;&nbsp;</a></span>getShardIndex()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -240,7 +248,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -256,11 +264,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a4425e98c58b969b6b9b7aed7438e8c1d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4425e98c58b969b6b9b7aed7438e8c1d">&#9670;&nbsp;</a></span>incrementAliveValuesCnt()</h2>
+<a id="ad8fd5e8b49213a66affc2bc8ffaeadab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8fd5e8b49213a66affc2bc8ffaeadab">&#9670;&nbsp;</a></span>incrementAliveValuesCnt()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Shard::incrementAliveValuesCnt </td>
@@ -269,6 +280,11 @@ Private Attributes</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Increase the counter of non-deleted elements in this shard. </p>
@@ -276,11 +292,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5245cd459207d51d155f919d156ca04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5245cd459207d51d155f919d156ca04">&#9670;&nbsp;</a></span>isRebuildRequired()</h2>
+<a id="a7dcb8c5e3e998662dc0659efb978c405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7dcb8c5e3e998662dc0659efb978c405">&#9670;&nbsp;</a></span>isRebuildRequired()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">boolean Shard::isRebuildRequired </td>
@@ -289,6 +308,11 @@ Private Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Check if a rebuild needs to be called. </p>

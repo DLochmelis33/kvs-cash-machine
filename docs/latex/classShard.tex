@@ -34,21 +34,21 @@ Collaboration diagram for Shard\+:
 \begin{DoxyCompactList}\small\item\em Read a value directly from disk storage. Used when \mbox{\hyperlink{classCacheMap}{Cache\+Map}} entry is hit. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classShard_a0037fc14121a68f2320549d7e13c3a9e}{write\+Value\+Directly}} (\mbox{\hyperlink{classPtr}{Ptr}} ptr, const \mbox{\hyperlink{classValue}{Value}} \&value)
 \begin{DoxyCompactList}\small\item\em Write a \mbox{\hyperlink{classValue}{Value}} directly to disk storage. Used when \mbox{\hyperlink{classCacheMap}{Cache\+Map}} entry is hit. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classShard_a4425e98c58b969b6b9b7aed7438e8c1d}{increment\+Alive\+Values\+Cnt}} ()
+void \mbox{\hyperlink{classShard_ad8fd5e8b49213a66affc2bc8ffaeadab}{increment\+Alive\+Values\+Cnt}} () noexcept
 \begin{DoxyCompactList}\small\item\em Increase the counter of non-\/deleted elements in this shard. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classShard_aa1c7c403980e689ac31e3929955dbb66}{decrement\+Alive\+Values\+Cnt}} ()
+void \mbox{\hyperlink{classShard_a986026ea972175ef7d174cdf0c7ea631}{decrement\+Alive\+Values\+Cnt}} () noexcept
 \begin{DoxyCompactList}\small\item\em Decrease the counter of non-\/deleted elements in this shard. \end{DoxyCompactList}\item 
-boolean \mbox{\hyperlink{classShard_ab5245cd459207d51d155f919d156ca04}{is\+Rebuild\+Required}} () const
+boolean \mbox{\hyperlink{classShard_a7dcb8c5e3e998662dc0659efb978c405}{is\+Rebuild\+Required}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Check if a rebuild needs to be called. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static size\+\_\+t \mbox{\hyperlink{classShard_adeb147b5edff8197d52222bda0fed625}{get\+Shard\+Index}} (\mbox{\hyperlink{classKey}{Key}} key)
+static size\+\_\+t \mbox{\hyperlink{classShard_a939e90e4cdd274cc1d8fa202912f0f4f}{get\+Shard\+Index}} (\mbox{\hyperlink{classKey}{Key}} key) noexcept
 \begin{DoxyCompactList}\small\item\em Get the shard index that contains the \mbox{\hyperlink{classKey}{Key}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classShard_ac4c8e698ab12f40623f08f8777c0b29c}{Shard}} (size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index}})
+\mbox{\hyperlink{classShard_ad20ff309054d160c0a3d208dd0939b48}{Shard}} (size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index}}) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -73,30 +73,30 @@ A single part of \mbox{\hyperlink{classKVS}{KVS}} after sharding.
 \doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-\mbox{\Hypertarget{classShard_ac4c8e698ab12f40623f08f8777c0b29c}\label{classShard_ac4c8e698ab12f40623f08f8777c0b29c}} 
+\mbox{\Hypertarget{classShard_ad20ff309054d160c0a3d208dd0939b48}\label{classShard_ad20ff309054d160c0a3d208dd0939b48}} 
 \index{Shard@{Shard}!Shard@{Shard}}
 \index{Shard@{Shard}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}}
+{\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classShard_aa1c7c403980e689ac31e3929955dbb66}\label{classShard_aa1c7c403980e689ac31e3929955dbb66}} 
+\mbox{\Hypertarget{classShard_a986026ea972175ef7d174cdf0c7ea631}\label{classShard_a986026ea972175ef7d174cdf0c7ea631}} 
 \index{Shard@{Shard}!decrementAliveValuesCnt@{decrementAliveValuesCnt}}
 \index{decrementAliveValuesCnt@{decrementAliveValuesCnt}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{decrementAliveValuesCnt()}{decrementAliveValuesCnt()}}
-{\footnotesize\ttfamily void Shard\+::decrement\+Alive\+Values\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Shard\+::decrement\+Alive\+Values\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
 Decrease the counter of non-\/deleted elements in this shard. 
 
-Used by \mbox{\hyperlink{classKVS}{KVS}} when an entry in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is marked as deleted. \mbox{\Hypertarget{classShard_adeb147b5edff8197d52222bda0fed625}\label{classShard_adeb147b5edff8197d52222bda0fed625}} 
+Used by \mbox{\hyperlink{classKVS}{KVS}} when an entry in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is marked as deleted. \mbox{\Hypertarget{classShard_a939e90e4cdd274cc1d8fa202912f0f4f}\label{classShard_a939e90e4cdd274cc1d8fa202912f0f4f}} 
 \index{Shard@{Shard}!getShardIndex@{getShardIndex}}
 \index{getShardIndex@{getShardIndex}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{getShardIndex()}{getShardIndex()}}
-{\footnotesize\ttfamily static size\+\_\+t Shard\+::get\+Shard\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static size\+\_\+t Shard\+::get\+Shard\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [noexcept]}}
 
 
 
@@ -110,21 +110,21 @@ Get the shard index that contains the \mbox{\hyperlink{classKey}{Key}}.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{classShard}{Shard}} index. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classShard_a4425e98c58b969b6b9b7aed7438e8c1d}\label{classShard_a4425e98c58b969b6b9b7aed7438e8c1d}} 
+\mbox{\Hypertarget{classShard_ad8fd5e8b49213a66affc2bc8ffaeadab}\label{classShard_ad8fd5e8b49213a66affc2bc8ffaeadab}} 
 \index{Shard@{Shard}!incrementAliveValuesCnt@{incrementAliveValuesCnt}}
 \index{incrementAliveValuesCnt@{incrementAliveValuesCnt}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{incrementAliveValuesCnt()}{incrementAliveValuesCnt()}}
-{\footnotesize\ttfamily void Shard\+::increment\+Alive\+Values\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Shard\+::increment\+Alive\+Values\+Cnt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
 Increase the counter of non-\/deleted elements in this shard. 
 
-Used by \mbox{\hyperlink{classKVS}{KVS}} when a deleted element in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is added again. \mbox{\Hypertarget{classShard_ab5245cd459207d51d155f919d156ca04}\label{classShard_ab5245cd459207d51d155f919d156ca04}} 
+Used by \mbox{\hyperlink{classKVS}{KVS}} when a deleted element in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is added again. \mbox{\Hypertarget{classShard_a7dcb8c5e3e998662dc0659efb978c405}\label{classShard_a7dcb8c5e3e998662dc0659efb978c405}} 
 \index{Shard@{Shard}!isRebuildRequired@{isRebuildRequired}}
 \index{isRebuildRequired@{isRebuildRequired}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{isRebuildRequired()}{isRebuildRequired()}}
-{\footnotesize\ttfamily boolean Shard\+::is\+Rebuild\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily boolean Shard\+::is\+Rebuild\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 

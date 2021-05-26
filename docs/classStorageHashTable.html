@@ -68,7 +68,7 @@ $(function() {
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classStorageHashTable-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">StorageHashTable Class Reference</div>  </div>
+<div class="title">StorageHashTable Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -91,9 +91,9 @@ Collaboration diagram for StorageHashTable:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af27c5f675a8cb917fac758553c4402ce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af27c5f675a8cb917fac758553c4402ce">StorageHashTable</a> (const <a class="el" href="classStorage.html">Storage</a> &amp;<a class="el" href="classStorageHashTable.html#afb686fa2878d2e08d6e2c65e39aa342b">storage</a>)</td></tr>
 <tr class="separator:af27c5f675a8cb917fac758553c4402ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1518de55446e78edcb5d942c4d6228f4"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a1518de55446e78edcb5d942c4d6228f4">get</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
-<tr class="memdesc:a1518de55446e78edcb5d942c4d6228f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key.  <a href="classStorageHashTable.html#a1518de55446e78edcb5d942c4d6228f4">More...</a><br /></td></tr>
-<tr class="separator:a1518de55446e78edcb5d942c4d6228f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98ee564daa5240927ab654976baec048"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a98ee564daa5240927ab654976baec048">get</a> (<a class="el" href="classKey.html">Key</a> key) const noexcept</td></tr>
+<tr class="memdesc:a98ee564daa5240927ab654976baec048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key.  <a href="classStorageHashTable.html#a98ee564daa5240927ab654976baec048">More...</a><br /></td></tr>
+<tr class="separator:a98ee564daa5240927ab654976baec048"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab796361aa122dd9d1711c11d802e64b6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#ab796361aa122dd9d1711c11d802e64b6">put</a> (<a class="el" href="classKey.html">Key</a> key, <a class="el" href="classPtr.html">Ptr</a> ptr)</td></tr>
 <tr class="memdesc:ab796361aa122dd9d1711c11d802e64b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the &lt;key, ptr&gt; entry into the table.  <a href="classStorageHashTable.html#ab796361aa122dd9d1711c11d802e64b6">More...</a><br /></td></tr>
 <tr class="separator:ab796361aa122dd9d1711c11d802e64b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,11 +164,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1518de55446e78edcb5d942c4d6228f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1518de55446e78edcb5d942c4d6228f4">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a98ee564daa5240927ab654976baec048"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98ee564daa5240927ab654976baec048">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::optional&lt;<a class="el" href="classPtr.html">Ptr</a>&gt; StorageHashTable::get </td>
@@ -178,6 +181,11 @@ Private Attributes</h2></td></tr>
           <td> const</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key. </p>

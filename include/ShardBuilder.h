@@ -2,13 +2,12 @@
 
 #include "KeyValueTypes.h"
 #include "Storage.h"
-#include <vector>
 #include <utility>
+#include <vector>
 
-final class ShardBuilder {
+class ShardBuilder final {
 
-  public:
-
+public:
   /**
    * @brief Create a Shard object.
    * 
@@ -24,6 +23,6 @@ final class ShardBuilder {
    * @param cacheMap 
    * @return std::vector<Entry> entries in CacheMap that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY_PTR
    */
-  static std::pair<Shard, std::vector<Entry>> rebuildShard(const Shard& shard, const CacheMap& cacheMap);
-
+  static std::pair<Shard, std::vector<Entry>>
+  rebuildShard(const Shard& shard, const CacheMap& cacheMap);
 };
