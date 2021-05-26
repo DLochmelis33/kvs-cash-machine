@@ -37,6 +37,8 @@ final struct KeyValue {
 final class Ptr {
 
 public:
+  static constexpr ptr_t EMPTY_PTR = 0b11111111;
+
   ptr_t get() const;
 
   /**
@@ -53,5 +55,12 @@ public:
   void setValuePresent(bool isPresent);
 
 private:
-  char ptr;
+  ptr_t ptr;
 };
+
+final struct Entry {
+  Key key;
+  Ptr ptr;
+};
+
+

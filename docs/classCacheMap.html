@@ -64,7 +64,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classCacheMap-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -91,7 +90,7 @@ Collaboration diagram for CacheMap:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a8866431a0452dde3bee7bbcc63bc4c29"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a8866431a0452dde3bee7bbcc63bc4c29">CacheMap</a> ()</td></tr>
 <tr class="separator:a8866431a0452dde3bee7bbcc63bc4c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">putOrDisplace</a> (<a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> entry)</td></tr>
+<tr class="memitem:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structEntry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">putOrDisplace</a> (<a class="el" href="structEntry.html">Entry</a> entry)</td></tr>
 <tr class="memdesc:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put @ptr by @key. If not enough space, displace a random entry and return it. If an entry with the given key already exists, overwrite it.  <a href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">More...</a><br /></td></tr>
 <tr class="separator:a0bf71d460d53ee9f3b4376d6341e0ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a5c3b2cd71e7245bc34cbb17baa0acb"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">get</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
@@ -101,14 +100,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a08010b627a6f55e6eb53d0d60a6f3470"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the entire map.  <a href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">More...</a><br /></td></tr>
 <tr class="separator:a08010b627a6f55e6eb53d0d60a6f3470"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a4b7ff2c98c07e55dc5befb1b06774342"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> = std::pair&lt; <a class="el" href="classKey.html">Key</a>, <a class="el" href="classPtr.html">Ptr</a> &gt;</td></tr>
-<tr class="separator:a4b7ff2c98c07e55dc5befb1b06774342"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:adc7cd25aa974f5e7ae69137026555fcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a></td></tr>
+<tr class="memitem:adc7cd25aa974f5e7ae69137026555fcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a></td></tr>
 <tr class="separator:adc7cd25aa974f5e7ae69137026555fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c9388000fc1d67535c682b15ae4d858"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">size</a></td></tr>
 <tr class="memdesc:a2c9388000fc1d67535c682b15ae4d858"><td class="mdescLeft">&#160;</td><td class="mdescRight">The number of elements present in the map.  <a href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">More...</a><br /></td></tr>
@@ -116,30 +110,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Cache map. Is stored in RAM. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a4b7ff2c98c07e55dc5befb1b06774342"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b7ff2c98c07e55dc5befb1b06774342">&#9670;&nbsp;</a></span>Entry</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">CacheMap::Entry</a> =  std::pair&lt;<a class="el" href="classKey.html">Key</a>, <a class="el" href="classPtr.html">Ptr</a>&gt;</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8866431a0452dde3bee7bbcc63bc4c29"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8866431a0452dde3bee7bbcc63bc4c29">&#9670;&nbsp;</a></span>CacheMap()</h2>
 
@@ -211,9 +182,9 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a>&gt; CacheMap::putOrDisplace </td>
+          <td class="memname">std::optional&lt;<a class="el" href="structEntry.html">Entry</a>&gt; CacheMap::putOrDisplace </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="structEntry.html">Entry</a>&#160;</td>
           <td class="paramname"><em>entry</em></td><td>)</td>
           <td></td>
         </tr>
@@ -242,7 +213,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a>&gt; CacheMap::data</td>
+          <td class="memname">std::vector&lt;<a class="el" href="structEntry.html">Entry</a>&gt; CacheMap::data</td>
         </tr>
       </table>
   </td>

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['incrementalivevaluescnt_94',['incrementAliveValuesCnt',['../classShard.html#a4425e98c58b969b6b9b7aed7438e8c1d',1,'Shard']]],
-  ['isvaluepresent_95',['isValuePresent',['../classPtr.html#a2dd729c0d00ddf014afdd41e19cd3213',1,'Ptr']]]
+  ['get_118',['get',['../classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb',1,'CacheMap::get()'],['../classKey.html#aa38f2412c07e43af234f88a30dfa2bf9',1,'Key::get()'],['../classValue.html#af06763dea7c971525f85ec7b366c5d65',1,'Value::get()'],['../classPtr.html#a54cc5b2b66127037c2d4dd5a5af3f303',1,'Ptr::get()'],['../classKVS.html#aa1bad605dc68f365d0efcaa13244a163',1,'KVS::get()'],['../classStorageHashTable.html#a1518de55446e78edcb5d942c4d6228f4',1,'StorageHashTable::get()']]],
+  ['getshardindex_119',['getShardIndex',['../classShard.html#adeb147b5edff8197d52222bda0fed625',1,'Shard']]]
 ];

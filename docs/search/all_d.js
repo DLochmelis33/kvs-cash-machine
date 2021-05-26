@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['read_41',['read',['../classStorage.html#a782c7a9f96debf79ea4819874bc35764',1,'Storage']]],
-  ['readfile_42',['readFile',['../classStorage.html#a3d0ddf5d74f4db788c0cf758cd072fd2',1,'Storage']]],
-  ['readvalue_43',['readValue',['../classShard.html#ada2f66a31376b01e85ded9dc471d3ae8',1,'Shard']]],
-  ['readvaluedirectly_44',['readValueDirectly',['../classShard.html#a0c5ba849d919ae276ff2b2985e582e1a',1,'Shard']]],
-  ['remove_45',['remove',['../classKVS.html#a97281f5996ec9416d6d6042851c2945f',1,'KVS']]]
+  ['read_53',['read',['../classStorage.html#ac2fa90bb7817a0a8285082d9d213c378',1,'Storage']]],
+  ['readfile_54',['readFile',['../classStorage.html#aa9dde0f759e9098778393d213f575b3b',1,'Storage']]],
+  ['readvalue_55',['readValue',['../classShard.html#a8beeae59ac4d6dabe834f3c199fe836d',1,'Shard']]],
+  ['readvaluedirectly_56',['readValueDirectly',['../classShard.html#a0c5ba849d919ae276ff2b2985e582e1a',1,'Shard']]],
+  ['rebuildshard_57',['rebuildShard',['../classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087',1,'ShardBuilder']]],
+  ['remove_58',['remove',['../classKVS.html#a97281f5996ec9416d6d6042851c2945f',1,'KVS']]],
+  ['removeentry_59',['removeEntry',['../classShard.html#ac1f0ae87249f0d74361de03226940a14',1,'Shard']]]
 ];

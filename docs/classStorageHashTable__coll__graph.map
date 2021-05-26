@@ -1,5 +1,5 @@
 <map id="StorageHashTable" name="StorageHashTable">
-<area shape="rect" id="node1" title="The hash table that is stored on disk." alt="" coords="5,344,155,451"/>
-<area shape="rect" id="node2" href="$classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="35,145,125,281"/>
+<area shape="rect" id="node1" title="The hash table that is stored on disk." alt="" coords="5,359,155,480"/>
+<area shape="rect" id="node2" href="$classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="35,145,125,296"/>
 <area shape="rect" id="node3" title=" " alt="" coords="53,5,107,83"/>
 </map>

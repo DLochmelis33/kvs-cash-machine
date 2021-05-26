@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['entry_134',['Entry',['../classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342',1,'CacheMap']]]
+  ['hash_5ft_169',['hash_t',['../classKVS.html#a619afe9aabb59c4fe5462e293e8e4402',1,'KVS']]]
 ];

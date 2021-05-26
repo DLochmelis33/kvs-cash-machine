@@ -65,6 +65,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classShard-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -81,40 +82,55 @@ Collaboration diagram for Shard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShard__coll__graph.png" border="0" usemap="#aShard_coll__map" alt="Collaboration graph"/></div>
 <map name="aShard_coll__map" id="aShard_coll__map">
-<area shape="rect" title="A single part of KVS after sharding." alt="" coords="15,557,201,723"/>
-<area shape="rect" title=" " alt="" coords="17,373,73,451"/>
-<area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="105,344,237,480"/>
-<area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="111,160,230,281"/>
+<area shape="rect" title="A single part of KVS after sharding." alt="" coords="79,528,270,752"/>
+<area shape="rect" title=" " alt="" coords="21,351,77,429"/>
+<area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="105,329,237,451"/>
+<area shape="rect" href="classBloomFilter.html" title="Bloom filter!" alt="" coords="111,160,230,267"/>
 <area shape="rect" title=" " alt="" coords="5,5,171,97"/>
 <area shape="rect" title=" " alt="" coords="194,13,313,90"/>
+<area shape="rect" title=" " alt="" coords="261,351,315,429"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac4c8e698ab12f40623f08f8777c0b29c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ac4c8e698ab12f40623f08f8777c0b29c">Shard</a> (size_t <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a>)</td></tr>
-<tr class="separator:ac4c8e698ab12f40623f08f8777c0b29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1d1e143159f59129d23f642c796477f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ad1d1e143159f59129d23f642c796477f">Shard</a> ()=delete</td></tr>
+<tr class="separator:ad1d1e143159f59129d23f642c796477f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8beeae59ac4d6dabe834f3c199fe836d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a8beeae59ac4d6dabe834f3c199fe836d">readValue</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
+<tr class="memdesc:a8beeae59ac4d6dabe834f3c199fe836d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from this shard.  <a href="classShard.html#a8beeae59ac4d6dabe834f3c199fe836d">More...</a><br /></td></tr>
+<tr class="separator:a8beeae59ac4d6dabe834f3c199fe836d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d553b3945c59a9eea2404c170debb77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a1d553b3945c59a9eea2404c170debb77">writeValue</a> (<a class="el" href="classKey.html">Key</a> key, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
+<tr class="memdesc:a1d553b3945c59a9eea2404c170debb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to this shard.  <a href="classShard.html#a1d553b3945c59a9eea2404c170debb77">More...</a><br /></td></tr>
+<tr class="separator:a1d553b3945c59a9eea2404c170debb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1f0ae87249f0d74361de03226940a14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ac1f0ae87249f0d74361de03226940a14">removeEntry</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
+<tr class="memdesc:ac1f0ae87249f0d74361de03226940a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a value from this shard.  <a href="classShard.html#ac1f0ae87249f0d74361de03226940a14">More...</a><br /></td></tr>
+<tr class="separator:ac1f0ae87249f0d74361de03226940a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5ba849d919ae276ff2b2985e582e1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classValue.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a0c5ba849d919ae276ff2b2985e582e1a">readValueDirectly</a> (<a class="el" href="classPtr.html">Ptr</a> ptr) const</td></tr>
 <tr class="memdesc:a0c5ba849d919ae276ff2b2985e582e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value directly from disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit.  <a href="classShard.html#a0c5ba849d919ae276ff2b2985e582e1a">More...</a><br /></td></tr>
 <tr class="separator:a0c5ba849d919ae276ff2b2985e582e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada2f66a31376b01e85ded9dc471d3ae8"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classValue.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ada2f66a31376b01e85ded9dc471d3ae8">readValue</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
-<tr class="memdesc:ada2f66a31376b01e85ded9dc471d3ae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from this shard.  <a href="classShard.html#ada2f66a31376b01e85ded9dc471d3ae8">More...</a><br /></td></tr>
-<tr class="separator:ada2f66a31376b01e85ded9dc471d3ae8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0037fc14121a68f2320549d7e13c3a9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a0037fc14121a68f2320549d7e13c3a9e">writeValueDirectly</a> (<a class="el" href="classPtr.html">Ptr</a> ptr, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
 <tr class="memdesc:a0037fc14121a68f2320549d7e13c3a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <a class="el" href="classValue.html">Value</a> directly to disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit.  <a href="classShard.html#a0037fc14121a68f2320549d7e13c3a9e">More...</a><br /></td></tr>
 <tr class="separator:a0037fc14121a68f2320549d7e13c3a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a561352e188b82af95bedfbba5f7add15"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classValue.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a561352e188b82af95bedfbba5f7add15">writeValue</a> (<a class="el" href="classKey.html">Key</a> key, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
-<tr class="memdesc:a561352e188b82af95bedfbba5f7add15"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to this shard.  <a href="classShard.html#a561352e188b82af95bedfbba5f7add15">More...</a><br /></td></tr>
-<tr class="separator:a561352e188b82af95bedfbba5f7add15"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4425e98c58b969b6b9b7aed7438e8c1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a4425e98c58b969b6b9b7aed7438e8c1d">incrementAliveValuesCnt</a> ()</td></tr>
 <tr class="memdesc:a4425e98c58b969b6b9b7aed7438e8c1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase the counter of non-deleted elements in this shard.  <a href="classShard.html#a4425e98c58b969b6b9b7aed7438e8c1d">More...</a><br /></td></tr>
 <tr class="separator:a4425e98c58b969b6b9b7aed7438e8c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1c7c403980e689ac31e3929955dbb66"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#aa1c7c403980e689ac31e3929955dbb66">decrementAliveValuesCnt</a> ()</td></tr>
+<tr class="memdesc:aa1c7c403980e689ac31e3929955dbb66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the counter of non-deleted elements in this shard.  <a href="classShard.html#aa1c7c403980e689ac31e3929955dbb66">More...</a><br /></td></tr>
+<tr class="separator:aa1c7c403980e689ac31e3929955dbb66"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5245cd459207d51d155f919d156ca04"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ab5245cd459207d51d155f919d156ca04">isRebuildRequired</a> () const</td></tr>
+<tr class="memdesc:ab5245cd459207d51d155f919d156ca04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a rebuild needs to be called.  <a href="classShard.html#ab5245cd459207d51d155f919d156ca04">More...</a><br /></td></tr>
+<tr class="separator:ab5245cd459207d51d155f919d156ca04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:adeb147b5edff8197d52222bda0fed625"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#adeb147b5edff8197d52222bda0fed625">getShardIndex</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
 <tr class="memdesc:adeb147b5edff8197d52222bda0fed625"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shard index that contains the <a class="el" href="classKey.html">Key</a>.  <a href="classShard.html#adeb147b5edff8197d52222bda0fed625">More...</a><br /></td></tr>
 <tr class="separator:adeb147b5edff8197d52222bda0fed625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac4c8e698ab12f40623f08f8777c0b29c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ac4c8e698ab12f40623f08f8777c0b29c">Shard</a> (size_t <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a>)</td></tr>
+<tr class="separator:ac4c8e698ab12f40623f08f8777c0b29c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -127,12 +143,39 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a3b161f4b5028fe56c148424358c9bbb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; <a class="el" href="classKey.html">Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a3b161f4b5028fe56c148424358c9bbb6">filter</a></td></tr>
 <tr class="memdesc:a3b161f4b5028fe56c148424358c9bbb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A filter.  <a href="classShard.html#a3b161f4b5028fe56c148424358c9bbb6">More...</a><br /></td></tr>
 <tr class="separator:a3b161f4b5028fe56c148424358c9bbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1baae30177bbbcdeb93f7521bc841fd"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ab1baae30177bbbcdeb93f7521bc841fd">ShardBuilder</a></td></tr>
+<tr class="separator:ab1baae30177bbbcdeb93f7521bc841fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad1d1e143159f59129d23f642c796477f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d1e143159f59129d23f642c796477f">&#9670;&nbsp;</a></span>Shard() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Shard::Shard </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac4c8e698ab12f40623f08f8777c0b29c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac4c8e698ab12f40623f08f8777c0b29c">&#9670;&nbsp;</a></span>Shard()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4c8e698ab12f40623f08f8777c0b29c">&#9670;&nbsp;</a></span>Shard() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -150,7 +193,7 @@ Private Attributes</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -158,6 +201,26 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="aa1c7c403980e689ac31e3929955dbb66"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1c7c403980e689ac31e3929955dbb66">&#9670;&nbsp;</a></span>decrementAliveValuesCnt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Shard::decrementAliveValuesCnt </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decrease the counter of non-deleted elements in this shard. </p>
+<p>Used by <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> when an entry in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> is marked as deleted. </p>
+
+</div>
+</div>
 <a id="adeb147b5edff8197d52222bda0fed625"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adeb147b5edff8197d52222bda0fed625">&#9670;&nbsp;</a></span>getShardIndex()</h2>
 
@@ -209,18 +272,38 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Increase the counter of non-deleted elements in this shard. </p>
-<p>Used when a deleted element in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> is hit. </p>
+<p>Used by <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> when a deleted element in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> is added again. </p>
 
 </div>
 </div>
-<a id="ada2f66a31376b01e85ded9dc471d3ae8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada2f66a31376b01e85ded9dc471d3ae8">&#9670;&nbsp;</a></span>readValue()</h2>
+<a id="ab5245cd459207d51d155f919d156ca04"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5245cd459207d51d155f919d156ca04">&#9670;&nbsp;</a></span>isRebuildRequired()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="classValue.html">Value</a>&gt; Shard::readValue </td>
+          <td class="memname">boolean Shard::isRebuildRequired </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check if a rebuild needs to be called. </p>
+<dl class="section return"><dt>Returns</dt><dd>boolean </dd></dl>
+
+</div>
+</div>
+<a id="a8beeae59ac4d6dabe834f3c199fe836d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8beeae59ac4d6dabe834f3c199fe836d">&#9670;&nbsp;</a></span>readValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEntry.html">Entry</a> Shard::readValue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
@@ -236,7 +319,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structEntry.html">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a> </dd></dl>
 
 </div>
 </div>
@@ -257,6 +340,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read a value directly from disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit. </p>
+<p>Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td></td></tr>
@@ -267,14 +351,42 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a561352e188b82af95bedfbba5f7add15"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a561352e188b82af95bedfbba5f7add15">&#9670;&nbsp;</a></span>writeValue()</h2>
+<a id="ac1f0ae87249f0d74361de03226940a14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1f0ae87249f0d74361de03226940a14">&#9670;&nbsp;</a></span>removeEntry()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="classValue.html">Value</a>&gt; Shard::writeValue </td>
+          <td class="memname"><a class="el" href="structEntry.html">Entry</a> Shard::removeEntry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove a value from this shard. </p>
+<p>Can also handle delayed removals.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structEntry.html">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a> </dd></dl>
+
+</div>
+</div>
+<a id="a1d553b3945c59a9eea2404c170debb77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d553b3945c59a9eea2404c170debb77">&#9670;&nbsp;</a></span>writeValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structEntry.html">Entry</a> Shard::writeValue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -300,7 +412,7 @@ Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>either the old or new <a class="el" href="structEntry.html">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a> </dd></dl>
 
 </div>
 </div>
@@ -331,6 +443,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write a <a class="el" href="classValue.html">Value</a> directly to disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit. </p>
+<p>Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td></td></tr>
@@ -411,6 +524,28 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> index. </p>
+
+</div>
+</div>
+<a id="ab1baae30177bbbcdeb93f7521bc841fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1baae30177bbbcdeb93f7521bc841fd">&#9670;&nbsp;</a></span>ShardBuilder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend Shard::ShardBuilder</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

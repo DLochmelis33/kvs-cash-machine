@@ -10,8 +10,6 @@
  */
 final class CacheMap {
 
-  using Entry = std::pair<Key, Ptr>;
-
 public:
   CacheMap();
 

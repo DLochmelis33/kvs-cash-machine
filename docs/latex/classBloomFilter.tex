@@ -2,6 +2,11 @@
 \label{classBloomFilter}\index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
 
 
+Bloom filter!  
+
+
+
+
 {\ttfamily \#include $<$Bloom\+Filter.\+h$>$}
 
 
@@ -30,11 +35,9 @@ Collaboration diagram for Bloom\+Filter$<$ T $>$\+:
 \mbox{\hyperlink{classBloomFilter_a5311d62ea76f2ce827e3ac8f77bf7d40}{Bloom\+Filter}} ()
 \item 
 bool \mbox{\hyperlink{classBloomFilter_a823ab0dad65fcc1d9bc83d516b4ac428}{check\+Exist}} (const T \&object) const
-\item 
+\begin{DoxyCompactList}\small\item\em Check if the object is present. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classBloomFilter_abff6ec892906d6aa40c9cc75890202e0}{add}} (const T \&object)
-\item 
-void \mbox{\hyperlink{classBloomFilter_a7b0bdb24702f02dc3947b563c3e49013}{clear}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Add the object to the filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -46,8 +49,14 @@ using \mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\
 std\+::bitset$<$ \mbox{\hyperlink{KeyValueTypes_8h_a9ffa2c6fd8072e2c6b1e46a2f464df12}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} $>$ \mbox{\hyperlink{classBloomFilter_a920967079541858ce55a09961aea319c}{bitset}}
 \item 
 const std\+::vector$<$ \mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\+\_\+t}} $>$ \mbox{\hyperlink{classBloomFilter_a15957332cc96ea223725ad4984928b26}{seeds}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The seeds for different hash functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Bloom\+Filter$<$ T $>$}
+
+Bloom filter! 
 
 \doxysubsection{Member Typedef Documentation}
 \mbox{\Hypertarget{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}\label{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}} 
@@ -77,6 +86,15 @@ using \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::\mbox{\hype
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 void \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::add (\begin{DoxyParamCaption}\item[{const T \&}]{object }\end{DoxyParamCaption})}
 
+
+
+Add the object to the filter. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classBloomFilter_a823ab0dad65fcc1d9bc83d516b4ac428}\label{classBloomFilter_a823ab0dad65fcc1d9bc83d516b4ac428}} 
 \index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!checkExist@{checkExist}}
 \index{checkExist@{checkExist}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
@@ -84,13 +102,15 @@ void \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::add (\begin{
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 bool \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::check\+Exist (\begin{DoxyParamCaption}\item[{const T \&}]{object }\end{DoxyParamCaption}) const}
 
-\mbox{\Hypertarget{classBloomFilter_a7b0bdb24702f02dc3947b563c3e49013}\label{classBloomFilter_a7b0bdb24702f02dc3947b563c3e49013}} 
-\index{BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}!clear@{clear}}
-\index{clear@{clear}!BloomFilter$<$ T $>$@{BloomFilter$<$ T $>$}}
-\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
-{\footnotesize\ttfamily template$<$typename T $>$ \\
-void \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+Check if the object is present. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object} & \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
@@ -107,6 +127,10 @@ std\+::bitset$<$\mbox{\hyperlink{KeyValueTypes_8h_a9ffa2c6fd8072e2c6b1e46a2f464d
 \doxysubsubsection{\texorpdfstring{seeds}{seeds}}
 {\footnotesize\ttfamily template$<$typename T $>$ \\
 const std\+::vector$<$\mbox{\hyperlink{classBloomFilter_abdc2884eb81f24a832a13fa7a2431d35}{seed\+\_\+t}}$>$ \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ T $>$\+::seeds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The seeds for different hash functions. 
 
 
 

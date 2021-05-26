@@ -29,14 +29,16 @@ struct \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}}
 \item 
 \mbox{\hyperlink{classStorage_a27a5684200a82b87e1e65a58f0a3c94d}{Storage}} (std\+::string \mbox{\hyperlink{classStorage_a4baa3ad18d9a813d3b26197fd1a40cfc}{filename}})
 \item 
-\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_a3d0ddf5d74f4db788c0cf758cd072fd2}{read\+File}} ()
+\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_aa9dde0f759e9098778393d213f575b3b}{read\+File}} () const
 \begin{DoxyCompactList}\small\item\em Read the entire file. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_a782c7a9f96debf79ea4819874bc35764}{read}} (size\+\_\+t offset, size\+\_\+t length)
+\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_ac2fa90bb7817a0a8285082d9d213c378}{read}} (size\+\_\+t offset, size\+\_\+t length) const
 \begin{DoxyCompactList}\small\item\em Read a part of file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classStorage_a6cd6b969a0917e0027b176ce91094066}{write\+File}} (const char $\ast$data) const
+void \mbox{\hyperlink{classStorage_a1e707ccc738be5418feb1fbaca920892}{write\+File}} (\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} bytes) const
 \begin{DoxyCompactList}\small\item\em Write the entire file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classStorage_a1db77d7457ce51f386f4d30b725e8098}{write}} (size\+\_\+t offset, size\+\_\+t length, const char $\ast$data)
-\begin{DoxyCompactList}\small\item\em Write a part of file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classStorage_a5fa61eeb33a92e9a05eed88453ca601f}{write}} (size\+\_\+t offset, \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} bytes) const
+\begin{DoxyCompactList}\small\item\em Write a part of file. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classStorage_a5c5141099decb46c9b6bbf8ada0e750f}{append}} (\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} bytes) const
+\begin{DoxyCompactList}\small\item\em Append to end of file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,11 +59,29 @@ An abstraction for safely opening, reading, writing and closing files on disk.
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classStorage_a782c7a9f96debf79ea4819874bc35764}\label{classStorage_a782c7a9f96debf79ea4819874bc35764}} 
+\mbox{\Hypertarget{classStorage_a5c5141099decb46c9b6bbf8ada0e750f}\label{classStorage_a5c5141099decb46c9b6bbf8ada0e750f}} 
+\index{Storage@{Storage}!append@{append}}
+\index{append@{append}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily size\+\_\+t Storage\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}}}]{bytes }\end{DoxyParamCaption}) const}
+
+
+
+Append to end of file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em bytes} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size\+\_\+t the size of file in bytes before appending 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classStorage_ac2fa90bb7817a0a8285082d9d213c378}\label{classStorage_ac2fa90bb7817a0a8285082d9d213c378}} 
 \index{Storage@{Storage}!read@{read}}
 \index{read@{read}!Storage@{Storage}}
 \doxysubsubsection{\texorpdfstring{read()}{read()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} Storage\+::read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} Storage\+::read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption}) const}
 
 
 
@@ -77,11 +97,11 @@ Read a part of file.
 \begin{DoxyReturn}{Returns}
 \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classStorage_a3d0ddf5d74f4db788c0cf758cd072fd2}\label{classStorage_a3d0ddf5d74f4db788c0cf758cd072fd2}} 
+\mbox{\Hypertarget{classStorage_aa9dde0f759e9098778393d213f575b3b}\label{classStorage_aa9dde0f759e9098778393d213f575b3b}} 
 \index{Storage@{Storage}!readFile@{readFile}}
 \index{readFile@{readFile}!Storage@{Storage}}
 \doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} Storage\+::read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}} Storage\+::read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
 
 
 
@@ -90,11 +110,11 @@ Read the entire file.
 \begin{DoxyReturn}{Returns}
 char$\ast$ 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classStorage_a1db77d7457ce51f386f4d30b725e8098}\label{classStorage_a1db77d7457ce51f386f4d30b725e8098}} 
+\mbox{\Hypertarget{classStorage_a5fa61eeb33a92e9a05eed88453ca601f}\label{classStorage_a5fa61eeb33a92e9a05eed88453ca601f}} 
 \index{Storage@{Storage}!write@{write}}
 \index{write@{write}!Storage@{Storage}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily void Storage\+::write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length,  }\item[{const char $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Storage\+::write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}}}]{bytes }\end{DoxyParamCaption}) const}
 
 
 
@@ -107,11 +127,11 @@ Write a part of file.
 {\em length} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{classStorage_a6cd6b969a0917e0027b176ce91094066}\label{classStorage_a6cd6b969a0917e0027b176ce91094066}} 
+\mbox{\Hypertarget{classStorage_a1e707ccc738be5418feb1fbaca920892}\label{classStorage_a1e707ccc738be5418feb1fbaca920892}} 
 \index{Storage@{Storage}!writeFile@{writeFile}}
 \index{writeFile@{writeFile}!Storage@{Storage}}
 \doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
-{\footnotesize\ttfamily void Storage\+::write\+File (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void Storage\+::write\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structStorage_1_1ByteArray}{Byte\+Array}}}]{bytes }\end{DoxyParamCaption}) const}
 
 
 

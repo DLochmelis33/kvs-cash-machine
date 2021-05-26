@@ -1,0 +1,69 @@
+\hypertarget{classShardBuilder}{}\doxysection{Shard\+Builder Class Reference}
+\label{classShardBuilder}\index{ShardBuilder@{ShardBuilder}}
+
+
+{\ttfamily \#include $<$Shard\+Builder.\+h$>$}
+
+
+
+Collaboration diagram for Shard\+Builder\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=165pt]{classShardBuilder__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classShard}{Shard}} \mbox{\hyperlink{classShardBuilder_a5cbf3800b9f6b9023fd2bdaa8bef109f}{create\+Shard}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classShard}{Shard}} object. \end{DoxyCompactList}\item 
+static std\+::pair$<$ \mbox{\hyperlink{classShard}{Shard}}, std\+::vector$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ $>$ \mbox{\hyperlink{classShardBuilder_acd04ed42c5bcc787cc213ce3d4bb6087}{rebuild\+Shard}} (const \mbox{\hyperlink{classShard}{Shard}} \&shard, const \mbox{\hyperlink{classCacheMap}{Cache\+Map}} \&cache\+Map)
+\begin{DoxyCompactList}\small\item\em Rebuild the shard according to delayed removals stored in \mbox{\hyperlink{classCacheMap}{Cache\+Map}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classShardBuilder_a5cbf3800b9f6b9023fd2bdaa8bef109f}\label{classShardBuilder_a5cbf3800b9f6b9023fd2bdaa8bef109f}} 
+\index{ShardBuilder@{ShardBuilder}!createShard@{createShard}}
+\index{createShard@{createShard}!ShardBuilder@{ShardBuilder}}
+\doxysubsubsection{\texorpdfstring{createShard()}{createShard()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{classShard}{Shard}} Shard\+Builder\+::create\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Create a \mbox{\hyperlink{classShard}{Shard}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classShard}{Shard}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classShardBuilder_acd04ed42c5bcc787cc213ce3d4bb6087}\label{classShardBuilder_acd04ed42c5bcc787cc213ce3d4bb6087}} 
+\index{ShardBuilder@{ShardBuilder}!rebuildShard@{rebuildShard}}
+\index{rebuildShard@{rebuildShard}!ShardBuilder@{ShardBuilder}}
+\doxysubsubsection{\texorpdfstring{rebuildShard()}{rebuildShard()}}
+{\footnotesize\ttfamily static std\+::pair$<$\mbox{\hyperlink{classShard}{Shard}}, std\+::vector$<$\mbox{\hyperlink{structEntry}{Entry}}$>$ $>$ Shard\+Builder\+::rebuild\+Shard (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classShard}{Shard}} \&}]{shard,  }\item[{const \mbox{\hyperlink{classCacheMap}{Cache\+Map}} \&}]{cache\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rebuild the shard according to delayed removals stored in \mbox{\hyperlink{classCacheMap}{Cache\+Map}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shard} & \\
+\hline
+{\em cache\+Map} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entry$>$ entries in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY\+\_\+\+PTR 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ShardBuilder_8h}{Shard\+Builder.\+h}}\end{DoxyCompactItemize}

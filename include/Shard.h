@@ -9,7 +9,7 @@
  */
 final class Shard {
 public:
-  explicit Shard(size_t index);
+  Shard() = delete;
 
   /**
      * @brief Get the shard index that contains the Key.
@@ -20,7 +20,35 @@ public:
   static size_t getShardIndex(Key key);
 
   /**
+     * @brief Read a value from this shard.
+     *
+     * @param key
+     * @return Entry that corresponds to given Key
+     */
+  Entry readValue(Key key) const;
+
+  /**
+     * @brief Write a value to this shard.
+     *
+     * @param key
+     * @return either the old or new Entry that corresponds to given Key
+     */
+  Entry writeValue(Key key, const Value& value);
+
+  /**
+     * @brief Remove a value from this shard.
+     *
+     * Can also handle delayed removals.
+     *
+     * @param key
+     * @return Entry that corresponds to given Key
+     */
+  Entry removeEntry(Key key);
+  
+  /**
      * @brief Read a value directly from disk storage. Used when CacheMap entry is hit.
+     *
+     * Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.
      *
      * @param ptr
      * @return
@@ -28,15 +56,9 @@ public:
   Value readValueDirectly(Ptr ptr) const;
 
   /**
-     * @brief Read a value from this shard.
-     *
-     * @param key
-     * @return
-     */
-  std::optional<Value> readValue(Key key) const;
-
-  /**
      * @brief Write a Value directly to disk storage. Used when CacheMap entry is hit.
+     *
+     * Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.
      *
      * @param ptr
      * @param value
@@ -44,24 +66,31 @@ public:
   void writeValueDirectly(Ptr ptr, const Value& value);
 
   /**
-     * @brief Write a value to this shard.
-     *
-     * @param key
-     * @return
-     */
-  std::optional<Value> writeValue(Key key, const Value& value);
-
-  /**
      * @brief Increase the counter of non-deleted elements in this shard.
      *
-     * Used when a deleted element in CacheMap is hit.
+     * Used by KVS when a deleted element in CacheMap is added again.
      *
      */
   void incrementAliveValuesCnt();
 
-  // TODO: remove(Key) should be able to tell KVS to perform a cleanup
+   /**
+    * @brief Decrease the counter of non-deleted elements in this shard.
+    *
+    * Used by KVS when an entry in CacheMap is marked as deleted.
+    * 
+    */
+  void decrementAliveValuesCnt();
+
+   /**
+    * @brief Check if a rebuild needs to be called.
+    * 
+    * @return boolean 
+    */
+  boolean isRebuildRequired() const;
 
 private:
+   explicit Shard(size_t index);
+
   /**
      * @brief Shard index.
      *
@@ -79,4 +108,6 @@ private:
      *
      */
   BloomFilter<Key> filter;
+
+  friend ShardBuilder;
 };

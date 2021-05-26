@@ -78,31 +78,29 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCacheMap.html">   11</a></span>&#160;<span class="keyword">final</span> <span class="keyword">class </span><a class="code" href="classCacheMap.html">CacheMap</a> {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">   13</a></span>&#160;  <span class="keyword">using</span> <a class="code" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> = std::pair&lt;Key, Ptr&gt;;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classCacheMap.html#a8866431a0452dde3bee7bbcc63bc4c29">   16</a></span>&#160;  <a class="code" href="classCacheMap.html#a8866431a0452dde3bee7bbcc63bc4c29">CacheMap</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">   25</a></span>&#160;  std::optional&lt;Entry&gt; <a class="code" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">putOrDisplace</a>(<a class="code" href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">Entry</a> entry);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">   33</a></span>&#160;  std::optional&lt;Ptr&gt; <a class="code" href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">get</a>(<a class="code" href="classKey.html">Key</a> key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">   39</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">clear</a>();</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">   42</a></span>&#160;  std::vector&lt;Entry&gt; <a class="code" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">   47</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">size</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCacheMap.html#a8866431a0452dde3bee7bbcc63bc4c29">   14</a></span>&#160;  <a class="code" href="classCacheMap.html#a8866431a0452dde3bee7bbcc63bc4c29">CacheMap</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">   23</a></span>&#160;  std::optional&lt;Entry&gt; <a class="code" href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">putOrDisplace</a>(<a class="code" href="structEntry.html">Entry</a> entry);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">   31</a></span>&#160;  std::optional&lt;Ptr&gt; <a class="code" href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">get</a>(<a class="code" href="classKey.html">Key</a> key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">   37</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">clear</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">   40</a></span>&#160;  std::vector&lt;Entry&gt; <a class="code" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">   45</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">size</a>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
 <div class="ttc" id="aclassCacheMap_html"><div class="ttname"><a href="classCacheMap.html">CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:11</div></div>
 <div class="ttc" id="aclassCacheMap_html_a08010b627a6f55e6eb53d0d60a6f3470"><div class="ttname"><a href="classCacheMap.html#a08010b627a6f55e6eb53d0d60a6f3470">CacheMap::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the entire map.</div></div>
 <div class="ttc" id="aclassCacheMap_html_a0bf71d460d53ee9f3b4376d6341e0ed5"><div class="ttname"><a href="classCacheMap.html#a0bf71d460d53ee9f3b4376d6341e0ed5">CacheMap::putOrDisplace</a></div><div class="ttdeci">std::optional&lt; Entry &gt; putOrDisplace(Entry entry)</div><div class="ttdoc">Put @ptr by @key. If not enough space, displace a random entry and return it. If an entry with the gi...</div></div>
-<div class="ttc" id="aclassCacheMap_html_a2c9388000fc1d67535c682b15ae4d858"><div class="ttname"><a href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">CacheMap::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">The number of elements present in the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:47</div></div>
-<div class="ttc" id="aclassCacheMap_html_a4b7ff2c98c07e55dc5befb1b06774342"><div class="ttname"><a href="classCacheMap.html#a4b7ff2c98c07e55dc5befb1b06774342">CacheMap::Entry</a></div><div class="ttdeci">std::pair&lt; Key, Ptr &gt; Entry</div><div class="ttdef"><b>Definition:</b> CacheMap.h:13</div></div>
+<div class="ttc" id="aclassCacheMap_html_a2c9388000fc1d67535c682b15ae4d858"><div class="ttname"><a href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">CacheMap::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">The number of elements present in the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:45</div></div>
 <div class="ttc" id="aclassCacheMap_html_a5a5c3b2cd71e7245bc34cbb17baa0acb"><div class="ttname"><a href="classCacheMap.html#a5a5c3b2cd71e7245bc34cbb17baa0acb">CacheMap::get</a></div><div class="ttdeci">std::optional&lt; Ptr &gt; get(Key key) const</div><div class="ttdoc">Find a @ptr by @key.</div></div>
 <div class="ttc" id="aclassCacheMap_html_a8866431a0452dde3bee7bbcc63bc4c29"><div class="ttname"><a href="classCacheMap.html#a8866431a0452dde3bee7bbcc63bc4c29">CacheMap::CacheMap</a></div><div class="ttdeci">CacheMap()</div></div>
-<div class="ttc" id="aclassCacheMap_html_adc7cd25aa974f5e7ae69137026555fcb"><div class="ttname"><a href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">CacheMap::data</a></div><div class="ttdeci">std::vector&lt; Entry &gt; data</div><div class="ttdef"><b>Definition:</b> CacheMap.h:42</div></div>
+<div class="ttc" id="aclassCacheMap_html_adc7cd25aa974f5e7ae69137026555fcb"><div class="ttname"><a href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">CacheMap::data</a></div><div class="ttdeci">std::vector&lt; Entry &gt; data</div><div class="ttdef"><b>Definition:</b> CacheMap.h:40</div></div>
 <div class="ttc" id="aclassKey_html"><div class="ttname"><a href="classKey.html">Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:17</div></div>
+<div class="ttc" id="astructEntry_html"><div class="ttname"><a href="structEntry.html">Entry</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:61</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -28,6 +28,11 @@ std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classSt
 \begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStorageHashTable_ab796361aa122dd9d1711c11d802e64b6}{put}} (\mbox{\hyperlink{classKey}{Key}} key, \mbox{\hyperlink{classPtr}{Ptr}} ptr)
 \begin{DoxyCompactList}\small\item\em Put the $<$key, ptr$>$ entry into the table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classStorageHashTable_a89b943495ee754e15f9e581c016d510b}{expand}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,6 +53,12 @@ The hash table that is stored on disk.
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classStorageHashTable_a89b943495ee754e15f9e581c016d510b}\label{classStorageHashTable_a89b943495ee754e15f9e581c016d510b}} 
+\index{StorageHashTable@{StorageHashTable}!expand@{expand}}
+\index{expand@{expand}!StorageHashTable@{StorageHashTable}}
+\doxysubsubsection{\texorpdfstring{expand()}{expand()}}
+{\footnotesize\ttfamily void Storage\+Hash\+Table\+::expand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
 \mbox{\Hypertarget{classStorageHashTable_a1518de55446e78edcb5d942c4d6228f4}\label{classStorageHashTable_a1518de55446e78edcb5d942c4d6228f4}} 
 \index{StorageHashTable@{StorageHashTable}!get@{get}}
 \index{get@{get}!StorageHashTable@{StorageHashTable}}
