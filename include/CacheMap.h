@@ -8,10 +8,10 @@
  * @brief Cache map. Is stored in RAM.
  *
  */
-final class CacheMap {
+class CacheMap final {
 
 public:
-  CacheMap();
+  CacheMap() noexcept;
 
   /**
      * @brief Put @ptr by @key. If not enough space, displace a random entry and return it. If an
@@ -20,7 +20,7 @@ public:
      * @param entry
      * @return displaced entry, if any
      */
-  std::optional<Entry> putOrDisplace(Entry entry);
+  std::optional<Entry> putOrDisplace(Entry entry) noexcept;
 
   /**
      * @brief Find a @ptr by @key.
@@ -28,13 +28,13 @@ public:
      * @param key
      * @return
      */
-  std::optional<Ptr> get(Key key) const;
+  std::optional<Ptr> get(Key key) const noexcept;
 
   /**
      * @brief Clear the entire map.
      *
      */
-  void clear();
+  void clear() noexcept;
 
 private:
   std::vector<Entry> data;

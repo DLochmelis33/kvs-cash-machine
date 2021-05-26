@@ -10,7 +10,7 @@
  * @brief The class that provides an access to a key-value storage.
  *
  */
-final class KVS {
+class KVS final {
 
 public:
   KVS();
@@ -51,7 +51,7 @@ private:
      * @param key
      * @return
      */
-  hash_t hash(Key key) const;
+  hash_t hash(Key key) const noexcept;
 
 private:
   CacheMap cacheMap;

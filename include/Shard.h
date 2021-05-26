@@ -7,7 +7,7 @@
  * @brief A single part of KVS after sharding.
  *
  */
-final class Shard {
+class Shard final {
 public:
   Shard() = delete;
 
@@ -17,7 +17,7 @@ public:
      * @param key
      * @return Shard index.
      */
-  static size_t getShardIndex(Key key);
+  static size_t getShardIndex(Key key) noexcept;
 
   /**
      * @brief Read a value from this shard.
@@ -44,7 +44,7 @@ public:
      * @return Entry that corresponds to given Key
      */
   Entry removeEntry(Key key);
-  
+
   /**
      * @brief Read a value directly from disk storage. Used when CacheMap entry is hit.
      *
@@ -71,25 +71,25 @@ public:
      * Used by KVS when a deleted element in CacheMap is added again.
      *
      */
-  void incrementAliveValuesCnt();
+  void incrementAliveValuesCnt() noexcept;
 
-   /**
+  /**
     * @brief Decrease the counter of non-deleted elements in this shard.
     *
     * Used by KVS when an entry in CacheMap is marked as deleted.
     * 
     */
-  void decrementAliveValuesCnt();
+  void decrementAliveValuesCnt() noexcept;
 
-   /**
+  /**
     * @brief Check if a rebuild needs to be called.
     * 
     * @return boolean 
     */
-  boolean isRebuildRequired() const;
+  boolean isRebuildRequired() const noexcept;
 
 private:
-   explicit Shard(size_t index);
+  explicit Shard(size_t index) noexcept;
 
   /**
      * @brief Shard index.

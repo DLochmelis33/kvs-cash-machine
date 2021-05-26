@@ -1,21 +1,20 @@
 #pragma once
 
 #include "KeyValueTypes.h"
-#include <exception>
 #include <string>
 
 /**
  * @brief An abstraction for safely opening, reading, writing and closing files on disk.
  *
  */
-class Storage {
+class Storage final {
 public:
-  struct ByteArray {
+  struct ByteArray final {
     const char* data;
     size_t length;
   };
 
-  explicit Storage(std::string filename);
+  explicit Storage(std::string filename) noexcept;
 
   /**
      * @brief Read the entire file.
@@ -38,7 +37,7 @@ public:
      *
      * @return char*
      */
-  void writeFile(ByteArray bytes) const; // TODO: exceptions
+  void writeFile(ByteArray bytes) const;
 
   /**
      * @brief Write a part of file.
@@ -46,9 +45,9 @@ public:
      * @param offset
      * @param length
      */
-  void write(size_t offset, ByteArray bytes) const; // TODO: exceptions
+  void write(size_t offset, ByteArray bytes) const;
 
-   /**
+  /**
     * @brief Append to end of file.
     * 
     * @param bytes 
