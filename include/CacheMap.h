@@ -14,7 +14,6 @@ final class CacheMap {
 
 public:
   CacheMap();
-  ~CacheMap();
 
   /**
      * @brief Put @ptr by @key. If not enough space, displace a random entry and return it. If an
@@ -40,7 +39,7 @@ public:
   void clear();
 
 private:
-  std::vector<Key> data;
+  std::vector<Entry> data;
   /**
      * @brief The number of elements present in the map.
      *
