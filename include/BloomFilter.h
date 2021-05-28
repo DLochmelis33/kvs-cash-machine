@@ -3,7 +3,6 @@
 #include "KeyValueTypes.h"
 #include <bitset>
 
-template <typename T>
 /**
  * @brief Bloom filter!
  * 
@@ -13,18 +12,18 @@ public:
   BloomFilter() noexcept;
 
   /**
-   * @brief Check if the object is present.
+   * @brief Check if the key is present.
    * 
    * @param object 
    */
-  bool checkExist(const T& object) const noexcept;
+  bool checkExist(const Key& key) const noexcept;
 
   /**
-   * @brief Add the object to the filter.
+   * @brief Add the key to the filter.
    * 
    * @param object 
    */
-  void add(const T& object) noexcept;
+  void add(const Key& key) noexcept;
 
 private:
   using seed_t = uint64_t;

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['data_18',['data',['../classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb',1,'CacheMap::data()'],['../structStorage_1_1ByteArray.html#af48e95299765bf86bdeb4d1e30aa5507',1,'Storage::ByteArray::data()']]],
+  ['data_18',['data',['../classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb',1,'CacheMap::data()'],['../structByteArray.html#a228392daf2f5a554a7be7a269312a86d',1,'ByteArray::data()'],['../classStorageHashTable.html#a0800b4b51d62a53d597ae4e0b4fdd507',1,'StorageHashTable::data()']]],
   ['decrementalivevaluescnt_19',['decrementAliveValuesCnt',['../classShard.html#a986026ea972175ef7d174cdf0c7ea631',1,'Shard']]]
 ];

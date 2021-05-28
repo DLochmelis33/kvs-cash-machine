@@ -1,4 +1,4 @@
 <map id="Storage" name="Storage">
-<area shape="rect" id="node1" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="5,145,96,296"/>
-<area shape="rect" id="node2" title=" " alt="" coords="23,5,78,83"/>
+<area shape="rect" id="node1" title="An abstraction for safely opening, reading, writing and closing files on disk." alt="" coords="5,145,96,311"/>
+<area shape="rect" id="node2" title=" " alt="" coords="17,5,84,83"/>
 </map>

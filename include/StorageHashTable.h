@@ -10,7 +10,9 @@
  */
 class StorageHashTable final {
 public:
-  explicit StorageHashTable(const Storage& storage);
+  explicit StorageHashTable(ByteArray serializedStorageHashTable) noexcept;
+
+  ByteArray serializeToByteArray() const noexcept;
 
   /**
      * @brief Find the Ptr associated with the key.
@@ -23,18 +25,16 @@ public:
   /**
      * @brief Put the <key, ptr> entry into the table.
      *
-     * @param key
-     * @param ptr
+     * @param entry
      */
-  void put(Key key, Ptr ptr);
+  void put(Entry entry);
+
+  std::vector<Entry> getEntries() const noexcept;
 
 private:
   void expand();
 
 private:
-  /**
-     * @brief The Storage that is used for reading and writing hash table files on disk.
-     *
-     */
-  const Storage& storage;
+  std::vector<Entry> data;
+  std::size_t size;
 };

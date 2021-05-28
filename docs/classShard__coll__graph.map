@@ -1,8 +1,8 @@
 <map id="Shard" name="Shard">
-<area shape="rect" id="node1" title="A single part of KVS after sharding." alt="" coords="79,528,270,752"/>
+<area shape="rect" id="node1" title="A single part of KVS after sharding." alt="" coords="79,528,270,767"/>
 <area shape="rect" id="node2" title=" " alt="" coords="21,351,77,429"/>
 <area shape="rect" id="node3" href="$classBloomFilter.html" title=" " alt="" coords="105,329,237,451"/>
-<area shape="rect" id="node4" href="$classBloomFilter.html" title="Bloom filter!" alt="" coords="111,160,230,267"/>
+<area shape="rect" id="node4" href="$classBloomFilter.html" title="Bloom filter!" alt="" coords="117,160,224,267"/>
 <area shape="rect" id="node5" title=" " alt="" coords="5,5,171,97"/>
 <area shape="rect" id="node6" title=" " alt="" coords="194,13,313,90"/>
 <area shape="rect" id="node7" title=" " alt="" coords="261,351,315,429"/>

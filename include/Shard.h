@@ -25,7 +25,7 @@ public:
      * @param key
      * @return Entry that corresponds to given Key
      */
-  Entry readValue(Key key) const;
+  std::pair<Entry, std::optional<Value>> readValue(Key key) const;
 
   /**
      * @brief Write a value to this shard.
@@ -90,6 +90,8 @@ public:
 
 private:
   explicit Shard(size_t index) noexcept;
+  explicit Shard(size_t index,
+                 const std::vector<Entry>& storageHashTableEntries) noexcept;
 
   /**
      * @brief Shard index.

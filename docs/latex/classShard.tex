@@ -24,7 +24,7 @@ Collaboration diagram for Shard\+:
 \item 
 \mbox{\hyperlink{classShard_ad1d1e143159f59129d23f642c796477f}{Shard}} ()=delete
 \item 
-\mbox{\hyperlink{structEntry}{Entry}} \mbox{\hyperlink{classShard_a8beeae59ac4d6dabe834f3c199fe836d}{read\+Value}} (\mbox{\hyperlink{classKey}{Key}} key) const
+std\+::pair$<$ \mbox{\hyperlink{structEntry}{Entry}}, std\+::optional$<$ \mbox{\hyperlink{classValue}{Value}} $>$ $>$ \mbox{\hyperlink{classShard_ae06a68baa373b1dc5d006c50ffc3f935}{read\+Value}} (\mbox{\hyperlink{classKey}{Key}} key) const
 \begin{DoxyCompactList}\small\item\em Read a value from this shard. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structEntry}{Entry}} \mbox{\hyperlink{classShard_a1d553b3945c59a9eea2404c170debb77}{write\+Value}} (\mbox{\hyperlink{classKey}{Key}} key, const \mbox{\hyperlink{classValue}{Value}} \&value)
 \begin{DoxyCompactList}\small\item\em Write a value to this shard. \end{DoxyCompactList}\item 
@@ -49,6 +49,8 @@ static size\+\_\+t \mbox{\hyperlink{classShard_a939e90e4cdd274cc1d8fa202912f0f4f
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classShard_ad20ff309054d160c0a3d208dd0939b48}{Shard}} (size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index}}) noexcept
+\item 
+\mbox{\hyperlink{classShard_acc02dc4ac1c7bb22911653ab3c7c5690}{Shard}} (size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index}}, const std\+::vector$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ \&storage\+Hash\+Table\+Entries) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
@@ -70,14 +72,20 @@ A single part of \mbox{\hyperlink{classKVS}{KVS}} after sharding.
 \mbox{\Hypertarget{classShard_ad1d1e143159f59129d23f642c796477f}\label{classShard_ad1d1e143159f59129d23f642c796477f}} 
 \index{Shard@{Shard}!Shard@{Shard}}
 \index{Shard@{Shard}!Shard@{Shard}}
-\doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
 \mbox{\Hypertarget{classShard_ad20ff309054d160c0a3d208dd0939b48}\label{classShard_ad20ff309054d160c0a3d208dd0939b48}} 
 \index{Shard@{Shard}!Shard@{Shard}}
 \index{Shard@{Shard}!Shard@{Shard}}
-\doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{classShard_acc02dc4ac1c7bb22911653ab3c7c5690}\label{classShard_acc02dc4ac1c7bb22911653ab3c7c5690}} 
+\index{Shard@{Shard}!Shard@{Shard}}
+\index{Shard@{Shard}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Shard\+::\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{const std\+::vector$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ \&}]{storage\+Hash\+Table\+Entries }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
 
 
 
@@ -133,11 +141,11 @@ Check if a rebuild needs to be called.
 \begin{DoxyReturn}{Returns}
 boolean 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classShard_a8beeae59ac4d6dabe834f3c199fe836d}\label{classShard_a8beeae59ac4d6dabe834f3c199fe836d}} 
+\mbox{\Hypertarget{classShard_ae06a68baa373b1dc5d006c50ffc3f935}\label{classShard_ae06a68baa373b1dc5d006c50ffc3f935}} 
 \index{Shard@{Shard}!readValue@{readValue}}
 \index{readValue@{readValue}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{readValue()}{readValue()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structEntry}{Entry}} Shard\+::read\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily std\+::pair$<$\mbox{\hyperlink{structEntry}{Entry}}, std\+::optional$<$\mbox{\hyperlink{classValue}{Value}}$>$ $>$ Shard\+::read\+Value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption}) const}
 
 
 

@@ -82,10 +82,10 @@ Collaboration diagram for Shard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShard__coll__graph.png" border="0" usemap="#aShard_coll__map" alt="Collaboration graph"/></div>
 <map name="aShard_coll__map" id="aShard_coll__map">
-<area shape="rect" title="A single part of KVS after sharding." alt="" coords="79,528,270,752"/>
+<area shape="rect" title="A single part of KVS after sharding." alt="" coords="79,528,270,767"/>
 <area shape="rect" title=" " alt="" coords="21,351,77,429"/>
 <area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="105,329,237,451"/>
-<area shape="rect" href="classBloomFilter.html" title="Bloom filter!" alt="" coords="111,160,230,267"/>
+<area shape="rect" href="classBloomFilter.html" title="Bloom filter!" alt="" coords="117,160,224,267"/>
 <area shape="rect" title=" " alt="" coords="5,5,171,97"/>
 <area shape="rect" title=" " alt="" coords="194,13,313,90"/>
 <area shape="rect" title=" " alt="" coords="261,351,315,429"/>
@@ -96,9 +96,9 @@ Collaboration diagram for Shard:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1d1e143159f59129d23f642c796477f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ad1d1e143159f59129d23f642c796477f">Shard</a> ()=delete</td></tr>
 <tr class="separator:ad1d1e143159f59129d23f642c796477f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8beeae59ac4d6dabe834f3c199fe836d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a8beeae59ac4d6dabe834f3c199fe836d">readValue</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
-<tr class="memdesc:a8beeae59ac4d6dabe834f3c199fe836d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from this shard.  <a href="classShard.html#a8beeae59ac4d6dabe834f3c199fe836d">More...</a><br /></td></tr>
-<tr class="separator:a8beeae59ac4d6dabe834f3c199fe836d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae06a68baa373b1dc5d006c50ffc3f935"><td class="memItemLeft" align="right" valign="top">std::pair&lt; <a class="el" href="structEntry.html">Entry</a>, std::optional&lt; <a class="el" href="classValue.html">Value</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ae06a68baa373b1dc5d006c50ffc3f935">readValue</a> (<a class="el" href="classKey.html">Key</a> key) const</td></tr>
+<tr class="memdesc:ae06a68baa373b1dc5d006c50ffc3f935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from this shard.  <a href="classShard.html#ae06a68baa373b1dc5d006c50ffc3f935">More...</a><br /></td></tr>
+<tr class="separator:ae06a68baa373b1dc5d006c50ffc3f935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d553b3945c59a9eea2404c170debb77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a1d553b3945c59a9eea2404c170debb77">writeValue</a> (<a class="el" href="classKey.html">Key</a> key, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
 <tr class="memdesc:a1d553b3945c59a9eea2404c170debb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to this shard.  <a href="classShard.html#a1d553b3945c59a9eea2404c170debb77">More...</a><br /></td></tr>
 <tr class="separator:a1d553b3945c59a9eea2404c170debb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,6 +131,8 @@ Static Public Member Functions</h2></td></tr>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:ad20ff309054d160c0a3d208dd0939b48"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ad20ff309054d160c0a3d208dd0939b48">Shard</a> (size_t <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a>) noexcept</td></tr>
 <tr class="separator:ad20ff309054d160c0a3d208dd0939b48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc02dc4ac1c7bb22911653ab3c7c5690"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#acc02dc4ac1c7bb22911653ab3c7c5690">Shard</a> (size_t <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a>, const std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt; &amp;storageHashTableEntries) noexcept</td></tr>
+<tr class="separator:acc02dc4ac1c7bb22911653ab3c7c5690"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -150,7 +152,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1d1e143159f59129d23f642c796477f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1d1e143159f59129d23f642c796477f">&#9670;&nbsp;</a></span>Shard() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1d1e143159f59129d23f642c796477f">&#9670;&nbsp;</a></span>Shard() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -175,7 +177,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <a id="ad20ff309054d160c0a3d208dd0939b48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad20ff309054d160c0a3d208dd0939b48">&#9670;&nbsp;</a></span>Shard() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20ff309054d160c0a3d208dd0939b48">&#9670;&nbsp;</a></span>Shard() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,6 +191,42 @@ Private Attributes</h2></td></tr>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">explicit</span><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc02dc4ac1c7bb22911653ab3c7c5690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc02dc4ac1c7bb22911653ab3c7c5690">&#9670;&nbsp;</a></span>Shard() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Shard::Shard </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>storageHashTableEntries</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -320,14 +358,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a8beeae59ac4d6dabe834f3c199fe836d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8beeae59ac4d6dabe834f3c199fe836d">&#9670;&nbsp;</a></span>readValue()</h2>
+<a id="ae06a68baa373b1dc5d006c50ffc3f935"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae06a68baa373b1dc5d006c50ffc3f935">&#9670;&nbsp;</a></span>readValue()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structEntry.html">Entry</a> Shard::readValue </td>
+          <td class="memname">std::pair&lt;<a class="el" href="structEntry.html">Entry</a>, std::optional&lt;<a class="el" href="classValue.html">Value</a>&gt; &gt; Shard::readValue </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
