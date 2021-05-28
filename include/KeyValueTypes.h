@@ -45,6 +45,8 @@ class Ptr final {
 public:
   static constexpr ptr_t EMPTY_PTR = 0b11111111;
 
+  explicit Ptr(ptr_t ptr) noexcept;
+
   ptr_t get() const noexcept;
 
   /**
@@ -67,4 +69,12 @@ private:
 struct Entry final {
   Key key;
   Ptr ptr;
+};
+
+struct ByteArray final {
+  explicit ByteArray(size_t length) noexcept;
+  ~ByteArray() noexcept;
+
+  const char* data;
+  size_t length;
 };

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "KeyValueTypes.h"
-#include <string>
+#include <fstream>
 
 /**
  * @brief An abstraction for safely opening, reading, writing and closing files on disk.
@@ -9,12 +9,9 @@
  */
 class Storage final {
 public:
-  struct ByteArray final {
-    const char* data;
-    size_t length;
-  };
+  explicit Storage(std::string filename);
 
-  explicit Storage(std::string filename) noexcept;
+  void close();
 
   /**
      * @brief Read the entire file.
@@ -56,5 +53,5 @@ public:
   size_t append(ByteArray bytes) const;
 
 private:
-  std::string filename;
+  std::fstream file;
 };
