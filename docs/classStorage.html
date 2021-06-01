@@ -90,6 +90,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a27a5684200a82b87e1e65a58f0a3c94d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a27a5684200a82b87e1e65a58f0a3c94d">Storage</a> (std::string filename)</td></tr>
 <tr class="separator:a27a5684200a82b87e1e65a58f0a3c94d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a562ed7328dd815f6eb1df9d7a3a6c64f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#a562ed7328dd815f6eb1df9d7a3a6c64f">close</a> ()</td></tr>
+<tr class="memdesc:a562ed7328dd815f6eb1df9d7a3a6c64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply all changes to the file contents (if any) and close the file. All further operations with this <a class="el" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk.">Storage</a> object are disallowed.  <a href="classStorage.html#a562ed7328dd815f6eb1df9d7a3a6c64f">More...</a><br /></td></tr>
 <tr class="separator:a562ed7328dd815f6eb1df9d7a3a6c64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9dde0f759e9098778393d213f575b3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structByteArray.html">ByteArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorage.html#aa9dde0f759e9098778393d213f575b3b">readFile</a> () const</td></tr>
 <tr class="memdesc:aa9dde0f759e9098778393d213f575b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the entire file.  <a href="classStorage.html#aa9dde0f759e9098778393d213f575b3b">More...</a><br /></td></tr>
@@ -114,6 +115,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>An abstraction for safely opening, reading, writing and closing files on disk. </p>
+<p>If any operation fails, throws a new <a class="el" href="classKVSException.html">KVSException</a>. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a27a5684200a82b87e1e65a58f0a3c94d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a27a5684200a82b87e1e65a58f0a3c94d">&#9670;&nbsp;</a></span>Storage()</h2>
@@ -159,13 +161,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Append to end of file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">bytes</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>size_t the size of file in bytes before appending </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The size of file in bytes before appending. </dd></dl>
 
 </div>
 </div>
@@ -183,6 +179,8 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Apply all changes to the file contents (if any) and close the file. All further operations with this <a class="el" href="classStorage.html" title="An abstraction for safely opening, reading, writing and closing files on disk.">Storage</a> object are disallowed. </p>
 
 </div>
 </div>
@@ -213,14 +211,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read a part of file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">offset</td><td></td></tr>
-    <tr><td class="paramname">length</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structByteArray.html">ByteArray</a> </dd></dl>
 
 </div>
 </div>
@@ -240,7 +230,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read the entire file. </p>
-<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
 
 </div>
 </div>
@@ -271,13 +260,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write a part of file. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">offset</td><td></td></tr>
-    <tr><td class="paramname">length</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -298,7 +280,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write the entire file. </p>
-<dl class="section return"><dt>Returns</dt><dd>char* </dd></dl>
 
 </div>
 </div>

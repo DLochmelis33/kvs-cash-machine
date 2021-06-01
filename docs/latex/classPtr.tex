@@ -25,16 +25,16 @@ Collaboration diagram for Ptr\+:
 \mbox{\hyperlink{classPtr_af16e6332c8029dc468ef3cb98ce43290}{Ptr}} (\mbox{\hyperlink{KeyValueTypes_8h_ab814495093e1a00b13162cad38f0a670}{ptr\+\_\+t}} \mbox{\hyperlink{classPtr_a02a78d3599a044df3d978c7d0dd70fd7}{ptr}}) noexcept
 \item 
 \mbox{\hyperlink{KeyValueTypes_8h_ab814495093e1a00b13162cad38f0a670}{ptr\+\_\+t}} \mbox{\hyperlink{classPtr_a5d922c01ad80e413082fed4a86b32ee0}{get}} () const noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Get the real value of this pointer. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classPtr_ae5653932264f0bc2434912b4d15ffd76}{is\+Value\+Present}} () const noexcept
-\begin{DoxyCompactList}\small\item\em Check if this \mbox{\hyperlink{classPtr}{Ptr}} points to a present or deleted value. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Check if this \mbox{\hyperlink{classPtr}{Ptr}} points to a present or deleted \mbox{\hyperlink{classValue}{Value}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classPtr_a13e133583b02f5b0fdcfea5e30ddc14c}{set\+Value\+Present}} (bool is\+Present) noexcept
-\begin{DoxyCompactList}\small\item\em Set state for the value associated with this \mbox{\hyperlink{classPtr}{Ptr}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Set state for the \mbox{\hyperlink{classValue}{Value}} associated with this \mbox{\hyperlink{classPtr}{Ptr}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 static constexpr \mbox{\hyperlink{KeyValueTypes_8h_ab814495093e1a00b13162cad38f0a670}{ptr\+\_\+t}} \mbox{\hyperlink{classPtr_a0ca51e6f109c26ce8da3eaf1bd39144c}{EMPTY\+\_\+\+PTR}} = 0b11111111
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A reserved value resembling a pointer to nowhere. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -61,6 +61,10 @@ A pointer determining the position of the associated value in the values file. A
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{KeyValueTypes_8h_ab814495093e1a00b13162cad38f0a670}{ptr\+\_\+t}} Ptr\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
+
+
+Get the real value of this pointer. 
+
 \mbox{\Hypertarget{classPtr_ae5653932264f0bc2434912b4d15ffd76}\label{classPtr_ae5653932264f0bc2434912b4d15ffd76}} 
 \index{Ptr@{Ptr}!isValuePresent@{isValuePresent}}
 \index{isValuePresent@{isValuePresent}!Ptr@{Ptr}}
@@ -69,7 +73,7 @@ A pointer determining the position of the associated value in the values file. A
 
 
 
-Check if this \mbox{\hyperlink{classPtr}{Ptr}} points to a present or deleted value. 
+Check if this \mbox{\hyperlink{classPtr}{Ptr}} points to a present or deleted \mbox{\hyperlink{classValue}{Value}}. 
 
 \mbox{\Hypertarget{classPtr_a13e133583b02f5b0fdcfea5e30ddc14c}\label{classPtr_a13e133583b02f5b0fdcfea5e30ddc14c}} 
 \index{Ptr@{Ptr}!setValuePresent@{setValuePresent}}
@@ -79,7 +83,7 @@ Check if this \mbox{\hyperlink{classPtr}{Ptr}} points to a present or deleted va
 
 
 
-Set state for the value associated with this \mbox{\hyperlink{classPtr}{Ptr}}. 
+Set state for the \mbox{\hyperlink{classValue}{Value}} associated with this \mbox{\hyperlink{classPtr}{Ptr}}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -94,6 +98,10 @@ Set state for the value associated with this \mbox{\hyperlink{classPtr}{Ptr}}.
 \index{EMPTY\_PTR@{EMPTY\_PTR}!Ptr@{Ptr}}
 \doxysubsubsection{\texorpdfstring{EMPTY\_PTR}{EMPTY\_PTR}}
 {\footnotesize\ttfamily constexpr \mbox{\hyperlink{KeyValueTypes_8h_ab814495093e1a00b13162cad38f0a670}{ptr\+\_\+t}} Ptr\+::\+EMPTY\+\_\+\+PTR = 0b11111111\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
+
+
+
+A reserved value resembling a pointer to nowhere. 
 
 \mbox{\Hypertarget{classPtr_a02a78d3599a044df3d978c7d0dd70fd7}\label{classPtr_a02a78d3599a044df3d978c7d0dd70fd7}} 
 \index{Ptr@{Ptr}!ptr@{ptr}}

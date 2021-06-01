@@ -18,22 +18,21 @@ public:
   /**
      * @brief Add a KeyValue to the storage.
      *
-     * @param keyValue
      */
   void add(KeyValue keyValue);
 
   /**
-     * @brief Remove the Key and associated Value from storage.
+     * @brief Remove the Key and associated Value from storage. Lazy operation.
+     * 
+     * Call shard rebuilding after removal if necessary.
      *
-     * @param key
      */
   void remove(Key key);
 
   /**
      * @brief Get the Value associated with the Key.
      *
-     * @param key
-     * @return The Value associated with the Key or nothing, if none.
+     * @return The Value associated with the Key or nothing, if no such Value is present.
      */
   std::optional<Value> get(Key key);
 
@@ -44,15 +43,25 @@ public:
   void clear();
 
 private:
+
    /**
-    * @brief Rebuilds the shard with given index.
+    * @brief Rebuilds the shard with the given index.
     * 
-    * @param shardIndex 
     */
    void rebuildShard(size_t shardIndex);
 
 
 private:
+
+   /**
+    * @brief Cache map, stored in RAM.
+    * 
+    */
   CacheMap cacheMap;
+
+  /**
+   * @brief Shard objects representing... shards?
+   * 
+   */
   std::vector<Shard> shards;
 };

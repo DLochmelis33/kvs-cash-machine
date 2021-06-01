@@ -92,17 +92,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af16e6332c8029dc468ef3cb98ce43290"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#af16e6332c8029dc468ef3cb98ce43290">Ptr</a> (<a class="el" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> <a class="el" href="classPtr.html#a02a78d3599a044df3d978c7d0dd70fd7">ptr</a>) noexcept</td></tr>
 <tr class="separator:af16e6332c8029dc468ef3cb98ce43290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d922c01ad80e413082fed4a86b32ee0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">get</a> () const noexcept</td></tr>
+<tr class="memdesc:a5d922c01ad80e413082fed4a86b32ee0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the real value of this pointer.  <a href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">More...</a><br /></td></tr>
 <tr class="separator:a5d922c01ad80e413082fed4a86b32ee0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5653932264f0bc2434912b4d15ffd76"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#ae5653932264f0bc2434912b4d15ffd76">isValuePresent</a> () const noexcept</td></tr>
-<tr class="memdesc:ae5653932264f0bc2434912b4d15ffd76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a present or deleted value.  <a href="classPtr.html#ae5653932264f0bc2434912b4d15ffd76">More...</a><br /></td></tr>
+<tr class="memdesc:ae5653932264f0bc2434912b4d15ffd76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a present or deleted <a class="el" href="classValue.html">Value</a>.  <a href="classPtr.html#ae5653932264f0bc2434912b4d15ffd76">More...</a><br /></td></tr>
 <tr class="separator:ae5653932264f0bc2434912b4d15ffd76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13e133583b02f5b0fdcfea5e30ddc14c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a13e133583b02f5b0fdcfea5e30ddc14c">setValuePresent</a> (bool isPresent) noexcept</td></tr>
-<tr class="memdesc:a13e133583b02f5b0fdcfea5e30ddc14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set state for the value associated with this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>.  <a href="classPtr.html#a13e133583b02f5b0fdcfea5e30ddc14c">More...</a><br /></td></tr>
+<tr class="memdesc:a13e133583b02f5b0fdcfea5e30ddc14c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set state for the <a class="el" href="classValue.html">Value</a> associated with this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>.  <a href="classPtr.html#a13e133583b02f5b0fdcfea5e30ddc14c">More...</a><br /></td></tr>
 <tr class="separator:a13e133583b02f5b0fdcfea5e30ddc14c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a0ca51e6f109c26ce8da3eaf1bd39144c"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classPtr.html#a0ca51e6f109c26ce8da3eaf1bd39144c">EMPTY_PTR</a> = 0b11111111</td></tr>
+<tr class="memdesc:a0ca51e6f109c26ce8da3eaf1bd39144c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A reserved value resembling a pointer to nowhere.  <a href="classPtr.html#a0ca51e6f109c26ce8da3eaf1bd39144c">More...</a><br /></td></tr>
 <tr class="separator:a0ca51e6f109c26ce8da3eaf1bd39144c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -163,6 +165,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the real value of this pointer. </p>
+
 </div>
 </div>
 <a id="ae5653932264f0bc2434912b4d15ffd76"></a>
@@ -188,7 +192,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Check if this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a present or deleted value. </p>
+<p>Check if this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a present or deleted <a class="el" href="classValue.html">Value</a>. </p>
 
 </div>
 </div>
@@ -216,7 +220,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Set state for the value associated with this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>. </p>
+<p>Set state for the <a class="el" href="classValue.html">Value</a> associated with this <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">isPresent</td><td></td></tr>
@@ -246,6 +250,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A reserved value resembling a pointer to nowhere. </p>
 
 </div>
 </div>

@@ -4,7 +4,9 @@
 #include "KeyValueTypes.h"
 
 /**
- * @brief A single part of KVS after sharding.
+ * @brief A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk when necessary.
+ * 
+ * Instantiated via ShardBuilder class static method.
  *
  */
 class Shard final {
@@ -12,46 +14,41 @@ public:
   Shard() = delete;
 
   /**
-     * @brief Get the shard index that contains the Key.
+     * @brief Get the index of a shard that contains the Key.
      *
-     * @param key
-     * @return Shard index.
      */
   static size_t getShardIndex(Key key) noexcept;
 
   /**
      * @brief Read a value from this shard.
      *
-     * @param key
-     * @return Entry that corresponds to given Key
+     * @return pair.first - the Entry corresponding to the Key. Used to update the CacheMap.
+     * @return pair.second - the actual Value or nothing, if none is present.
      */
   std::pair<Entry, std::optional<Value>> readValue(Key key) const;
 
   /**
-     * @brief Write a value to this shard.
+     * @brief Write a Value to this shard.
      *
-     * @param key
-     * @return either the old or new Entry that corresponds to given Key
+     * @return Either the old or the new Entry that corresponds to given Key.
      */
   Entry writeValue(Key key, const Value& value);
 
   /**
-     * @brief Remove a value from this shard.
+     * @brief Remove a Value from this shard.
      *
      * Can also handle delayed removals.
      *
-     * @param key
-     * @return Entry that corresponds to given Key
+     * @return The new Entry that corresponds to given Key.
      */
   Entry removeEntry(Key key);
 
   /**
-     * @brief Read a value directly from disk storage. Used when CacheMap entry is hit.
+     * @brief Read a Value directly from disk storage. Used when CacheMap entry is hit.
      *
      * Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.
      *
-     * @param ptr
-     * @return
+     * @return The read Value. If the Ptr points to a nonexistent Value, the behavior is undefined.
      */
   Value readValueDirectly(Ptr ptr) const;
 
@@ -60,8 +57,6 @@ public:
      *
      * Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.
      *
-     * @param ptr
-     * @param value
      */
   void writeValueDirectly(Ptr ptr, const Value& value);
 

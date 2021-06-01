@@ -83,10 +83,10 @@ Collaboration diagram for ShardBuilder:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classShard.html">Shard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">createShard</a> (size_t index)</td></tr>
-<tr class="memdesc:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> object.  <a href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">More...</a><br /></td></tr>
+<tr class="memdesc:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> object.  <a href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">More...</a><br /></td></tr>
 <tr class="separator:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classShard.html">Shard</a>, std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">rebuildShard</a> (const <a class="el" href="classShard.html">Shard</a> &amp;shard, const <a class="el" href="classCacheMap.html">CacheMap</a> &amp;cacheMap)</td></tr>
-<tr class="memdesc:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild the shard according to delayed removals stored in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a>.  <a href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">More...</a><br /></td></tr>
+<tr class="memdesc:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild the <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> according to delayed removals stored in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a>.  <a href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">More...</a><br /></td></tr>
 <tr class="separator:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -114,14 +114,8 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a <a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">index</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> </dd></dl>
+<p>Create a <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> object. </p>
+<p>A factory method for consistency. </p>
 
 </div>
 </div>
@@ -159,15 +153,18 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuild the shard according to delayed removals stored in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a>. </p>
+<p>Rebuild the <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> according to delayed removals stored in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a>. </p>
+<p>The old shard is modified, but it is intended to be removed with a new <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a>. The old <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> is disallowed to use after calling this method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">shard</td><td></td></tr>
-    <tr><td class="paramname">cacheMap</td><td></td></tr>
+    <tr><td class="paramname">shard</td><td>The <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> to rebuild. </td></tr>
+    <tr><td class="paramname">cacheMap</td><td>The <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> to read information about delayed removals from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Entry&gt; entries in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY_PTR </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pair.first - The newly created <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> to replace the old one. </dd>
+<dd>
+pair.second - Entries in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY_PTR. </dd></dl>
 
 </div>
 </div>

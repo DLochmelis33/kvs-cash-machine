@@ -74,7 +74,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding.  
+<p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. Contains a <a class="el" href="classBloomFilter.html" title="Bloom filter!">BloomFilter</a> and loads hash tables into RAM from disk when necessary.  
  <a href="classShard.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Shard_8h_source.html">Shard.h</a>&gt;</code></p>
@@ -83,7 +83,7 @@ Collaboration diagram for Shard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShard__coll__graph.png" border="0" usemap="#aShard_coll__map" alt="Collaboration graph"/></div>
 <map name="aShard_coll__map" id="aShard_coll__map">
-<area shape="rect" title="A single part of KVS after sharding." alt="" coords="149,344,339,583"/>
+<area shape="rect" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ..." alt="" coords="149,344,339,583"/>
 <area shape="rect" href="classBloomFilter.html" title="Bloom filter!" alt="" coords="117,160,224,267"/>
 <area shape="rect" title=" " alt="" coords="5,5,171,97"/>
 <area shape="rect" title=" " alt="" coords="194,13,313,90"/>
@@ -99,13 +99,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae06a68baa373b1dc5d006c50ffc3f935"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value from this shard.  <a href="classShard.html#ae06a68baa373b1dc5d006c50ffc3f935">More...</a><br /></td></tr>
 <tr class="separator:ae06a68baa373b1dc5d006c50ffc3f935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1d553b3945c59a9eea2404c170debb77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a1d553b3945c59a9eea2404c170debb77">writeValue</a> (<a class="el" href="classKey.html">Key</a> key, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
-<tr class="memdesc:a1d553b3945c59a9eea2404c170debb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a value to this shard.  <a href="classShard.html#a1d553b3945c59a9eea2404c170debb77">More...</a><br /></td></tr>
+<tr class="memdesc:a1d553b3945c59a9eea2404c170debb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <a class="el" href="classValue.html">Value</a> to this shard.  <a href="classShard.html#a1d553b3945c59a9eea2404c170debb77">More...</a><br /></td></tr>
 <tr class="separator:a1d553b3945c59a9eea2404c170debb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1f0ae87249f0d74361de03226940a14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structEntry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ac1f0ae87249f0d74361de03226940a14">removeEntry</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:ac1f0ae87249f0d74361de03226940a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a value from this shard.  <a href="classShard.html#ac1f0ae87249f0d74361de03226940a14">More...</a><br /></td></tr>
+<tr class="memdesc:ac1f0ae87249f0d74361de03226940a14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a <a class="el" href="classValue.html">Value</a> from this shard.  <a href="classShard.html#ac1f0ae87249f0d74361de03226940a14">More...</a><br /></td></tr>
 <tr class="separator:ac1f0ae87249f0d74361de03226940a14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c5ba849d919ae276ff2b2985e582e1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classValue.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a0c5ba849d919ae276ff2b2985e582e1a">readValueDirectly</a> (<a class="el" href="classPtr.html">Ptr</a> ptr) const</td></tr>
-<tr class="memdesc:a0c5ba849d919ae276ff2b2985e582e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a value directly from disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit.  <a href="classShard.html#a0c5ba849d919ae276ff2b2985e582e1a">More...</a><br /></td></tr>
+<tr class="memdesc:a0c5ba849d919ae276ff2b2985e582e1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a <a class="el" href="classValue.html">Value</a> directly from disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit.  <a href="classShard.html#a0c5ba849d919ae276ff2b2985e582e1a">More...</a><br /></td></tr>
 <tr class="separator:a0c5ba849d919ae276ff2b2985e582e1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0037fc14121a68f2320549d7e13c3a9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a0037fc14121a68f2320549d7e13c3a9e">writeValueDirectly</a> (<a class="el" href="classPtr.html">Ptr</a> ptr, const <a class="el" href="classValue.html">Value</a> &amp;value)</td></tr>
 <tr class="memdesc:a0037fc14121a68f2320549d7e13c3a9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a <a class="el" href="classValue.html">Value</a> directly to disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit.  <a href="classShard.html#a0037fc14121a68f2320549d7e13c3a9e">More...</a><br /></td></tr>
@@ -123,7 +123,7 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f">getShardIndex</a> (<a class="el" href="classKey.html">Key</a> key) noexcept</td></tr>
-<tr class="memdesc:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the shard index that contains the <a class="el" href="classKey.html">Key</a>.  <a href="classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f">More...</a><br /></td></tr>
+<tr class="memdesc:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of a shard that contains the <a class="el" href="classKey.html">Key</a>.  <a href="classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f">More...</a><br /></td></tr>
 <tr class="separator:a939e90e4cdd274cc1d8fa202912f0f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -136,7 +136,7 @@ Private Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:abefece21372068eb7596f90990b71f2d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">index</a></td></tr>
-<tr class="memdesc:abefece21372068eb7596f90990b71f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> index.  <a href="classShard.html#abefece21372068eb7596f90990b71f2d">More...</a><br /></td></tr>
+<tr class="memdesc:abefece21372068eb7596f90990b71f2d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> index.  <a href="classShard.html#abefece21372068eb7596f90990b71f2d">More...</a><br /></td></tr>
 <tr class="separator:abefece21372068eb7596f90990b71f2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add9303ccc9ebed081e0d4e2f9ea405a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#add9303ccc9ebed081e0d4e2f9ea405a3">aliveValuesCnt</a></td></tr>
 <tr class="memdesc:add9303ccc9ebed081e0d4e2f9ea405a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of values that are stored on disk, but not deleted yet.  <a href="classShard.html#add9303ccc9ebed081e0d4e2f9ea405a3">More...</a><br /></td></tr>
@@ -151,7 +151,8 @@ Friends</h2></td></tr>
 <tr class="separator:a75f5d7eb5774c232dbb08b3c2a02dbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. </p>
+<div class="textblock"><p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. Contains a <a class="el" href="classBloomFilter.html" title="Bloom filter!">BloomFilter</a> and loads hash tables into RAM from disk when necessary. </p>
+<p>Instantiated via <a class="el" href="classShardBuilder.html">ShardBuilder</a> class static method. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad1d1e143159f59129d23f642c796477f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad1d1e143159f59129d23f642c796477f">&#9670;&nbsp;</a></span>Shard() <span class="overload">[1/3]</span></h2>
@@ -293,14 +294,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get the shard index that contains the <a class="el" href="classKey.html">Key</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> index. </dd></dl>
+<p>Get the index of a shard that contains the <a class="el" href="classKey.html">Key</a>. </p>
 
 </div>
 </div>
@@ -376,13 +370,9 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read a value from this shard. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structEntry.html">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pair.first - the <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> corresponding to the <a class="el" href="classKey.html">Key</a>. Used to update the <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a>. </dd>
+<dd>
+pair.second - the actual <a class="el" href="classValue.html">Value</a> or nothing, if none is present. </dd></dl>
 
 </div>
 </div>
@@ -402,15 +392,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read a value directly from disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit. </p>
+<p>Read a <a class="el" href="classValue.html">Value</a> directly from disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit. </p>
 <p>Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ptr</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The read <a class="el" href="classValue.html">Value</a>. If the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a nonexistent <a class="el" href="classValue.html">Value</a>, the behavior is undefined. </dd></dl>
 
 </div>
 </div>
@@ -430,15 +414,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove a value from this shard. </p>
+<p>Remove a <a class="el" href="classValue.html">Value</a> from this shard. </p>
 <p>Can also handle delayed removals.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structEntry.html">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The new <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a>. </dd></dl>
 
 </div>
 </div>
@@ -468,14 +446,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write a value to this shard. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>either the old or new <a class="el" href="structEntry.html">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a> </dd></dl>
+<p>Write a <a class="el" href="classValue.html">Value</a> to this shard. </p>
+<dl class="section return"><dt>Returns</dt><dd>Either the old or the new <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> that corresponds to given <a class="el" href="classKey.html">Key</a>. </dd></dl>
 
 </div>
 </div>
@@ -506,14 +478,7 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Write a <a class="el" href="classValue.html">Value</a> directly to disk storage. Used when <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> entry is hit. </p>
-<p>Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">ptr</td><td></td></tr>
-    <tr><td class="paramname">value</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Attention: this nethod does not update the internal alive values counter, it has to be done using the increment / decrement methods. </p>
 
 </div>
 </div>
@@ -609,7 +574,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> index. </p>
+<p><a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> index. </p>
 
 </div>
 </div>

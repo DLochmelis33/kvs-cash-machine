@@ -25,18 +25,18 @@ Collaboration diagram for Storage\+Hash\+Table\+:
 \mbox{\hyperlink{classStorageHashTable_a33023a575f61c5826e269033f4899897}{Storage\+Hash\+Table}} (\mbox{\hyperlink{structByteArray}{Byte\+Array}} serialized\+Storage\+Hash\+Table) noexcept
 \item 
 \mbox{\hyperlink{structByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorageHashTable_a519cf1c372b3d8e663400c3d456fed24}{serialize\+To\+Byte\+Array}} () const noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Serialize the table into a \mbox{\hyperlink{structByteArray}{Byte\+Array}}. \end{DoxyCompactList}\item 
 std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classStorageHashTable_a98ee564daa5240927ab654976baec048}{get}} (\mbox{\hyperlink{classKey}{Key}} key) const noexcept
 \begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStorageHashTable_af7238f6554cbaf2648bc8dffda6bef6c}{put}} (\mbox{\hyperlink{structEntry}{Entry}} entry)
-\begin{DoxyCompactList}\small\item\em Put the $<$key, ptr$>$ entry into the table. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Put an \mbox{\hyperlink{structEntry}{Entry}} into the table. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ \mbox{\hyperlink{classStorageHashTable_af7869f93649c601734536c168ac3d1e7}{get\+Entries}} () const noexcept
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get all entries present in the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classStorageHashTable_a89b943495ee754e15f9e581c016d510b}{expand}} ()
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Expand the map to twice its current capacity. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,6 +48,8 @@ std\+::size\+\_\+t \mbox{\hyperlink{classStorageHashTable_aea6ffa8b65b4ec848609e
 
 \doxysubsection{Detailed Description}
 The hash table that is stored on disk. 
+
+Operates in RAM, so can be used with any kind of storage via serializing. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classStorageHashTable_a33023a575f61c5826e269033f4899897}\label{classStorageHashTable_a33023a575f61c5826e269033f4899897}} 
@@ -65,7 +67,11 @@ The hash table that is stored on disk.
 \doxysubsubsection{\texorpdfstring{expand()}{expand()}}
 {\footnotesize\ttfamily void Storage\+Hash\+Table\+::expand (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
-\mbox{\Hypertarget{classStorageHashTable_a98ee564daa5240927ab654976baec048}\label{classStorageHashTable_a98ee564daa5240927ab654976baec048}} 
+
+
+Expand the map to twice its current capacity. 
+
+Needs to be called once the number of elements exceeds capacity $\ast$ a predefined constant. Only works one time; calling this method a second time causes a SHARD\+\_\+\+OVERFLOW typed \mbox{\hyperlink{classKVSException}{KVSException}}. \mbox{\Hypertarget{classStorageHashTable_a98ee564daa5240927ab654976baec048}\label{classStorageHashTable_a98ee564daa5240927ab654976baec048}} 
 \index{StorageHashTable@{StorageHashTable}!get@{get}}
 \index{get@{get}!StorageHashTable@{StorageHashTable}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
@@ -75,13 +81,8 @@ The hash table that is stored on disk.
 
 Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em key} & \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-std\+::optional$<$\+Ptr$>$ 
+The requested \mbox{\hyperlink{classPtr}{Ptr}} or nothing, if no \mbox{\hyperlink{structEntry}{Entry}} with given \mbox{\hyperlink{classKey}{Key}} is present. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classStorageHashTable_af7869f93649c601734536c168ac3d1e7}\label{classStorageHashTable_af7869f93649c601734536c168ac3d1e7}} 
 \index{StorageHashTable@{StorageHashTable}!getEntries@{getEntries}}
@@ -89,6 +90,15 @@ std\+::optional$<$\+Ptr$>$
 \doxysubsubsection{\texorpdfstring{getEntries()}{getEntries()}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structEntry}{Entry}}$>$ Storage\+Hash\+Table\+::get\+Entries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
+
+
+Get all entries present in the map. 
+
+Used during rebuilding.
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Entry$>$ 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classStorageHashTable_af7238f6554cbaf2648bc8dffda6bef6c}\label{classStorageHashTable_af7238f6554cbaf2648bc8dffda6bef6c}} 
 \index{StorageHashTable@{StorageHashTable}!put@{put}}
 \index{put@{put}!StorageHashTable@{StorageHashTable}}
@@ -97,18 +107,17 @@ std\+::optional$<$\+Ptr$>$
 
 
 
-Put the $<$key, ptr$>$ entry into the table. 
+Put an \mbox{\hyperlink{structEntry}{Entry}} into the table. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em entry} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classStorageHashTable_a519cf1c372b3d8e663400c3d456fed24}\label{classStorageHashTable_a519cf1c372b3d8e663400c3d456fed24}} 
 \index{StorageHashTable@{StorageHashTable}!serializeToByteArray@{serializeToByteArray}}
 \index{serializeToByteArray@{serializeToByteArray}!StorageHashTable@{StorageHashTable}}
 \doxysubsubsection{\texorpdfstring{serializeToByteArray()}{serializeToByteArray()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structByteArray}{Byte\+Array}} Storage\+Hash\+Table\+::serialize\+To\+Byte\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Serialize the table into a \mbox{\hyperlink{structByteArray}{Byte\+Array}}. 
 
 
 

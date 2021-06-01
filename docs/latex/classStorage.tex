@@ -25,7 +25,7 @@ Collaboration diagram for Storage\+:
 \mbox{\hyperlink{classStorage_a27a5684200a82b87e1e65a58f0a3c94d}{Storage}} (std\+::string filename)
 \item 
 void \mbox{\hyperlink{classStorage_a562ed7328dd815f6eb1df9d7a3a6c64f}{close}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Apply all changes to the file contents (if any) and close the file. All further operations with this \mbox{\hyperlink{classStorage}{Storage}} object are disallowed. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_aa9dde0f759e9098778393d213f575b3b}{read\+File}} () const
 \begin{DoxyCompactList}\small\item\em Read the entire file. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorage_ac2fa90bb7817a0a8285082d9d213c378}{read}} (size\+\_\+t offset, size\+\_\+t length) const
@@ -45,6 +45,8 @@ std\+::fstream \mbox{\hyperlink{classStorage_a5c9e2a277cb875d7c360929e03d7a3b0}{
 
 \doxysubsection{Detailed Description}
 An abstraction for safely opening, reading, writing and closing files on disk. 
+
+If any operation fails, throws a new \mbox{\hyperlink{classKVSException}{KVSException}}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classStorage_a27a5684200a82b87e1e65a58f0a3c94d}\label{classStorage_a27a5684200a82b87e1e65a58f0a3c94d}} 
@@ -66,19 +68,18 @@ An abstraction for safely opening, reading, writing and closing files on disk.
 
 Append to end of file. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em bytes} & \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-size\+\_\+t the size of file in bytes before appending 
+The size of file in bytes before appending. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classStorage_a562ed7328dd815f6eb1df9d7a3a6c64f}\label{classStorage_a562ed7328dd815f6eb1df9d7a3a6c64f}} 
 \index{Storage@{Storage}!close@{close}}
 \index{close@{close}!Storage@{Storage}}
 \doxysubsubsection{\texorpdfstring{close()}{close()}}
 {\footnotesize\ttfamily void Storage\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Apply all changes to the file contents (if any) and close the file. All further operations with this \mbox{\hyperlink{classStorage}{Storage}} object are disallowed. 
 
 \mbox{\Hypertarget{classStorage_ac2fa90bb7817a0a8285082d9d213c378}\label{classStorage_ac2fa90bb7817a0a8285082d9d213c378}} 
 \index{Storage@{Storage}!read@{read}}
@@ -90,16 +91,6 @@ size\+\_\+t the size of file in bytes before appending
 
 Read a part of file. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em offset} & \\
-\hline
-{\em length} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-\mbox{\hyperlink{structByteArray}{Byte\+Array}} 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classStorage_aa9dde0f759e9098778393d213f575b3b}\label{classStorage_aa9dde0f759e9098778393d213f575b3b}} 
 \index{Storage@{Storage}!readFile@{readFile}}
 \index{readFile@{readFile}!Storage@{Storage}}
@@ -110,9 +101,6 @@ Read a part of file.
 
 Read the entire file. 
 
-\begin{DoxyReturn}{Returns}
-char$\ast$ 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classStorage_a5fa61eeb33a92e9a05eed88453ca601f}\label{classStorage_a5fa61eeb33a92e9a05eed88453ca601f}} 
 \index{Storage@{Storage}!write@{write}}
 \index{write@{write}!Storage@{Storage}}
@@ -123,13 +111,6 @@ char$\ast$
 
 Write a part of file. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em offset} & \\
-\hline
-{\em length} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classStorage_a1e707ccc738be5418feb1fbaca920892}\label{classStorage_a1e707ccc738be5418feb1fbaca920892}} 
 \index{Storage@{Storage}!writeFile@{writeFile}}
 \index{writeFile@{writeFile}!Storage@{Storage}}
@@ -140,9 +121,6 @@ Write a part of file.
 
 Write the entire file. 
 
-\begin{DoxyReturn}{Returns}
-char$\ast$ 
-\end{DoxyReturn}
 
 
 \doxysubsection{Member Data Documentation}

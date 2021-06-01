@@ -13,16 +13,14 @@ public:
   BloomFilter() noexcept;
 
   /**
-   * @brief Check if the key is present.
+   * @brief Check if the Key is present.
    * 
-   * @param object 
    */
   bool checkExist(const Key& key) const noexcept;
 
   /**
-   * @brief Add the key to the filter.
+   * @brief Add the Key to the filter.
    * 
-   * @param object 
    */
   void add(const Key& key) noexcept;
 

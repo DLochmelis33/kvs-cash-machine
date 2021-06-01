@@ -27,7 +27,7 @@ Collaboration diagram for KVS\+:
 void \mbox{\hyperlink{classKVS_ae5eb6a7ac3640a482884a20b5f424b47}{add}} (\mbox{\hyperlink{structKeyValue}{Key\+Value}} key\+Value)
 \begin{DoxyCompactList}\small\item\em Add a \mbox{\hyperlink{structKeyValue}{Key\+Value}} to the storage. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classKVS_a97281f5996ec9416d6d6042851c2945f}{remove}} (\mbox{\hyperlink{classKey}{Key}} key)
-\begin{DoxyCompactList}\small\item\em Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{classValue}{Value}} from storage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{classValue}{Value}} from storage. Lazy operation. \end{DoxyCompactList}\item 
 std\+::optional$<$ \mbox{\hyperlink{classValue}{Value}} $>$ \mbox{\hyperlink{classKVS_aa1bad605dc68f365d0efcaa13244a163}{get}} (\mbox{\hyperlink{classKey}{Key}} key)
 \begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}{clear}} ()
@@ -36,14 +36,14 @@ void \mbox{\hyperlink{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}{clear}} ()
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}{rebuild\+Shard}} (size\+\_\+t shard\+Index)
-\begin{DoxyCompactList}\small\item\em Rebuilds the shard with given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Rebuilds the shard with the given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classCacheMap}{Cache\+Map}} \mbox{\hyperlink{classKVS_aa1c5673ea8f4b49e195df583ddd963a8}{cache\+Map}}
-\item 
+\begin{DoxyCompactList}\small\item\em Cache map, stored in RAM. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{classShard}{Shard}} $>$ \mbox{\hyperlink{classKVS_aac89451d61d6f16c85d17b8eaaf36fd0}{shards}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classShard}{Shard}} objects representing... shards? \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -69,11 +69,6 @@ The class that provides an access to a key-\/value storage.
 
 Add a \mbox{\hyperlink{structKeyValue}{Key\+Value}} to the storage. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em key\+Value} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}\label{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}} 
 \index{KVS@{KVS}!clear@{clear}}
 \index{clear@{clear}!KVS@{KVS}}
@@ -94,13 +89,8 @@ Clear the storage.
 
 Get the \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}}. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em key} & \\
-\hline
-\end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-The \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}} or nothing, if none. 
+The \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}} or nothing, if no such \mbox{\hyperlink{classValue}{Value}} is present. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}\label{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}} 
 \index{KVS@{KVS}!rebuildShard@{rebuildShard}}
@@ -110,13 +100,8 @@ The \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{cl
 
 
 
-Rebuilds the shard with given index. 
+Rebuilds the shard with the given index. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em shard\+Index} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classKVS_a97281f5996ec9416d6d6042851c2945f}\label{classKVS_a97281f5996ec9416d6d6042851c2945f}} 
 \index{KVS@{KVS}!remove@{remove}}
 \index{remove@{remove}!KVS@{KVS}}
@@ -125,14 +110,9 @@ Rebuilds the shard with given index.
 
 
 
-Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{classValue}{Value}} from storage. 
+Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{classValue}{Value}} from storage. Lazy operation. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em key} & \\
-\hline
-\end{DoxyParams}
-
+Call shard rebuilding after removal if necessary. 
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classKVS_aa1c5673ea8f4b49e195df583ddd963a8}\label{classKVS_aa1c5673ea8f4b49e195df583ddd963a8}} 
@@ -141,11 +121,19 @@ Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{clas
 \doxysubsubsection{\texorpdfstring{cacheMap}{cacheMap}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classCacheMap}{Cache\+Map}} KVS\+::cache\+Map\hspace{0.3cm}{\ttfamily [private]}}
 
+
+
+Cache map, stored in RAM. 
+
 \mbox{\Hypertarget{classKVS_aac89451d61d6f16c85d17b8eaaf36fd0}\label{classKVS_aac89451d61d6f16c85d17b8eaaf36fd0}} 
 \index{KVS@{KVS}!shards@{shards}}
 \index{shards@{shards}!KVS@{KVS}}
 \doxysubsubsection{\texorpdfstring{shards}{shards}}
 {\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classShard}{Shard}}$>$ KVS\+::shards\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{classShard}{Shard}} objects representing... shards? 
 
 
 

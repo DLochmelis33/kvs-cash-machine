@@ -97,7 +97,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae5eb6a7ac3640a482884a20b5f424b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="structKeyValue.html">KeyValue</a> to the storage.  <a href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">More...</a><br /></td></tr>
 <tr class="separator:ae5eb6a7ac3640a482884a20b5f424b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97281f5996ec9416d6d6042851c2945f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">remove</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:a97281f5996ec9416d6d6042851c2945f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the <a class="el" href="classKey.html">Key</a> and associated <a class="el" href="classValue.html">Value</a> from storage.  <a href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">More...</a><br /></td></tr>
+<tr class="memdesc:a97281f5996ec9416d6d6042851c2945f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the <a class="el" href="classKey.html">Key</a> and associated <a class="el" href="classValue.html">Value</a> from storage. Lazy operation.  <a href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">More...</a><br /></td></tr>
 <tr class="separator:a97281f5996ec9416d6d6042851c2945f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1bad605dc68f365d0efcaa13244a163"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classValue.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">get</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
 <tr class="memdesc:aa1bad605dc68f365d0efcaa13244a163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a>.  <a href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">More...</a><br /></td></tr>
@@ -109,14 +109,16 @@ Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a6ddd61c7a1a01de30e81401f279d66bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">rebuildShard</a> (size_t shardIndex)</td></tr>
-<tr class="memdesc:a6ddd61c7a1a01de30e81401f279d66bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the shard with given index.  <a href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">More...</a><br /></td></tr>
+<tr class="memdesc:a6ddd61c7a1a01de30e81401f279d66bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the shard with the given index.  <a href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">More...</a><br /></td></tr>
 <tr class="separator:a6ddd61c7a1a01de30e81401f279d66bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
 <tr class="memitem:aa1c5673ea8f4b49e195df583ddd963a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCacheMap.html">CacheMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">cacheMap</a></td></tr>
+<tr class="memdesc:aa1c5673ea8f4b49e195df583ddd963a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache map, stored in RAM.  <a href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">More...</a><br /></td></tr>
 <tr class="separator:aa1c5673ea8f4b49e195df583ddd963a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classShard.html">Shard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">shards</a></td></tr>
+<tr class="memdesc:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> objects representing... shards?  <a href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">More...</a><br /></td></tr>
 <tr class="separator:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -157,12 +159,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Add a <a class="el" href="structKeyValue.html">KeyValue</a> to the storage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">keyValue</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -202,13 +198,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a> or nothing, if none. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a> or nothing, if no such <a class="el" href="classValue.html">Value</a> is present. </dd></dl>
 
 </div>
 </div>
@@ -236,13 +226,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuilds the shard with given index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">shardIndex</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Rebuilds the shard with the given index. </p>
 
 </div>
 </div>
@@ -262,13 +246,8 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove the <a class="el" href="classKey.html">Key</a> and associated <a class="el" href="classValue.html">Value</a> from storage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Remove the <a class="el" href="classKey.html">Key</a> and associated <a class="el" href="classValue.html">Value</a> from storage. Lazy operation. </p>
+<p>Call shard rebuilding after removal if necessary. </p>
 
 </div>
 </div>
@@ -293,6 +272,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Cache map, stored in RAM. </p>
+
 </div>
 </div>
 <a id="aac89451d61d6f16c85d17b8eaaf36fd0"></a>
@@ -314,6 +295,8 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p><a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> objects representing... shards? </p>
 
 </div>
 </div>
