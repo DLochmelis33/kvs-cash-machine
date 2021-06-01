@@ -84,9 +84,8 @@ public:
   /**
     * @brief Check if a rebuild needs to be called.
     * 
-    * @return boolean 
     */
-  boolean isRebuildRequired() const noexcept;
+  bool isRebuildRequired() const noexcept;
 
 private:
   explicit Shard(size_t index) noexcept;
@@ -109,7 +108,7 @@ private:
      * @brief A filter.
      *
      */
-  BloomFilter<Key> filter;
+  BloomFilter filter;
 
-  friend ShardBuilder;
+  friend class ShardBuilder;
 };

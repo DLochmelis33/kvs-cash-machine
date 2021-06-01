@@ -44,14 +44,13 @@ public:
   void clear();
 
 private:
-  using hash_t = uint64_t;
-  /**
-     * @brief Hash the Key.
-     *
-     * @param key
-     * @return
-     */
-  hash_t hash(Key key) const noexcept;
+   /**
+    * @brief Rebuilds the shard with given index.
+    * 
+    * @param shardIndex 
+    */
+   void rebuildShard(size_t shardIndex);
+
 
 private:
   CacheMap cacheMap;

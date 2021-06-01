@@ -3,6 +3,7 @@
 #include "KeyValueTypes.h"
 #include "Storage.h"
 #include <optional>
+#include <vector>
 
 /**
  * @brief The hash table that is stored on disk.
