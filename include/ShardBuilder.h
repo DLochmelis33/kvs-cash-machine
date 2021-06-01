@@ -2,6 +2,8 @@
 
 #include "KeyValueTypes.h"
 #include "Storage.h"
+#include "Shard.h"
+#include "CacheMap.h"
 #include <utility>
 #include <vector>
 
@@ -24,5 +26,5 @@ public:
    * @return std::vector<Entry> entries in CacheMap that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY_PTR
    */
   static std::pair<Shard, std::vector<Entry>>
-  rebuildShard(const Shard& shard, const CacheMap& cacheMap);
+      rebuildShard(const Shard& shard, const CacheMap& cacheMap);
 };

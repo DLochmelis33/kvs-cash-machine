@@ -67,6 +67,7 @@ $(function() {
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classShard-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Shard Class Reference<span class="mlabels"><span class="mlabel">final</span></span></div>  </div>
@@ -82,13 +83,11 @@ Collaboration diagram for Shard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classShard__coll__graph.png" border="0" usemap="#aShard_coll__map" alt="Collaboration graph"/></div>
 <map name="aShard_coll__map" id="aShard_coll__map">
-<area shape="rect" title="A single part of KVS after sharding." alt="" coords="79,528,270,767"/>
-<area shape="rect" title=" " alt="" coords="21,351,77,429"/>
-<area shape="rect" href="classBloomFilter.html" title=" " alt="" coords="105,329,237,451"/>
+<area shape="rect" title="A single part of KVS after sharding." alt="" coords="149,344,339,583"/>
 <area shape="rect" href="classBloomFilter.html" title="Bloom filter!" alt="" coords="117,160,224,267"/>
 <area shape="rect" title=" " alt="" coords="5,5,171,97"/>
 <area shape="rect" title=" " alt="" coords="194,13,313,90"/>
-<area shape="rect" title=" " alt="" coords="261,351,315,429"/>
+<area shape="rect" title=" " alt="" coords="248,175,304,252"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -117,9 +116,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a986026ea972175ef7d174cdf0c7ea631"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a986026ea972175ef7d174cdf0c7ea631">decrementAliveValuesCnt</a> () noexcept</td></tr>
 <tr class="memdesc:a986026ea972175ef7d174cdf0c7ea631"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the counter of non-deleted elements in this shard.  <a href="classShard.html#a986026ea972175ef7d174cdf0c7ea631">More...</a><br /></td></tr>
 <tr class="separator:a986026ea972175ef7d174cdf0c7ea631"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dcb8c5e3e998662dc0659efb978c405"><td class="memItemLeft" align="right" valign="top">boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a7dcb8c5e3e998662dc0659efb978c405">isRebuildRequired</a> () const noexcept</td></tr>
-<tr class="memdesc:a7dcb8c5e3e998662dc0659efb978c405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a rebuild needs to be called.  <a href="classShard.html#a7dcb8c5e3e998662dc0659efb978c405">More...</a><br /></td></tr>
-<tr class="separator:a7dcb8c5e3e998662dc0659efb978c405"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86104c09dcbeeefb9c9f9690b6a5bd55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a86104c09dcbeeefb9c9f9690b6a5bd55">isRebuildRequired</a> () const noexcept</td></tr>
+<tr class="memdesc:a86104c09dcbeeefb9c9f9690b6a5bd55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a rebuild needs to be called.  <a href="classShard.html#a86104c09dcbeeefb9c9f9690b6a5bd55">More...</a><br /></td></tr>
+<tr class="separator:a86104c09dcbeeefb9c9f9690b6a5bd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -142,11 +141,14 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:add9303ccc9ebed081e0d4e2f9ea405a3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#add9303ccc9ebed081e0d4e2f9ea405a3">aliveValuesCnt</a></td></tr>
 <tr class="memdesc:add9303ccc9ebed081e0d4e2f9ea405a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of values that are stored on disk, but not deleted yet.  <a href="classShard.html#add9303ccc9ebed081e0d4e2f9ea405a3">More...</a><br /></td></tr>
 <tr class="separator:add9303ccc9ebed081e0d4e2f9ea405a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b161f4b5028fe56c148424358c9bbb6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBloomFilter.html">BloomFilter</a>&lt; <a class="el" href="classKey.html">Key</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a3b161f4b5028fe56c148424358c9bbb6">filter</a></td></tr>
-<tr class="memdesc:a3b161f4b5028fe56c148424358c9bbb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A filter.  <a href="classShard.html#a3b161f4b5028fe56c148424358c9bbb6">More...</a><br /></td></tr>
-<tr class="separator:a3b161f4b5028fe56c148424358c9bbb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1baae30177bbbcdeb93f7521bc841fd"><td class="memItemLeft" align="right" valign="top">friend&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#ab1baae30177bbbcdeb93f7521bc841fd">ShardBuilder</a></td></tr>
-<tr class="separator:ab1baae30177bbbcdeb93f7521bc841fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7671964f2e07a41c9786b6a8e3d5302f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classBloomFilter.html">BloomFilter</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a7671964f2e07a41c9786b6a8e3d5302f">filter</a></td></tr>
+<tr class="memdesc:a7671964f2e07a41c9786b6a8e3d5302f"><td class="mdescLeft">&#160;</td><td class="mdescRight">A filter.  <a href="classShard.html#a7671964f2e07a41c9786b6a8e3d5302f">More...</a><br /></td></tr>
+<tr class="separator:a7671964f2e07a41c9786b6a8e3d5302f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a75f5d7eb5774c232dbb08b3c2a02dbd6"><td class="memItemLeft" align="right" valign="top">class&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShard.html#a75f5d7eb5774c232dbb08b3c2a02dbd6">ShardBuilder</a></td></tr>
+<tr class="separator:a75f5d7eb5774c232dbb08b3c2a02dbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A single part of <a class="el" href="classKVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. </p>
@@ -330,8 +332,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a7dcb8c5e3e998662dc0659efb978c405"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7dcb8c5e3e998662dc0659efb978c405">&#9670;&nbsp;</a></span>isRebuildRequired()</h2>
+<a id="a86104c09dcbeeefb9c9f9690b6a5bd55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86104c09dcbeeefb9c9f9690b6a5bd55">&#9670;&nbsp;</a></span>isRebuildRequired()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,7 +342,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">boolean Shard::isRebuildRequired </td>
+          <td class="memname">bool Shard::isRebuildRequired </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -354,7 +356,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if a rebuild needs to be called. </p>
-<dl class="section return"><dt>Returns</dt><dd>boolean </dd></dl>
 
 </div>
 </div>
@@ -516,6 +517,29 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a id="a75f5d7eb5774c232dbb08b3c2a02dbd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f5d7eb5774c232dbb08b3c2a02dbd6">&#9670;&nbsp;</a></span>ShardBuilder</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend class <a class="el" href="classShardBuilder.html">ShardBuilder</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="add9303ccc9ebed081e0d4e2f9ea405a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#add9303ccc9ebed081e0d4e2f9ea405a3">&#9670;&nbsp;</a></span>aliveValuesCnt</h2>
@@ -541,8 +565,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a3b161f4b5028fe56c148424358c9bbb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b161f4b5028fe56c148424358c9bbb6">&#9670;&nbsp;</a></span>filter</h2>
+<a id="a7671964f2e07a41c9786b6a8e3d5302f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7671964f2e07a41c9786b6a8e3d5302f">&#9670;&nbsp;</a></span>filter</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -551,7 +575,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classBloomFilter.html">BloomFilter</a>&lt;<a class="el" href="classKey.html">Key</a>&gt; Shard::filter</td>
+          <td class="memname"><a class="el" href="classBloomFilter.html">BloomFilter</a> Shard::filter</td>
         </tr>
       </table>
   </td>
@@ -586,28 +610,6 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p><a class="el" href="classShard.html" title="A single part of KVS after sharding.">Shard</a> index. </p>
-
-</div>
-</div>
-<a id="ab1baae30177bbbcdeb93f7521bc841fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab1baae30177bbbcdeb93f7521bc841fd">&#9670;&nbsp;</a></span>ShardBuilder</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">friend Shard::ShardBuilder</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
 
 </div>
 </div>

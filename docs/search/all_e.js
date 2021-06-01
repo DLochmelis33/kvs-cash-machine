@@ -8,7 +8,7 @@ var searchData=
   ['shard_2eh_66',['Shard.h',['../Shard_8h.html',1,'']]],
   ['shard_5fnumber_67',['SHARD_NUMBER',['../KeyValueTypes_8h.html#a937e217ed7efdcc75e4513f2ca493de8',1,'KeyValueTypes.h']]],
   ['shard_5foverflow_68',['SHARD_OVERFLOW',['../KVSException_8h.html#a3097cfae9981b2a78aa4f56ce5247da1a19df2f84a4d9d9df1d50d18f88df583f',1,'KVSException.h']]],
-  ['shardbuilder_69',['ShardBuilder',['../classShard.html#ab1baae30177bbbcdeb93f7521bc841fd',1,'Shard::ShardBuilder()'],['../classShardBuilder.html',1,'ShardBuilder']]],
+  ['shardbuilder_69',['ShardBuilder',['../classShard.html#a75f5d7eb5774c232dbb08b3c2a02dbd6',1,'Shard::ShardBuilder()'],['../classShardBuilder.html',1,'ShardBuilder']]],
   ['shardbuilder_2eh_70',['ShardBuilder.h',['../ShardBuilder_8h.html',1,'']]],
   ['shards_71',['shards',['../classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0',1,'KVS']]],
   ['size_72',['size',['../classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858',1,'CacheMap::size()'],['../classStorageHashTable.html#aea6ffa8b65b4ec848609ea9b37aa62dd',1,'StorageHashTable::size()']]],

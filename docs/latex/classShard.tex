@@ -16,7 +16,7 @@ Collaboration diagram for Shard\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=550pt]{classShard__coll__graph}
+\includegraphics[width=346pt]{classShard__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -38,7 +38,7 @@ void \mbox{\hyperlink{classShard_ad8fd5e8b49213a66affc2bc8ffaeadab}{increment\+A
 \begin{DoxyCompactList}\small\item\em Increase the counter of non-\/deleted elements in this shard. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classShard_a986026ea972175ef7d174cdf0c7ea631}{decrement\+Alive\+Values\+Cnt}} () noexcept
 \begin{DoxyCompactList}\small\item\em Decrease the counter of non-\/deleted elements in this shard. \end{DoxyCompactList}\item 
-boolean \mbox{\hyperlink{classShard_a7dcb8c5e3e998662dc0659efb978c405}{is\+Rebuild\+Required}} () const noexcept
+bool \mbox{\hyperlink{classShard_a86104c09dcbeeefb9c9f9690b6a5bd55}{is\+Rebuild\+Required}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Check if a rebuild needs to be called. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -59,9 +59,12 @@ size\+\_\+t \mbox{\hyperlink{classShard_abefece21372068eb7596f90990b71f2d}{index
 \begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classShard}{Shard}} index. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classShard_add9303ccc9ebed081e0d4e2f9ea405a3}{alive\+Values\+Cnt}}
 \begin{DoxyCompactList}\small\item\em Number of values that are stored on disk, but not deleted yet. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$ \mbox{\hyperlink{classKey}{Key}} $>$ \mbox{\hyperlink{classShard_a3b161f4b5028fe56c148424358c9bbb6}{filter}}
-\begin{DoxyCompactList}\small\item\em A filter. \end{DoxyCompactList}\item 
-friend \mbox{\hyperlink{classShard_ab1baae30177bbbcdeb93f7521bc841fd}{Shard\+Builder}}
+\mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}} \mbox{\hyperlink{classShard_a7671964f2e07a41c9786b6a8e3d5302f}{filter}}
+\begin{DoxyCompactList}\small\item\em A filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classShard_a75f5d7eb5774c232dbb08b3c2a02dbd6}{Shard\+Builder}}
 \end{DoxyCompactItemize}
 
 
@@ -128,19 +131,16 @@ Get the shard index that contains the \mbox{\hyperlink{classKey}{Key}}.
 
 Increase the counter of non-\/deleted elements in this shard. 
 
-Used by \mbox{\hyperlink{classKVS}{KVS}} when a deleted element in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is added again. \mbox{\Hypertarget{classShard_a7dcb8c5e3e998662dc0659efb978c405}\label{classShard_a7dcb8c5e3e998662dc0659efb978c405}} 
+Used by \mbox{\hyperlink{classKVS}{KVS}} when a deleted element in \mbox{\hyperlink{classCacheMap}{Cache\+Map}} is added again. \mbox{\Hypertarget{classShard_a86104c09dcbeeefb9c9f9690b6a5bd55}\label{classShard_a86104c09dcbeeefb9c9f9690b6a5bd55}} 
 \index{Shard@{Shard}!isRebuildRequired@{isRebuildRequired}}
 \index{isRebuildRequired@{isRebuildRequired}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{isRebuildRequired()}{isRebuildRequired()}}
-{\footnotesize\ttfamily boolean Shard\+::is\+Rebuild\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily bool Shard\+::is\+Rebuild\+Required (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
 Check if a rebuild needs to be called. 
 
-\begin{DoxyReturn}{Returns}
-boolean 
-\end{DoxyReturn}
 \mbox{\Hypertarget{classShard_ae06a68baa373b1dc5d006c50ffc3f935}\label{classShard_ae06a68baa373b1dc5d006c50ffc3f935}} 
 \index{Shard@{Shard}!readValue@{readValue}}
 \index{readValue@{readValue}!Shard@{Shard}}
@@ -238,6 +238,15 @@ Attention\+: this nethod does not update the internal alive values counter, it h
 \end{DoxyParams}
 
 
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{classShard_a75f5d7eb5774c232dbb08b3c2a02dbd6}\label{classShard_a75f5d7eb5774c232dbb08b3c2a02dbd6}} 
+\index{Shard@{Shard}!ShardBuilder@{ShardBuilder}}
+\index{ShardBuilder@{ShardBuilder}!Shard@{Shard}}
+\doxysubsubsection{\texorpdfstring{ShardBuilder}{ShardBuilder}}
+{\footnotesize\ttfamily friend class \mbox{\hyperlink{classShardBuilder}{Shard\+Builder}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classShard_add9303ccc9ebed081e0d4e2f9ea405a3}\label{classShard_add9303ccc9ebed081e0d4e2f9ea405a3}} 
 \index{Shard@{Shard}!aliveValuesCnt@{aliveValuesCnt}}
@@ -249,11 +258,11 @@ Attention\+: this nethod does not update the internal alive values counter, it h
 
 Number of values that are stored on disk, but not deleted yet. 
 
-\mbox{\Hypertarget{classShard_a3b161f4b5028fe56c148424358c9bbb6}\label{classShard_a3b161f4b5028fe56c148424358c9bbb6}} 
+\mbox{\Hypertarget{classShard_a7671964f2e07a41c9786b6a8e3d5302f}\label{classShard_a7671964f2e07a41c9786b6a8e3d5302f}} 
 \index{Shard@{Shard}!filter@{filter}}
 \index{filter@{filter}!Shard@{Shard}}
 \doxysubsubsection{\texorpdfstring{filter}{filter}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}}$<$\mbox{\hyperlink{classKey}{Key}}$>$ Shard\+::filter\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classBloomFilter}{Bloom\+Filter}} Shard\+::filter\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
@@ -268,12 +277,6 @@ A filter.
 
 
 \mbox{\hyperlink{classShard}{Shard}} index. 
-
-\mbox{\Hypertarget{classShard_ab1baae30177bbbcdeb93f7521bc841fd}\label{classShard_ab1baae30177bbbcdeb93f7521bc841fd}} 
-\index{Shard@{Shard}!ShardBuilder@{ShardBuilder}}
-\index{ShardBuilder@{ShardBuilder}!Shard@{Shard}}
-\doxysubsubsection{\texorpdfstring{ShardBuilder}{ShardBuilder}}
-{\footnotesize\ttfamily friend Shard\+::\+Shard\+Builder\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

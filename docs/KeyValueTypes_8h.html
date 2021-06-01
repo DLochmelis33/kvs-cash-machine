@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">KeyValueTypes.h File Reference</div>  </div>
@@ -89,14 +90,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="KeyValueTypes_8h__dep__incl.png" border="0" usemap="#ainclude_2KeyValueTypes_8hdep" alt=""/></div>
 <map name="ainclude_2KeyValueTypes_8hdep" id="ainclude_2KeyValueTypes_8hdep">
-<area shape="rect" title=" " alt="" coords="260,5,427,32"/>
-<area shape="rect" href="BloomFilter_8h.html" title=" " alt="" coords="5,80,148,107"/>
-<area shape="rect" href="Shard_8h.html" title=" " alt="" coords="88,155,199,181"/>
-<area shape="rect" href="KVS_8h.html" title=" " alt="" coords="185,229,289,256"/>
-<area shape="rect" href="CacheMap_8h.html" title=" " alt="" coords="274,80,413,107"/>
-<area shape="rect" href="ShardBuilder_8h.html" title=" " alt="" coords="376,155,527,181"/>
-<area shape="rect" href="Storage_8h.html" title=" " alt="" coords="487,80,610,107"/>
-<area shape="rect" href="StorageHashTable_8h.html" title=" " alt="" coords="553,155,739,181"/>
+<area shape="rect" title=" " alt="" coords="184,5,351,32"/>
+<area shape="rect" href="BloomFilter_8h.html" title=" " alt="" coords="36,80,179,107"/>
+<area shape="rect" href="Shard_8h.html" title=" " alt="" coords="36,155,147,181"/>
+<area shape="rect" href="KVS_8h.html" title=" " alt="" coords="39,229,143,256"/>
+<area shape="rect" href="ShardBuilder_8h.html" title=" " alt="" coords="220,229,371,256"/>
+<area shape="rect" href="CacheMap_8h.html" title=" " alt="" coords="171,155,310,181"/>
+<area shape="rect" href="Storage_8h.html" title=" " alt="" coords="382,80,505,107"/>
+<area shape="rect" href="StorageHashTable_8h.html" title=" " alt="" coords="448,155,633,181"/>
 </map>
 </div>
 </div>
@@ -126,6 +127,13 @@ Typedefs</h2></td></tr>
 <tr class="separator:a832b95dd05311cd511428d6a87a864f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab814495093e1a00b13162cad38f0a670"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> = char</td></tr>
 <tr class="separator:ab814495093e1a00b13162cad38f0a670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a02bf693ab0462328bfb3a8a1f8bd65"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a> = unsigned long long</td></tr>
+<tr class="separator:a0a02bf693ab0462328bfb3a8a1f8bd65"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a69372e535068dfb70708d87798e3abce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KeyValueTypes_8h.html#a69372e535068dfb70708d87798e3abce">hashKey</a> (<a class="el" href="classKey.html">Key</a> key) noexcept</td></tr>
+<tr class="separator:a69372e535068dfb70708d87798e3abce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -145,6 +153,20 @@ Variables</h2></td></tr>
 <tr class="separator:ae0a433acbd57c02942b88e8909534db3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a0a02bf693ab0462328bfb3a8a1f8bd65"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a02bf693ab0462328bfb3a8a1f8bd65">&#9670;&nbsp;</a></span>hash_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a> =  unsigned long long</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ab66cbe59b6fe4b8170fcd8e964254fab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab66cbe59b6fe4b8170fcd8e964254fab">&#9670;&nbsp;</a></span>key_t</h2>
 
@@ -183,6 +205,33 @@ Variables</h2></td></tr>
           <td class="memname">using <a class="el" href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a> =  char*</td>
         </tr>
       </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a69372e535068dfb70708d87798e3abce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69372e535068dfb70708d87798e3abce">&#9670;&nbsp;</a></span>hashKey()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a> hashKey </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 </div>

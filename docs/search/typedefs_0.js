@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash_5ft_176',['hash_t',['../classKVS.html#a619afe9aabb59c4fe5462e293e8e4402',1,'KVS']]]
+  ['hash_5ft_174',['hash_t',['../KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65',1,'KeyValueTypes.h']]]
 ];

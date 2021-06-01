@@ -64,7 +64,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pri-types">Private Types</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classKVS-members.html">List of all members</a>  </div>
@@ -82,7 +81,7 @@ Collaboration diagram for KVS:</div>
 <div class="dyncontent">
 <div class="center"><img src="classKVS__coll__graph.png" border="0" usemap="#aKVS_coll__map" alt="Collaboration graph"/></div>
 <map name="aKVS_coll__map" id="aKVS_coll__map">
-<area shape="rect" title="The class that provides an access to a key&#45;value storage." alt="" coords="75,329,159,480"/>
+<area shape="rect" title="The class that provides an access to a key&#45;value storage." alt="" coords="63,329,172,480"/>
 <area shape="rect" title=" " alt="" coords="5,167,120,245"/>
 <area shape="rect" href="classCacheMap.html" title="Cache map. Is stored in RAM." alt="" coords="144,145,267,267"/>
 <area shape="rect" title=" " alt="" coords="124,5,180,83"/>
@@ -107,16 +106,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0ed6f47f1cd2e0b53e8e293974386959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the storage.  <a href="classKVS.html#a0ed6f47f1cd2e0b53e8e293974386959">More...</a><br /></td></tr>
 <tr class="separator:a0ed6f47f1cd2e0b53e8e293974386959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
-Private Types</h2></td></tr>
-<tr class="memitem:a619afe9aabb59c4fe5462e293e8e4402"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a619afe9aabb59c4fe5462e293e8e4402">hash_t</a> = uint64_t</td></tr>
-<tr class="separator:a619afe9aabb59c4fe5462e293e8e4402"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a1d848d631a4bf2a5ea7b31695d02e12a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classKVS.html#a619afe9aabb59c4fe5462e293e8e4402">hash_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a1d848d631a4bf2a5ea7b31695d02e12a">hash</a> (<a class="el" href="classKey.html">Key</a> key) const noexcept</td></tr>
-<tr class="memdesc:a1d848d631a4bf2a5ea7b31695d02e12a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash the <a class="el" href="classKey.html">Key</a>.  <a href="classKVS.html#a1d848d631a4bf2a5ea7b31695d02e12a">More...</a><br /></td></tr>
-<tr class="separator:a1d848d631a4bf2a5ea7b31695d02e12a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ddd61c7a1a01de30e81401f279d66bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">rebuildShard</a> (size_t shardIndex)</td></tr>
+<tr class="memdesc:a6ddd61c7a1a01de30e81401f279d66bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the shard with given index.  <a href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">More...</a><br /></td></tr>
+<tr class="separator:a6ddd61c7a1a01de30e81401f279d66bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -127,30 +121,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The class that provides an access to a key-value storage. </p>
-</div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a619afe9aabb59c4fe5462e293e8e4402"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a619afe9aabb59c4fe5462e293e8e4402">&#9670;&nbsp;</a></span>hash_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="classKVS.html#a619afe9aabb59c4fe5462e293e8e4402">KVS::hash_t</a> =  uint64_t</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a63c84c6f0a2be545458351d72b5ebf57"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a63c84c6f0a2be545458351d72b5ebf57">&#9670;&nbsp;</a></span>KVS()</h2>
 
@@ -241,8 +212,8 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a1d848d631a4bf2a5ea7b31695d02e12a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d848d631a4bf2a5ea7b31695d02e12a">&#9670;&nbsp;</a></span>hash()</h2>
+<a id="a6ddd61c7a1a01de30e81401f279d66bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ddd61c7a1a01de30e81401f279d66bd">&#9670;&nbsp;</a></span>rebuildShard()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -251,28 +222,27 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classKVS.html#a619afe9aabb59c4fe5462e293e8e4402">hash_t</a> KVS::hash </td>
+          <td class="memname">void KVS::rebuildShard </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
-          <td class="paramname"><em>key</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>shardIndex</em></td><td>)</td>
+          <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Hash the <a class="el" href="classKey.html">Key</a>. </p>
+<p>Rebuilds the shard with given index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">key</td><td></td></tr>
+    <tr><td class="paramname">shardIndex</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

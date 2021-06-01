@@ -2,6 +2,7 @@
 
 #include "KeyValueTypes.h"
 #include <bitset>
+#include <vector>
 
 /**
  * @brief Bloom filter!

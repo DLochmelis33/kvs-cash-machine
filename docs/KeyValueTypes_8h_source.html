@@ -94,49 +94,57 @@ $(function() {
 <div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classKey.html#a70439140082f54c874000e9d41d950b6">   22</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#ab66cbe59b6fe4b8170fcd8e964254fab">key_t</a> <a class="code" href="classKey.html#a70439140082f54c874000e9d41d950b6">key</a>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classValue.html">   25</a></span>&#160;class <a class="code" href="classValue.html">Value</a> final {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="classValue.html#a315ceda8cabb906c2e38744b7483aff8">   27</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a> <a class="code" href="classValue.html#a315ceda8cabb906c2e38744b7483aff8">get</a>() noexcept;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;private:</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classValue.html#a75ffaf493d8043f6337d7b8e66a9350d">   30</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a> value;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;};</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="structKeyValue.html">   33</a></span>&#160;struct <a class="code" href="structKeyValue.html">KeyValue</a> final {</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">   34</a></span>&#160;  <a class="code" href="classKey.html">Key</a> <a class="code" href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">key</a>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">   35</a></span>&#160;  <a class="code" href="classValue.html">Value</a> <a class="code" href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">value</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classPtr.html">   43</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPtr.html">Ptr</a> final {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classPtr.html#a0ca51e6f109c26ce8da3eaf1bd39144c">   46</a></span>&#160;  <span class="keyword">static</span> constexpr <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> EMPTY_PTR = 0b11111111;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classPtr.html#af16e6332c8029dc468ef3cb98ce43290">   48</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classPtr.html#af16e6332c8029dc468ef3cb98ce43290">Ptr</a>(<a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> ptr) noexcept;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">   50</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> <a class="code" href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">get</a>() const noexcept;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classPtr.html#ae5653932264f0bc2434912b4d15ffd76">   56</a></span>&#160;  <span class="keywordtype">bool</span> isValuePresent() const noexcept;</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">   25</a></span>&#160;using <a class="code" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a> = <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="KeyValueTypes_8h.html#a69372e535068dfb70708d87798e3abce">   27</a></span>&#160;<a class="code" href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a> <a class="code" href="KeyValueTypes_8h.html#a69372e535068dfb70708d87798e3abce">hashKey</a>(<a class="code" href="classKey.html">Key</a> <a class="code" href="classKey.html#a70439140082f54c874000e9d41d950b6">key</a>) noexcept {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">return</span> 0; <span class="comment">// TODO</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="classValue.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="classValue.html">Value</a> final {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classValue.html#a315ceda8cabb906c2e38744b7483aff8">   33</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a> <a class="code" href="classValue.html#a315ceda8cabb906c2e38744b7483aff8">get</a>() noexcept;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;private:</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classValue.html#a75ffaf493d8043f6337d7b8e66a9350d">   36</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a> value;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="structKeyValue.html">   39</a></span>&#160;struct <a class="code" href="structKeyValue.html">KeyValue</a> final {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">   40</a></span>&#160;  <a class="code" href="classKey.html">Key</a> <a class="code" href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">key</a>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">   41</a></span>&#160;  <a class="code" href="classValue.html">Value</a> <a class="code" href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">value</a>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classPtr.html">   49</a></span>&#160;<span class="keyword">class </span><a class="code" href="classPtr.html">Ptr</a> final {</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classPtr.html#a0ca51e6f109c26ce8da3eaf1bd39144c">   52</a></span>&#160;  <span class="keyword">static</span> constexpr <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> EMPTY_PTR = 0b11111111;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classPtr.html#af16e6332c8029dc468ef3cb98ce43290">   54</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classPtr.html#af16e6332c8029dc468ef3cb98ce43290">Ptr</a>(<a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> ptr) noexcept;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">   56</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> <a class="code" href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">get</a>() const noexcept;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classPtr.html#a13e133583b02f5b0fdcfea5e30ddc14c">   63</a></span>&#160;  <span class="keywordtype">void</span> setValuePresent(<span class="keywordtype">bool</span> isPresent) noexcept;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;private:</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classPtr.html#a02a78d3599a044df3d978c7d0dd70fd7">   66</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> ptr;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="structEntry.html">   69</a></span>&#160;struct <a class="code" href="structEntry.html">Entry</a> final {</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6">   70</a></span>&#160;  <a class="code" href="classKey.html">Key</a> <a class="code" href="structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6">key</a>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="structEntry.html#a38a01427bf76fcd886ff133ef9bca5c8">   71</a></span>&#160;  <a class="code" href="classPtr.html">Ptr</a> <a class="code" href="structEntry.html#a38a01427bf76fcd886ff133ef9bca5c8">ptr</a>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="structByteArray.html">   74</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structByteArray.html">ByteArray</a> final {</div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structByteArray.html#a4358b5cc870a7a98399a2a2a2b4262d9">   75</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="structByteArray.html#a4358b5cc870a7a98399a2a2a2b4262d9">ByteArray</a>(<span class="keywordtype">size_t</span> length) noexcept;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structByteArray.html#a68290968c0fd50b95bcbff78f925eb5c">   76</a></span>&#160;  <a class="code" href="structByteArray.html#a68290968c0fd50b95bcbff78f925eb5c">~ByteArray</a>() noexcept;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="structByteArray.html#a228392daf2f5a554a7be7a269312a86d">   78</a></span>&#160;  const <span class="keywordtype">char</span>* data;</div>
-<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="structByteArray.html#a0bc791676d8a97670f1b5d86db41f90c">   79</a></span>&#160;  <span class="keywordtype">size_t</span> length;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="classPtr.html#ae5653932264f0bc2434912b4d15ffd76">   62</a></span>&#160;  <span class="keywordtype">bool</span> isValuePresent() const noexcept;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classPtr.html#a13e133583b02f5b0fdcfea5e30ddc14c">   69</a></span>&#160;  <span class="keywordtype">void</span> setValuePresent(<span class="keywordtype">bool</span> isPresent) noexcept;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;private:</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classPtr.html#a02a78d3599a044df3d978c7d0dd70fd7">   72</a></span>&#160;  <a class="code" href="KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670">ptr_t</a> ptr;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="structEntry.html">   75</a></span>&#160;struct <a class="code" href="structEntry.html">Entry</a> final {</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6">   76</a></span>&#160;  <a class="code" href="classKey.html">Key</a> <a class="code" href="structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6">key</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="structEntry.html#a38a01427bf76fcd886ff133ef9bca5c8">   77</a></span>&#160;  <a class="code" href="classPtr.html">Ptr</a> <a class="code" href="structEntry.html#a38a01427bf76fcd886ff133ef9bca5c8">ptr</a>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="structByteArray.html">   80</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structByteArray.html">ByteArray</a> final {</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="structByteArray.html#a4358b5cc870a7a98399a2a2a2b4262d9">   81</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="structByteArray.html#a4358b5cc870a7a98399a2a2a2b4262d9">ByteArray</a>(<span class="keywordtype">size_t</span> length) noexcept;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="structByteArray.html#a68290968c0fd50b95bcbff78f925eb5c">   82</a></span>&#160;  <a class="code" href="structByteArray.html#a68290968c0fd50b95bcbff78f925eb5c">~ByteArray</a>() noexcept;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="structByteArray.html#a228392daf2f5a554a7be7a269312a86d">   84</a></span>&#160;  const <span class="keywordtype">char</span>* data;</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="structByteArray.html#a0bc791676d8a97670f1b5d86db41f90c">   85</a></span>&#160;  <span class="keywordtype">size_t</span> length;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;};</div>
+<div class="ttc" id="aKeyValueTypes_8h_html_a0a02bf693ab0462328bfb3a8a1f8bd65"><div class="ttname"><a href="KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65">hash_t</a></div><div class="ttdeci">unsigned long long hash_t</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:25</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a5ab9602a693dd11c365e308e4f7175ad"><div class="ttname"><a href="KeyValueTypes_8h.html#a5ab9602a693dd11c365e308e4f7175ad">KEY_SIZE</a></div><div class="ttdeci">constexpr size_t KEY_SIZE</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:6</div></div>
+<div class="ttc" id="aKeyValueTypes_8h_html_a69372e535068dfb70708d87798e3abce"><div class="ttname"><a href="KeyValueTypes_8h.html#a69372e535068dfb70708d87798e3abce">hashKey</a></div><div class="ttdeci">hash_t hashKey(Key key) noexcept</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:27</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a6c1e77a584cf292e416cb08b6446a9fd"><div class="ttname"><a href="KeyValueTypes_8h.html#a6c1e77a584cf292e416cb08b6446a9fd">CACHE_MAP_SIZE</a></div><div class="ttdeci">constexpr size_t CACHE_MAP_SIZE</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:7</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a832b95dd05311cd511428d6a87a864f9"><div class="ttname"><a href="KeyValueTypes_8h.html#a832b95dd05311cd511428d6a87a864f9">value_t</a></div><div class="ttdeci">char * value_t</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:14</div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html_a937e217ed7efdcc75e4513f2ca493de8"><div class="ttname"><a href="KeyValueTypes_8h.html#a937e217ed7efdcc75e4513f2ca493de8">SHARD_NUMBER</a></div><div class="ttdeci">constexpr size_t SHARD_NUMBER</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:9</div></div>
@@ -149,20 +157,20 @@ $(function() {
 <div class="ttc" id="aclassKey_html"><div class="ttname"><a href="classKey.html">Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:17</div></div>
 <div class="ttc" id="aclassKey_html_a2ef05022042b2c08feb3460c4f8dca91"><div class="ttname"><a href="classKey.html#a2ef05022042b2c08feb3460c4f8dca91">Key::get</a></div><div class="ttdeci">key_t get() noexcept</div></div>
 <div class="ttc" id="aclassKey_html_a70439140082f54c874000e9d41d950b6"><div class="ttname"><a href="classKey.html#a70439140082f54c874000e9d41d950b6">Key::key</a></div><div class="ttdeci">key_t key</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:22</div></div>
-<div class="ttc" id="aclassPtr_html"><div class="ttname"><a href="classPtr.html">Ptr</a></div><div class="ttdoc">A pointer determining the position of the associated value in the values file. Also stores informatio...</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:43</div></div>
+<div class="ttc" id="aclassPtr_html"><div class="ttname"><a href="classPtr.html">Ptr</a></div><div class="ttdoc">A pointer determining the position of the associated value in the values file. Also stores informatio...</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:49</div></div>
 <div class="ttc" id="aclassPtr_html_a5d922c01ad80e413082fed4a86b32ee0"><div class="ttname"><a href="classPtr.html#a5d922c01ad80e413082fed4a86b32ee0">Ptr::get</a></div><div class="ttdeci">ptr_t get() const noexcept</div></div>
 <div class="ttc" id="aclassPtr_html_af16e6332c8029dc468ef3cb98ce43290"><div class="ttname"><a href="classPtr.html#af16e6332c8029dc468ef3cb98ce43290">Ptr::Ptr</a></div><div class="ttdeci">Ptr(ptr_t ptr) noexcept</div></div>
-<div class="ttc" id="aclassValue_html"><div class="ttname"><a href="classValue.html">Value</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:25</div></div>
+<div class="ttc" id="aclassValue_html"><div class="ttname"><a href="classValue.html">Value</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:31</div></div>
 <div class="ttc" id="aclassValue_html_a315ceda8cabb906c2e38744b7483aff8"><div class="ttname"><a href="classValue.html#a315ceda8cabb906c2e38744b7483aff8">Value::get</a></div><div class="ttdeci">value_t get() noexcept</div></div>
-<div class="ttc" id="astructByteArray_html"><div class="ttname"><a href="structByteArray.html">ByteArray</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:74</div></div>
+<div class="ttc" id="astructByteArray_html"><div class="ttname"><a href="structByteArray.html">ByteArray</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:80</div></div>
 <div class="ttc" id="astructByteArray_html_a4358b5cc870a7a98399a2a2a2b4262d9"><div class="ttname"><a href="structByteArray.html#a4358b5cc870a7a98399a2a2a2b4262d9">ByteArray::ByteArray</a></div><div class="ttdeci">ByteArray(size_t length) noexcept</div></div>
 <div class="ttc" id="astructByteArray_html_a68290968c0fd50b95bcbff78f925eb5c"><div class="ttname"><a href="structByteArray.html#a68290968c0fd50b95bcbff78f925eb5c">ByteArray::~ByteArray</a></div><div class="ttdeci">~ByteArray() noexcept</div></div>
-<div class="ttc" id="astructEntry_html"><div class="ttname"><a href="structEntry.html">Entry</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:69</div></div>
-<div class="ttc" id="astructEntry_html_a38a01427bf76fcd886ff133ef9bca5c8"><div class="ttname"><a href="structEntry.html#a38a01427bf76fcd886ff133ef9bca5c8">Entry::ptr</a></div><div class="ttdeci">Ptr ptr</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:71</div></div>
-<div class="ttc" id="astructEntry_html_ae53cf8114fed8984c2a22fb23a3f42f6"><div class="ttname"><a href="structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6">Entry::key</a></div><div class="ttdeci">Key key</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:70</div></div>
-<div class="ttc" id="astructKeyValue_html"><div class="ttname"><a href="structKeyValue.html">KeyValue</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:33</div></div>
-<div class="ttc" id="astructKeyValue_html_a9fa2e3b8ba94871bcbbc241c9897f15c"><div class="ttname"><a href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">KeyValue::key</a></div><div class="ttdeci">Key key</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:34</div></div>
-<div class="ttc" id="astructKeyValue_html_adbe6e938278033956d991e90c37ba586"><div class="ttname"><a href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">KeyValue::value</a></div><div class="ttdeci">Value value</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:35</div></div>
+<div class="ttc" id="astructEntry_html"><div class="ttname"><a href="structEntry.html">Entry</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:75</div></div>
+<div class="ttc" id="astructEntry_html_a38a01427bf76fcd886ff133ef9bca5c8"><div class="ttname"><a href="structEntry.html#a38a01427bf76fcd886ff133ef9bca5c8">Entry::ptr</a></div><div class="ttdeci">Ptr ptr</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:77</div></div>
+<div class="ttc" id="astructEntry_html_ae53cf8114fed8984c2a22fb23a3f42f6"><div class="ttname"><a href="structEntry.html#ae53cf8114fed8984c2a22fb23a3f42f6">Entry::key</a></div><div class="ttdeci">Key key</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:76</div></div>
+<div class="ttc" id="astructKeyValue_html"><div class="ttname"><a href="structKeyValue.html">KeyValue</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:39</div></div>
+<div class="ttc" id="astructKeyValue_html_a9fa2e3b8ba94871bcbbc241c9897f15c"><div class="ttname"><a href="structKeyValue.html#a9fa2e3b8ba94871bcbbc241c9897f15c">KeyValue::key</a></div><div class="ttdeci">Key key</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:40</div></div>
+<div class="ttc" id="astructKeyValue_html_adbe6e938278033956d991e90c37ba586"><div class="ttname"><a href="structKeyValue.html#adbe6e938278033956d991e90c37ba586">KeyValue::value</a></div><div class="ttdeci">Value value</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:41</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

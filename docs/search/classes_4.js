@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ptr_96',['Ptr',['../classPtr.html',1,'']]]
+  ['ptr_95',['Ptr',['../classPtr.html',1,'']]]
 ];

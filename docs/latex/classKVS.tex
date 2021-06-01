@@ -32,16 +32,11 @@ std\+::optional$<$ \mbox{\hyperlink{classValue}{Value}} $>$ \mbox{\hyperlink{cla
 \begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}{clear}} ()
 \begin{DoxyCompactList}\small\item\em Clear the storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\doxysubsection*{Private Types}
-\begin{DoxyCompactItemize}
-\item 
-using \mbox{\hyperlink{classKVS_a619afe9aabb59c4fe5462e293e8e4402}{hash\+\_\+t}} = uint64\+\_\+t
-\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classKVS_a619afe9aabb59c4fe5462e293e8e4402}{hash\+\_\+t}} \mbox{\hyperlink{classKVS_a1d848d631a4bf2a5ea7b31695d02e12a}{hash}} (\mbox{\hyperlink{classKey}{Key}} key) const noexcept
-\begin{DoxyCompactList}\small\item\em Hash the \mbox{\hyperlink{classKey}{Key}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}{rebuild\+Shard}} (size\+\_\+t shard\+Index)
+\begin{DoxyCompactList}\small\item\em Rebuilds the shard with given index. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,15 +48,6 @@ std\+::vector$<$ \mbox{\hyperlink{classShard}{Shard}} $>$ \mbox{\hyperlink{class
 
 \doxysubsection{Detailed Description}
 The class that provides an access to a key-\/value storage. 
-
-\doxysubsection{Member Typedef Documentation}
-\mbox{\Hypertarget{classKVS_a619afe9aabb59c4fe5462e293e8e4402}\label{classKVS_a619afe9aabb59c4fe5462e293e8e4402}} 
-\index{KVS@{KVS}!hash\_t@{hash\_t}}
-\index{hash\_t@{hash\_t}!KVS@{KVS}}
-\doxysubsubsection{\texorpdfstring{hash\_t}{hash\_t}}
-{\footnotesize\ttfamily using \mbox{\hyperlink{classKVS_a619afe9aabb59c4fe5462e293e8e4402}{KVS\+::hash\+\_\+t}} =  uint64\+\_\+t\hspace{0.3cm}{\ttfamily [private]}}
-
-
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classKVS_a63c84c6f0a2be545458351d72b5ebf57}\label{classKVS_a63c84c6f0a2be545458351d72b5ebf57}} 
@@ -116,24 +102,21 @@ Get the \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlin
 \begin{DoxyReturn}{Returns}
 The \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}} or nothing, if none. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{classKVS_a1d848d631a4bf2a5ea7b31695d02e12a}\label{classKVS_a1d848d631a4bf2a5ea7b31695d02e12a}} 
-\index{KVS@{KVS}!hash@{hash}}
-\index{hash@{hash}!KVS@{KVS}}
-\doxysubsubsection{\texorpdfstring{hash()}{hash()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classKVS_a619afe9aabb59c4fe5462e293e8e4402}{hash\+\_\+t}} KVS\+::hash (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}\label{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}} 
+\index{KVS@{KVS}!rebuildShard@{rebuildShard}}
+\index{rebuildShard@{rebuildShard}!KVS@{KVS}}
+\doxysubsubsection{\texorpdfstring{rebuildShard()}{rebuildShard()}}
+{\footnotesize\ttfamily void KVS\+::rebuild\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{shard\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-Hash the \mbox{\hyperlink{classKey}{Key}}. 
+Rebuilds the shard with given index. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em key} & \\
+{\em shard\+Index} & \\
 \hline
 \end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
 \mbox{\Hypertarget{classKVS_a97281f5996ec9416d6d6042851c2945f}\label{classKVS_a97281f5996ec9416d6d6042851c2945f}} 
 \index{KVS@{KVS}!remove@{remove}}
 \index{remove@{remove}!KVS@{KVS}}

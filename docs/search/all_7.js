@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['hash_29',['hash',['../classKVS.html#a1d848d631a4bf2a5ea7b31695d02e12a',1,'KVS']]],
-  ['hash_5ft_30',['hash_t',['../classKVS.html#a619afe9aabb59c4fe5462e293e8e4402',1,'KVS']]]
+  ['hash_5ft_29',['hash_t',['../KeyValueTypes_8h.html#a0a02bf693ab0462328bfb3a8a1f8bd65',1,'KeyValueTypes.h']]],
+  ['hashkey_30',['hashKey',['../KeyValueTypes_8h.html#a69372e535068dfb70708d87798e3abce',1,'KeyValueTypes.h']]]
 ];

@@ -22,6 +22,12 @@ private:
   key_t key;
 };
 
+using hash_t = unsigned long long;
+
+hash_t hashKey(Key key) noexcept {
+  return 0; // TODO
+}
+
 class Value final {
 public:
   value_t get() noexcept;
