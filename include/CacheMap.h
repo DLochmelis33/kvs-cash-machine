@@ -14,19 +14,17 @@ public:
   CacheMap() noexcept;
 
   /**
-     * @brief Put @ptr by @key. If not enough space, displace a random entry and return it. If an
-     * entry with the given key already exists, overwrite it.
+     * @brief Put Ptr by Key. If not enough space, displace a random Entry and return it. If an
+     * Entry with the given Key already exists, overwrite it.
      *
-     * @param entry
-     * @return displaced entry, if any
+     * @return Displaced Entry, if any.
      */
   std::optional<Entry> putOrDisplace(Entry entry) noexcept;
 
   /**
-     * @brief Find a @ptr by @key.
+     * @brief Find a Ptr by Key.
      *
-     * @param key
-     * @return
+     * @return The requested Ptr or nothing, if no Entry with given Key is present.
      */
   std::optional<Ptr> get(Key key) const noexcept;
 
@@ -37,7 +35,13 @@ public:
   void clear() noexcept;
 
 private:
+
+   /**
+    * @brief The internal storage of the map.
+    * 
+    */
   std::vector<Entry> data;
+
   /**
      * @brief The number of elements present in the map.
      *
