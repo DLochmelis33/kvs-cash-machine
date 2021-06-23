@@ -1,11 +1,13 @@
 <map id="include/KVS.h" name="include/KVS.h">
-<area shape="rect" id="node1" title=" " alt="" coords="219,5,323,32"/>
-<area shape="rect" id="node2" href="$CacheMap_8h.html" title=" " alt="" coords="223,80,318,107"/>
-<area shape="rect" id="node3" href="$KeyValueTypes_8h.html" title=" " alt="" coords="5,229,128,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="316,155,383,181"/>
-<area shape="rect" id="node6" title=" " alt="" coords="249,229,308,256"/>
-<area shape="rect" id="node7" href="$Shard_8h.html" title=" " alt="" coords="132,80,199,107"/>
-<area shape="rect" id="node4" title=" " alt="" coords="34,304,99,331"/>
-<area shape="rect" id="node8" href="$BloomFilter_8h.html" title=" " alt="" coords="143,155,241,181"/>
-<area shape="rect" id="node9" title=" " alt="" coords="165,229,219,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="252,5,356,32"/>
+<area shape="rect" id="node2" href="$CacheMap_8h.html" title=" " alt="" coords="257,80,351,107"/>
+<area shape="rect" id="node3" href="$KeyValueTypes_8h.html" title=" " alt="" coords="39,229,161,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="349,155,416,181"/>
+<area shape="rect" id="node8" title=" " alt="" coords="283,229,341,256"/>
+<area shape="rect" id="node9" href="$Shard_8h.html" title=" " alt="" coords="165,80,232,107"/>
+<area shape="rect" id="node4" href="$ByteArray_8h.html" title=" " alt="" coords="5,304,93,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="118,304,183,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="22,379,77,405"/>
+<area shape="rect" id="node10" href="$BloomFilter_8h.html" title=" " alt="" coords="176,155,275,181"/>
+<area shape="rect" id="node11" title=" " alt="" coords="198,229,253,256"/>
 </map>

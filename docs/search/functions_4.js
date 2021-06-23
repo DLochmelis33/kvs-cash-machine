@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['expand_120',['expand',['../classStorageHashTable.html#a89b943495ee754e15f9e581c016d510b',1,'StorageHashTable']]]
+  ['epsilon_888',['epsilon',['../classdoctest_1_1Approx.html#af8df6b0af00fd875e5b6a0c30b86f636',1,'doctest::Approx']]],
+  ['exceptiontranslator_889',['ExceptionTranslator',['../classdoctest_1_1detail_1_1ExceptionTranslator.html#a3ac05488993c40c6ba55ce51a6bf7eae',1,'doctest::detail::ExceptionTranslator']]],
+  ['expand_890',['expand',['../classStorageHashTable.html#a89b943495ee754e15f9e581c016d510b',1,'StorageHashTable']]],
+  ['expressiondecomposer_891',['ExpressionDecomposer',['../structdoctest_1_1detail_1_1ExpressionDecomposer.html#a6bf2c46ebf0dc68106be801a90776e65',1,'doctest::detail::ExpressionDecomposer']]]
 ];

@@ -1,6 +1,20 @@
 var searchData=
 [
-  ['get_26',['get',['../classCacheMap.html#ae9b77c038acc4369547b5750409d0af9',1,'CacheMap::get()'],['../classKey.html#a2ef05022042b2c08feb3460c4f8dca91',1,'Key::get()'],['../classValue.html#a315ceda8cabb906c2e38744b7483aff8',1,'Value::get()'],['../classPtr.html#a5d922c01ad80e413082fed4a86b32ee0',1,'Ptr::get()'],['../classKVS.html#aa1bad605dc68f365d0efcaa13244a163',1,'KVS::get()'],['../classStorageHashTable.html#a98ee564daa5240927ab654976baec048',1,'StorageHashTable::get(Key key) const noexcept']]],
-  ['getentries_27',['getEntries',['../classStorageHashTable.html#af7869f93649c601734536c168ac3d1e7',1,'StorageHashTable']]],
-  ['getshardindex_28',['getShardIndex',['../classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f',1,'Shard']]]
+  ['ge_402',['ge',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html#a2117cafa5b007d26f2e0988f3a081569a1de9460fcfb6a1681f13d54083f88313',1,'doctest::detail::binaryAssertComparison']]],
+  ['get_403',['get',['../classKey.html#a2ef05022042b2c08feb3460c4f8dca91',1,'Key::get()'],['../classValue.html#a315ceda8cabb906c2e38744b7483aff8',1,'Value::get()'],['../classPtr.html#a5d922c01ad80e413082fed4a86b32ee0',1,'Ptr::get()'],['../classKVS.html#aa1bad605dc68f365d0efcaa13244a163',1,'KVS::get()'],['../classStorageHashTable.html#a98ee564daa5240927ab654976baec048',1,'StorageHashTable::get()'],['../classCacheMap.html#ae9b77c038acc4369547b5750409d0af9',1,'CacheMap::get()']]],
+  ['get_5factive_5fcontexts_404',['get_active_contexts',['../structdoctest_1_1IReporter.html#a67a2da62d754d3b517d6d50ef210a988',1,'doctest::IReporter']]],
+  ['get_5fnum_5factive_5fcontexts_405',['get_num_active_contexts',['../structdoctest_1_1IReporter.html#a7d520de46d9104c0eeb02375fabad32d',1,'doctest::IReporter']]],
+  ['get_5fnum_5fstringified_5fcontexts_406',['get_num_stringified_contexts',['../structdoctest_1_1IReporter.html#ac8b96fef046edc609a3374a61b84797d',1,'doctest::IReporter']]],
+  ['get_5fstringified_5fcontexts_407',['get_stringified_contexts',['../structdoctest_1_1IReporter.html#acc1a86891876a957c6fc382af7894f99',1,'doctest::IReporter']]],
+  ['getcontextoptions_408',['getContextOptions',['../namespacedoctest.html#a1ff2f40fd17351e182820848e27e6c79',1,'doctest']]],
+  ['getcurrenttestsuite_409',['getCurrentTestSuite',['../namespacedoctest__detail__test__suite__ns.html#a3a236c82d51cd3622d14b00aa145df94',1,'doctest_detail_test_suite_ns']]],
+  ['getentries_410',['getEntries',['../classStorageHashTable.html#af7869f93649c601734536c168ac3d1e7',1,'StorageHashTable']]],
+  ['getshardindex_411',['getShardIndex',['../classShard.html#a939e90e4cdd274cc1d8fa202912f0f4f',1,'Shard']]],
+  ['gettlsoss_412',['getTlsOss',['../namespacedoctest_1_1detail.html#a52299f4a981a01a3d3fe6e8d7518823d',1,'doctest::detail']]],
+  ['gettlsossresult_413',['getTlsOssResult',['../namespacedoctest_1_1detail.html#a7b0b3df5fe79d7ffa8fa138201476df1',1,'doctest::detail']]],
+  ['given_414',['GIVEN',['../doctest_8h.html#a6e079cc73cfaebf22e5a7914b3834cf9',1,'doctest.h']]],
+  ['gnu_5ffile_5fline_415',['gnu_file_line',['../structdoctest_1_1ContextOptions.html#aab894e731a6fc86cf095288ec7d0c0f2',1,'doctest::ContextOptions']]],
+  ['green_416',['Green',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a11e251a01549ffbc0993c769e787c6ae',1,'doctest::Color']]],
+  ['grey_417',['Grey',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92aa2a431a059ed0e85160db8967c8ace58',1,'doctest::Color']]],
+  ['gt_418',['gt',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html#a2117cafa5b007d26f2e0988f3a081569a3efb665f41cd9490d9739e1ad228918e',1,'doctest::detail::binaryAssertComparison']]]
 ];

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['shard_96',['Shard',['../classShard.html',1,'']]],
-  ['shardbuilder_97',['ShardBuilder',['../classShardBuilder.html',1,'']]],
-  ['storage_98',['Storage',['../classStorage.html',1,'']]],
-  ['storagehashtable_99',['StorageHashTable',['../classStorageHashTable.html',1,'']]]
+  ['has_5finsertion_5foperator_783',['has_insertion_operator',['../structdoctest_1_1detail_1_1has__insertion__operator.html',1,'doctest::detail::has_insertion_operator&lt; T &gt;'],['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1has__insertion__operator.html',1,'doctest::detail::has_insertion_operator_impl::has_insertion_operator&lt; T &gt;']]]
 ];

@@ -1,5 +1,7 @@
 #pragma once
 
+#include "ByteArray.h"
+
 #include <cstddef>
 
 constexpr size_t VALUE_SIZE = 2048;
@@ -22,7 +24,6 @@ public:
 private:
   key_t key;
 };
-
 
 hash_t hashKey(Key key) noexcept {
   return 0; // TODO
@@ -49,7 +50,6 @@ struct KeyValue final {
 class Ptr final {
 
 public:
-
   /**
    * @brief A reserved value resembling a pointer to nowhere.
    * 
@@ -88,16 +88,4 @@ private:
 struct Entry final {
   Key key;
   Ptr ptr;
-};
-
-/**
- * @brief A wrapper for an array and its size.
- * 
- */
-struct ByteArray final {
-  explicit ByteArray(size_t length) noexcept;
-  ~ByteArray() noexcept;
-
-  const char* data;
-  size_t length;
 };

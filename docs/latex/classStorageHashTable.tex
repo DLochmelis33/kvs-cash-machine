@@ -22,10 +22,10 @@ Collaboration diagram for Storage\+Hash\+Table\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classStorageHashTable_a33023a575f61c5826e269033f4899897}{Storage\+Hash\+Table}} (\mbox{\hyperlink{structByteArray}{Byte\+Array}} serialized\+Storage\+Hash\+Table) noexcept
+\mbox{\hyperlink{classStorageHashTable_a33023a575f61c5826e269033f4899897}{Storage\+Hash\+Table}} (Byte\+Array serialized\+Storage\+Hash\+Table) noexcept
 \item 
-\mbox{\hyperlink{structByteArray}{Byte\+Array}} \mbox{\hyperlink{classStorageHashTable_a519cf1c372b3d8e663400c3d456fed24}{serialize\+To\+Byte\+Array}} () const noexcept
-\begin{DoxyCompactList}\small\item\em Serialize the table into a \mbox{\hyperlink{structByteArray}{Byte\+Array}}. \end{DoxyCompactList}\item 
+Byte\+Array \mbox{\hyperlink{classStorageHashTable_a519cf1c372b3d8e663400c3d456fed24}{serialize\+To\+Byte\+Array}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Serialize the table into a Byte\+Array. \end{DoxyCompactList}\item 
 std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classStorageHashTable_a98ee564daa5240927ab654976baec048}{get}} (\mbox{\hyperlink{classKey}{Key}} key) const noexcept
 \begin{DoxyCompactList}\small\item\em Find the \mbox{\hyperlink{classPtr}{Ptr}} associated with the key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classStorageHashTable_af7238f6554cbaf2648bc8dffda6bef6c}{put}} (\mbox{\hyperlink{structEntry}{Entry}} entry)
@@ -56,7 +56,7 @@ Operates in RAM, so can be used with any kind of storage via serializing.
 \index{StorageHashTable@{StorageHashTable}!StorageHashTable@{StorageHashTable}}
 \index{StorageHashTable@{StorageHashTable}!StorageHashTable@{StorageHashTable}}
 \doxysubsubsection{\texorpdfstring{StorageHashTable()}{StorageHashTable()}}
-{\footnotesize\ttfamily Storage\+Hash\+Table\+::\+Storage\+Hash\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structByteArray}{Byte\+Array}}}]{serialized\+Storage\+Hash\+Table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily Storage\+Hash\+Table\+::\+Storage\+Hash\+Table (\begin{DoxyParamCaption}\item[{Byte\+Array}]{serialized\+Storage\+Hash\+Table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
 
@@ -113,11 +113,11 @@ Put an \mbox{\hyperlink{structEntry}{Entry}} into the table.
 \index{StorageHashTable@{StorageHashTable}!serializeToByteArray@{serializeToByteArray}}
 \index{serializeToByteArray@{serializeToByteArray}!StorageHashTable@{StorageHashTable}}
 \doxysubsubsection{\texorpdfstring{serializeToByteArray()}{serializeToByteArray()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structByteArray}{Byte\+Array}} Storage\+Hash\+Table\+::serialize\+To\+Byte\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily Byte\+Array Storage\+Hash\+Table\+::serialize\+To\+Byte\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
-Serialize the table into a \mbox{\hyperlink{structByteArray}{Byte\+Array}}. 
+Serialize the table into a Byte\+Array. 
 
 
 

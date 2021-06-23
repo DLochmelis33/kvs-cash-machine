@@ -1,9 +1,20 @@
 var searchData=
 [
-  ['bitset_3',['bitset',['../classBloomFilter.html#a2e7ea3c8a6ba6bdf672452ebf3b66171',1,'BloomFilter']]],
-  ['bloom_5ffilter_5fhash_5ffunctions_5fnumber_4',['BLOOM_FILTER_HASH_FUNCTIONS_NUMBER',['../KeyValueTypes_8h.html#ae0a433acbd57c02942b88e8909534db3',1,'KeyValueTypes.h']]],
-  ['bloom_5ffilter_5fsize_5',['BLOOM_FILTER_SIZE',['../KeyValueTypes_8h.html#a9ffa2c6fd8072e2c6b1e46a2f464df12',1,'KeyValueTypes.h']]],
-  ['bloomfilter_6',['BloomFilter',['../classBloomFilter.html',1,'BloomFilter'],['../classBloomFilter.html#a3494e85a0f1e44f5ead4e913bca1e1e3',1,'BloomFilter::BloomFilter()']]],
-  ['bloomfilter_2eh_7',['BloomFilter.h',['../BloomFilter_8h.html',1,'']]],
-  ['bytearray_8',['ByteArray',['../structByteArray.html',1,'ByteArray'],['../structByteArray.html#a4358b5cc870a7a98399a2a2a2b4262d9',1,'ByteArray::ByteArray()']]]
+  ['basic_5fostream_17',['basic_ostream',['../classbasic__ostream.html',1,'']]],
+  ['binary_5fassert_18',['binary_assert',['../structdoctest_1_1detail_1_1ResultBuilder.html#ab3d55b158b3ae687f80bca94db6bb701',1,'doctest::detail::ResultBuilder::binary_assert()'],['../namespacedoctest_1_1detail.html#a570279a22ca888528e87a426853a0288',1,'doctest::detail::binary_assert()']]],
+  ['binary_5fname_19',['binary_name',['../structdoctest_1_1ContextOptions.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
+  ['bitset_20',['bitset',['../classBloomFilter.html#a2e7ea3c8a6ba6bdf672452ebf3b66171',1,'BloomFilter']]],
+  ['bloom_5ffilter_5fhash_5ffunctions_5fnumber_21',['BLOOM_FILTER_HASH_FUNCTIONS_NUMBER',['../KeyValueTypes_8h.html#ae0a433acbd57c02942b88e8909534db3',1,'KeyValueTypes.h']]],
+  ['bloom_5ffilter_5fsize_22',['BLOOM_FILTER_SIZE',['../KeyValueTypes_8h.html#a9ffa2c6fd8072e2c6b1e46a2f464df12',1,'KeyValueTypes.h']]],
+  ['bloomfilter_23',['BloomFilter',['../classBloomFilter.html',1,'BloomFilter'],['../classBloomFilter.html#a3494e85a0f1e44f5ead4e913bca1e1e3',1,'BloomFilter::BloomFilter()']]],
+  ['bloomfilter_2eh_24',['BloomFilter.h',['../BloomFilter_8h.html',1,'']]],
+  ['blue_25',['Blue',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92aada3ad8958b1319450cc20f3f8e5e2d6',1,'doctest::Color']]],
+  ['bright_26',['Bright',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a7659647d16a78c607f9bafaa207b9e07',1,'doctest::Color']]],
+  ['brightgreen_27',['BrightGreen',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a016090b96620a42a63dadf0265977664',1,'doctest::Color']]],
+  ['brightred_28',['BrightRed',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a236dfdbcd49d10dbf1a31f9e2947a671',1,'doctest::Color']]],
+  ['brightwhite_29',['BrightWhite',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a4f80853796b4875d61ff5e4ad138492e',1,'doctest::Color']]],
+  ['buf_30',['buf',['../classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]],
+  ['bytearray_31',['ByteArray',['../classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5',1,'kvs::utils::ByteArray::ByteArray()'],['../classkvs_1_1utils_1_1ByteArray.html',1,'kvs::utils::ByteArray']]],
+  ['bytearray_2ecpp_32',['ByteArray.cpp',['../ByteArray_8cpp.html',1,'']]],
+  ['bytearray_2eh_33',['ByteArray.h',['../ByteArray_8h.html',1,'']]]
 ];
