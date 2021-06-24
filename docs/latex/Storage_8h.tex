@@ -1,13 +1,14 @@
 \hypertarget{Storage_8h}{}\doxysection{include/\+Storage.h File Reference}
 \label{Storage_8h}\index{include/Storage.h@{include/Storage.h}}
-{\ttfamily \#include \char`\"{}Key\+Value\+Types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Byte\+Array.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$string$>$}\newline
 Include dependency graph for Storage.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=265pt]{Storage_8h__incl}
+\includegraphics[width=252pt]{Storage_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -30,3 +31,10 @@ class \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{kvs\+::storage\+::\+Stora
 \item 
  \mbox{\hyperlink{namespacekvs_1_1storage}{kvs\+::storage}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+utils\+::\+Byte\+Array \mbox{\hyperlink{namespacekvs_1_1storage_ad2dfd3ef16d650b5c4ae8ffa82fe856d}{kvs\+::storage\+::read\+File}} (std\+::string filename)
+\begin{DoxyCompactList}\small\item\em Read the entire file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{namespacekvs_1_1storage_a8967e9dea1400799ebffa52aca74ac55}{kvs\+::storage\+::write\+File}} (std\+::string filename, utils\+::\+Byte\+Array bytes)
+\begin{DoxyCompactList}\small\item\em Write the entire file. \end{DoxyCompactList}\end{DoxyCompactItemize}

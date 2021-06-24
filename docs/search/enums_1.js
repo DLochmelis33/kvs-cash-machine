@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kvserrortype_1134',['KVSErrorType',['../KVSException_8h.html#a3097cfae9981b2a78aa4f56ce5247da1',1,'KVSException.h']]]
+  ['kvserrortype_1135',['KVSErrorType',['../namespacekvs.html#acf3940270dd597f58c6c22e874850ad0',1,'kvs']]]
 ];

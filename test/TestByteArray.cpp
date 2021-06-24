@@ -9,8 +9,8 @@ TEST_CASE("test ByteArray") {
     ByteArray byteArray(length);
     REQUIRE(byteArray.length() == length);
 
-    byteArray.charPtrData()[0] = 'a';
-    CHECK(byteArray.charPtrData()[0] == 'a');
+    byteArray.get()[0] = 'a';
+    CHECK(byteArray.get()[0] == 'a');
   }
   SUBCASE("test write and read") {
     for (size_t len = 1; len < 100; ++len) {
@@ -18,10 +18,10 @@ TEST_CASE("test ByteArray") {
       REQUIRE(byteArray.length() == len);
 
       for (size_t i = 0; i < len; ++i) {
-        byteArray.charPtrData()[i] = static_cast<char>(i);
+        byteArray.get()[i] = static_cast<char>(i);
       }
       for (size_t i = 0; i < len; ++i) {
-        CHECK(byteArray.charPtrData()[i] == static_cast<char>(i));
+        CHECK(byteArray.get()[i] == static_cast<char>(i));
       }
     }
   }

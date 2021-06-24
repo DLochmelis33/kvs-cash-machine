@@ -16,7 +16,7 @@ Collaboration diagram for kvs\+::storage\+::Storage\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=187pt]{classkvs_1_1storage_1_1Storage__coll__graph}
+\includegraphics[width=191pt]{classkvs_1_1storage_1_1Storage__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -26,27 +26,25 @@ Collaboration diagram for kvs\+::storage\+::Storage\+:
 \item 
 void \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a6fa129ebd4897a029c736bd141c2a48f}{close}} ()
 \begin{DoxyCompactList}\small\item\em Apply all changes to the file contents (if any) and close the file. All further operations with this \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{Storage}} object are disallowed. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a55b04c5836c9a7765ea4c3142c0e54dd}{read\+File}} () const
-\begin{DoxyCompactList}\small\item\em Read the entire file. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_abb43ccb6fe6a09854e7b3d0bbf306606}{read}} (size\+\_\+t offset, size\+\_\+t length) const
-\begin{DoxyCompactList}\small\item\em Read a part of file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_ac564d44dafe1a0ade9c32d86129e6411}{write\+File}} (\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} bytes) const
-\begin{DoxyCompactList}\small\item\em Write the entire file. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a4d603ddc65a4a0a322ce9732d6c6fb87}{write}} (size\+\_\+t offset, \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} bytes) const
-\begin{DoxyCompactList}\small\item\em Write a part of file. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a4825408b038586c0ed99c3b769c67152}{append}} (\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} bytes) const
+\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a527276ecc4fe7cead1d8950ed7abcab8}{read}} (size\+\_\+t offset, size\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read a part of file. // TODO\+: offset from the beggining. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a1034f188022f6acee21ac34b4ec68052}{write}} (size\+\_\+t offset, \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} bytes)
+\begin{DoxyCompactList}\small\item\em Write a part of file. // TODO\+: offset from the beggining. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_abf2b24ebb2fc0b45845cdce0cbb0c1ca}{append}} (\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} bytes)
 \begin{DoxyCompactList}\small\item\em Append to end of file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::fstream \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_aeae3f082beef7bb2f3b13ef752a1d41a}{file}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_ac56ca90eedae8c9aa302c092250aa62a}{file\+Size}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 An abstraction for safely opening, reading, writing and closing files on disk. 
 
-If any operation fails, throws a new \mbox{\hyperlink{classKVSException}{KVSException}}. 
+If any operation fails, throws a new \mbox{\hyperlink{classkvs_1_1KVSException}{KVSException}}. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a4912b2adf68d76a99f4772529741dad3}\label{classkvs_1_1storage_1_1Storage_a4912b2adf68d76a99f4772529741dad3}} 
@@ -58,11 +56,11 @@ If any operation fails, throws a new \mbox{\hyperlink{classKVSException}{KVSExce
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a4825408b038586c0ed99c3b769c67152}\label{classkvs_1_1storage_1_1Storage_a4825408b038586c0ed99c3b769c67152}} 
+\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_abf2b24ebb2fc0b45845cdce0cbb0c1ca}\label{classkvs_1_1storage_1_1Storage_abf2b24ebb2fc0b45845cdce0cbb0c1ca}} 
 \index{kvs::storage::Storage@{kvs::storage::Storage}!append@{append}}
 \index{append@{append}!kvs::storage::Storage@{kvs::storage::Storage}}
 \doxysubsubsection{\texorpdfstring{append()}{append()}}
-{\footnotesize\ttfamily size\+\_\+t kvs\+::storage\+::\+Storage\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}}}]{bytes }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily size\+\_\+t kvs\+::storage\+::\+Storage\+::append (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}}}]{bytes }\end{DoxyParamCaption})}
 
 
 
@@ -81,45 +79,25 @@ The size of file in bytes before appending.
 
 Apply all changes to the file contents (if any) and close the file. All further operations with this \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{Storage}} object are disallowed. 
 
-\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_abb43ccb6fe6a09854e7b3d0bbf306606}\label{classkvs_1_1storage_1_1Storage_abb43ccb6fe6a09854e7b3d0bbf306606}} 
+\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a527276ecc4fe7cead1d8950ed7abcab8}\label{classkvs_1_1storage_1_1Storage_a527276ecc4fe7cead1d8950ed7abcab8}} 
 \index{kvs::storage::Storage@{kvs::storage::Storage}!read@{read}}
 \index{read@{read}!kvs::storage::Storage@{kvs::storage::Storage}}
 \doxysubsubsection{\texorpdfstring{read()}{read()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} kvs\+::storage\+::\+Storage\+::read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} kvs\+::storage\+::\+Storage\+::read (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
 
 
 
-Read a part of file. 
+Read a part of file. // TODO\+: offset from the beggining. 
 
-\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a55b04c5836c9a7765ea4c3142c0e54dd}\label{classkvs_1_1storage_1_1Storage_a55b04c5836c9a7765ea4c3142c0e54dd}} 
-\index{kvs::storage::Storage@{kvs::storage::Storage}!readFile@{readFile}}
-\index{readFile@{readFile}!kvs::storage::Storage@{kvs::storage::Storage}}
-\doxysubsubsection{\texorpdfstring{readFile()}{readFile()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}} kvs\+::storage\+::\+Storage\+::read\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
-
-
-
-Read the entire file. 
-
-\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a4d603ddc65a4a0a322ce9732d6c6fb87}\label{classkvs_1_1storage_1_1Storage_a4d603ddc65a4a0a322ce9732d6c6fb87}} 
+\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a1034f188022f6acee21ac34b4ec68052}\label{classkvs_1_1storage_1_1Storage_a1034f188022f6acee21ac34b4ec68052}} 
 \index{kvs::storage::Storage@{kvs::storage::Storage}!write@{write}}
 \index{write@{write}!kvs::storage::Storage@{kvs::storage::Storage}}
 \doxysubsubsection{\texorpdfstring{write()}{write()}}
-{\footnotesize\ttfamily void kvs\+::storage\+::\+Storage\+::write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}}}]{bytes }\end{DoxyParamCaption}) const}
+{\footnotesize\ttfamily void kvs\+::storage\+::\+Storage\+::write (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset,  }\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}}}]{bytes }\end{DoxyParamCaption})}
 
 
 
-Write a part of file. 
-
-\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_ac564d44dafe1a0ade9c32d86129e6411}\label{classkvs_1_1storage_1_1Storage_ac564d44dafe1a0ade9c32d86129e6411}} 
-\index{kvs::storage::Storage@{kvs::storage::Storage}!writeFile@{writeFile}}
-\index{writeFile@{writeFile}!kvs::storage::Storage@{kvs::storage::Storage}}
-\doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
-{\footnotesize\ttfamily void kvs\+::storage\+::\+Storage\+::write\+File (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{utils\+::\+Byte\+Array}}}]{bytes }\end{DoxyParamCaption}) const}
-
-
-
-Write the entire file. 
+Write a part of file. // TODO\+: offset from the beggining. 
 
 
 
@@ -130,8 +108,15 @@ Write the entire file.
 \doxysubsubsection{\texorpdfstring{file}{file}}
 {\footnotesize\ttfamily std\+::fstream kvs\+::storage\+::\+Storage\+::file\hspace{0.3cm}{\ttfamily [private]}}
 
+\mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_ac56ca90eedae8c9aa302c092250aa62a}\label{classkvs_1_1storage_1_1Storage_ac56ca90eedae8c9aa302c092250aa62a}} 
+\index{kvs::storage::Storage@{kvs::storage::Storage}!fileSize@{fileSize}}
+\index{fileSize@{fileSize}!kvs::storage::Storage@{kvs::storage::Storage}}
+\doxysubsubsection{\texorpdfstring{fileSize}{fileSize}}
+{\footnotesize\ttfamily size\+\_\+t kvs\+::storage\+::\+Storage\+::file\+Size\hspace{0.3cm}{\ttfamily [private]}}
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{Storage_8h}{Storage.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{Storage_8h}{Storage.\+h}}\item 
+src/\mbox{\hyperlink{Storage_8cpp}{Storage.\+cpp}}\end{DoxyCompactItemize}

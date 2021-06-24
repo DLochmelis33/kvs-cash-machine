@@ -10,7 +10,7 @@ var searchData=
   ['and_5fthen_7',['AND_THEN',['../doctest_8h.html#a6272f72e74c723b318c2439075d888ab',1,'doctest.h']]],
   ['and_5fwhen_8',['AND_WHEN',['../doctest_8h.html#a6894cdaa24f62067bbe1a80d8a48f8cb',1,'doctest.h']]],
   ['any_5ft_9',['any_t',['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1any__t.html#a253f4ce5a749ffd79ae9b1c68914e69b',1,'doctest::detail::has_insertion_operator_impl::any_t::any_t()'],['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1any__t.html',1,'doctest::detail::has_insertion_operator_impl::any_t']]],
-  ['append_10',['append',['../classkvs_1_1storage_1_1Storage.html#a4825408b038586c0ed99c3b769c67152',1,'kvs::storage::Storage']]],
+  ['append_10',['append',['../classkvs_1_1storage_1_1Storage.html#abf2b24ebb2fc0b45845cdce0cbb0c1ca',1,'kvs::storage::Storage']]],
   ['applycommandline_11',['applyCommandLine',['../classdoctest_1_1Context.html#ad55229220bf9ca74e6e0c6323bf672e1',1,'doctest::Context']]],
   ['approx_12',['Approx',['../classdoctest_1_1Approx.html#a86f0d1b44c1cf095697f23ccdab00802',1,'doctest::Approx::Approx()'],['../classdoctest_1_1Approx.html',1,'doctest::Approx']]],
   ['assert_5fhandler_13',['assert_handler',['../namespacedoctest_1_1detail.html#a5b5db6997f20389de5735e3ee3439b95',1,'doctest::detail']]],

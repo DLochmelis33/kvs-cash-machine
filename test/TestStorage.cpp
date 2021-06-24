@@ -1,6 +1,15 @@
 #include "Storage.h"
 #include "doctest.h"
 
-TEST_CASE("test Storage") {
-  SUBCASE("test constructor") { CHECK(1 == 1); }
+TEST_SUITE("test readFile and writeFile") {
+  TEST_CASE("test readFile") {}
+  TEST_CASE("test writeFile") {}
+}
+
+TEST_SUITE("test Storage") {
+  TEST_CASE("test close") {}
+  TEST_CASE("test read") {}
+  TEST_CASE("test write") {}
+  TEST_CASE("test append") {}
+  TEST_CASE("test complex") {}
 }

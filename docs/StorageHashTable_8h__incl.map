@@ -1,11 +1,11 @@
 <map id="include/StorageHashTable.h" name="include/StorageHashTable.h">
-<area shape="rect" id="node1" title=" " alt="" coords="131,5,317,32"/>
-<area shape="rect" id="node2" href="$KeyValueTypes_8h.html" title=" " alt="" coords="39,155,161,181"/>
-<area shape="rect" id="node6" href="$Storage_8h.html" title=" " alt="" coords="137,80,215,107"/>
-<area shape="rect" id="node8" title=" " alt="" coords="239,80,305,107"/>
-<area shape="rect" id="node9" title=" " alt="" coords="329,80,388,107"/>
-<area shape="rect" id="node3" href="$ByteArray_8h.html" title=" " alt="" coords="5,229,93,256"/>
-<area shape="rect" id="node5" title=" " alt="" coords="118,229,183,256"/>
-<area shape="rect" id="node4" title=" " alt="" coords="22,304,77,331"/>
-<area shape="rect" id="node7" title=" " alt="" coords="185,155,252,181"/>
+<area shape="rect" id="node1" title=" " alt="" coords="176,5,361,32"/>
+<area shape="rect" id="node2" href="$KeyValueTypes_8h.html" title=" " alt="" coords="35,80,158,107"/>
+<area shape="rect" id="node6" href="$Storage_8h.html" title=" " alt="" coords="182,80,259,107"/>
+<area shape="rect" id="node8" title=" " alt="" coords="283,80,350,107"/>
+<area shape="rect" id="node9" title=" " alt="" coords="374,80,433,107"/>
+<area shape="rect" id="node3" href="$ByteArray_8h.html" title=" " alt="" coords="95,155,183,181"/>
+<area shape="rect" id="node5" title=" " alt="" coords="5,155,71,181"/>
+<area shape="rect" id="node4" title=" " alt="" coords="152,229,207,256"/>
+<area shape="rect" id="node7" title=" " alt="" coords="258,155,325,181"/>
 </map>

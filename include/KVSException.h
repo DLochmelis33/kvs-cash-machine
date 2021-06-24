@@ -2,9 +2,14 @@
 
 #include <exception>
 
+namespace kvs {
+
 enum class KVSErrorType {
   SHARD_OVERFLOW,
-  IO_ERROR // TODO: different types of io errors
+  STORAGE_OPEN_FAILED,
+  STORAGE_CLOSE_FAILED,
+  STORAGE_READ_FAILED,
+  STORAGE_WRITE_FAILED
 };
 
 class KVSException final : public std::exception {
@@ -15,3 +20,5 @@ public:
 private:
   KVSErrorType errType;
 };
+
+} // namespace kvs

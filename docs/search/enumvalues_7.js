@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['io_5ferror_1198',['IO_ERROR',['../KVSException_8h.html#a3097cfae9981b2a78aa4f56ce5247da1a198489bd72edc2407c15917c5323cd93',1,'KVSException.h']]],
   ['is_5fcheck_1199',['is_check',['../namespacedoctest_1_1assertType.html#ae1bb5bed722f34f1c38b83cb19d326d3a9ca6ff629647f2a90d4c01ce68800590',1,'doctest::assertType']]],
   ['is_5feq_1200',['is_eq',['../namespacedoctest_1_1assertType.html#ae1bb5bed722f34f1c38b83cb19d326d3a7010ae6142f085a3bfd85caa251c7499',1,'doctest::assertType']]],
   ['is_5ffalse_1201',['is_false',['../namespacedoctest_1_1assertType.html#ae1bb5bed722f34f1c38b83cb19d326d3a6539bad84e35008dc4a4a2c2d0793318',1,'doctest::assertType']]],

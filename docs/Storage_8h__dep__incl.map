@@ -1,5 +1,6 @@
 <map id="include/Storage.h" name="include/Storage.h">
-<area shape="rect" id="node1" title=" " alt="" coords="115,5,238,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="211,5,334,32"/>
 <area shape="rect" id="node2" href="$ShardBuilder_8h.html" title=" " alt="" coords="5,80,156,107"/>
 <area shape="rect" id="node3" href="$StorageHashTable_8h.html" title=" " alt="" coords="180,80,365,107"/>
+<area shape="rect" id="node4" href="$Storage_8cpp.html" title=" " alt="" coords="389,80,503,107"/>
 </map>
