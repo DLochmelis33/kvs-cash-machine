@@ -12,9 +12,9 @@ class ByteArray final {
 public:
   explicit ByteArray(size_t length) noexcept;
 
-  const char* charPtrData() const noexcept;
+  const char* get() const noexcept;
 
-  char* charPtrData() noexcept;
+  char* get() noexcept;
 
   size_t length() const noexcept;
 

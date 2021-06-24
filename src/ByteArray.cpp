@@ -8,9 +8,9 @@ ByteArray::ByteArray(size_t length) noexcept : data{std::string(length, '\0')} {
   assert(length > 0);
 }
 
-const char* ByteArray::charPtrData() const noexcept { return &data[0]; }
+const char* ByteArray::get() const noexcept { return &data[0]; }
 
-char* ByteArray::charPtrData() noexcept { return &data[0]; }
+char* ByteArray::get() noexcept { return &data[0]; }
 
 size_t ByteArray::length() const noexcept { return data.size(); }
 

@@ -1,9 +1,23 @@
 #pragma once
 
-#include "KeyValueTypes.h"
+#include "ByteArray.h"
+
 #include <fstream>
+#include <string>
 
 namespace kvs::storage {
+
+/**
+ * @brief Read the entire file.
+ *
+ */
+utils::ByteArray readFile(std::string filename);
+
+/**
+ * @brief Write the entire file.
+ *
+ */
+void writeFile(std::string filename, utils::ByteArray bytes);
 
 /**
  * @brief An abstraction for safely opening, reading, writing and closing files on disk.
@@ -22,38 +36,27 @@ public:
   void close();
 
   /**
-     * @brief Read the entire file.
+     * @brief Read a part of file. // TODO: offset from the beggining
      *
      */
-  utils::ByteArray readFile() const;
+  utils::ByteArray read(size_t offset, size_t length);
 
   /**
-     * @brief Read a part of file.
+     * @brief Write a part of file. // TODO: offset from the beggining
      *
      */
-  utils::ByteArray read(size_t offset, size_t length) const;
-
-  /**
-     * @brief Write the entire file.
-     *
-     */
-  void writeFile(utils::ByteArray bytes) const;
-
-  /**
-     * @brief Write a part of file.
-     *
-     */
-  void write(size_t offset, utils::ByteArray bytes) const;
+  void write(size_t offset, utils::ByteArray bytes);
 
   /**
     * @brief Append to end of file.
     * 
     * @return The size of file in bytes before appending.
     */
-  size_t append(utils::ByteArray bytes) const;
+  size_t append(utils::ByteArray bytes);
 
 private:
   std::fstream file;
+  size_t fileSize;
 };
 
 } // namespace kvs::storage

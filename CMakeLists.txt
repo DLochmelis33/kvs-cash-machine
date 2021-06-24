@@ -10,8 +10,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3")
 
-set(KVS_SRC src/ByteArray.cpp)
-set(TEST_SRC test/TestMain.cpp test/TestByteArray.cpp)
+set(KVS_SRC src/ByteArray.cpp src/KVSException.cpp src/Storage.cpp)
+set(TEST_SRC test/TestMain.cpp test/TestByteArray.cpp test/TestStorage.cpp)
 set(SRC_LIST ${KVS_SRC} ${TEST_SRC})
 
 include_directories(include/)
