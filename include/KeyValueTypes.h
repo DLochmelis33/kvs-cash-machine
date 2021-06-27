@@ -29,7 +29,9 @@ public:
 
   explicit Key(__uint128_t key) noexcept;
 
-  key_t get() const noexcept;
+  key_t get() noexcept;
+
+  const char* get() const noexcept;
 
   bool operator==(const Key& other) const noexcept;
 
@@ -121,16 +123,6 @@ public:
   enum class PtrType { PRESENT, DELETED, EMPTY_PTR };
 
   PtrType getType() const noexcept;
-
-  PtrType Ptr::getType() const noexcept {
-    if (ptr == EMPTY_PTR_V) {
-      return PtrType::EMPTY_PTR;
-    }
-    if (isValuePresent()) {
-      return PtrType::PRESENT;
-    }
-    return PtrType::DELETED;
-  }
 
 private:
   static constexpr ptr_t CONTROL_MASK = 0b10000000;
