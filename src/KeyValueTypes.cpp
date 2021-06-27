@@ -14,7 +14,9 @@ Key::Key() noexcept : data(KEY_SIZE) {}
 
 Key::Key(__uint128_t key) noexcept : Key(reinterpret_cast<char*>(&key)) {}
 
-key_t Key::get() const noexcept { return data.get(); }
+key_t Key::get() noexcept { return data.get(); }
+
+const char* Key::get() const noexcept { return data.get(); }
 
 bool Key::operator==(const Key& other) const noexcept {
   bool res = memcmp(data.get(), other.data.get(), KEY_SIZE) == 0;
@@ -23,7 +25,7 @@ bool Key::operator==(const Key& other) const noexcept {
 
 value_t Value::get() const noexcept { return value; }
 
-hash_t hashKey(Key key, seed_t seed) noexcept {
+hash_t hashKey(const Key& key, seed_t seed) noexcept {
   // RV is guaranteed to be equivalent to uint64_t
   return XXH3_64bits_withSeed(key.get(), KEY_SIZE, seed);
 }
@@ -60,6 +62,16 @@ bool Ptr::operator==(const Ptr& other) const noexcept {
 
 bool Ptr::operator!=(const Ptr& other) const noexcept {
   return ptr != other.ptr;
+}
+
+Ptr::PtrType Ptr::getType() const noexcept {
+  if (ptr == EMPTY_PTR_V) {
+    return PtrType::EMPTY_PTR;
+  }
+  if (isValuePresent()) {
+    return PtrType::PRESENT;
+  }
+  return PtrType::DELETED;
 }
 
 bool Entry::operator==(const Entry& other) const noexcept {
