@@ -5,6 +5,10 @@
 #include <optional>
 #include <vector>
 
+namespace kvs::storage_hash_table {
+
+using namespace kvs::utils;
+
 /**
  * @brief The hash table that is stored on disk.
  * 
@@ -13,9 +17,18 @@
  */
 class StorageHashTable final {
 public:
+  /**
+   * @brief Deserialize a StorageHashTable from serializedStorageHashTable.
+   * 
+   * @throws KVSException if the data is corrupted
+   */
+  explicit StorageHashTable(ByteArray serializedStorageHashTable);
 
-  explicit StorageHashTable(ByteArray serializedStorageHashTable) noexcept;
-
+  /**
+   * @brief Construct a new empty StorageHashTable.
+   * 
+   */
+  explicit StorageHashTable(size_t size) noexcept;
   /**
    * @brief Serialize the table into a ByteArray.
    * 
@@ -27,13 +40,13 @@ public:
      *
      * @return The requested Ptr or nothing, if no Entry with given Key is present.
      */
-  std::optional<Ptr> get(Key key) const noexcept;
+  Ptr get(Key key) const noexcept;
 
   /**
      * @brief Put an Entry into the table.
      *
      */
-  void put(Entry entry);
+  void put(Entry entry) noexcept;
 
   /**
    * @brief Get all entries present in the map.
@@ -42,7 +55,7 @@ public:
    * 
    * @return std::vector<Entry> 
    */
-  std::vector<Entry> getEntries() const noexcept;
+  const std::vector<Entry> getEntries() const noexcept;
 
 private:
   /**
@@ -50,10 +63,13 @@ private:
    * 
    * Needs to be called once the number of elements exceeds capacity * a predefined constant. Only works one time; calling this method a second time causes a SHARD_OVERFLOW typed KVSException.
    * 
+   * @throws KVSException if the table is already expanded
    */
   void expand();
 
 private:
   std::vector<Entry> data;
-  std::size_t size;
+  std::size_t usedSize;
 };
+
+} // namespace kvs::storage_hash_table
