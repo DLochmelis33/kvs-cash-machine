@@ -50,7 +50,7 @@ void writeFile(std::string filename, utils::ByteArray bytes) {
 }
 
 Storage::Storage(std::string filename)
-    : file{filename, std::ios::in | std::ios::out | std::ios::binary},
+    : file{filename, std::ios::out | std::ios::in | std::ios::binary},
       fileSize{std::filesystem::file_size(std::filesystem::path(filename))} {
   try {
     file.exceptions(std::fstream::failbit | std::fstream::badbit);
@@ -70,7 +70,7 @@ void Storage::close() {
 utils::ByteArray Storage::read(size_t offset, size_t length) {
   utils::ByteArray bytes(length);
   try {
-    file.seekg(offset, file.beg);
+    file.seekg(offset);
     file.read(bytes.get(), length);
   } catch (const std::exception& exc) {
     throw KVSException(KVSErrorType::STORAGE_READ_FAILED);
@@ -80,7 +80,7 @@ utils::ByteArray Storage::read(size_t offset, size_t length) {
 
 void Storage::write(size_t offset, utils::ByteArray bytes) {
   try {
-    file.seekp(offset, file.beg);
+    file.seekp(offset);
     file.write(bytes.get(), bytes.length());
   } catch (const std::exception& exc) {
     throw KVSException(KVSErrorType::STORAGE_WRITE_FAILED);
