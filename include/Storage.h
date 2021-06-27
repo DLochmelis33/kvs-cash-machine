@@ -7,17 +7,19 @@
 
 namespace kvs::storage {
 
+using kvs::utils::ByteArray;
+
 /**
  * @brief Read the entire file.
  *
  */
-utils::ByteArray readFile(std::string filename); // TODO docs: empty file is ok
+ByteArray readFile(std::string filename); // TODO docs: empty file is ok
 
 /**
  * @brief Write the entire file. Create file if it's not created.
  *
  */
-void writeFile(std::string filename, utils::ByteArray bytes);
+void writeFile(std::string filename, ByteArray bytes);
 // TODO docs: file is truncated if it exists, zero-length bytes is ok
 
 /**
@@ -41,20 +43,20 @@ public:
      * @brief Read a part of file. // TODO docs: offset from the beggining; zero length is ok
      *
      */
-  utils::ByteArray read(size_t offset, size_t length);
+  ByteArray read(size_t offset, size_t length);
 
   /**
      * @brief Write a part of file. // TODO docs: offset from the beggining; zero length is ok; if offset + bytes.length() > eof append
      *
      */
-  void write(size_t offset, utils::ByteArray bytes);
+  void write(size_t offset, ByteArray bytes);
 
   /**
     * @brief Append to end of file.
     * 
     * @return The size of file in bytes before appending.
     */
-  size_t append(utils::ByteArray bytes); // TODO docs: zero length is ok
+  size_t append(ByteArray bytes); // TODO docs: zero length is ok
 
 private:
   std::fstream file;

@@ -91,7 +91,7 @@ const std::vector<Entry> StorageHashTable::getEntries() const noexcept {
 void StorageHashTable::expand() {
   std::vector<Entry> oldData = data;
   size_t newSize = data.size() * TABLE_EXPANSION_FACTOR;
-  if(newSize > TABLE_MAX_SIZE)
+  if (newSize > TABLE_MAX_SIZE)
     throw KVSException(KVSErrorType::SHARD_OVERFLOW);
   data.clear();
   data.resize(newSize);

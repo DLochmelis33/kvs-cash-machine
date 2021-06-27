@@ -6,7 +6,7 @@
 
 namespace kvs::storage {
 
-utils::ByteArray readFile(std::string filename) {
+ByteArray readFile(std::string filename) {
   std::ifstream file(filename, std::ios::in | std::ios::binary);
   try {
     file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
@@ -15,7 +15,7 @@ utils::ByteArray readFile(std::string filename) {
   }
 
   size_t fileSize = std::filesystem::file_size(std::filesystem::path(filename));
-  utils::ByteArray bytes(fileSize);
+  ByteArray bytes(fileSize);
   try {
     file.read(bytes.get(), fileSize);
   } catch (const std::exception& exc) {
@@ -29,7 +29,7 @@ utils::ByteArray readFile(std::string filename) {
   return bytes;
 }
 
-void writeFile(std::string filename, utils::ByteArray bytes) {
+void writeFile(std::string filename, ByteArray bytes) {
   std::ofstream file(filename,
                      std::ios::out | std::ios::binary | std::ios::trunc);
   try {
@@ -67,8 +67,8 @@ void Storage::close() {
   }
 }
 
-utils::ByteArray Storage::read(size_t offset, size_t length) {
-  utils::ByteArray bytes(length);
+ByteArray Storage::read(size_t offset, size_t length) {
+  ByteArray bytes(length);
   try {
     file.seekg(offset);
     file.read(bytes.get(), length);
@@ -78,7 +78,7 @@ utils::ByteArray Storage::read(size_t offset, size_t length) {
   return bytes;
 }
 
-void Storage::write(size_t offset, utils::ByteArray bytes) {
+void Storage::write(size_t offset, ByteArray bytes) {
   try {
     file.seekp(offset);
     file.write(bytes.get(), bytes.length());
@@ -88,7 +88,7 @@ void Storage::write(size_t offset, utils::ByteArray bytes) {
   fileSize = std::max(fileSize, offset + bytes.length());
 }
 
-size_t Storage::append(utils::ByteArray bytes) {
+size_t Storage::append(ByteArray bytes) {
   size_t prevFileSize = fileSize;
   try {
     file.seekp(0, file.end);

@@ -3,9 +3,7 @@
 #include <filesystem>
 #include <iostream>
 
-using kvs::storage::readFile;
-using kvs::storage::Storage;
-using kvs::storage::writeFile;
+using namespace kvs::storage;
 using kvs::utils::ByteArray;
 
 const std::string testDirectoryPath = "../.test-data/test-storage/";
