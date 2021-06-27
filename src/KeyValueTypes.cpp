@@ -43,6 +43,8 @@ hash_t hashKey(const Key& key, seed_t seed) noexcept {
   return XXH3_64bits_withSeed(key.getBytes().get(), KEY_SIZE, seed);
 }
 
+// ----- Ptr impl -----
+
 Ptr::Ptr(ptr_t ptr_) noexcept : ptr(ptr_) {
   static_assert((EMPTY_PTR_V & CONTROL_MASK) == false);
 }
@@ -92,6 +94,8 @@ bool Ptr::operator==(const Ptr& other) const noexcept {
 bool Ptr::operator!=(const Ptr& other) const noexcept {
   return ptr != other.ptr;
 }
+
+// ----- Entry impl -----
 
 bool Entry::operator==(const Entry& other) const noexcept {
   return (key == other.key) && (ptr == other.ptr);
