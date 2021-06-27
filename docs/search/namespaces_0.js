@@ -1,12 +1,12 @@
 var searchData=
 [
-  ['assertaction_837',['assertAction',['../namespacedoctest_1_1detail_1_1assertAction.html',1,'doctest::detail']]],
-  ['asserttype_838',['assertType',['../namespacedoctest_1_1assertType.html',1,'doctest']]],
-  ['binaryassertcomparison_839',['binaryAssertComparison',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html',1,'doctest::detail']]],
-  ['color_840',['Color',['../namespacedoctest_1_1Color.html',1,'doctest']]],
-  ['detail_841',['detail',['../namespacedoctest_1_1detail.html',1,'doctest']]],
-  ['doctest_842',['doctest',['../namespacedoctest.html',1,'']]],
-  ['doctest_5fdetail_5ftest_5fsuite_5fns_843',['doctest_detail_test_suite_ns',['../namespacedoctest__detail__test__suite__ns.html',1,'']]],
-  ['has_5finsertion_5foperator_5fimpl_844',['has_insertion_operator_impl',['../namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html',1,'doctest::detail']]],
-  ['testcasefailurereason_845',['TestCaseFailureReason',['../namespacedoctest_1_1TestCaseFailureReason.html',1,'doctest']]]
+  ['assertaction_846',['assertAction',['../namespacedoctest_1_1detail_1_1assertAction.html',1,'doctest::detail']]],
+  ['asserttype_847',['assertType',['../namespacedoctest_1_1assertType.html',1,'doctest']]],
+  ['binaryassertcomparison_848',['binaryAssertComparison',['../namespacedoctest_1_1detail_1_1binaryAssertComparison.html',1,'doctest::detail']]],
+  ['color_849',['Color',['../namespacedoctest_1_1Color.html',1,'doctest']]],
+  ['detail_850',['detail',['../namespacedoctest_1_1detail.html',1,'doctest']]],
+  ['doctest_851',['doctest',['../namespacedoctest.html',1,'']]],
+  ['doctest_5fdetail_5ftest_5fsuite_5fns_852',['doctest_detail_test_suite_ns',['../namespacedoctest__detail__test__suite__ns.html',1,'']]],
+  ['has_5finsertion_5foperator_5fimpl_853',['has_insertion_operator_impl',['../namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html',1,'doctest::detail']]],
+  ['testcasefailurereason_854',['TestCaseFailureReason',['../namespacedoctest_1_1TestCaseFailureReason.html',1,'doctest']]]
 ];

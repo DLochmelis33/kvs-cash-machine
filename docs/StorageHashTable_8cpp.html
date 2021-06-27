@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>KVS-Cash-Machine: src/Utils.cpp File Reference</title>
+<title>KVS-Cash-Machine: src/StorageHashTable.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -70,22 +70,32 @@ $(function() {
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">Utils.cpp File Reference</div>  </div>
+<div class="title">StorageHashTable.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="KeyValueTypes_8h_source.html">KeyValueTypes.h</a>&quot;</code><br />
-<code>#include &quot;xxh3.h&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="StorageHashTable_8h_source.html">StorageHashTable.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="KVSException_8h_source.html">KVSException.h</a>&quot;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;functional&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for Utils.cpp:</div>
+Include dependency graph for StorageHashTable.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="Utils_8cpp__incl.png" border="0" usemap="#asrc_2Utils_8cpp" alt=""/></div>
-<map name="asrc_2Utils_8cpp" id="asrc_2Utils_8cpp">
-<area shape="rect" title=" " alt="" coords="110,5,205,32"/>
-<area shape="rect" href="KeyValueTypes_8h.html" title=" " alt="" coords="39,80,161,107"/>
-<area shape="rect" title=" " alt="" coords="185,80,244,107"/>
-<area shape="rect" href="ByteArray_8h.html" title=" " alt="" coords="5,155,93,181"/>
-<area shape="rect" title=" " alt="" coords="118,155,183,181"/>
-<area shape="rect" title=" " alt="" coords="22,229,77,256"/>
+<div class="center"><img src="StorageHashTable_8cpp__incl.png" border="0" usemap="#asrc_2StorageHashTable_8cpp" alt=""/></div>
+<map name="asrc_2StorageHashTable_8cpp" id="asrc_2StorageHashTable_8cpp">
+<area shape="rect" title=" " alt="" coords="451,5,627,32"/>
+<area shape="rect" href="StorageHashTable_8h.html" title=" " alt="" coords="247,80,387,107"/>
+<area shape="rect" href="KVSException_8h.html" title=" " alt="" coords="425,80,539,107"/>
+<area shape="rect" title=" " alt="" coords="564,80,629,107"/>
+<area shape="rect" title=" " alt="" coords="653,80,732,107"/>
+<area shape="rect" href="KeyValueTypes_8h.html" title=" " alt="" coords="35,155,158,181"/>
+<area shape="rect" href="Storage_8h.html" title=" " alt="" coords="182,155,259,181"/>
+<area shape="rect" title=" " alt="" coords="283,155,350,181"/>
+<area shape="rect" title=" " alt="" coords="374,155,433,181"/>
+<area shape="rect" href="ByteArray_8h.html" title=" " alt="" coords="95,229,183,256"/>
+<area shape="rect" title=" " alt="" coords="5,229,71,256"/>
+<area shape="rect" title=" " alt="" coords="152,304,207,331"/>
+<area shape="rect" title=" " alt="" coords="258,229,325,256"/>
+<area shape="rect" title=" " alt="" coords="457,155,534,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -93,11 +103,14 @@ Include dependency graph for Utils.cpp:</div>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacekvs"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html">kvs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespacekvs_1_1storage__hash__table"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1storage__hash__table.html">kvs::storage_hash_table</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a86a85175e2412b807fba79d90f9612a8"><td class="memItemLeft" align="right" valign="top">hash_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#a86a85175e2412b807fba79d90f9612a8">kvs::hashKey</a> (Key key, seed_t seed) noexcept</td></tr>
-<tr class="separator:a86a85175e2412b807fba79d90f9612a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3077c02657b6aff7e347e7c0735b5f9"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1storage__hash__table.html#ac3077c02657b6aff7e347e7c0735b5f9">kvs::storage_hash_table::findNextByPredicate</a> (const std::vector&lt; Entry &gt; &amp;data, size_t fromIndex, const std::function&lt; bool(const Entry &amp;)&gt; predicate)</td></tr>
+<tr class="memdesc:ac3077c02657b6aff7e347e7c0735b5f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the next entry by predicate <b>exclusively</b> after fromIndex.  <a href="namespacekvs_1_1storage__hash__table.html#ac3077c02657b6aff7e347e7c0735b5f9">More...</a><br /></td></tr>
+<tr class="separator:ac3077c02657b6aff7e347e7c0735b5f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

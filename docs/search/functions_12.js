@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['what_1010',['what',['../classkvs_1_1KVSException.html#a5447916fc51e814f8e5b3ff941b5ab96',1,'kvs::KVSException']]],
-  ['write_1011',['write',['../classkvs_1_1storage_1_1Storage.html#a1034f188022f6acee21ac34b4ec68052',1,'kvs::storage::Storage']]],
-  ['writefile_1012',['writeFile',['../namespacekvs_1_1storage.html#a8967e9dea1400799ebffa52aca74ac55',1,'kvs::storage']]],
-  ['writevalue_1013',['writeValue',['../classShard.html#a1d553b3945c59a9eea2404c170debb77',1,'Shard']]],
-  ['writevaluedirectly_1014',['writeValueDirectly',['../classShard.html#a0037fc14121a68f2320549d7e13c3a9e',1,'Shard']]]
+  ['what_1023',['what',['../classkvs_1_1KVSException.html#a5447916fc51e814f8e5b3ff941b5ab96',1,'kvs::KVSException']]],
+  ['write_1024',['write',['../classkvs_1_1storage_1_1Storage.html#a1034f188022f6acee21ac34b4ec68052',1,'kvs::storage::Storage']]],
+  ['writefile_1025',['writeFile',['../namespacekvs_1_1storage.html#a8967e9dea1400799ebffa52aca74ac55',1,'kvs::storage']]],
+  ['writevalue_1026',['writeValue',['../classShard.html#a1d553b3945c59a9eea2404c170debb77',1,'Shard']]],
+  ['writevaluedirectly_1027',['writeValueDirectly',['../classShard.html#a0037fc14121a68f2320549d7e13c3a9e',1,'Shard']]]
 ];

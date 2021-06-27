@@ -30,16 +30,11 @@ struct \mbox{\hyperlink{structkvs_1_1KeyValue}{kvs\+::\+Key\+Value}}
 class \mbox{\hyperlink{classkvs_1_1Ptr}{kvs\+::\+Ptr}}
 \begin{DoxyCompactList}\small\item\em A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structkvs_1_1Entry}{kvs\+::\+Entry}}
-\begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cache\+Map}} and \mbox{\hyperlink{classStorageHashTable}{Storage\+Hash\+Table}}). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cache\+Map}} and Storage\+Hash\+Table). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacekvs}{kvs}}
-\end{DoxyCompactItemize}
-\doxysubsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \mbox{\hyperlink{KeyValueTypes_8h_a5a61b869708b770ad75e3e063a2f9273}{XXH\+\_\+\+INLINE\+\_\+\+ALL}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -57,7 +52,7 @@ using \mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{kvs\+::se
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-hash\+\_\+t \mbox{\hyperlink{namespacekvs_a86a85175e2412b807fba79d90f9612a8}{kvs\+::hash\+Key}} (Key key, seed\+\_\+t seed) noexcept
+hash\+\_\+t \mbox{\hyperlink{namespacekvs_af1ed1bb6ad1d35001428d5357c2a76e0}{kvs\+::hash\+Key}} (Key key, seed\+\_\+t seed=0) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -75,13 +70,10 @@ constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_aa78e0c27e923920ab0a56b6031e
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}{kvs\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 5000
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_aec26c761f7c54004a2bbc0236d83806a}{kvs\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 5
+\item 
+constexpr double \mbox{\hyperlink{namespacekvs_ac3f9ec89603545765a3147865dd7e33a}{kvs\+::\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_ab84e559b1a4a496be7656e3e9f6b8f9e}{kvs\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 50
+\item 
+const Ptr \mbox{\hyperlink{namespacekvs_ae9203ef873af86e4e7355d6d7cd116e8}{kvs\+::\+EMPTY\+\_\+\+PTR}} = Ptr(Ptr\+::\+EMPTY\+\_\+\+PTR\+\_\+V)
 \end{DoxyCompactItemize}
-
-
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{KeyValueTypes_8h_a5a61b869708b770ad75e3e063a2f9273}\label{KeyValueTypes_8h_a5a61b869708b770ad75e3e063a2f9273}} 
-\index{KeyValueTypes.h@{KeyValueTypes.h}!XXH\_INLINE\_ALL@{XXH\_INLINE\_ALL}}
-\index{XXH\_INLINE\_ALL@{XXH\_INLINE\_ALL}!KeyValueTypes.h@{KeyValueTypes.h}}
-\doxysubsubsection{\texorpdfstring{XXH\_INLINE\_ALL}{XXH\_INLINE\_ALL}}
-{\footnotesize\ttfamily \#define XXH\+\_\+\+INLINE\+\_\+\+ALL}
-

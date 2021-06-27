@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['red_1232',['Red',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a67beb0a8d937993ad8b8cf6a238271f9',1,'doctest::Color']]]
+  ['ptr_5findex_5fout_5fof_5fbounds_1250',['PTR_INDEX_OUT_OF_BOUNDS',['../namespacekvs.html#acf3940270dd597f58c6c22e874850ad0a96bbed624ad9c03de7fabc726d600926',1,'kvs']]]
 ];

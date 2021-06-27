@@ -69,7 +69,6 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
@@ -95,15 +94,16 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="KeyValueTypes_8h__dep__incl.png" border="0" usemap="#ainclude_2KeyValueTypes_8hdep" alt=""/></div>
 <map name="ainclude_2KeyValueTypes_8hdep" id="ainclude_2KeyValueTypes_8hdep">
-<area shape="rect" title=" " alt="" coords="338,5,504,32"/>
-<area shape="rect" href="BloomFilter_8h.html" title=" " alt="" coords="240,80,383,107"/>
-<area shape="rect" href="Shard_8h.html" title=" " alt="" coords="344,155,455,181"/>
-<area shape="rect" href="KVS_8h.html" title=" " alt="" coords="40,229,144,256"/>
-<area shape="rect" href="ShardBuilder_8h.html" title=" " alt="" coords="324,229,475,256"/>
-<area shape="rect" href="CacheMap_8h.html" title=" " alt="" coords="22,155,161,181"/>
-<area shape="rect" href="StorageHashTable_8h.html" title=" " alt="" coords="531,80,716,107"/>
-<area shape="rect" href="Utils_8cpp.html" title=" " alt="" coords="740,80,835,107"/>
-<area shape="rect" href="BloomFilter_8cpp.html" title=" " alt="" coords="186,155,320,181"/>
+<area shape="rect" title=" " alt="" coords="302,5,468,32"/>
+<area shape="rect" href="BloomFilter_8h.html" title=" " alt="" coords="152,80,295,107"/>
+<area shape="rect" href="Shard_8h.html" title=" " alt="" coords="22,155,132,181"/>
+<area shape="rect" href="KVS_8h.html" title=" " alt="" coords="25,229,129,256"/>
+<area shape="rect" href="ShardBuilder_8h.html" title=" " alt="" coords="310,229,460,256"/>
+<area shape="rect" href="CacheMap_8h.html" title=" " alt="" coords="316,155,454,181"/>
+<area shape="rect" href="StorageHashTable_8h.html" title=" " alt="" coords="530,80,715,107"/>
+<area shape="rect" href="KeyValueTypes_8cpp.html" title=" " alt="" coords="739,80,898,107"/>
+<area shape="rect" href="BloomFilter_8cpp.html" title=" " alt="" coords="156,155,291,181"/>
+<area shape="rect" href="StorageHashTable_8cpp.html" title=" " alt="" coords="534,155,710,181"/>
 </map>
 </div>
 </div>
@@ -121,18 +121,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted.  <a href="classkvs_1_1Ptr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkvs_1_1Entry.html">kvs::Entry</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for entries in hash tables (i.e. <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> and <a class="el" href="classStorageHashTable.html" title="The hash table that is stored on disk.">StorageHashTable</a>).  <a href="structkvs_1_1Entry.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for entries in hash tables (i.e. <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> and StorageHashTable).  <a href="structkvs_1_1Entry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespacekvs"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html">kvs</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a5a61b869708b770ad75e3e063a2f9273"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="KeyValueTypes_8h.html#a5a61b869708b770ad75e3e063a2f9273">XXH_INLINE_ALL</a></td></tr>
-<tr class="separator:a5a61b869708b770ad75e3e063a2f9273"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -149,8 +144,8 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a86a85175e2412b807fba79d90f9612a8"><td class="memItemLeft" align="right" valign="top">hash_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#a86a85175e2412b807fba79d90f9612a8">kvs::hashKey</a> (Key key, seed_t seed) noexcept</td></tr>
-<tr class="separator:a86a85175e2412b807fba79d90f9612a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ed1bb6ad1d35001428d5357c2a76e0"><td class="memItemLeft" align="right" valign="top">hash_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#af1ed1bb6ad1d35001428d5357c2a76e0">kvs::hashKey</a> (Key key, seed_t seed=0) noexcept</td></tr>
+<tr class="separator:af1ed1bb6ad1d35001428d5357c2a76e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -168,22 +163,13 @@ Variables</h2></td></tr>
 <tr class="separator:a7ae734d9482d4a78f02d8eace3b61100"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec26c761f7c54004a2bbc0236d83806a"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#aec26c761f7c54004a2bbc0236d83806a">kvs::BLOOM_FILTER_HASH_FUNCTIONS_NUMBER</a> = 5</td></tr>
 <tr class="separator:aec26c761f7c54004a2bbc0236d83806a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3f9ec89603545765a3147865dd7e33a"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#ac3f9ec89603545765a3147865dd7e33a">kvs::TABLE_EXPANSION_FACTOR</a> = 2</td></tr>
+<tr class="separator:ac3f9ec89603545765a3147865dd7e33a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab84e559b1a4a496be7656e3e9f6b8f9e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#ab84e559b1a4a496be7656e3e9f6b8f9e">kvs::TABLE_MAX_SIZE</a> = 50</td></tr>
+<tr class="separator:ab84e559b1a4a496be7656e3e9f6b8f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9203ef873af86e4e7355d6d7cd116e8"><td class="memItemLeft" align="right" valign="top">const Ptr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs.html#ae9203ef873af86e4e7355d6d7cd116e8">kvs::EMPTY_PTR</a> = Ptr(Ptr::EMPTY_PTR_V)</td></tr>
+<tr class="separator:ae9203ef873af86e4e7355d6d7cd116e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a5a61b869708b770ad75e3e063a2f9273"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5a61b869708b770ad75e3e063a2f9273">&#9670;&nbsp;</a></span>XXH_INLINE_ALL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define XXH_INLINE_ALL</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
