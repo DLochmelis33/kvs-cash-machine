@@ -21,59 +21,61 @@ This graph shows which files directly or indirectly include this file\+:
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-class \mbox{\hyperlink{classkvs_1_1Key}{kvs\+::\+Key}}
+class \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{kvs\+::utils\+::\+Key}}
 \item 
-class \mbox{\hyperlink{classkvs_1_1Value}{kvs\+::\+Value}}
+class \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{kvs\+::utils\+::\+Value}}
 \item 
-struct \mbox{\hyperlink{structkvs_1_1KeyValue}{kvs\+::\+Key\+Value}}
+struct \mbox{\hyperlink{structkvs_1_1utils_1_1KeyValue}{kvs\+::utils\+::\+Key\+Value}}
 \item 
-class \mbox{\hyperlink{classkvs_1_1Ptr}{kvs\+::\+Ptr}}
+class \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{kvs\+::utils\+::\+Ptr}}
 \begin{DoxyCompactList}\small\item\em A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structkvs_1_1Entry}{kvs\+::\+Entry}}
+struct \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{kvs\+::utils\+::\+Entry}}
 \begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cache\+Map}} and Storage\+Hash\+Table). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \mbox{\hyperlink{namespacekvs}{kvs}}
+\item 
+ \mbox{\hyperlink{namespacekvs_1_1utils}{kvs\+::utils}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespacekvs_a8e9bb0ff0b94184c38de1c28f2022a6e}{kvs\+::key\+\_\+t}} = \+\_\+\+\_\+uint128\+\_\+t
+using \mbox{\hyperlink{namespacekvs_1_1utils_a634b472d366e0304426c37432ab0d88f}{kvs\+::utils\+::key\+\_\+t}} = \+\_\+\+\_\+uint128\+\_\+t
 \item 
-using \mbox{\hyperlink{namespacekvs_a441df124a1113c2e4e86bffec031e0f4}{kvs\+::value\+\_\+t}} = char $\ast$
+using \mbox{\hyperlink{namespacekvs_1_1utils_aaf8b9c7f9457db4120829b238ce88431}{kvs\+::utils\+::value\+\_\+t}} = char $\ast$
 \item 
-using \mbox{\hyperlink{namespacekvs_a30ab9f4b730386019da9612a4e1f68c9}{kvs\+::ptr\+\_\+t}} = unsigned char
+using \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{kvs\+::utils\+::ptr\+\_\+t}} = unsigned char
 \item 
-using \mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{kvs\+::hash\+\_\+t}} = uint64\+\_\+t
+using \mbox{\hyperlink{namespacekvs_1_1utils_a27f1fda06a7533a9f16ba45d443f98c7}{kvs\+::utils\+::hash\+\_\+t}} = uint64\+\_\+t
 \item 
-using \mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{kvs\+::seed\+\_\+t}} = hash\+\_\+t
+using \mbox{\hyperlink{namespacekvs_1_1utils_a5ca84ce63a01b9456bafdc403ffe8ed5}{kvs\+::utils\+::seed\+\_\+t}} = hash\+\_\+t
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-hash\+\_\+t \mbox{\hyperlink{namespacekvs_af1ed1bb6ad1d35001428d5357c2a76e0}{kvs\+::hash\+Key}} (Key key, seed\+\_\+t seed=0) noexcept
+hash\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a233493a22f0ab2aa1b0ac58c38b92068}{kvs\+::utils\+::hash\+Key}} (Key key, seed\+\_\+t seed=0) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_a02372280a0134fd9612b06a1963f97fb}{kvs\+::\+VALUE\+\_\+\+SIZE}} = 2048
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a100686ddd2d16ac96e0b0ba8031ed81c}{kvs\+::utils\+::\+VALUE\+\_\+\+SIZE}} = 2048
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_af356b6eb0cbc05e66fce8f17ed301d11}{kvs\+::\+KEY\+\_\+\+SIZE}} = 16
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_addeb36ca6455ac8903f049050a74ac9d}{kvs\+::utils\+::\+KEY\+\_\+\+SIZE}} = 16
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_adf36d628f0eb034024accb37c6aef338}{kvs\+::\+CACHE\+\_\+\+MAP\+\_\+\+SIZE}} = 5000
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_aa40f8db5aefd3c971d1387c09f331198}{kvs\+::utils\+::\+CACHE\+\_\+\+MAP\+\_\+\+SIZE}} = 5000
 \item 
-constexpr double \mbox{\hyperlink{namespacekvs_a02b9c37ba748443dadd89796c15304e6}{kvs\+::\+MAP\+\_\+\+LOAD\+\_\+\+FACTOR}} = 1.\+5
+constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a9edace8f2922eecb69aa0af572ecc7a2}{kvs\+::utils\+::\+MAP\+\_\+\+LOAD\+\_\+\+FACTOR}} = 1.\+5
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_aa78e0c27e923920ab0a56b6031e79e9d}{kvs\+::\+SHARD\+\_\+\+NUMBER}} = 4981
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a4a81b2504774f36d34be0ee79ce4ebff}{kvs\+::utils\+::\+SHARD\+\_\+\+NUMBER}} = 4981
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}{kvs\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 5000
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a681ae91ffea4696bc012ef7e2b4fc2ce}{kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 5000
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_aec26c761f7c54004a2bbc0236d83806a}{kvs\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 5
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a9a39b70a28445b61801f025a976bcdca}{kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 5
 \item 
-constexpr double \mbox{\hyperlink{namespacekvs_ac3f9ec89603545765a3147865dd7e33a}{kvs\+::\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
+constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f829cab397a}{kvs\+::utils\+::\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_ab84e559b1a4a496be7656e3e9f6b8f9e}{kvs\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 50
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}{kvs\+::utils\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 50
 \item 
-const Ptr \mbox{\hyperlink{namespacekvs_ae9203ef873af86e4e7355d6d7cd116e8}{kvs\+::\+EMPTY\+\_\+\+PTR}} = Ptr(Ptr\+::\+EMPTY\+\_\+\+PTR\+\_\+V)
+const Ptr \mbox{\hyperlink{namespacekvs_1_1utils_a8bd160be3e41bb51385d203e9ffab544}{kvs\+::utils\+::\+EMPTY\+\_\+\+PTR}} = Ptr(Ptr\+::\+EMPTY\+\_\+\+PTR\+\_\+V)
 \end{DoxyCompactItemize}

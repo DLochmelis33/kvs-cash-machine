@@ -4,9 +4,8 @@
 
 namespace kvs::utils {
 
-ByteArray::ByteArray(size_t length) noexcept : data{std::string(length, '\0')} {
-  assert(length > 0);
-}
+ByteArray::ByteArray(size_t length) noexcept
+    : data{std::string(length, '\0')} {}
 
 const char* ByteArray::get() const noexcept { return &data[0]; }
 

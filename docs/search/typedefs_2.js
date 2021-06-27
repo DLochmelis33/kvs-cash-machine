@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hash_5ft_1153',['hash_t',['../namespacekvs.html#ab3dc2c295052e93223190ff87f78e1ae',1,'kvs']]]
+  ['hash_5ft_1153',['hash_t',['../namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7',1,'kvs::utils']]]
 ];

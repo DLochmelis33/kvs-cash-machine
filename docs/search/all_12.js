@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['table_5fexpansion_5ffactor_695',['TABLE_EXPANSION_FACTOR',['../namespacekvs.html#ac3f9ec89603545765a3147865dd7e33a',1,'kvs']]],
+  ['table_5fexpansion_5ffactor_695',['TABLE_EXPANSION_FACTOR',['../namespacekvs_1_1utils.html#ac1d4507ce05562ffb2de5f829cab397a',1,'kvs::utils']]],
   ['table_5finvalid_5fbuild_5fdata_696',['TABLE_INVALID_BUILD_DATA',['../namespacekvs.html#acf3940270dd597f58c6c22e874850ad0abc9802c10117c978c0bdd3b49cc8fe75',1,'kvs']]],
-  ['table_5fmax_5fsize_697',['TABLE_MAX_SIZE',['../namespacekvs.html#ab84e559b1a4a496be7656e3e9f6b8f9e',1,'kvs']]],
+  ['table_5fmax_5fsize_697',['TABLE_MAX_SIZE',['../namespacekvs_1_1utils.html#a88d1f7c3f7075ce9ef77956c7e6a03f5',1,'kvs::utils']]],
   ['test_5fcase_698',['TEST_CASE',['../doctest_8h.html#a5ab5b9aaf3850b085ca39abf901b2751',1,'doctest.h']]],
   ['test_5fcase_5fclass_699',['TEST_CASE_CLASS',['../doctest_8h.html#a5556f51cbbc5bd82a9f742706dde3bf4',1,'doctest.h']]],
   ['test_5fcase_5fend_700',['test_case_end',['../structdoctest_1_1IReporter.html#a43f8f19681dd5d42218ecb4fd935cda7',1,'doctest::IReporter']]],

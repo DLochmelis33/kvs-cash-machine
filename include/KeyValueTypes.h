@@ -3,7 +3,7 @@
 #include "ByteArray.h"
 #include <cstddef>
 
-namespace kvs {
+namespace kvs::utils {
 
 constexpr size_t VALUE_SIZE = 2048;
 constexpr size_t KEY_SIZE = 16;
@@ -23,11 +23,11 @@ using seed_t = hash_t;
 
 class Key final {
 public:
-  Key(key_t key_) noexcept : key(key_) {}
+  Key(key_t key_) noexcept;
 
-  key_t get() const noexcept { return key; }
+  key_t get() const noexcept;
 
-  bool operator==(const Key& other) const noexcept { return key == other.key; }
+  bool operator==(const Key& other) const noexcept;
 
 private:
   key_t key;
@@ -37,7 +37,7 @@ hash_t hashKey(Key key, seed_t seed = 0) noexcept;
 
 class Value final {
 public:
-  value_t get() const noexcept { return value; }
+  value_t get() const noexcept;
 
 private:
   value_t value;
@@ -123,4 +123,4 @@ struct Entry final {
   Ptr ptr;
 };
 
-} // namespace kvs
+} // namespace kvs::utils

@@ -1,12 +1,12 @@
 var searchData=
 [
   ['bloom_5ffilter_456',['bloom_filter',['../namespacekvs_1_1bloom__filter.html',1,'kvs']]],
-  ['key_457',['Key',['../classkvs_1_1Key.html#a42024dc95652629cfd15b62c76699cc0',1,'kvs::Key']]],
-  ['key_458',['key',['../structkvs_1_1Entry.html#a24676a4bd6360de390d5bdef49b61ccb',1,'kvs::Entry::key()'],['../classkvs_1_1Key.html#ad15d9c6b42b397a0c130df3837b89937',1,'kvs::Key::key()'],['../structkvs_1_1KeyValue.html#a7b61c68ea8c9033692e5f377cc629367',1,'kvs::KeyValue::key()']]],
-  ['key_459',['Key',['../classkvs_1_1Key.html',1,'kvs']]],
-  ['key_5fsize_460',['KEY_SIZE',['../namespacekvs.html#af356b6eb0cbc05e66fce8f17ed301d11',1,'kvs']]],
-  ['key_5ft_461',['key_t',['../namespacekvs.html#a8e9bb0ff0b94184c38de1c28f2022a6e',1,'kvs']]],
-  ['keyvalue_462',['KeyValue',['../structkvs_1_1KeyValue.html',1,'kvs']]],
+  ['key_457',['Key',['../classkvs_1_1utils_1_1Key.html#ab7b00badc78e1100bb2948ab997d9d9e',1,'kvs::utils::Key']]],
+  ['key_458',['key',['../structkvs_1_1utils_1_1Entry.html#a0f78d305f8af5355e30c2e9e8fabc157',1,'kvs::utils::Entry::key()'],['../classkvs_1_1utils_1_1Key.html#a4e30b1ba7dfa82e37527a129cd9290b1',1,'kvs::utils::Key::key()'],['../structkvs_1_1utils_1_1KeyValue.html#ab1253c5edbf776b4c26de9d7cda57bce',1,'kvs::utils::KeyValue::key()']]],
+  ['key_459',['Key',['../classkvs_1_1utils_1_1Key.html',1,'kvs::utils']]],
+  ['key_5fsize_460',['KEY_SIZE',['../namespacekvs_1_1utils.html#addeb36ca6455ac8903f049050a74ac9d',1,'kvs::utils']]],
+  ['key_5ft_461',['key_t',['../namespacekvs_1_1utils.html#a634b472d366e0304426c37432ab0d88f',1,'kvs::utils']]],
+  ['keyvalue_462',['KeyValue',['../structkvs_1_1utils_1_1KeyValue.html',1,'kvs::utils']]],
   ['keyvaluetypes_2ecpp_463',['KeyValueTypes.cpp',['../KeyValueTypes_8cpp.html',1,'']]],
   ['keyvaluetypes_2eh_464',['KeyValueTypes.h',['../KeyValueTypes_8h.html',1,'']]],
   ['kvs_465',['KVS',['../classKVS.html',1,'']]],

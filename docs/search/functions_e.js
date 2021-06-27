@@ -2,8 +2,8 @@ var searchData=
 [
   ['rawmemorytostring_966',['rawMemoryToString',['../namespacedoctest_1_1detail.html#a28da75fd01ab3d943436aa69876b7151',1,'doctest::detail::rawMemoryToString(const DOCTEST_REF_WRAP(T) object)'],['../namespacedoctest_1_1detail.html#adb894f73b88fb3b39d6c48d80451f5ff',1,'doctest::detail::rawMemoryToString(const void *object, unsigned size)']]],
   ['react_967',['react',['../structdoctest_1_1detail_1_1MessageBuilder.html#a3a65c5e39a0c04ae8e2a7c34997a2e4d',1,'doctest::detail::MessageBuilder::react()'],['../structdoctest_1_1detail_1_1ResultBuilder.html#a03686f862471728c2980d72e02980213',1,'doctest::detail::ResultBuilder::react()']]],
-  ['read_968',['read',['../classkvs_1_1storage_1_1Storage.html#a527276ecc4fe7cead1d8950ed7abcab8',1,'kvs::storage::Storage']]],
-  ['readfile_969',['readFile',['../namespacekvs_1_1storage.html#ad2dfd3ef16d650b5c4ae8ffa82fe856d',1,'kvs::storage']]],
+  ['read_968',['read',['../classkvs_1_1storage_1_1Storage.html#a16417d140a6c8e88ae6d088747dd6f2a',1,'kvs::storage::Storage']]],
+  ['readfile_969',['readFile',['../namespacekvs_1_1storage.html#a3ad6708a61b915141b087e88f5839769',1,'kvs::storage']]],
   ['readvalue_970',['readValue',['../classShard.html#ae06a68baa373b1dc5d006c50ffc3f935',1,'Shard']]],
   ['readvaluedirectly_971',['readValueDirectly',['../classShard.html#a0c5ba849d919ae276ff2b2985e582e1a',1,'Shard']]],
   ['rebuildshard_972',['rebuildShard',['../classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd',1,'KVS::rebuildShard()'],['../classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087',1,'ShardBuilder::rebuildShard()']]],

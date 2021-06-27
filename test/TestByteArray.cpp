@@ -4,6 +4,7 @@
 using kvs::utils::ByteArray;
 
 TEST_CASE("test ByteArray") {
+
   SUBCASE("test simple") {
     size_t length = 100;
     ByteArray byteArray(length);
@@ -12,6 +13,7 @@ TEST_CASE("test ByteArray") {
     byteArray.get()[0] = 'a';
     CHECK(byteArray.get()[0] == 'a');
   }
+
   SUBCASE("test write and read") {
     for (size_t len = 1; len < 100; ++len) {
       ByteArray byteArray(len);
@@ -24,5 +26,11 @@ TEST_CASE("test ByteArray") {
         CHECK(byteArray.get()[i] == static_cast<char>(i));
       }
     }
+  }
+
+  SUBCASE("test zero-length") {
+    ByteArray byteArray(0);
+    REQUIRE(byteArray.length() == 0);
+    CHECK_NOTHROW(byteArray.get());
   }
 }

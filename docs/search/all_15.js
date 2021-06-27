@@ -25,8 +25,8 @@ var searchData=
   ['what_766',['what',['../classkvs_1_1KVSException.html#a5447916fc51e814f8e5b3ff941b5ab96',1,'kvs::KVSException']]],
   ['when_767',['WHEN',['../doctest_8h.html#aec3ea373906cedb8f1c3baddcc8be548',1,'doctest.h']]],
   ['white_768',['White',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a0bf060b447441fbf2e4beeb25370a808',1,'doctest::Color']]],
-  ['write_769',['write',['../classkvs_1_1storage_1_1Storage.html#a1034f188022f6acee21ac34b4ec68052',1,'kvs::storage::Storage']]],
-  ['writefile_770',['writeFile',['../namespacekvs_1_1storage.html#a8967e9dea1400799ebffa52aca74ac55',1,'kvs::storage']]],
+  ['write_769',['write',['../classkvs_1_1storage_1_1Storage.html#a8cba1c39408d86f6ab9170836b33bc7a',1,'kvs::storage::Storage']]],
+  ['writefile_770',['writeFile',['../namespacekvs_1_1storage.html#a556ac213670103a75191e4c11452394c',1,'kvs::storage']]],
   ['writevalue_771',['writeValue',['../classShard.html#a1d553b3945c59a9eea2404c170debb77',1,'Shard']]],
   ['writevaluedirectly_772',['writeValueDirectly',['../classShard.html#a0037fc14121a68f2320549d7e13c3a9e',1,'Shard']]]
 ];

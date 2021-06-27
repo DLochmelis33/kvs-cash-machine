@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['table_5fexpansion_5ffactor_1145',['TABLE_EXPANSION_FACTOR',['../namespacekvs.html#ac3f9ec89603545765a3147865dd7e33a',1,'kvs']]],
-  ['table_5fmax_5fsize_1146',['TABLE_MAX_SIZE',['../namespacekvs.html#ab84e559b1a4a496be7656e3e9f6b8f9e',1,'kvs']]]
+  ['table_5fexpansion_5ffactor_1145',['TABLE_EXPANSION_FACTOR',['../namespacekvs_1_1utils.html#ac1d4507ce05562ffb2de5f829cab397a',1,'kvs::utils']]],
+  ['table_5fmax_5fsize_1146',['TABLE_MAX_SIZE',['../namespacekvs_1_1utils.html#a88d1f7c3f7075ce9ef77956c7e6a03f5',1,'kvs::utils']]]
 ];

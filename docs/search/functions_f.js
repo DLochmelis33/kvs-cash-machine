@@ -9,7 +9,7 @@ var searchData=
   ['setoption_991',['setOption',['../classdoctest_1_1Context.html#a95e7a0230c5897f0eae36718f51d2f05',1,'doctest::Context::setOption(const char *option, int value)'],['../classdoctest_1_1Context.html#a4352ffc196c4ba56045270e45baa2754',1,'doctest::Context::setOption(const char *option, const char *value)']]],
   ['setresult_992',['setResult',['../structdoctest_1_1detail_1_1ResultBuilder.html#a86c0ca727fead43263de4a7e9a59ad23',1,'doctest::detail::ResultBuilder']]],
   ['settestsuite_993',['setTestSuite',['../namespacedoctest_1_1detail.html#ae79cb8df06d35468dd0ba9f04c85802c',1,'doctest::detail']]],
-  ['setvaluepresent_994',['setValuePresent',['../classkvs_1_1Ptr.html#a897e4867f1050b4e69df4a0a4788dc6e',1,'kvs::Ptr']]],
+  ['setvaluepresent_994',['setValuePresent',['../classkvs_1_1utils_1_1Ptr.html#a1b6da0a4c23efdbeb2bc86bf005160d6',1,'kvs::utils::Ptr']]],
   ['shard_995',['Shard',['../classShard.html#ad1d1e143159f59129d23f642c796477f',1,'Shard::Shard()=delete'],['../classShard.html#ad20ff309054d160c0a3d208dd0939b48',1,'Shard::Shard(size_t index) noexcept'],['../classShard.html#acc02dc4ac1c7bb22911653ab3c7c5690',1,'Shard::Shard(size_t index, const std::vector&lt; Entry &gt; &amp;storageHashTableEntries) noexcept']]],
   ['shouldexit_996',['shouldExit',['../classdoctest_1_1Context.html#a219b10301380b81c84c0824a6876d9aa',1,'doctest::Context']]],
   ['size_997',['size',['../classdoctest_1_1String.html#a9fbc7b09f1660b236f12fc2adce6183d',1,'doctest::String']]],

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_5ft_1161',['value_t',['../namespacekvs.html#a441df124a1113c2e4e86bffec031e0f4',1,'kvs']]]
+  ['value_5ft_1161',['value_t',['../namespacekvs_1_1utils.html#aaf8b9c7f9457db4120829b238ce88431',1,'kvs::utils']]]
 ];

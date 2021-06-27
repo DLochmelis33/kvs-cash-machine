@@ -1,7 +1,7 @@
 var searchData=
 [
   ['c_5fstr_35',['c_str',['../classdoctest_1_1String.html#a35df67f11652bcc568ad3af470c344c0',1,'doctest::String::c_str()'],['../classdoctest_1_1String.html#a607c6977b193fecf29622110e6081625',1,'doctest::String::c_str() const']]],
-  ['cache_5fmap_5fsize_36',['CACHE_MAP_SIZE',['../namespacekvs.html#adf36d628f0eb034024accb37c6aef338',1,'kvs']]],
+  ['cache_5fmap_5fsize_36',['CACHE_MAP_SIZE',['../namespacekvs_1_1utils.html#aa40f8db5aefd3c971d1387c09f331198',1,'kvs::utils']]],
   ['cachemap_37',['CacheMap',['../classCacheMap.html',1,'']]],
   ['cachemap_38',['cacheMap',['../classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8',1,'KVS']]],
   ['cachemap_39',['CacheMap',['../classCacheMap.html#afaeca70c6504cb3aebf42c27a4deded3',1,'CacheMap']]],
@@ -43,7 +43,7 @@ var searchData=
   ['contextoptions_75',['ContextOptions',['../structdoctest_1_1ContextOptions.html',1,'doctest']]],
   ['contextscope_76',['ContextScope',['../classdoctest_1_1detail_1_1ContextScope.html#afca3228fdeb0e86257a21f826c4247ff',1,'doctest::detail::ContextScope::ContextScope(ContextScope &amp;&amp;other)'],['../classdoctest_1_1detail_1_1ContextScope.html#a344c76a0374615d567a084c0a0ffd215',1,'doctest::detail::ContextScope::ContextScope(const L &amp;lambda)'],['../classdoctest_1_1detail_1_1ContextScope.html',1,'doctest::detail::ContextScope&lt; L &gt;']]],
   ['contextscopebase_77',['ContextScopeBase',['../classdoctest_1_1detail_1_1ContextScopeBase.html#af3a3ff7ad6b98142ef0f7e1d01912d48',1,'doctest::detail::ContextScopeBase::ContextScopeBase()'],['../classdoctest_1_1detail_1_1ContextScopeBase.html',1,'doctest::detail::ContextScopeBase']]],
-  ['control_5fmask_78',['CONTROL_MASK',['../classkvs_1_1Ptr.html#a795146a5ed156b898985ce3351580739',1,'kvs::Ptr']]],
+  ['control_5fmask_78',['CONTROL_MASK',['../classkvs_1_1utils_1_1Ptr.html#a8f42c135534af5998f940dd8bb9f1fdc',1,'kvs::utils::Ptr']]],
   ['convert_79',['convert',['../structdoctest_1_1detail_1_1StringStreamBase.html#a7c248639907b26e46344b91d7ab90be7',1,'doctest::detail::StringStreamBase::convert()'],['../structdoctest_1_1detail_1_1StringStreamBase_3_01true_01_4.html#a3f86285d254474498065e6b70522e2b7',1,'doctest::detail::StringStreamBase&lt; true &gt;::convert()'],['../structdoctest_1_1detail_1_1StringStreamBase.html#a0eca8e2711f17a565fea3696635a3833',1,'doctest::detail::StringStreamBase::convert()'],['../structdoctest_1_1StringMaker_3_01R_01C_1_1_5_01_4.html#a06144903aacd73ed31c2fb043be8abb0',1,'doctest::StringMaker&lt; R C::* &gt;::convert()'],['../structdoctest_1_1StringMaker_3_01T_01_5_01_4.html#a79dfd2e72f48a1d9941b924d6ac23104',1,'doctest::StringMaker&lt; T * &gt;::convert()'],['../structdoctest_1_1detail_1_1StringMakerBase_3_01true_01_4.html#ae1a11dee413117f36e335677589b047f',1,'doctest::detail::StringMakerBase&lt; true &gt;::convert()'],['../structdoctest_1_1detail_1_1StringMakerBase.html#a67d29f2a5de9a522d8e8607c1a39db9b',1,'doctest::detail::StringMakerBase::convert()']]],
   ['copy_80',['copy',['../classdoctest_1_1String.html#a9adde1fae310e0d1a394cc1383495572',1,'doctest::String']]],
   ['couldhavefailedanddid_81',['CouldHaveFailedAndDid',['../namespacedoctest_1_1TestCaseFailureReason.html#aecb2ca1f80416d60f0d6b96f65859d3caa038bc08a903185cf809dd05056d6a75',1,'doctest::TestCaseFailureReason']]],

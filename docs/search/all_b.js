@@ -35,7 +35,7 @@ var searchData=
   ['m_5ftype_521',['m_type',['../structdoctest_1_1detail_1_1TestCase.html#ad29513e7194ebb6e53e3b1df27ebf48f',1,'doctest::detail::TestCase']]],
   ['m_5fvalue_522',['m_value',['../classdoctest_1_1Approx.html#af29d79bf1986ba565a688cb97b10efd4',1,'doctest::Approx']]],
   ['makecontextscope_523',['MakeContextScope',['../namespacedoctest_1_1detail.html#a193493f40330f096b9e1b78557a832a3',1,'doctest::detail']]],
-  ['map_5fload_5ffactor_524',['MAP_LOAD_FACTOR',['../namespacekvs.html#a02b9c37ba748443dadd89796c15304e6',1,'kvs']]],
+  ['map_5fload_5ffactor_524',['MAP_LOAD_FACTOR',['../namespacekvs_1_1utils.html#a9edace8f2922eecb69aa0af572ecc7a2',1,'kvs::utils']]],
   ['maptobitset_525',['mapToBitset',['../namespacekvs_1_1bloom__filter.html#a38689c0230ffe3ab0004065b449f82ae',1,'kvs::bloom_filter']]],
   ['message_526',['MESSAGE',['../doctest_8h.html#af8a3e30cb4858ca8a098acae107286c0',1,'doctest.h']]],
   ['messagebuilder_527',['MessageBuilder',['../structdoctest_1_1detail_1_1MessageBuilder.html',1,'doctest::detail::MessageBuilder'],['../structdoctest_1_1detail_1_1MessageBuilder.html#aaaaf33f49c6d66425af9c2306010ae7e',1,'doctest::detail::MessageBuilder::MessageBuilder()=delete'],['../structdoctest_1_1detail_1_1MessageBuilder.html#a93cb6f180968d38cb0f18b08ec6c9000',1,'doctest::detail::MessageBuilder::MessageBuilder(const char *file, int line, assertType::Enum severity)']]],

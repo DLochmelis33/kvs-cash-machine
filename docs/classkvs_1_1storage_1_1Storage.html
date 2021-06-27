@@ -97,15 +97,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6fa129ebd4897a029c736bd141c2a48f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#a6fa129ebd4897a029c736bd141c2a48f">close</a> ()</td></tr>
 <tr class="memdesc:a6fa129ebd4897a029c736bd141c2a48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply all changes to the file contents (if any) and close the file. All further operations with this <a class="el" href="classkvs_1_1storage_1_1Storage.html" title="An abstraction for safely opening, reading, writing and closing files on disk.">Storage</a> object are disallowed.  <a href="classkvs_1_1storage_1_1Storage.html#a6fa129ebd4897a029c736bd141c2a48f">More...</a><br /></td></tr>
 <tr class="separator:a6fa129ebd4897a029c736bd141c2a48f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a527276ecc4fe7cead1d8950ed7abcab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">utils::ByteArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#a527276ecc4fe7cead1d8950ed7abcab8">read</a> (size_t offset, size_t length)</td></tr>
-<tr class="memdesc:a527276ecc4fe7cead1d8950ed7abcab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a part of file. // TODO: offset from the beggining.  <a href="classkvs_1_1storage_1_1Storage.html#a527276ecc4fe7cead1d8950ed7abcab8">More...</a><br /></td></tr>
-<tr class="separator:a527276ecc4fe7cead1d8950ed7abcab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1034f188022f6acee21ac34b4ec68052"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#a1034f188022f6acee21ac34b4ec68052">write</a> (size_t offset, <a class="el" href="classkvs_1_1utils_1_1ByteArray.html">utils::ByteArray</a> bytes)</td></tr>
-<tr class="memdesc:a1034f188022f6acee21ac34b4ec68052"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a part of file. // TODO: offset from the beggining.  <a href="classkvs_1_1storage_1_1Storage.html#a1034f188022f6acee21ac34b4ec68052">More...</a><br /></td></tr>
-<tr class="separator:a1034f188022f6acee21ac34b4ec68052"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf2b24ebb2fc0b45845cdce0cbb0c1ca"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#abf2b24ebb2fc0b45845cdce0cbb0c1ca">append</a> (<a class="el" href="classkvs_1_1utils_1_1ByteArray.html">utils::ByteArray</a> bytes)</td></tr>
-<tr class="memdesc:abf2b24ebb2fc0b45845cdce0cbb0c1ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append to end of file.  <a href="classkvs_1_1storage_1_1Storage.html#abf2b24ebb2fc0b45845cdce0cbb0c1ca">More...</a><br /></td></tr>
-<tr class="separator:abf2b24ebb2fc0b45845cdce0cbb0c1ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16417d140a6c8e88ae6d088747dd6f2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#a16417d140a6c8e88ae6d088747dd6f2a">read</a> (size_t offset, size_t length)</td></tr>
+<tr class="memdesc:a16417d140a6c8e88ae6d088747dd6f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a part of file. // TODO docs: offset from the beggining; zero length is ok.  <a href="classkvs_1_1storage_1_1Storage.html#a16417d140a6c8e88ae6d088747dd6f2a">More...</a><br /></td></tr>
+<tr class="separator:a16417d140a6c8e88ae6d088747dd6f2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cba1c39408d86f6ab9170836b33bc7a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#a8cba1c39408d86f6ab9170836b33bc7a">write</a> (size_t offset, <a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a> bytes)</td></tr>
+<tr class="memdesc:a8cba1c39408d86f6ab9170836b33bc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a part of file. // TODO docs: offset from the beggining; zero length is ok; if offset + bytes.length() &gt; eof append.  <a href="classkvs_1_1storage_1_1Storage.html#a8cba1c39408d86f6ab9170836b33bc7a">More...</a><br /></td></tr>
+<tr class="separator:a8cba1c39408d86f6ab9170836b33bc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a886d77329f632d3917532f72f3108562"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage_1_1Storage.html#a886d77329f632d3917532f72f3108562">append</a> (<a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a> bytes)</td></tr>
+<tr class="memdesc:a886d77329f632d3917532f72f3108562"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append to end of file.  <a href="classkvs_1_1storage_1_1Storage.html#a886d77329f632d3917532f72f3108562">More...</a><br /></td></tr>
+<tr class="separator:a886d77329f632d3917532f72f3108562"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -145,8 +145,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="abf2b24ebb2fc0b45845cdce0cbb0c1ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf2b24ebb2fc0b45845cdce0cbb0c1ca">&#9670;&nbsp;</a></span>append()</h2>
+<a id="a886d77329f632d3917532f72f3108562"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a886d77329f632d3917532f72f3108562">&#9670;&nbsp;</a></span>append()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +154,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">size_t kvs::storage::Storage::append </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">utils::ByteArray</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a>&#160;</td>
           <td class="paramname"><em>bytes</em></td><td>)</td>
           <td></td>
         </tr>
@@ -185,14 +185,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a527276ecc4fe7cead1d8950ed7abcab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a527276ecc4fe7cead1d8950ed7abcab8">&#9670;&nbsp;</a></span>read()</h2>
+<a id="a16417d140a6c8e88ae6d088747dd6f2a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16417d140a6c8e88ae6d088747dd6f2a">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">utils::ByteArray</a> kvs::storage::Storage::read </td>
+          <td class="memname"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a> kvs::storage::Storage::read </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>offset</em>, </td>
@@ -211,12 +211,12 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Read a part of file. // TODO: offset from the beggining. </p>
+<p>Read a part of file. // TODO docs: offset from the beggining; zero length is ok. </p>
 
 </div>
 </div>
-<a id="a1034f188022f6acee21ac34b4ec68052"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1034f188022f6acee21ac34b4ec68052">&#9670;&nbsp;</a></span>write()</h2>
+<a id="a8cba1c39408d86f6ab9170836b33bc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cba1c39408d86f6ab9170836b33bc7a">&#9670;&nbsp;</a></span>write()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -230,7 +230,7 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">utils::ByteArray</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a>&#160;</td>
           <td class="paramname"><em>bytes</em>&#160;</td>
         </tr>
         <tr>
@@ -241,7 +241,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write a part of file. // TODO: offset from the beggining. </p>
+<p>Write a part of file. // TODO docs: offset from the beggining; zero length is ok; if offset + bytes.length() &gt; eof append. </p>
 
 </div>
 </div>

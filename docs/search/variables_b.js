@@ -34,5 +34,5 @@ var searchData=
   ['m_5ftranslatefunction_1108',['m_translateFunction',['../classdoctest_1_1detail_1_1ExceptionTranslator.html#a739d70771e0f246622c81efde79fdf46',1,'doctest::detail::ExceptionTranslator']]],
   ['m_5ftype_1109',['m_type',['../structdoctest_1_1detail_1_1TestCase.html#ad29513e7194ebb6e53e3b1df27ebf48f',1,'doctest::detail::TestCase']]],
   ['m_5fvalue_1110',['m_value',['../classdoctest_1_1Approx.html#af29d79bf1986ba565a688cb97b10efd4',1,'doctest::Approx']]],
-  ['map_5fload_5ffactor_1111',['MAP_LOAD_FACTOR',['../namespacekvs.html#a02b9c37ba748443dadd89796c15304e6',1,'kvs']]]
+  ['map_5fload_5ffactor_1111',['MAP_LOAD_FACTOR',['../namespacekvs_1_1utils.html#a9edace8f2922eecb69aa0af572ecc7a2',1,'kvs::utils']]]
 ];
