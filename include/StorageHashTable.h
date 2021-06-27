@@ -22,7 +22,7 @@ public:
    * 
    * @throws KVSException if the data is corrupted
    */
-  explicit StorageHashTable(ByteArray serializedStorageHashTable);
+  explicit StorageHashTable(const ByteArray serializedStorageHashTable);
 
   /**
    * @brief Construct a new empty StorageHashTable.
@@ -40,13 +40,13 @@ public:
      *
      * @return The requested Ptr or nothing, if no Entry with given Key is present.
      */
-  Ptr get(Key key) const noexcept;
+  Ptr& get(const Key& key) noexcept;
 
   /**
      * @brief Put an Entry into the table.
      *
      */
-  void put(Entry entry) noexcept;
+  void put(const Entry& entry) noexcept;
 
   /**
    * @brief Get all entries present in the map.

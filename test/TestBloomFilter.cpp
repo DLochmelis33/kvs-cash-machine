@@ -19,7 +19,7 @@ struct hash<kvs::utils::Key> {
 } // namespace std
 
 TEST_CASE("test BloomFilter") {
-  SUBCASE("simple") {
+  SUBCASE("test simple") {
     BloomFilter filter;
     Key key1(5);
     CHECK(filter.checkExist(key1) == false);
@@ -34,18 +34,17 @@ TEST_CASE("test BloomFilter") {
     filter.add(key2);
     CHECK(filter.checkExist(key2) == true);
   }
-  SUBCASE("stress") {
+  SUBCASE("test stress") {
     std::random_device rd;
     std::mt19937_64 gen(rd());
-    std::uniform_int_distribution<kvs::utils::key_t> distr;
+    std::uniform_int_distribution<__uint128_t> distr;
     const size_t OPS = 5000; // ! see constants
 
     BloomFilter filter;
     std::unordered_set<Key> set(OPS);
     size_t totalChecks = 0, filterMisses = 0;
     for (size_t i = 0; i < OPS; i++) {
-      kvs::utils::key_t k = rand();
-      Key key(k);
+      Key key(distr(gen));
       if (rand() & 1) {
         // add
         filter.add(key);
