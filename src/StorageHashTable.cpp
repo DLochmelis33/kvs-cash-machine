@@ -1,12 +1,13 @@
 #include "StorageHashTable.h"
 #include "KVSException.h"
 #include <cassert>
+#include <cstring>
 #include <functional>
 
 namespace kvs::storage_hash_table {
 
-StorageHashTable::StorageHashTable(ByteArray array) {
-  size_t entrySize = sizeof(key_t) + sizeof(ptr_t);
+StorageHashTable::StorageHashTable(const ByteArray array) {
+  size_t entrySize = KEY_SIZE + sizeof(ptr_t);
   size_t withoutUsedSize = array.length() - sizeof(size_t);
   if (withoutUsedSize % entrySize != 0)
     throw KVSException(KVSErrorType::TABLE_INVALID_BUILD_DATA);
@@ -14,26 +15,28 @@ StorageHashTable::StorageHashTable(ByteArray array) {
   data.resize(dataSize);
 
   for (size_t i = 0; i < dataSize; i++) {
-    key_t k = *reinterpret_cast<key_t*>(array.get() + i * entrySize);
+    Key key;
+    memcpy(key.getBytes().get(), array.get() + (i * entrySize), KEY_SIZE);
     ptr_t p =
-        *reinterpret_cast<ptr_t*>(array.get() + i * entrySize + sizeof(key_t));
-    data[i] = Entry(Key(k), Ptr(p));
+        *reinterpret_cast<const ptr_t*>(array.get() + i * entrySize + KEY_SIZE);
+    data[i] = Entry(key, Ptr(p));
   }
-  usedSize = *reinterpret_cast<size_t*>(array.get() + withoutUsedSize);
+  usedSize = *reinterpret_cast<const size_t*>(array.get() + withoutUsedSize);
 }
 
 ByteArray StorageHashTable::serializeToByteArray() const noexcept {
-  size_t entrySize = sizeof(key_t) + sizeof(ptr_t);
+  constexpr size_t entrySize = KEY_SIZE + sizeof(ptr_t);
   size_t resultLength = data.size() * entrySize + sizeof(size_t);
   ByteArray result(resultLength);
 
   for (size_t i = 0; i < data.size(); i++) {
     auto [key, ptr] = data[i];
-    *reinterpret_cast<key_t*>(result.get() + i * entrySize) = key.get();
-    *reinterpret_cast<ptr_t*>(result.get() + i * entrySize + sizeof(key_t)) =
-        ptr.get();
+    memcpy(result.get() + (i * entrySize), key.getBytes().get(), KEY_SIZE);
+    result.get()[i * entrySize + KEY_SIZE] = ptr.getRaw();
   }
-  *reinterpret_cast<size_t*>(result.get()) = usedSize;
+  memcpy(result.get() + (resultLength - sizeof(size_t)),
+         reinterpret_cast<const char*>(&usedSize), sizeof(size_t));
+
   return result;
 }
 
@@ -41,7 +44,7 @@ StorageHashTable::StorageHashTable(size_t size) noexcept {
   usedSize = 0;
   data.resize(size);
   // default key will be stored with EMPTY_PTR => no collisions in case of real Key(0)
-  Key defaultKey(0);
+  Key defaultKey;
   for (size_t i = 0; i < size; i++) data[i] = Entry(defaultKey, EMPTY_PTR);
 }
 
@@ -51,7 +54,7 @@ StorageHashTable::StorageHashTable(size_t size) noexcept {
  * @return size_t The found index \b or fromIndex, if no entry was found.
  */
 size_t findNextByPredicate(const std::vector<Entry>& data, size_t fromIndex,
-                           const std::function<bool(const Entry&)> predicate) {
+                           std::function<bool(const Entry&)> predicate) {
   for (size_t i = (fromIndex != data.size() - 1 ? fromIndex + 1 : 0);
        i != fromIndex; i = (i + 1) % data.size()) {
     if (predicate(data[i]))
@@ -60,20 +63,28 @@ size_t findNextByPredicate(const std::vector<Entry>& data, size_t fromIndex,
   return fromIndex;
 }
 
-void StorageHashTable::put(Entry entry) noexcept {
+void StorageHashTable::put(const Entry& entry) noexcept {
   auto [key, ptr] = entry;
   size_t keyIndex = hashKey(key) % data.size();
-  if (data[keyIndex].ptr != EMPTY_PTR) {
-    size_t newIndex = findNextByPredicate(
-        data, keyIndex, [](Entry e) { return e.ptr == EMPTY_PTR; });
+
+  auto entryCheck = [&entry](const Entry& e) {
+    return e.ptr == EMPTY_PTR || // either no such key before and new empty spot
+           e.key == entry.key; // or there is such key
+  };
+
+  if (!entryCheck(data[keyIndex])) {
+    size_t newIndex = findNextByPredicate(data, keyIndex, entryCheck);
     assert(keyIndex != newIndex);
     keyIndex = newIndex;
   }
   data[keyIndex] = entry;
   usedSize++;
+
+  if (usedSize * MAP_LOAD_FACTOR > data.size())
+    expand();
 }
 
-Ptr StorageHashTable::get(Key key) const noexcept {
+Ptr& StorageHashTable::get(const Key& key) noexcept {
   size_t keyIndex = hashKey(key) % data.size();
   if (data[keyIndex].key == key)
     return data[keyIndex].ptr;
@@ -85,17 +96,23 @@ Ptr StorageHashTable::get(Key key) const noexcept {
 }
 
 std::vector<Entry> StorageHashTable::getEntries() const noexcept {
-  return data;
+  std::vector<Entry> result;
+  for (auto [key, ptr] : data) {
+    if (ptr != EMPTY_PTR)
+      result.push_back(Entry(key, ptr));
+  }
+  return result;
 }
 
 void StorageHashTable::expand() {
-  std::vector<Entry> oldData = data;
   size_t newSize = data.size() * TABLE_EXPANSION_FACTOR;
   if (newSize > TABLE_MAX_SIZE)
     throw KVSException(KVSErrorType::SHARD_OVERFLOW);
+
+  std::vector<Entry> oldData = getEntries();
   data.clear();
+  usedSize = 0;
   data.resize(newSize);
-  std::vector<Entry> newData(data.size() * TABLE_EXPANSION_FACTOR);
   for (Entry e : oldData) put(e);
 }
 

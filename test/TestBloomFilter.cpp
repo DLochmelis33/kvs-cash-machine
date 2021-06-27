@@ -1,5 +1,7 @@
 #include "BloomFilter.h"
 #include "doctest.h"
+
+#include <cstring>
 #include <random>
 #include <string>
 #include <unordered_set>
@@ -18,10 +20,18 @@ struct hash<kvs::utils::Key> {
 
 } // namespace std
 
+namespace test_kvs::bloom_filter {
+
+Key generateKey(size_t value) {
+  ByteArray byteArray{KEY_SIZE};
+  std::memcpy(byteArray.get(), reinterpret_cast<char*>(&value), sizeof(size_t));
+  return Key{byteArray};
+}
+
 TEST_CASE("test BloomFilter") {
-  SUBCASE("simple") {
+  SUBCASE("test simple") {
     BloomFilter filter;
-    Key key1(5);
+    Key key1 = generateKey(5);
     CHECK(filter.checkExist(key1) == false);
     filter.add(key1);
     CHECK(filter.checkExist(key1) == true);
@@ -29,23 +39,22 @@ TEST_CASE("test BloomFilter") {
     filter.add(key1);
     filter.add(key1);
     CHECK(filter.checkExist(key1) == true);
-    Key key2(555);
+    Key key2 = generateKey(555);
     CHECK(filter.checkExist(key2) == false);
     filter.add(key2);
     CHECK(filter.checkExist(key2) == true);
   }
-  SUBCASE("stress") {
+  SUBCASE("test stress") {
     std::random_device rd;
     std::mt19937_64 gen(rd());
-    std::uniform_int_distribution<kvs::utils::key_t> distr;
+    std::uniform_int_distribution<__uint128_t> distr;
     const size_t OPS = 5000; // ! see constants
 
     BloomFilter filter;
     std::unordered_set<Key> set(OPS);
     size_t totalChecks = 0, filterMisses = 0;
     for (size_t i = 0; i < OPS; i++) {
-      kvs::utils::key_t k = rand();
-      Key key(k);
+      Key key = generateKey(distr(gen));
       if (rand() & 1) {
         // add
         filter.add(key);
@@ -66,3 +75,5 @@ TEST_CASE("test BloomFilter") {
             " out of " + std::to_string(totalChecks) + " checks");
   }
 }
+
+} // namespace test_kvs::bloom_filter

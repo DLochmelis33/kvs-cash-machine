@@ -17,7 +17,7 @@ constexpr double MAX_OUTDATED_RECORDS_LOAD_FACTOR = 0.5;
 constexpr size_t BLOOM_FILTER_SIZE = 5000; // TODO
 constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER = 5; // TODO
 constexpr double TABLE_EXPANSION_FACTOR = 2;
-constexpr size_t TABLE_MAX_SIZE = 50; // TODO
+constexpr size_t TABLE_MAX_SIZE = 5000000; // TODO
 
 constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR = MAP_LOAD_FACTOR;
 constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE =
@@ -25,7 +25,6 @@ constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE =
 
 const std::string STORAGE_DIRECTORY_PATH = "../data/";
 
-using key_t = __uint128_t;
 using ptr_t = unsigned char;
 using hash_t = XXH64_hash_t; // uint64_t
 using seed_t = hash_t;
@@ -35,17 +34,19 @@ using values_cnt_t = uint8_t;
 
 class Key final {
 public:
-  Key(key_t key_) noexcept;
+  explicit Key(ByteArray bytes = ByteArray{KEY_SIZE}) noexcept;
 
-  key_t get() const noexcept;
+  ByteArray& getBytes() noexcept;
+
+  const ByteArray& getBytes() const noexcept;
 
   bool operator==(const Key& other) const noexcept;
 
 private:
-  key_t key;
+  ByteArray bytes;
 };
 
-hash_t hashKey(Key key, seed_t seed = 0) noexcept;
+hash_t hashKey(const Key& key, seed_t seed = 0) noexcept;
 
 class Value final {
 public:
@@ -96,16 +97,28 @@ public:
    * @param index 
    * @param isPresent 
    */
-  explicit Ptr(size_t offset, bool isPresent);
+  explicit Ptr(size_t offset, bool isPresent) noexcept;
 
   /**
-   * @brief Get the real value of this pointer.
+   * @brief Construct a new empty Ptr.
+   * 
+   */
+  explicit Ptr() noexcept;
+
+  /**
+   * @brief Get the actual index stored in this pointer.
    *
    */
   size_t get() const noexcept;
 
   // TODO docs
   size_t getOffset() const noexcept;
+
+  /**
+   * @brief Get the raw pointer data (including control bits).
+   * 
+   */
+  ptr_t getRaw() const noexcept;
 
   /**
    * @brief Check if this Ptr points to a present or deleted Value.
@@ -123,8 +136,8 @@ public:
   // TODO docs
   PtrType getType() const noexcept;
 
-  bool operator==(const Ptr& other) noexcept;
-  bool operator!=(const Ptr& other) noexcept;
+  bool operator==(const Ptr& other) const noexcept;
+  bool operator!=(const Ptr& other) const noexcept;
 
 private:
   static constexpr ptr_t CONTROL_MASK = 0b10000000;
@@ -132,7 +145,11 @@ private:
   ptr_t ptr;
 };
 
-const Ptr EMPTY_PTR = Ptr(Ptr::EMPTY_PTR_V);
+/**
+ * @brief \b DO \b NOT \b CHANGE \b THIS \b !!!!!!!!!
+ * 
+ */
+static Ptr EMPTY_PTR = Ptr();
 
 /**
  * @brief A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).
@@ -140,12 +157,14 @@ const Ptr EMPTY_PTR = Ptr(Ptr::EMPTY_PTR_V);
  */
 struct Entry final {
 
-  Entry(Key key_ = Key(0), Ptr ptr_ = EMPTY_PTR) noexcept
+  Entry(const Key& key_ = Key(), const Ptr& ptr_ = EMPTY_PTR) noexcept
       : key(key_),
         ptr(ptr_) {}
 
   Key key;
   Ptr ptr;
+
+  bool operator==(const Entry& other) const noexcept;
 };
 
 } // namespace kvs::utils
