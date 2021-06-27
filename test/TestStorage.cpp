@@ -6,6 +6,8 @@
 using namespace kvs::storage;
 using kvs::utils::ByteArray;
 
+namespace test_kvs::storage {
+
 const std::string testDirectoryPath = "../.test-data/test-storage/";
 const std::string filePath = testDirectoryPath + "file.test";
 const std::string emptyFilePath = testDirectoryPath + "empty-file.test";
@@ -247,3 +249,5 @@ TEST_CASE("test Storage") {
 
   clearTestDirectory();
 }
+
+} // namespace test_kvs::storage

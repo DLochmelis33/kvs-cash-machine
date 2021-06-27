@@ -84,7 +84,7 @@ Ptr StorageHashTable::get(Key key) const noexcept {
   return data[newIndex].ptr;
 }
 
-const std::vector<Entry> StorageHashTable::getEntries() const noexcept {
+std::vector<Entry> StorageHashTable::getEntries() const noexcept {
   return data;
 }
 

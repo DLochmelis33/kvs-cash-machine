@@ -4,6 +4,10 @@
 #include <optional>
 #include <vector>
 
+namespace kvs::cache_map {
+
+using namespace kvs::utils;
+
 /**
  * @brief Cache map. Is stored in RAM.
  *
@@ -35,8 +39,7 @@ public:
   void clear() noexcept;
 
 private:
-
-   /**
+  /**
     * @brief The internal storage of the map.
     * 
     */
@@ -48,3 +51,5 @@ private:
      */
   size_t size;
 };
+
+} // namespace kvs::cache_map
