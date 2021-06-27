@@ -1,7 +1,8 @@
 <map id="kvs::utils::KeyValue" name="kvs::utils::KeyValue">
-<area shape="rect" id="node1" title=" " alt="" coords="55,315,190,392"/>
-<area shape="rect" id="node2" href="$classkvs_1_1utils_1_1Key.html" title=" " alt="" coords="5,145,109,252"/>
-<area shape="rect" id="node3" title=" " alt="" coords="13,5,102,83"/>
-<area shape="rect" id="node4" href="$classkvs_1_1utils_1_1Value.html" title=" " alt="" coords="133,160,245,237"/>
-<area shape="rect" id="node5" title=" " alt="" coords="166,5,213,83"/>
+<area shape="rect" id="node1" title=" " alt="" coords="71,528,205,605"/>
+<area shape="rect" id="node2" href="$classkvs_1_1utils_1_1Key.html" title=" " alt="" coords="21,329,125,465"/>
+<area shape="rect" id="node3" href="$classkvs_1_1utils_1_1ByteArray.html" title="A wrapper for an array and its length." alt="" coords="5,145,140,267"/>
+<area shape="rect" id="node4" title=" " alt="" coords="45,5,100,83"/>
+<area shape="rect" id="node5" href="$classkvs_1_1utils_1_1Value.html" title=" " alt="" coords="149,359,261,436"/>
+<area shape="rect" id="node6" title=" " alt="" coords="181,167,228,245"/>
 </map>

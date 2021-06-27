@@ -41,7 +41,7 @@ struct \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{kvs\+::utils\+::\+Entry}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespacekvs_1_1utils_a634b472d366e0304426c37432ab0d88f}{kvs\+::utils\+::key\+\_\+t}} = \+\_\+\+\_\+uint128\+\_\+t
+using \mbox{\hyperlink{namespacekvs_1_1utils_ab29a21fc7832efae7c3e6eca6b01dae2}{kvs\+::utils\+::key\+\_\+t}} = char $\ast$
 \item 
 using \mbox{\hyperlink{namespacekvs_1_1utils_aaf8b9c7f9457db4120829b238ce88431}{kvs\+::utils\+::value\+\_\+t}} = char $\ast$
 \item 
@@ -54,7 +54,7 @@ using \mbox{\hyperlink{namespacekvs_1_1utils_a5ca84ce63a01b9456bafdc403ffe8ed5}{
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-hash\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a233493a22f0ab2aa1b0ac58c38b92068}{kvs\+::utils\+::hash\+Key}} (Key key, seed\+\_\+t seed=0) noexcept
+hash\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a5343a7054666f26f837da2eaf405de1a}{kvs\+::utils\+::hash\+Key}} (const Key \&key, seed\+\_\+t seed=0) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -75,7 +75,5 @@ constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a9a39b70a28445b6180
 \item 
 constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f829cab397a}{kvs\+::utils\+::\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}{kvs\+::utils\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 50
-\item 
-const Ptr \mbox{\hyperlink{namespacekvs_1_1utils_a8bd160be3e41bb51385d203e9ffab544}{kvs\+::utils\+::\+EMPTY\+\_\+\+PTR}} = Ptr(Ptr\+::\+EMPTY\+\_\+\+PTR\+\_\+V)
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}{kvs\+::utils\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 5000000
 \end{DoxyCompactItemize}

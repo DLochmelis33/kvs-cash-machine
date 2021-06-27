@@ -16,13 +16,15 @@ Collaboration diagram for kvs\+::utils\+::Entry\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{structkvs_1_1utils_1_1Entry__coll__graph}
+\includegraphics[height=550pt]{structkvs_1_1utils_1_1Entry__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structkvs_1_1utils_1_1Entry_ab3a6cc516a31c2a7a9c042f82974a184}{Entry}} (\mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} key\+\_\+=\mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}(0), \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} ptr\+\_\+=\mbox{\hyperlink{namespacekvs_1_1utils_a8bd160be3e41bb51385d203e9ffab544}{EMPTY\+\_\+\+PTR}}) noexcept
+\mbox{\hyperlink{structkvs_1_1utils_1_1Entry_a3e8455d85e586a10f2a8344d4192b0ff}{Entry}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key\+\_\+=\mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}(), const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \&ptr\+\_\+=EMPTY\+\_\+\+PTR) noexcept
+\item 
+bool \mbox{\hyperlink{structkvs_1_1utils_1_1Entry_a721e9e0b4d8916b6cbb7c9968fb6bfe0}{operator==}} (const \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \&other) const noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
@@ -37,11 +39,20 @@ Collaboration diagram for kvs\+::utils\+::Entry\+:
 A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cache\+Map}} and Storage\+Hash\+Table). 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structkvs_1_1utils_1_1Entry_ab3a6cc516a31c2a7a9c042f82974a184}\label{structkvs_1_1utils_1_1Entry_ab3a6cc516a31c2a7a9c042f82974a184}} 
+\mbox{\Hypertarget{structkvs_1_1utils_1_1Entry_a3e8455d85e586a10f2a8344d4192b0ff}\label{structkvs_1_1utils_1_1Entry_a3e8455d85e586a10f2a8344d4192b0ff}} 
 \index{kvs::utils::Entry@{kvs::utils::Entry}!Entry@{Entry}}
 \index{Entry@{Entry}!kvs::utils::Entry@{kvs::utils::Entry}}
 \doxysubsubsection{\texorpdfstring{Entry()}{Entry()}}
-{\footnotesize\ttfamily kvs\+::utils\+::\+Entry\+::\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}}]{key\+\_\+ = {\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}(0)},  }\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}}]{ptr\+\_\+ = {\ttfamily \mbox{\hyperlink{namespacekvs_1_1utils_a8bd160be3e41bb51385d203e9ffab544}{EMPTY\+\_\+\+PTR}}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily kvs\+::utils\+::\+Entry\+::\+Entry (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key\+\_\+ = {\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}()},  }\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \&}]{ptr\+\_\+ = {\ttfamily EMPTY\+\_\+PTR} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structkvs_1_1utils_1_1Entry_a721e9e0b4d8916b6cbb7c9968fb6bfe0}\label{structkvs_1_1utils_1_1Entry_a721e9e0b4d8916b6cbb7c9968fb6bfe0}} 
+\index{kvs::utils::Entry@{kvs::utils::Entry}!operator==@{operator==}}
+\index{operator==@{operator==}!kvs::utils::Entry@{kvs::utils::Entry}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool kvs\+::utils\+::\+Entry\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
@@ -60,6 +71,7 @@ A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cac
 
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-include/\mbox{\hyperlink{KeyValueTypes_8h}{Key\+Value\+Types.\+h}}\end{DoxyCompactItemize}
+include/\mbox{\hyperlink{KeyValueTypes_8h}{Key\+Value\+Types.\+h}}\item 
+src/\mbox{\hyperlink{KeyValueTypes_8cpp}{Key\+Value\+Types.\+cpp}}\end{DoxyCompactItemize}
