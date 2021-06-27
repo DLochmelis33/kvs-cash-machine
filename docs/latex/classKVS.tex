@@ -24,12 +24,12 @@ Collaboration diagram for KVS\+:
 \item 
 \mbox{\hyperlink{classKVS_a63c84c6f0a2be545458351d72b5ebf57}{KVS}} ()
 \item 
-void \mbox{\hyperlink{classKVS_ae5eb6a7ac3640a482884a20b5f424b47}{add}} (\mbox{\hyperlink{structKeyValue}{Key\+Value}} key\+Value)
-\begin{DoxyCompactList}\small\item\em Add a \mbox{\hyperlink{structKeyValue}{Key\+Value}} to the storage. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{classKVS_a97281f5996ec9416d6d6042851c2945f}{remove}} (\mbox{\hyperlink{classKey}{Key}} key)
-\begin{DoxyCompactList}\small\item\em Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{classValue}{Value}} from storage. Lazy operation. \end{DoxyCompactList}\item 
-std\+::optional$<$ \mbox{\hyperlink{classValue}{Value}} $>$ \mbox{\hyperlink{classKVS_aa1bad605dc68f365d0efcaa13244a163}{get}} (\mbox{\hyperlink{classKey}{Key}} key)
-\begin{DoxyCompactList}\small\item\em Get the \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKVS_ae5eb6a7ac3640a482884a20b5f424b47}{add}} (Key\+Value key\+Value)
+\begin{DoxyCompactList}\small\item\em Add a Key\+Value to the storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classKVS_a97281f5996ec9416d6d6042851c2945f}{remove}} (Key key)
+\begin{DoxyCompactList}\small\item\em Remove the Key and associated Value from storage. Lazy operation. \end{DoxyCompactList}\item 
+std\+::optional$<$ Value $>$ \mbox{\hyperlink{classKVS_aa1bad605dc68f365d0efcaa13244a163}{get}} (Key key)
+\begin{DoxyCompactList}\small\item\em Get the Value associated with the Key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}{clear}} ()
 \begin{DoxyCompactList}\small\item\em Clear the storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
@@ -63,11 +63,11 @@ The class that provides an access to a key-\/value storage.
 \index{KVS@{KVS}!add@{add}}
 \index{add@{add}!KVS@{KVS}}
 \doxysubsubsection{\texorpdfstring{add()}{add()}}
-{\footnotesize\ttfamily void KVS\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structKeyValue}{Key\+Value}}}]{key\+Value }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void KVS\+::add (\begin{DoxyParamCaption}\item[{Key\+Value}]{key\+Value }\end{DoxyParamCaption})}
 
 
 
-Add a \mbox{\hyperlink{structKeyValue}{Key\+Value}} to the storage. 
+Add a Key\+Value to the storage. 
 
 \mbox{\Hypertarget{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}\label{classKVS_a0ed6f47f1cd2e0b53e8e293974386959}} 
 \index{KVS@{KVS}!clear@{clear}}
@@ -83,14 +83,14 @@ Clear the storage.
 \index{KVS@{KVS}!get@{get}}
 \index{get@{get}!KVS@{KVS}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
-{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classValue}{Value}}$>$ KVS\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily std\+::optional$<$Value$>$ KVS\+::get (\begin{DoxyParamCaption}\item[{Key}]{key }\end{DoxyParamCaption})}
 
 
 
-Get the \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}}. 
+Get the Value associated with the Key. 
 
 \begin{DoxyReturn}{Returns}
-The \mbox{\hyperlink{classValue}{Value}} associated with the \mbox{\hyperlink{classKey}{Key}} or nothing, if no such \mbox{\hyperlink{classValue}{Value}} is present. 
+The Value associated with the Key or nothing, if no such Value is present. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}\label{classKVS_a6ddd61c7a1a01de30e81401f279d66bd}} 
 \index{KVS@{KVS}!rebuildShard@{rebuildShard}}
@@ -106,11 +106,11 @@ Rebuilds the shard with the given index.
 \index{KVS@{KVS}!remove@{remove}}
 \index{remove@{remove}!KVS@{KVS}}
 \doxysubsubsection{\texorpdfstring{remove()}{remove()}}
-{\footnotesize\ttfamily void KVS\+::remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void KVS\+::remove (\begin{DoxyParamCaption}\item[{Key}]{key }\end{DoxyParamCaption})}
 
 
 
-Remove the \mbox{\hyperlink{classKey}{Key}} and associated \mbox{\hyperlink{classValue}{Value}} from storage. Lazy operation. 
+Remove the Key and associated Value from storage. Lazy operation. 
 
 Call shard rebuilding after removal if necessary. 
 

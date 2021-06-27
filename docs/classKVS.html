@@ -93,14 +93,14 @@ Collaboration diagram for KVS:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a63c84c6f0a2be545458351d72b5ebf57"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a63c84c6f0a2be545458351d72b5ebf57">KVS</a> ()</td></tr>
 <tr class="separator:a63c84c6f0a2be545458351d72b5ebf57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5eb6a7ac3640a482884a20b5f424b47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">add</a> (<a class="el" href="structKeyValue.html">KeyValue</a> keyValue)</td></tr>
-<tr class="memdesc:ae5eb6a7ac3640a482884a20b5f424b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a <a class="el" href="structKeyValue.html">KeyValue</a> to the storage.  <a href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">More...</a><br /></td></tr>
+<tr class="memitem:ae5eb6a7ac3640a482884a20b5f424b47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">add</a> (KeyValue keyValue)</td></tr>
+<tr class="memdesc:ae5eb6a7ac3640a482884a20b5f424b47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a KeyValue to the storage.  <a href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">More...</a><br /></td></tr>
 <tr class="separator:ae5eb6a7ac3640a482884a20b5f424b47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a97281f5996ec9416d6d6042851c2945f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">remove</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:a97281f5996ec9416d6d6042851c2945f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the <a class="el" href="classKey.html">Key</a> and associated <a class="el" href="classValue.html">Value</a> from storage. Lazy operation.  <a href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">More...</a><br /></td></tr>
+<tr class="memitem:a97281f5996ec9416d6d6042851c2945f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">remove</a> (Key key)</td></tr>
+<tr class="memdesc:a97281f5996ec9416d6d6042851c2945f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the Key and associated Value from storage. Lazy operation.  <a href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">More...</a><br /></td></tr>
 <tr class="separator:a97281f5996ec9416d6d6042851c2945f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1bad605dc68f365d0efcaa13244a163"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classValue.html">Value</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">get</a> (<a class="el" href="classKey.html">Key</a> key)</td></tr>
-<tr class="memdesc:aa1bad605dc68f365d0efcaa13244a163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a>.  <a href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">More...</a><br /></td></tr>
+<tr class="memitem:aa1bad605dc68f365d0efcaa13244a163"><td class="memItemLeft" align="right" valign="top">std::optional&lt; Value &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">get</a> (Key key)</td></tr>
+<tr class="memdesc:aa1bad605dc68f365d0efcaa13244a163"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Value associated with the Key.  <a href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">More...</a><br /></td></tr>
 <tr class="separator:aa1bad605dc68f365d0efcaa13244a163"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ed6f47f1cd2e0b53e8e293974386959"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#a0ed6f47f1cd2e0b53e8e293974386959">clear</a> ()</td></tr>
 <tr class="memdesc:a0ed6f47f1cd2e0b53e8e293974386959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the storage.  <a href="classKVS.html#a0ed6f47f1cd2e0b53e8e293974386959">More...</a><br /></td></tr>
@@ -151,14 +151,14 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void KVS::add </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structKeyValue.html">KeyValue</a>&#160;</td>
+          <td class="paramtype">KeyValue&#160;</td>
           <td class="paramname"><em>keyValue</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add a <a class="el" href="structKeyValue.html">KeyValue</a> to the storage. </p>
+<p>Add a KeyValue to the storage. </p>
 
 </div>
 </div>
@@ -188,17 +188,17 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="classValue.html">Value</a>&gt; KVS::get </td>
+          <td class="memname">std::optional&lt;Value&gt; KVS::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramtype">Key&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The <a class="el" href="classValue.html">Value</a> associated with the <a class="el" href="classKey.html">Key</a> or nothing, if no such <a class="el" href="classValue.html">Value</a> is present. </dd></dl>
+<p>Get the Value associated with the Key. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Value associated with the Key or nothing, if no such Value is present. </dd></dl>
 
 </div>
 </div>
@@ -239,14 +239,14 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void KVS::remove </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramtype">Key&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove the <a class="el" href="classKey.html">Key</a> and associated <a class="el" href="classValue.html">Value</a> from storage. Lazy operation. </p>
+<p>Remove the Key and associated Value from storage. Lazy operation. </p>
 <p>Call shard rebuilding after removal if necessary. </p>
 
 </div>

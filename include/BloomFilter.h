@@ -4,34 +4,37 @@
 #include <bitset>
 #include <vector>
 
+namespace kvs::bloom_filter {
+
 /**
  * @brief Bloom filter!
- * 
+ *
  */
 class BloomFilter final {
-public:
-  BloomFilter() noexcept;
+  public:
+    BloomFilter() noexcept;
 
-  /**
-   * @brief Check if the Key is present.
-   * 
-   */
-  bool checkExist(const Key& key) const noexcept;
+    /**
+     * @brief Check if the Key is present.
+     *
+     */
+    bool checkExist(const Key& key) const noexcept;
 
-  /**
-   * @brief Add the Key to the filter.
-   * 
-   */
-  void add(const Key& key) noexcept;
+    /**
+     * @brief Add the Key to the filter.
+     *
+     */
+    void add(const Key& key) noexcept;
 
-private:
-  using seed_t = uint64_t;
+  private:
 
-  std::bitset<BLOOM_FILTER_SIZE> bitset;
+    std::bitset<BLOOM_FILTER_SIZE> bitset;
 
-  /**
-   * @brief The seeds for different hash functions.
-   * 
-   */
-  const std::vector<seed_t> seeds;
+    /**
+     * @brief The seeds for different hash functions.
+     *
+     */
+    std::vector<seed_t> seeds;
 };
+
+} // namespace kvs::bloom_filter

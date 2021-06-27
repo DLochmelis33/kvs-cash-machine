@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['value_829',['Value',['../classValue.html',1,'']]],
-  ['view_830',['view',['../structdoctest_1_1String_1_1view.html',1,'doctest::String']]]
+  ['value_835',['Value',['../classkvs_1_1Value.html',1,'kvs']]],
+  ['view_836',['view',['../structdoctest_1_1String_1_1view.html',1,'doctest::String']]]
 ];

@@ -3,6 +3,8 @@
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
+ \mbox{\hyperlink{namespacekvs_1_1bloom__filter}{bloom\+\_\+filter}}
+\item 
  \mbox{\hyperlink{namespacekvs_1_1storage}{storage}}
 \item 
  \mbox{\hyperlink{namespacekvs_1_1utils}{utils}}
@@ -10,7 +12,30 @@
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+class \mbox{\hyperlink{classkvs_1_1Key}{Key}}
+\item 
+class \mbox{\hyperlink{classkvs_1_1Value}{Value}}
+\item 
+struct \mbox{\hyperlink{structkvs_1_1KeyValue}{Key\+Value}}
+\item 
+class \mbox{\hyperlink{classkvs_1_1Ptr}{Ptr}}
+\begin{DoxyCompactList}\small\item\em A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structkvs_1_1Entry}{Entry}}
+\begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cache\+Map}} and \mbox{\hyperlink{classStorageHashTable}{Storage\+Hash\+Table}}). \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classkvs_1_1KVSException}{KVSException}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \mbox{\hyperlink{namespacekvs_a8e9bb0ff0b94184c38de1c28f2022a6e}{key\+\_\+t}} = \+\_\+\+\_\+uint128\+\_\+t
+\item 
+using \mbox{\hyperlink{namespacekvs_a441df124a1113c2e4e86bffec031e0f4}{value\+\_\+t}} = char $\ast$
+\item 
+using \mbox{\hyperlink{namespacekvs_a30ab9f4b730386019da9612a4e1f68c9}{ptr\+\_\+t}} = unsigned char
+\item 
+using \mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{hash\+\_\+t}} = uint64\+\_\+t
+\item 
+using \mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{seed\+\_\+t}} = \mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{hash\+\_\+t}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -24,6 +49,61 @@ enum class \mbox{\hyperlink{namespacekvs_acf3940270dd597f58c6c22e874850ad0}{KVSE
 \mbox{\hyperlink{namespacekvs_acf3940270dd597f58c6c22e874850ad0ac43488bc0958ba353ae0e497db264f65}{STORAGE\+\_\+\+WRITE\+\_\+\+FAILED}}
  \}
 \end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{hash\+\_\+t}} \mbox{\hyperlink{namespacekvs_a86a85175e2412b807fba79d90f9612a8}{hash\+Key}} (\mbox{\hyperlink{classkvs_1_1Key}{Key}} key, \mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{seed\+\_\+t}} seed) noexcept
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_a02372280a0134fd9612b06a1963f97fb}{VALUE\+\_\+\+SIZE}} = 2048
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_af356b6eb0cbc05e66fce8f17ed301d11}{KEY\+\_\+\+SIZE}} = 16
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_adf36d628f0eb034024accb37c6aef338}{CACHE\+\_\+\+MAP\+\_\+\+SIZE}} = 5000
+\item 
+constexpr double \mbox{\hyperlink{namespacekvs_a02b9c37ba748443dadd89796c15304e6}{MAP\+\_\+\+LOAD\+\_\+\+FACTOR}} = 1.\+5
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_aa78e0c27e923920ab0a56b6031e79e9d}{SHARD\+\_\+\+NUMBER}} = 4981
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 5000
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_aec26c761f7c54004a2bbc0236d83806a}{BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 5
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}\label{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}} 
+\index{kvs@{kvs}!hash\_t@{hash\_t}}
+\index{hash\_t@{hash\_t}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{hash\_t}{hash\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{kvs\+::hash\+\_\+t}} = typedef uint64\+\_\+t}
+
+\mbox{\Hypertarget{namespacekvs_a8e9bb0ff0b94184c38de1c28f2022a6e}\label{namespacekvs_a8e9bb0ff0b94184c38de1c28f2022a6e}} 
+\index{kvs@{kvs}!key\_t@{key\_t}}
+\index{key\_t@{key\_t}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{key\_t}{key\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacekvs_a8e9bb0ff0b94184c38de1c28f2022a6e}{kvs\+::key\+\_\+t}} = typedef \+\_\+\+\_\+uint128\+\_\+t}
+
+\mbox{\Hypertarget{namespacekvs_a30ab9f4b730386019da9612a4e1f68c9}\label{namespacekvs_a30ab9f4b730386019da9612a4e1f68c9}} 
+\index{kvs@{kvs}!ptr\_t@{ptr\_t}}
+\index{ptr\_t@{ptr\_t}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{ptr\_t}{ptr\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacekvs_a30ab9f4b730386019da9612a4e1f68c9}{kvs\+::ptr\+\_\+t}} = typedef unsigned char}
+
+\mbox{\Hypertarget{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}\label{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}} 
+\index{kvs@{kvs}!seed\_t@{seed\_t}}
+\index{seed\_t@{seed\_t}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{seed\_t}{seed\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{kvs\+::seed\+\_\+t}} = typedef \mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{hash\+\_\+t}}}
+
+\mbox{\Hypertarget{namespacekvs_a441df124a1113c2e4e86bffec031e0f4}\label{namespacekvs_a441df124a1113c2e4e86bffec031e0f4}} 
+\index{kvs@{kvs}!value\_t@{value\_t}}
+\index{value\_t@{value\_t}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{value\_t}{value\_t}}
+{\footnotesize\ttfamily using \mbox{\hyperlink{namespacekvs_a441df124a1113c2e4e86bffec031e0f4}{kvs\+::value\+\_\+t}} = typedef char$\ast$}
+
 
 
 \doxysubsection{Enumeration Type Documentation}
@@ -55,3 +135,57 @@ STORAGE\+\_\+\+WRITE\+\_\+\+FAILED&\\
 \hline
 
 \end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespacekvs_a86a85175e2412b807fba79d90f9612a8}\label{namespacekvs_a86a85175e2412b807fba79d90f9612a8}} 
+\index{kvs@{kvs}!hashKey@{hashKey}}
+\index{hashKey@{hashKey}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{hashKey()}{hashKey()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespacekvs_ab3dc2c295052e93223190ff87f78e1ae}{hash\+\_\+t}} kvs\+::hash\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1Key}{Key}}}]{key,  }\item[{\mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{seed\+\_\+t}}}]{seed }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespacekvs_aec26c761f7c54004a2bbc0236d83806a}\label{namespacekvs_aec26c761f7c54004a2bbc0236d83806a}} 
+\index{kvs@{kvs}!BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER@{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}}
+\index{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER@{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER = 5\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}\label{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}} 
+\index{kvs@{kvs}!BLOOM\_FILTER\_SIZE@{BLOOM\_FILTER\_SIZE}}
+\index{BLOOM\_FILTER\_SIZE@{BLOOM\_FILTER\_SIZE}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{BLOOM\_FILTER\_SIZE}{BLOOM\_FILTER\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE = 5000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacekvs_adf36d628f0eb034024accb37c6aef338}\label{namespacekvs_adf36d628f0eb034024accb37c6aef338}} 
+\index{kvs@{kvs}!CACHE\_MAP\_SIZE@{CACHE\_MAP\_SIZE}}
+\index{CACHE\_MAP\_SIZE@{CACHE\_MAP\_SIZE}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{CACHE\_MAP\_SIZE}{CACHE\_MAP\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::\+CACHE\+\_\+\+MAP\+\_\+\+SIZE = 5000\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacekvs_af356b6eb0cbc05e66fce8f17ed301d11}\label{namespacekvs_af356b6eb0cbc05e66fce8f17ed301d11}} 
+\index{kvs@{kvs}!KEY\_SIZE@{KEY\_SIZE}}
+\index{KEY\_SIZE@{KEY\_SIZE}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{KEY\_SIZE}{KEY\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::\+KEY\+\_\+\+SIZE = 16\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacekvs_a02b9c37ba748443dadd89796c15304e6}\label{namespacekvs_a02b9c37ba748443dadd89796c15304e6}} 
+\index{kvs@{kvs}!MAP\_LOAD\_FACTOR@{MAP\_LOAD\_FACTOR}}
+\index{MAP\_LOAD\_FACTOR@{MAP\_LOAD\_FACTOR}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{MAP\_LOAD\_FACTOR}{MAP\_LOAD\_FACTOR}}
+{\footnotesize\ttfamily constexpr double kvs\+::\+MAP\+\_\+\+LOAD\+\_\+\+FACTOR = 1.\+5\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacekvs_aa78e0c27e923920ab0a56b6031e79e9d}\label{namespacekvs_aa78e0c27e923920ab0a56b6031e79e9d}} 
+\index{kvs@{kvs}!SHARD\_NUMBER@{SHARD\_NUMBER}}
+\index{SHARD\_NUMBER@{SHARD\_NUMBER}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{SHARD\_NUMBER}{SHARD\_NUMBER}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::\+SHARD\+\_\+\+NUMBER = 4981\hspace{0.3cm}{\ttfamily [constexpr]}}
+
+\mbox{\Hypertarget{namespacekvs_a02372280a0134fd9612b06a1963f97fb}\label{namespacekvs_a02372280a0134fd9612b06a1963f97fb}} 
+\index{kvs@{kvs}!VALUE\_SIZE@{VALUE\_SIZE}}
+\index{VALUE\_SIZE@{VALUE\_SIZE}!kvs@{kvs}}
+\doxysubsubsection{\texorpdfstring{VALUE\_SIZE}{VALUE\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::\+VALUE\+\_\+\+SIZE = 2048\hspace{0.3cm}{\ttfamily [constexpr]}}
+

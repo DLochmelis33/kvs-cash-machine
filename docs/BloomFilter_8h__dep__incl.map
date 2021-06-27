@@ -1,6 +1,7 @@
 <map id="include/BloomFilter.h" name="include/BloomFilter.h">
-<area shape="rect" id="node1" title=" " alt="" coords="62,5,205,32"/>
+<area shape="rect" id="node1" title=" " alt="" coords="135,5,278,32"/>
 <area shape="rect" id="node2" href="$Shard_8h.html" title=" " alt="" coords="78,80,189,107"/>
+<area shape="rect" id="node5" href="$BloomFilter_8cpp.html" title=" " alt="" coords="213,80,347,107"/>
 <area shape="rect" id="node3" href="$KVS_8h.html" title=" " alt="" coords="5,155,109,181"/>
 <area shape="rect" id="node4" href="$ShardBuilder_8h.html" title=" " alt="" coords="134,155,285,181"/>
 </map>

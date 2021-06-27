@@ -85,7 +85,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classShard.html">Shard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">createShard</a> (size_t index)</td></tr>
 <tr class="memdesc:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> object.  <a href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">More...</a><br /></td></tr>
 <tr class="separator:a5cbf3800b9f6b9023fd2bdaa8bef109f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classShard.html">Shard</a>, std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">rebuildShard</a> (const <a class="el" href="classShard.html">Shard</a> &amp;shard, const <a class="el" href="classCacheMap.html">CacheMap</a> &amp;cacheMap)</td></tr>
+<tr class="memitem:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classShard.html">Shard</a>, std::vector&lt; Entry &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">rebuildShard</a> (const <a class="el" href="classShard.html">Shard</a> &amp;shard, const <a class="el" href="classCacheMap.html">CacheMap</a> &amp;cacheMap)</td></tr>
 <tr class="memdesc:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild the <a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> according to delayed removals stored in <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a>.  <a href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">More...</a><br /></td></tr>
 <tr class="separator:acd04ed42c5bcc787cc213ce3d4bb6087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -129,7 +129,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::pair&lt;<a class="el" href="classShard.html">Shard</a>, std::vector&lt;<a class="el" href="structEntry.html">Entry</a>&gt; &gt; ShardBuilder::rebuildShard </td>
+          <td class="memname">static std::pair&lt;<a class="el" href="classShard.html">Shard</a>, std::vector&lt;Entry&gt; &gt; ShardBuilder::rebuildShard </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classShard.html">Shard</a> &amp;&#160;</td>
           <td class="paramname"><em>shard</em>, </td>

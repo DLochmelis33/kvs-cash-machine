@@ -1,12 +1,13 @@
 <map id="doctest::detail::MessageBuilder" name="doctest::detail::MessageBuilder">
-<area shape="rect" id="node1" title=" " alt="" coords="202,888,363,1053"/>
-<area shape="rect" id="node2" href="$structdoctest_1_1MessageData.html" title=" " alt="" coords="138,748,288,825"/>
-<area shape="rect" id="node3" title=" " alt="" coords="16,5,63,83"/>
-<area shape="rect" id="node4" href="$classdoctest_1_1String.html" title=" " alt="" coords="110,300,215,685"/>
-<area shape="rect" id="node5" href="$structdoctest_1_1String_1_1view.html" title="OCLINT avoid private static members." alt="" coords="93,160,232,237"/>
-<area shape="rect" id="node6" title=" " alt="" coords="193,5,268,83"/>
-<area shape="rect" id="node7" title=" " alt="" coords="334,160,450,237"/>
-<area shape="rect" id="node8" title=" " alt="" coords="239,454,294,531"/>
-<area shape="rect" id="node9" title=" " alt="" coords="348,454,387,531"/>
-<area shape="rect" id="node10" title=" " alt="" coords="313,748,390,825"/>
+<area shape="rect" id="node1" title=" " alt="" coords="356,888,517,1053"/>
+<area shape="rect" id="node2" href="$structdoctest_1_1MessageData.html" title=" " alt="" coords="292,748,442,825"/>
+<area shape="rect" id="node3" href="$classdoctest_1_1String.html" title=" " alt="" coords="158,300,264,685"/>
+<area shape="rect" id="node4" href="$structdoctest_1_1String_1_1view.html" title="OCLINT avoid private static members." alt="" coords="54,160,192,237"/>
+<area shape="rect" id="node5" title=" " alt="" coords="32,5,78,83"/>
+<area shape="rect" id="node6" title=" " alt="" coords="122,5,196,83"/>
+<area shape="rect" id="node7" title=" " alt="" coords="294,160,410,237"/>
+<area shape="rect" id="node8" title=" " alt="" coords="288,454,342,531"/>
+<area shape="rect" id="node9" title=" " alt="" coords="401,454,440,531"/>
+<area shape="rect" id="node10" title=" " alt="" coords="464,454,555,531"/>
+<area shape="rect" id="node11" title=" " alt="" coords="467,748,544,825"/>
 </map>

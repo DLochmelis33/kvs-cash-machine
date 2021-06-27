@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ptr_5ft_1128',['ptr_t',['../KeyValueTypes_8h.html#ab814495093e1a00b13162cad38f0a670',1,'KeyValueTypes.h']]]
+  ['ptr_5ft_1139',['ptr_t',['../namespacekvs.html#a30ab9f4b730386019da9612a4e1f68c9',1,'kvs']]]
 ];

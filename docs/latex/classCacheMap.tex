@@ -24,16 +24,16 @@ Collaboration diagram for Cache\+Map\+:
 \item 
 \mbox{\hyperlink{classCacheMap_afaeca70c6504cb3aebf42c27a4deded3}{Cache\+Map}} () noexcept
 \item 
-std\+::optional$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ \mbox{\hyperlink{classCacheMap_a871b3530a597c285c3dafdee7f6942da}{put\+Or\+Displace}} (\mbox{\hyperlink{structEntry}{Entry}} entry) noexcept
-\begin{DoxyCompactList}\small\item\em Put \mbox{\hyperlink{classPtr}{Ptr}} by \mbox{\hyperlink{classKey}{Key}}. If not enough space, displace a random \mbox{\hyperlink{structEntry}{Entry}} and return it. If an \mbox{\hyperlink{structEntry}{Entry}} with the given \mbox{\hyperlink{classKey}{Key}} already exists, overwrite it. \end{DoxyCompactList}\item 
-std\+::optional$<$ \mbox{\hyperlink{classPtr}{Ptr}} $>$ \mbox{\hyperlink{classCacheMap_ae9b77c038acc4369547b5750409d0af9}{get}} (\mbox{\hyperlink{classKey}{Key}} key) const noexcept
-\begin{DoxyCompactList}\small\item\em Find a \mbox{\hyperlink{classPtr}{Ptr}} by \mbox{\hyperlink{classKey}{Key}}. \end{DoxyCompactList}\item 
+std\+::optional$<$ Entry $>$ \mbox{\hyperlink{classCacheMap_a871b3530a597c285c3dafdee7f6942da}{put\+Or\+Displace}} (Entry entry) noexcept
+\begin{DoxyCompactList}\small\item\em Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. \end{DoxyCompactList}\item 
+std\+::optional$<$ Ptr $>$ \mbox{\hyperlink{classCacheMap_ae9b77c038acc4369547b5750409d0af9}{get}} (Key key) const noexcept
+\begin{DoxyCompactList}\small\item\em Find a Ptr by Key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classCacheMap_a8386c90fd6523f7383318863e2225f3c}{clear}} () noexcept
 \begin{DoxyCompactList}\small\item\em Clear the entire map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-std\+::vector$<$ \mbox{\hyperlink{structEntry}{Entry}} $>$ \mbox{\hyperlink{classCacheMap_adc7cd25aa974f5e7ae69137026555fcb}{data}}
+std\+::vector$<$ Entry $>$ \mbox{\hyperlink{classCacheMap_adc7cd25aa974f5e7ae69137026555fcb}{data}}
 \begin{DoxyCompactList}\small\item\em The internal storage of the map. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classCacheMap_a2c9388000fc1d67535c682b15ae4d858}{size}}
 \begin{DoxyCompactList}\small\item\em The number of elements present in the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -66,27 +66,27 @@ Clear the entire map.
 \index{CacheMap@{CacheMap}!get@{get}}
 \index{get@{get}!CacheMap@{CacheMap}}
 \doxysubsubsection{\texorpdfstring{get()}{get()}}
-{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classPtr}{Ptr}}$>$ Cache\+Map\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classKey}{Key}}}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily std\+::optional$<$Ptr$>$ Cache\+Map\+::get (\begin{DoxyParamCaption}\item[{Key}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
-Find a \mbox{\hyperlink{classPtr}{Ptr}} by \mbox{\hyperlink{classKey}{Key}}. 
+Find a Ptr by Key. 
 
 \begin{DoxyReturn}{Returns}
-The requested \mbox{\hyperlink{classPtr}{Ptr}} or nothing, if no \mbox{\hyperlink{structEntry}{Entry}} with given \mbox{\hyperlink{classKey}{Key}} is present. 
+The requested Ptr or nothing, if no Entry with given Key is present. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classCacheMap_a871b3530a597c285c3dafdee7f6942da}\label{classCacheMap_a871b3530a597c285c3dafdee7f6942da}} 
 \index{CacheMap@{CacheMap}!putOrDisplace@{putOrDisplace}}
 \index{putOrDisplace@{putOrDisplace}!CacheMap@{CacheMap}}
 \doxysubsubsection{\texorpdfstring{putOrDisplace()}{putOrDisplace()}}
-{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{structEntry}{Entry}}$>$ Cache\+Map\+::put\+Or\+Displace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structEntry}{Entry}}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+{\footnotesize\ttfamily std\+::optional$<$Entry$>$ Cache\+Map\+::put\+Or\+Displace (\begin{DoxyParamCaption}\item[{Entry}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
-Put \mbox{\hyperlink{classPtr}{Ptr}} by \mbox{\hyperlink{classKey}{Key}}. If not enough space, displace a random \mbox{\hyperlink{structEntry}{Entry}} and return it. If an \mbox{\hyperlink{structEntry}{Entry}} with the given \mbox{\hyperlink{classKey}{Key}} already exists, overwrite it. 
+Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. 
 
 \begin{DoxyReturn}{Returns}
-Displaced \mbox{\hyperlink{structEntry}{Entry}}, if any. 
+Displaced Entry, if any. 
 \end{DoxyReturn}
 
 
@@ -95,7 +95,7 @@ Displaced \mbox{\hyperlink{structEntry}{Entry}}, if any.
 \index{CacheMap@{CacheMap}!data@{data}}
 \index{data@{data}!CacheMap@{CacheMap}}
 \doxysubsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structEntry}{Entry}}$>$ Cache\+Map\+::data\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily std\+::vector$<$Entry$>$ Cache\+Map\+::data\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

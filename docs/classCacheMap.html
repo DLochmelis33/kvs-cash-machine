@@ -90,11 +90,11 @@ Collaboration diagram for CacheMap:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:afaeca70c6504cb3aebf42c27a4deded3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#afaeca70c6504cb3aebf42c27a4deded3">CacheMap</a> () noexcept</td></tr>
 <tr class="separator:afaeca70c6504cb3aebf42c27a4deded3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a871b3530a597c285c3dafdee7f6942da"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structEntry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">putOrDisplace</a> (<a class="el" href="structEntry.html">Entry</a> entry) noexcept</td></tr>
-<tr class="memdesc:a871b3530a597c285c3dafdee7f6942da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> by <a class="el" href="classKey.html">Key</a>. If not enough space, displace a random <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> and return it. If an <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> with the given <a class="el" href="classKey.html">Key</a> already exists, overwrite it.  <a href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">More...</a><br /></td></tr>
+<tr class="memitem:a871b3530a597c285c3dafdee7f6942da"><td class="memItemLeft" align="right" valign="top">std::optional&lt; Entry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">putOrDisplace</a> (Entry entry) noexcept</td></tr>
+<tr class="memdesc:a871b3530a597c285c3dafdee7f6942da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it.  <a href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">More...</a><br /></td></tr>
 <tr class="separator:a871b3530a597c285c3dafdee7f6942da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9b77c038acc4369547b5750409d0af9"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">get</a> (<a class="el" href="classKey.html">Key</a> key) const noexcept</td></tr>
-<tr class="memdesc:ae9b77c038acc4369547b5750409d0af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> by <a class="el" href="classKey.html">Key</a>.  <a href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">More...</a><br /></td></tr>
+<tr class="memitem:ae9b77c038acc4369547b5750409d0af9"><td class="memItemLeft" align="right" valign="top">std::optional&lt; Ptr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">get</a> (Key key) const noexcept</td></tr>
+<tr class="memdesc:ae9b77c038acc4369547b5750409d0af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a Ptr by Key.  <a href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">More...</a><br /></td></tr>
 <tr class="separator:ae9b77c038acc4369547b5750409d0af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8386c90fd6523f7383318863e2225f3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a8386c90fd6523f7383318863e2225f3c">clear</a> () noexcept</td></tr>
 <tr class="memdesc:a8386c90fd6523f7383318863e2225f3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the entire map.  <a href="classCacheMap.html#a8386c90fd6523f7383318863e2225f3c">More...</a><br /></td></tr>
@@ -102,7 +102,7 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:adc7cd25aa974f5e7ae69137026555fcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a></td></tr>
+<tr class="memitem:adc7cd25aa974f5e7ae69137026555fcb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Entry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a></td></tr>
 <tr class="memdesc:adc7cd25aa974f5e7ae69137026555fcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">The internal storage of the map.  <a href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">More...</a><br /></td></tr>
 <tr class="separator:adc7cd25aa974f5e7ae69137026555fcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2c9388000fc1d67535c682b15ae4d858"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">size</a></td></tr>
@@ -175,9 +175,9 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="classPtr.html">Ptr</a>&gt; CacheMap::get </td>
+          <td class="memname">std::optional&lt;Ptr&gt; CacheMap::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramtype">Key&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -189,8 +189,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Find a <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> by <a class="el" href="classKey.html">Key</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd>The requested <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> or nothing, if no <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> with given <a class="el" href="classKey.html">Key</a> is present. </dd></dl>
+<p>Find a Ptr by Key. </p>
+<dl class="section return"><dt>Returns</dt><dd>The requested Ptr or nothing, if no Entry with given Key is present. </dd></dl>
 
 </div>
 </div>
@@ -204,9 +204,9 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="structEntry.html">Entry</a>&gt; CacheMap::putOrDisplace </td>
+          <td class="memname">std::optional&lt;Entry&gt; CacheMap::putOrDisplace </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structEntry.html">Entry</a>&#160;</td>
+          <td class="paramtype">Entry&#160;</td>
           <td class="paramname"><em>entry</em></td><td>)</td>
           <td></td>
         </tr>
@@ -218,8 +218,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Put <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> by <a class="el" href="classKey.html">Key</a>. If not enough space, displace a random <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> and return it. If an <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> with the given <a class="el" href="classKey.html">Key</a> already exists, overwrite it. </p>
-<dl class="section return"><dt>Returns</dt><dd>Displaced <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a>, if any. </dd></dl>
+<p>Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. </p>
+<dl class="section return"><dt>Returns</dt><dd>Displaced Entry, if any. </dd></dl>
 
 </div>
 </div>
@@ -234,7 +234,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structEntry.html">Entry</a>&gt; CacheMap::data</td>
+          <td class="memname">std::vector&lt;Entry&gt; CacheMap::data</td>
         </tr>
       </table>
   </td>

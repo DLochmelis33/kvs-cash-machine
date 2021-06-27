@@ -1,7 +1,7 @@
 var searchData=
 [
   ['abort_5fafter_0',['abort_after',['../structdoctest_1_1ContextOptions.html#a8ba5bfec2229bc2da9ab917f4bdee5e7',1,'doctest::ContextOptions']]],
-  ['add_1',['add',['../classBloomFilter.html#aea5778bab1107b73b53a842ee6224f8a',1,'BloomFilter::add()'],['../classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47',1,'KVS::add()']]],
+  ['add_1',['add',['../classkvs_1_1bloom__filter_1_1BloomFilter.html#a8dfc5a4874086785ca7d05566673657f',1,'kvs::bloom_filter::BloomFilter::add()'],['../classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47',1,'KVS::add()']]],
   ['add_5ffail_5fat_2',['ADD_FAIL_AT',['../doctest_8h.html#ae9198d684b0ca06b0efef9dd773707e5',1,'doctest.h']]],
   ['add_5ffail_5fcheck_5fat_3',['ADD_FAIL_CHECK_AT',['../doctest_8h.html#a2787e9f3c538079e2b7652af637cbbfb',1,'doctest.h']]],
   ['add_5fmessage_5fat_4',['ADD_MESSAGE_AT',['../doctest_8h.html#a285505606bef4b4d31c77a1996f98aee',1,'doctest.h']]],

@@ -94,13 +94,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a519cf1c372b3d8e663400c3d456fed24"><td class="memItemLeft" align="right" valign="top">ByteArray&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a519cf1c372b3d8e663400c3d456fed24">serializeToByteArray</a> () const noexcept</td></tr>
 <tr class="memdesc:a519cf1c372b3d8e663400c3d456fed24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize the table into a ByteArray.  <a href="classStorageHashTable.html#a519cf1c372b3d8e663400c3d456fed24">More...</a><br /></td></tr>
 <tr class="separator:a519cf1c372b3d8e663400c3d456fed24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98ee564daa5240927ab654976baec048"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classPtr.html">Ptr</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a98ee564daa5240927ab654976baec048">get</a> (<a class="el" href="classKey.html">Key</a> key) const noexcept</td></tr>
-<tr class="memdesc:a98ee564daa5240927ab654976baec048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key.  <a href="classStorageHashTable.html#a98ee564daa5240927ab654976baec048">More...</a><br /></td></tr>
+<tr class="memitem:a98ee564daa5240927ab654976baec048"><td class="memItemLeft" align="right" valign="top">std::optional&lt; Ptr &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a98ee564daa5240927ab654976baec048">get</a> (Key key) const noexcept</td></tr>
+<tr class="memdesc:a98ee564daa5240927ab654976baec048"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the Ptr associated with the key.  <a href="classStorageHashTable.html#a98ee564daa5240927ab654976baec048">More...</a><br /></td></tr>
 <tr class="separator:a98ee564daa5240927ab654976baec048"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7238f6554cbaf2648bc8dffda6bef6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af7238f6554cbaf2648bc8dffda6bef6c">put</a> (<a class="el" href="structEntry.html">Entry</a> entry)</td></tr>
-<tr class="memdesc:af7238f6554cbaf2648bc8dffda6bef6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put an <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> into the table.  <a href="classStorageHashTable.html#af7238f6554cbaf2648bc8dffda6bef6c">More...</a><br /></td></tr>
+<tr class="memitem:af7238f6554cbaf2648bc8dffda6bef6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af7238f6554cbaf2648bc8dffda6bef6c">put</a> (Entry entry)</td></tr>
+<tr class="memdesc:af7238f6554cbaf2648bc8dffda6bef6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put an Entry into the table.  <a href="classStorageHashTable.html#af7238f6554cbaf2648bc8dffda6bef6c">More...</a><br /></td></tr>
 <tr class="separator:af7238f6554cbaf2648bc8dffda6bef6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7869f93649c601734536c168ac3d1e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af7869f93649c601734536c168ac3d1e7">getEntries</a> () const noexcept</td></tr>
+<tr class="memitem:af7869f93649c601734536c168ac3d1e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Entry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#af7869f93649c601734536c168ac3d1e7">getEntries</a> () const noexcept</td></tr>
 <tr class="memdesc:af7869f93649c601734536c168ac3d1e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all entries present in the map.  <a href="classStorageHashTable.html#af7869f93649c601734536c168ac3d1e7">More...</a><br /></td></tr>
 <tr class="separator:af7869f93649c601734536c168ac3d1e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -112,7 +112,7 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a0800b4b51d62a53d597ae4e0b4fdd507"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structEntry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a0800b4b51d62a53d597ae4e0b4fdd507">data</a></td></tr>
+<tr class="memitem:a0800b4b51d62a53d597ae4e0b4fdd507"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Entry &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#a0800b4b51d62a53d597ae4e0b4fdd507">data</a></td></tr>
 <tr class="separator:a0800b4b51d62a53d597ae4e0b4fdd507"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea6ffa8b65b4ec848609ea9b37aa62dd"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classStorageHashTable.html#aea6ffa8b65b4ec848609ea9b37aa62dd">size</a></td></tr>
 <tr class="separator:aea6ffa8b65b4ec848609ea9b37aa62dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -186,9 +186,9 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::optional&lt;<a class="el" href="classPtr.html">Ptr</a>&gt; StorageHashTable::get </td>
+          <td class="memname">std::optional&lt;Ptr&gt; StorageHashTable::get </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classKey.html">Key</a>&#160;</td>
+          <td class="paramtype">Key&#160;</td>
           <td class="paramname"><em>key</em></td><td>)</td>
           <td> const</td>
         </tr>
@@ -200,8 +200,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Find the <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> associated with the key. </p>
-<dl class="section return"><dt>Returns</dt><dd>The requested <a class="el" href="classPtr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> or nothing, if no <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> with given <a class="el" href="classKey.html">Key</a> is present. </dd></dl>
+<p>Find the Ptr associated with the key. </p>
+<dl class="section return"><dt>Returns</dt><dd>The requested Ptr or nothing, if no Entry with given Key is present. </dd></dl>
 
 </div>
 </div>
@@ -215,7 +215,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structEntry.html">Entry</a>&gt; StorageHashTable::getEntries </td>
+          <td class="memname">std::vector&lt;Entry&gt; StorageHashTable::getEntries </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -243,14 +243,14 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">void StorageHashTable::put </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structEntry.html">Entry</a>&#160;</td>
+          <td class="paramtype">Entry&#160;</td>
           <td class="paramname"><em>entry</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Put an <a class="el" href="structEntry.html" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).">Entry</a> into the table. </p>
+<p>Put an Entry into the table. </p>
 
 </div>
 </div>
@@ -292,7 +292,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="structEntry.html">Entry</a>&gt; StorageHashTable::data</td>
+          <td class="memname">std::vector&lt;Entry&gt; StorageHashTable::data</td>
         </tr>
       </table>
   </td>

@@ -1,0 +1,97 @@
+\hypertarget{classkvs_1_1bloom__filter_1_1BloomFilter}{}\doxysection{kvs\+::bloom\+\_\+filter\+::Bloom\+Filter Class Reference}
+\label{classkvs_1_1bloom__filter_1_1BloomFilter}\index{kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}}
+
+
+Bloom filter!  
+
+
+
+
+{\ttfamily \#include $<$Bloom\+Filter.\+h$>$}
+
+
+
+Collaboration diagram for kvs\+::bloom\+\_\+filter\+::Bloom\+Filter\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{classkvs_1_1bloom__filter_1_1BloomFilter__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classkvs_1_1bloom__filter_1_1BloomFilter_a95a414856a10b324472cfbc1416150cb}{Bloom\+Filter}} () noexcept
+\item 
+bool \mbox{\hyperlink{classkvs_1_1bloom__filter_1_1BloomFilter_ab92ad6453099dc032d7d5de61b7fe384}{check\+Exist}} (const \mbox{\hyperlink{classkvs_1_1Key}{Key}} \&key) const noexcept
+\begin{DoxyCompactList}\small\item\em Check if the \mbox{\hyperlink{classkvs_1_1Key}{Key}} is present. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classkvs_1_1bloom__filter_1_1BloomFilter_a8dfc5a4874086785ca7d05566673657f}{add}} (const \mbox{\hyperlink{classkvs_1_1Key}{Key}} \&key) noexcept
+\begin{DoxyCompactList}\small\item\em Add the \mbox{\hyperlink{classkvs_1_1Key}{Key}} to the filter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::bitset$<$ \mbox{\hyperlink{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} $>$ \mbox{\hyperlink{classkvs_1_1bloom__filter_1_1BloomFilter_a7d3e96dfc1b432706ff49cad92806e2b}{bitset}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{seed\+\_\+t}} $>$ \mbox{\hyperlink{classkvs_1_1bloom__filter_1_1BloomFilter_a20a08ecef5aa988348fb42afbeb17b32}{seeds}}
+\begin{DoxyCompactList}\small\item\em The seeds for different hash functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Bloom filter! 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classkvs_1_1bloom__filter_1_1BloomFilter_a95a414856a10b324472cfbc1416150cb}\label{classkvs_1_1bloom__filter_1_1BloomFilter_a95a414856a10b324472cfbc1416150cb}} 
+\index{kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}!BloomFilter@{BloomFilter}}
+\index{BloomFilter@{BloomFilter}!kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}}
+\doxysubsubsection{\texorpdfstring{BloomFilter()}{BloomFilter()}}
+{\footnotesize\ttfamily kvs\+::bloom\+\_\+filter\+::\+Bloom\+Filter\+::\+Bloom\+Filter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classkvs_1_1bloom__filter_1_1BloomFilter_a8dfc5a4874086785ca7d05566673657f}\label{classkvs_1_1bloom__filter_1_1BloomFilter_a8dfc5a4874086785ca7d05566673657f}} 
+\index{kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}!add@{add}}
+\index{add@{add}!kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void kvs\+::bloom\+\_\+filter\+::\+Bloom\+Filter\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Add the \mbox{\hyperlink{classkvs_1_1Key}{Key}} to the filter. 
+
+\mbox{\Hypertarget{classkvs_1_1bloom__filter_1_1BloomFilter_ab92ad6453099dc032d7d5de61b7fe384}\label{classkvs_1_1bloom__filter_1_1BloomFilter_ab92ad6453099dc032d7d5de61b7fe384}} 
+\index{kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}!checkExist@{checkExist}}
+\index{checkExist@{checkExist}!kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}}
+\doxysubsubsection{\texorpdfstring{checkExist()}{checkExist()}}
+{\footnotesize\ttfamily bool kvs\+::bloom\+\_\+filter\+::\+Bloom\+Filter\+::check\+Exist (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Check if the \mbox{\hyperlink{classkvs_1_1Key}{Key}} is present. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classkvs_1_1bloom__filter_1_1BloomFilter_a7d3e96dfc1b432706ff49cad92806e2b}\label{classkvs_1_1bloom__filter_1_1BloomFilter_a7d3e96dfc1b432706ff49cad92806e2b}} 
+\index{kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}!bitset@{bitset}}
+\index{bitset@{bitset}!kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}}
+\doxysubsubsection{\texorpdfstring{bitset}{bitset}}
+{\footnotesize\ttfamily std\+::bitset$<$\mbox{\hyperlink{namespacekvs_a7ae734d9482d4a78f02d8eace3b61100}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}}$>$ kvs\+::bloom\+\_\+filter\+::\+Bloom\+Filter\+::bitset\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classkvs_1_1bloom__filter_1_1BloomFilter_a20a08ecef5aa988348fb42afbeb17b32}\label{classkvs_1_1bloom__filter_1_1BloomFilter_a20a08ecef5aa988348fb42afbeb17b32}} 
+\index{kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}!seeds@{seeds}}
+\index{seeds@{seeds}!kvs::bloom\_filter::BloomFilter@{kvs::bloom\_filter::BloomFilter}}
+\doxysubsubsection{\texorpdfstring{seeds}{seeds}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{namespacekvs_a9f178efa31a6d47c0bd8fd65efbb72b3}{seed\+\_\+t}}$>$ kvs\+::bloom\+\_\+filter\+::\+Bloom\+Filter\+::seeds\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The seeds for different hash functions. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{BloomFilter_8h}{Bloom\+Filter.\+h}}\item 
+src/\mbox{\hyperlink{BloomFilter_8cpp}{Bloom\+Filter.\+cpp}}\end{DoxyCompactItemize}
