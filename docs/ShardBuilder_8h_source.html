@@ -72,30 +72,34 @@ $(function() {
 <div class="contents">
 <a href="ShardBuilder_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="KeyValueTypes_8h.html">KeyValueTypes.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Storage_8h.html">Storage.h</a>&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CacheMap_8h.html">CacheMap.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="KeyValueTypes_8h.html">KeyValueTypes.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Shard_8h.html">Shard.h</a>&quot;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="CacheMap_8h.html">CacheMap.h</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classShardBuilder.html">   10</a></span>&#160;<span class="keyword">class </span><a class="code" href="classShardBuilder.html">ShardBuilder</a> final {</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">   19</a></span>&#160;  <span class="keyword">static</span> <a class="code" href="classShard.html">Shard</a> <a class="code" href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">createShard</a>(<span class="keywordtype">size_t</span> index);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">static</span> std::pair&lt;Shard, std::vector&lt;Entry&gt;&gt;</div>
-<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">   32</a></span>&#160;      <a class="code" href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">rebuildShard</a>(<span class="keyword">const</span> <a class="code" href="classShard.html">Shard</a>&amp; shard, <span class="keyword">const</span> <a class="code" href="classCacheMap.html">CacheMap</a>&amp; cacheMap);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;};</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;utility&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacekvs_1_1shard.html">kvs::shard</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacekvs_1_1utils.html">kvs::utils</a>;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1ShardBuilder.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classkvs_1_1shard_1_1ShardBuilder.html">ShardBuilder</a> final {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">static</span> <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a> createShard(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex);</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//static std::pair&lt;Shard, std::vector&lt;Entry&gt;&gt;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">//rebuildShard(const Shard&amp; shard, const kvs::cache_map::CacheMap&amp; cacheMap);</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace kvs::shard</span></div>
 <div class="ttc" id="aCacheMap_8h_html"><div class="ttname"><a href="CacheMap_8h.html">CacheMap.h</a></div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
 <div class="ttc" id="aShard_8h_html"><div class="ttname"><a href="Shard_8h.html">Shard.h</a></div></div>
-<div class="ttc" id="aStorage_8h_html"><div class="ttname"><a href="Storage_8h.html">Storage.h</a></div></div>
-<div class="ttc" id="aclassCacheMap_html"><div class="ttname"><a href="classCacheMap.html">CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:11</div></div>
-<div class="ttc" id="aclassShardBuilder_html"><div class="ttname"><a href="classShardBuilder.html">ShardBuilder</a></div><div class="ttdef"><b>Definition:</b> ShardBuilder.h:10</div></div>
-<div class="ttc" id="aclassShardBuilder_html_a5cbf3800b9f6b9023fd2bdaa8bef109f"><div class="ttname"><a href="classShardBuilder.html#a5cbf3800b9f6b9023fd2bdaa8bef109f">ShardBuilder::createShard</a></div><div class="ttdeci">static Shard createShard(size_t index)</div><div class="ttdoc">Create a Shard object.</div></div>
-<div class="ttc" id="aclassShardBuilder_html_acd04ed42c5bcc787cc213ce3d4bb6087"><div class="ttname"><a href="classShardBuilder.html#acd04ed42c5bcc787cc213ce3d4bb6087">ShardBuilder::rebuildShard</a></div><div class="ttdeci">static std::pair&lt; Shard, std::vector&lt; Entry &gt; &gt; rebuildShard(const Shard &amp;shard, const CacheMap &amp;cacheMap)</div><div class="ttdoc">Rebuild the Shard according to delayed removals stored in CacheMap.</div></div>
-<div class="ttc" id="aclassShard_html"><div class="ttname"><a href="classShard.html">Shard</a></div><div class="ttdoc">A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...</div><div class="ttdef"><b>Definition:</b> Shard.h:12</div></div>
+<div class="ttc" id="aclasskvs_1_1shard_1_1ShardBuilder_html"><div class="ttname"><a href="classkvs_1_1shard_1_1ShardBuilder.html">kvs::shard::ShardBuilder</a></div><div class="ttdef"><b>Definition:</b> ShardBuilder.h:13</div></div>
+<div class="ttc" id="aclasskvs_1_1shard_1_1Shard_html"><div class="ttname"><a href="classkvs_1_1shard_1_1Shard.html">kvs::shard::Shard</a></div><div class="ttdoc">A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...</div><div class="ttdef"><b>Definition:</b> Shard.h:19</div></div>
+<div class="ttc" id="anamespacekvs_1_1shard_html"><div class="ttname"><a href="namespacekvs_1_1shard.html">kvs::shard</a></div><div class="ttdef"><b>Definition:</b> Shard.h:9</div></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html"><div class="ttname"><a href="namespacekvs_1_1utils.html">kvs::utils</a></div><div class="ttdef"><b>Definition:</b> ByteArray.h:5</div></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html_a13db4e78a1fbfd9a5adaec1986834283"><div class="ttname"><a href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">kvs::utils::shard_index_t</a></div><div class="ttdeci">uint16_t shard_index_t</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

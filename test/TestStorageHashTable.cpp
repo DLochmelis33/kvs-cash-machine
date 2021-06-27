@@ -1,6 +1,8 @@
 #include "StorageHashTable.h"
 #include "doctest.h"
+
 #include <bitset>
+#include <cstring>
 #include <iostream>
 #include <random>
 #include <sstream>
@@ -8,6 +10,8 @@
 
 using namespace kvs::utils;
 using namespace kvs::storage_hash_table;
+
+namespace test_kvs::storage_hash_table {
 
 template <typename T>
 bool contains(const std::vector<T>& holder, const T& value) {
@@ -30,7 +34,7 @@ bool containsAll(const std::vector<T>& holder, const std::vector<T>& values) {
 std::string toBin(Key key) {
   std::stringstream ss;
   for (size_t i = KEY_SIZE - 1; i < KEY_SIZE; i--) {
-    std::bitset<8> rep((unsigned long long) key.get()[i]);
+    std::bitset<8> rep(key.getBytes().get()[i]);
     ss << rep;
   }
   return ss.str();
@@ -53,11 +57,21 @@ std::string print(const std::vector<Entry>& vec) {
   ss << "}\n";
   return ss.str();
 }
+
+Key generateKey(size_t value) {
+  ByteArray byteArray(KEY_SIZE);
+  std::memcpy(byteArray.get(), reinterpret_cast<char*>(&value), sizeof(size_t));
+  return Key{byteArray};
+}
+
 TEST_CASE("test StorageHashTable") {
 
-  const Ptr p1(1, true), p2(2, true), p3(3, true);
-  const Entry e1(Key(1), p1), e2(Key(2), p2), e3(Key(3), p3);
-  const Entry e4(Key(4), p1), e5(Key(5), p2), e6(Key(6), p3);
+  const Ptr p1(1 * VALUE_SIZE, true), p2(2 * VALUE_SIZE, true),
+      p3(3 * VALUE_SIZE, true);
+  const Entry e1(generateKey(1), p1), e2(generateKey(2), p2),
+      e3(generateKey(3), p3);
+  const Entry e4(generateKey(4), p1), e5(generateKey(5), p2),
+      e6(generateKey(6), p3);
 
   SUBCASE("operations") {
 
@@ -82,13 +96,13 @@ TEST_CASE("test StorageHashTable") {
       CHECK(table.get(e2.key) == p2);
       CHECK(table.get(e3.key) == p3);
 
-      table.put(Entry(Key(1), Ptr(5)));
+      table.put(Entry(generateKey(1), Ptr(5)));
       CHECK(table.get(e1.key) == Ptr(5));
       CHECK(table.get(e2.key) == p2);
       CHECK(table.get(e3.key) == p3);
 
-      table.put(Entry(Key(2), Ptr(5)));
-      table.put(Entry(Key(3), Ptr(5)));
+      table.put(Entry(generateKey(2), Ptr(5)));
+      table.put(Entry(generateKey(3), Ptr(5)));
       CHECK(table.get(e1.key) == Ptr(5));
       CHECK(table.get(e2.key) == Ptr(5));
       CHECK(table.get(e3.key) == Ptr(5));
@@ -139,7 +153,7 @@ TEST_CASE("test StorageHashTable") {
         ptr_t p = static_cast<unsigned char>(rand() & 0b01111111);
         if (p == 0b01111111)
           p--;
-        Key key(k);
+        Key key = generateKey(k);
         Ptr ptr(rand(), rand());
         Entry entry(key, ptr);
 
@@ -174,6 +188,7 @@ TEST_CASE("test StorageHashTable") {
 
         ByteArray serialized = table.serializeToByteArray();
         StorageHashTable built(serialized);
+
         CHECK(containsAll(built.getEntries(), {e1, e2, e3}));
       }
 
@@ -192,3 +207,5 @@ TEST_CASE("test StorageHashTable") {
     }
   }
 }
+
+} // namespace test_kvs::storage_hash_table

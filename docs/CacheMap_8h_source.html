@@ -76,31 +76,36 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classCacheMap.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCacheMap.html">CacheMap</a> final {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCacheMap.html#afaeca70c6504cb3aebf42c27a4deded3">   14</a></span>&#160;  <a class="code" href="classCacheMap.html#afaeca70c6504cb3aebf42c27a4deded3">CacheMap</a>() noexcept;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">   22</a></span>&#160;  std::optional&lt;Entry&gt; <a class="code" href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">putOrDisplace</a>(Entry entry) noexcept;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">   29</a></span>&#160;  std::optional&lt;Ptr&gt; <a class="code" href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">get</a>(Key key) const noexcept;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classCacheMap.html#a8386c90fd6523f7383318863e2225f3c">   35</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCacheMap.html#a8386c90fd6523f7383318863e2225f3c">clear</a>() noexcept;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;private:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">   43</a></span>&#160;  std::vector&lt;Entry&gt; <a class="code" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">data</a>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">   49</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">size</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespacekvs_1_1cache__map.html">    7</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacekvs_1_1cache__map.html">kvs::cache_map</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacekvs_1_1utils.html">kvs::utils</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html">CacheMap</a> final {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#a29a003bbf66535b0fdfb1af4d1a8dddf">   18</a></span>&#160;  <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html#a29a003bbf66535b0fdfb1af4d1a8dddf">CacheMap</a>() noexcept;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#a0eb05d3c0b5cdffecf57b15b8c900943">   26</a></span>&#160;  std::optional&lt;<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&gt; putOrDisplace(<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> entry) noexcept;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#afe612a6e3fb1c3e60ef13cf801210dbf">   33</a></span>&#160;  std::optional&lt;<a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a>&gt; get(<a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a> key) const noexcept;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#a35964877a9e96734d3f42c3c4812e56b">   39</a></span>&#160;  <span class="keywordtype">void</span> clear() noexcept;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;private:</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">   46</a></span>&#160;  std::vector&lt;<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&gt; data;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#a859a1b1289aa3edd904ec35cdc0133f3">   52</a></span>&#160;  <span class="keywordtype">size_t</span> size;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace kvs::cache_map</span></div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
-<div class="ttc" id="aclassCacheMap_html"><div class="ttname"><a href="classCacheMap.html">CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:11</div></div>
-<div class="ttc" id="aclassCacheMap_html_a2c9388000fc1d67535c682b15ae4d858"><div class="ttname"><a href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">CacheMap::size</a></div><div class="ttdeci">size_t size</div><div class="ttdoc">The number of elements present in the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:49</div></div>
-<div class="ttc" id="aclassCacheMap_html_a8386c90fd6523f7383318863e2225f3c"><div class="ttname"><a href="classCacheMap.html#a8386c90fd6523f7383318863e2225f3c">CacheMap::clear</a></div><div class="ttdeci">void clear() noexcept</div><div class="ttdoc">Clear the entire map.</div></div>
-<div class="ttc" id="aclassCacheMap_html_a871b3530a597c285c3dafdee7f6942da"><div class="ttname"><a href="classCacheMap.html#a871b3530a597c285c3dafdee7f6942da">CacheMap::putOrDisplace</a></div><div class="ttdeci">std::optional&lt; Entry &gt; putOrDisplace(Entry entry) noexcept</div><div class="ttdoc">Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the give...</div></div>
-<div class="ttc" id="aclassCacheMap_html_adc7cd25aa974f5e7ae69137026555fcb"><div class="ttname"><a href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">CacheMap::data</a></div><div class="ttdeci">std::vector&lt; Entry &gt; data</div><div class="ttdoc">The internal storage of the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:43</div></div>
-<div class="ttc" id="aclassCacheMap_html_ae9b77c038acc4369547b5750409d0af9"><div class="ttname"><a href="classCacheMap.html#ae9b77c038acc4369547b5750409d0af9">CacheMap::get</a></div><div class="ttdeci">std::optional&lt; Ptr &gt; get(Key key) const noexcept</div><div class="ttdoc">Find a Ptr by Key.</div></div>
-<div class="ttc" id="aclassCacheMap_html_afaeca70c6504cb3aebf42c27a4deded3"><div class="ttname"><a href="classCacheMap.html#afaeca70c6504cb3aebf42c27a4deded3">CacheMap::CacheMap</a></div><div class="ttdeci">CacheMap() noexcept</div></div>
+<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:15</div></div>
+<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html_a29a003bbf66535b0fdfb1af4d1a8dddf"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html#a29a003bbf66535b0fdfb1af4d1a8dddf">kvs::cache_map::CacheMap::CacheMap</a></div><div class="ttdeci">CacheMap() noexcept</div></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1Key_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Key.html">kvs::utils::Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:35</div></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1Ptr_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Ptr.html">kvs::utils::Ptr</a></div><div class="ttdoc">A pointer determining the position of the associated value in the values file. Also stores informatio...</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:76</div></div>
+<div class="ttc" id="anamespacekvs_1_1cache__map_html"><div class="ttname"><a href="namespacekvs_1_1cache__map.html">kvs::cache_map</a></div><div class="ttdef"><b>Definition:</b> CacheMap.h:7</div></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html"><div class="ttname"><a href="namespacekvs_1_1utils.html">kvs::utils</a></div><div class="ttdef"><b>Definition:</b> ByteArray.h:5</div></div>
+<div class="ttc" id="astructkvs_1_1utils_1_1Entry_html"><div class="ttname"><a href="structkvs_1_1utils_1_1Entry.html">kvs::utils::Entry</a></div><div class="ttdoc">A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:158</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -3,6 +3,8 @@
 
 using kvs::utils::ByteArray;
 
+namespace test_kvs::byte_array {
+
 TEST_CASE("test ByteArray") {
 
   SUBCASE("test simple") {
@@ -34,3 +36,5 @@ TEST_CASE("test ByteArray") {
     CHECK_NOTHROW(byteArray.get());
   }
 }
+
+} // namespace test_kvs::byte_array

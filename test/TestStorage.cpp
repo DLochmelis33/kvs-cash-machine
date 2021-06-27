@@ -6,10 +6,12 @@
 using namespace kvs::storage;
 using kvs::utils::ByteArray;
 
+namespace test_kvs::storage {
+
 const std::string testDirectoryPath = "../.test-data/test-storage/";
 const std::string filePath = testDirectoryPath + "file.test";
 const std::string emptyFilePath = testDirectoryPath + "empty-file.test";
-constexpr uint32_t maxContentInteger = 1e6;
+constexpr uint32_t maxContentInteger = 1e3;
 constexpr size_t contentFileSize = (maxContentInteger + 1) * sizeof(uint32_t);
 
 void setUpTestDirectory() {
@@ -247,3 +249,5 @@ TEST_CASE("test Storage") {
 
   clearTestDirectory();
 }
+
+} // namespace test_kvs::storage

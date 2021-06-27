@@ -1,48 +1,67 @@
 #include "KeyValueTypes.h"
+#include "ByteArray.h"
 #include "KVSException.h"
-#include "xxh3.h"
+
 #include <cassert>
 #include <cstring>
 
 namespace kvs::utils {
 
-Key::Key(key_t key) noexcept : data(KEY_SIZE) {
-  memcpy(data.get(), key, KEY_SIZE);
+Key::Key(ByteArray byteArray) noexcept : bytes{byteArray} {
+  assert(byteArray.length() == KEY_SIZE);
 }
 
-Key::Key() noexcept : data(KEY_SIZE) {}
+ByteArray& Key::getBytes() noexcept { return bytes; }
 
-Key::Key(__uint128_t key) noexcept : Key(reinterpret_cast<char*>(&key)) {}
-
-key_t Key::get() noexcept { return data.get(); }
-
-const char* Key::get() const noexcept { return data.get(); }
+const ByteArray& Key::getBytes() const noexcept { return bytes; }
 
 bool Key::operator==(const Key& other) const noexcept {
-  bool res = memcmp(data.get(), other.data.get(), KEY_SIZE) == 0;
+  bool res = memcmp(bytes.get(), other.bytes.get(), KEY_SIZE) == 0;
   return res;
 }
 
-value_t Value::get() const noexcept { return value; }
+Value::Value(ByteArray bytes_) : bytes{std::move(bytes_)} {}
+
+const ByteArray& Value::getBytes() const noexcept { return bytes; }
+
+bool Value::operator==(const Value& other) const noexcept {
+  if (bytes.length() != other.bytes.length()) {
+    return false;
+  }
+  const char* charBytes = bytes.get();
+  const char* otherCharBytes = other.bytes.get();
+  for (size_t i = 0, size = bytes.length(); i < size; ++i) {
+    if (charBytes[i] != otherCharBytes[i]) {
+      return false;
+    }
+  }
+  return true;
+}
 
 hash_t hashKey(const Key& key, seed_t seed) noexcept {
   // RV is guaranteed to be equivalent to uint64_t
-  return XXH3_64bits_withSeed(key.get(), KEY_SIZE, seed);
+  return XXH3_64bits_withSeed(key.getBytes().get(), KEY_SIZE, seed);
 }
 
 Ptr::Ptr(ptr_t ptr_) noexcept : ptr(ptr_) {
   static_assert((EMPTY_PTR_V & CONTROL_MASK) == false);
 }
 
-Ptr::Ptr(size_t index, bool isPresent) noexcept {
-  assert(index < EMPTY_PTR_V);
+Ptr::Ptr(size_t offset, bool isPresent) noexcept {
+  assert(offset % VALUE_SIZE == 0);
+  size_t index = offset / VALUE_SIZE;
+  assert(index >= EMPTY_PTR_V);
   ptr = index;
   setValuePresent(isPresent);
 }
 
 Ptr::Ptr() noexcept : Ptr(Ptr::EMPTY_PTR_V) {}
 
-ptr_t Ptr::get() const noexcept { return ptr & ~CONTROL_MASK; }
+size_t Ptr::get() const noexcept { return ptr & ~CONTROL_MASK; }
+
+size_t Ptr::getOffset() const noexcept {
+  return (ptr & ~CONTROL_MASK) * VALUE_SIZE;
+}
 
 ptr_t Ptr::getRaw() const noexcept { return ptr; }
 
@@ -56,15 +75,7 @@ void Ptr::setValuePresent(bool isPresent) noexcept {
   }
 }
 
-bool Ptr::operator==(const Ptr& other) const noexcept {
-  return ptr == other.ptr;
-}
-
-bool Ptr::operator!=(const Ptr& other) const noexcept {
-  return ptr != other.ptr;
-}
-
-Ptr::PtrType Ptr::getType() const noexcept {
+PtrType Ptr::getType() const noexcept {
   if (ptr == EMPTY_PTR_V) {
     return PtrType::EMPTY_PTR;
   }
@@ -72,6 +83,14 @@ Ptr::PtrType Ptr::getType() const noexcept {
     return PtrType::PRESENT;
   }
   return PtrType::DELETED;
+}
+
+bool Ptr::operator==(const Ptr& other) const noexcept {
+  return ptr == other.ptr;
+}
+
+bool Ptr::operator!=(const Ptr& other) const noexcept {
+  return ptr != other.ptr;
 }
 
 bool Entry::operator==(const Entry& other) const noexcept {

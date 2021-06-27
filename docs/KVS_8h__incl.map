@@ -1,13 +1,15 @@
 <map id="include/KVS.h" name="include/KVS.h">
-<area shape="rect" id="node1" title=" " alt="" coords="252,5,356,32"/>
-<area shape="rect" id="node2" href="$CacheMap_8h.html" title=" " alt="" coords="257,80,351,107"/>
-<area shape="rect" id="node3" href="$KeyValueTypes_8h.html" title=" " alt="" coords="39,229,161,256"/>
-<area shape="rect" id="node7" title=" " alt="" coords="349,155,416,181"/>
-<area shape="rect" id="node8" title=" " alt="" coords="283,229,341,256"/>
-<area shape="rect" id="node9" href="$Shard_8h.html" title=" " alt="" coords="165,80,232,107"/>
-<area shape="rect" id="node4" href="$ByteArray_8h.html" title=" " alt="" coords="5,304,93,331"/>
-<area shape="rect" id="node6" title=" " alt="" coords="118,304,183,331"/>
-<area shape="rect" id="node5" title=" " alt="" coords="22,379,77,405"/>
-<area shape="rect" id="node10" href="$BloomFilter_8h.html" title=" " alt="" coords="176,155,275,181"/>
-<area shape="rect" id="node11" title=" " alt="" coords="198,229,253,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="119,5,223,32"/>
+<area shape="rect" id="node2" href="$CacheMap_8h.html" title=" " alt="" coords="38,80,133,107"/>
+<area shape="rect" id="node3" href="$KeyValueTypes_8h.html" title=" " alt="" coords="177,229,300,256"/>
+<area shape="rect" id="node9" title=" " alt="" coords="123,155,189,181"/>
+<area shape="rect" id="node10" title=" " alt="" coords="5,229,64,256"/>
+<area shape="rect" id="node11" href="$Shard_8h.html" title=" " alt="" coords="264,80,331,107"/>
+<area shape="rect" id="node4" href="$ByteArray_8h.html" title=" " alt="" coords="67,304,155,331"/>
+<area shape="rect" id="node6" title=" " alt="" coords="179,304,237,331"/>
+<area shape="rect" id="node7" title=" " alt="" coords="262,304,327,331"/>
+<area shape="rect" id="node8" title=" " alt="" coords="352,304,413,331"/>
+<area shape="rect" id="node5" title=" " alt="" coords="253,379,307,405"/>
+<area shape="rect" id="node12" href="$BloomFilter_8h.html" title=" " alt="" coords="315,155,413,181"/>
+<area shape="rect" id="node13" title=" " alt="" coords="337,229,391,256"/>
 </map>

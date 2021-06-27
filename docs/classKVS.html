@@ -81,11 +81,9 @@ Collaboration diagram for KVS:</div>
 <div class="dyncontent">
 <div class="center"><img src="classKVS__coll__graph.png" border="0" usemap="#aKVS_coll__map" alt="Collaboration graph"/></div>
 <map name="aKVS_coll__map" id="aKVS_coll__map">
-<area shape="rect" title="The class that provides an access to a key&#45;value storage." alt="" coords="63,329,172,480"/>
-<area shape="rect" title=" " alt="" coords="5,167,120,245"/>
-<area shape="rect" href="classCacheMap.html" title="Cache map. Is stored in RAM." alt="" coords="144,145,267,267"/>
-<area shape="rect" title=" " alt="" coords="124,5,180,83"/>
-<area shape="rect" title=" " alt="" coords="204,5,313,83"/>
+<area shape="rect" title="The class that provides an access to a key&#45;value storage." alt="" coords="69,145,179,296"/>
+<area shape="rect" title=" " alt="" coords="5,5,120,83"/>
+<area shape="rect" title=" " alt="" coords="145,5,229,83"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -114,11 +112,11 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:aa1c5673ea8f4b49e195df583ddd963a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCacheMap.html">CacheMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">cacheMap</a></td></tr>
+<tr class="memitem:aa1c5673ea8f4b49e195df583ddd963a8"><td class="memItemLeft" align="right" valign="top">CacheMap&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">cacheMap</a></td></tr>
 <tr class="memdesc:aa1c5673ea8f4b49e195df583ddd963a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache map, stored in RAM.  <a href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">More...</a><br /></td></tr>
 <tr class="separator:aa1c5673ea8f4b49e195df583ddd963a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classShard.html">Shard</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">shards</a></td></tr>
-<tr class="memdesc:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> objects representing... shards?  <a href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">More...</a><br /></td></tr>
+<tr class="memitem:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Shard &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">shards</a></td></tr>
+<tr class="memdesc:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shard objects representing... shards?  <a href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">More...</a><br /></td></tr>
 <tr class="separator:aac89451d61d6f16c85d17b8eaaf36fd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -262,7 +260,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCacheMap.html">CacheMap</a> KVS::cacheMap</td>
+          <td class="memname">CacheMap KVS::cacheMap</td>
         </tr>
       </table>
   </td>
@@ -286,7 +284,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="classShard.html">Shard</a>&gt; KVS::shards</td>
+          <td class="memname">std::vector&lt;Shard&gt; KVS::shards</td>
         </tr>
       </table>
   </td>
@@ -296,7 +294,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="classShard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> objects representing... shards? </p>
+<p>Shard objects representing... shards? </p>
 
 </div>
 </div>

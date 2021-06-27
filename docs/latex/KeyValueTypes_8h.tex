@@ -1,13 +1,15 @@
 \hypertarget{KeyValueTypes_8h}{}\doxysection{include/\+Key\+Value\+Types.h File Reference}
 \label{KeyValueTypes_8h}\index{include/KeyValueTypes.h@{include/KeyValueTypes.h}}
 {\ttfamily \#include \char`\"{}Byte\+Array.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}xxh3.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$cstddef$>$}\newline
+{\ttfamily \#include $<$cstdint$>$}\newline
 Include dependency graph for Key\+Value\+Types.\+h\+:
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=214pt]{KeyValueTypes_8h__incl}
+\includegraphics[width=340pt]{KeyValueTypes_8h__incl}
 \end{center}
 \end{figure}
 This graph shows which files directly or indirectly include this file\+:
@@ -30,7 +32,7 @@ struct \mbox{\hyperlink{structkvs_1_1utils_1_1KeyValue}{kvs\+::utils\+::\+Key\+V
 class \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{kvs\+::utils\+::\+Ptr}}
 \begin{DoxyCompactList}\small\item\em A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{kvs\+::utils\+::\+Entry}}
-\begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. \mbox{\hyperlink{classCacheMap}{Cache\+Map}} and Storage\+Hash\+Table). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. Cache\+Map and Storage\+Hash\+Table). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
@@ -41,15 +43,23 @@ struct \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{kvs\+::utils\+::\+Entry}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-using \mbox{\hyperlink{namespacekvs_1_1utils_ab29a21fc7832efae7c3e6eca6b01dae2}{kvs\+::utils\+::key\+\_\+t}} = char $\ast$
-\item 
-using \mbox{\hyperlink{namespacekvs_1_1utils_aaf8b9c7f9457db4120829b238ce88431}{kvs\+::utils\+::value\+\_\+t}} = char $\ast$
-\item 
 using \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{kvs\+::utils\+::ptr\+\_\+t}} = unsigned char
 \item 
-using \mbox{\hyperlink{namespacekvs_1_1utils_a27f1fda06a7533a9f16ba45d443f98c7}{kvs\+::utils\+::hash\+\_\+t}} = uint64\+\_\+t
+using \mbox{\hyperlink{namespacekvs_1_1utils_abf384e438bebfb25f264b6cedfaa51e7}{kvs\+::utils\+::hash\+\_\+t}} = XXH64\+\_\+hash\+\_\+t
 \item 
 using \mbox{\hyperlink{namespacekvs_1_1utils_a5ca84ce63a01b9456bafdc403ffe8ed5}{kvs\+::utils\+::seed\+\_\+t}} = hash\+\_\+t
+\item 
+using \mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{kvs\+::utils\+::shard\+\_\+index\+\_\+t}} = uint16\+\_\+t
+\item 
+using \mbox{\hyperlink{namespacekvs_1_1utils_a9de0de755051dacc6e2530e016f2be70}{kvs\+::utils\+::values\+\_\+cnt\+\_\+t}} = uint8\+\_\+t
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{kvs\+::utils\+::\+Ptr\+Type}} \{ \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}{kvs\+::utils\+::\+PRESENT}}
+, \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59}{kvs\+::utils\+::\+DELETED}}
+, \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b}{kvs\+::utils\+::\+EMPTY\+\_\+\+PTR}}
+ \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -69,6 +79,8 @@ constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a9edace8f2922eecb69aa0af
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a4a81b2504774f36d34be0ee79ce4ebff}{kvs\+::utils\+::\+SHARD\+\_\+\+NUMBER}} = 4981
 \item 
+constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a5bd35bcc3182c27eaf8e678d6d8a32bf}{kvs\+::utils\+::\+MAX\+\_\+\+OUTDATED\+\_\+\+RECORDS\+\_\+\+LOAD\+\_\+\+FACTOR}} = 0.\+5
+\item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a681ae91ffea4696bc012ef7e2b4fc2ce}{kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 5000
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a9a39b70a28445b61801f025a976bcdca}{kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 5
@@ -76,4 +88,10 @@ constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a9a39b70a28445b6180
 constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f829cab397a}{kvs\+::utils\+::\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}{kvs\+::utils\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 5000000
+\item 
+constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}{kvs\+::utils\+::\+STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+LOAD\+\_\+\+FACTOR}} = MAP\+\_\+\+LOAD\+\_\+\+FACTOR
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a71f4cddbd64d2661a167643cfbf4724e}{kvs\+::utils\+::\+STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+INITIAL\+\_\+\+SIZE}}
+\item 
+const std\+::string \mbox{\hyperlink{namespacekvs_1_1utils_ae5e2bb2e3084ebe05ab38f84e93fb780}{kvs\+::utils\+::\+STORAGE\+\_\+\+DIRECTORY\+\_\+\+PATH}} = \char`\"{}../data/\char`\"{}
 \end{DoxyCompactItemize}

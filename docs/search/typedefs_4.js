@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['no_1159',['no',['../namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html#a2abd7cf8c326904d6f21a4ef7bddb8e1',1,'doctest::detail::has_insertion_operator_impl']]]
+  ['ostream_1189',['ostream',['../doctest_8h.html#a116af65cb5e924b33ad9d9ecd7a783f3',1,'doctest.h']]]
 ];

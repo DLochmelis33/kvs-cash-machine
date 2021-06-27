@@ -1,7 +1,10 @@
 #pragma once
 
 #include "ByteArray.h"
+#include "xxh3.h"
+
 #include <cstddef>
+#include <cstdint>
 
 namespace kvs::utils {
 
@@ -10,49 +13,60 @@ constexpr size_t KEY_SIZE = 16;
 constexpr size_t CACHE_MAP_SIZE = 5000;
 constexpr double MAP_LOAD_FACTOR = 1.5;
 constexpr size_t SHARD_NUMBER = 4981;
+constexpr double MAX_OUTDATED_RECORDS_LOAD_FACTOR = 0.5;
 constexpr size_t BLOOM_FILTER_SIZE = 5000; // TODO
 constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER = 5; // TODO
 constexpr double TABLE_EXPANSION_FACTOR = 2;
 constexpr size_t TABLE_MAX_SIZE = 5000000; // TODO
 
-using key_t = char*;
-using value_t = char*;
+constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR = MAP_LOAD_FACTOR;
+constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE =
+    23 * STORAGE_HASH_TABLE_LOAD_FACTOR;
+
+const std::string STORAGE_DIRECTORY_PATH = "../data/";
+
 using ptr_t = unsigned char;
-using hash_t = uint64_t;
+using hash_t = XXH64_hash_t; // uint64_t
 using seed_t = hash_t;
+
+using shard_index_t = uint16_t;
+using values_cnt_t = uint8_t;
 
 class Key final {
 public:
-  explicit Key(key_t key) noexcept;
+  explicit Key(ByteArray bytes = ByteArray{KEY_SIZE}) noexcept;
 
-  explicit Key() noexcept;
+  ByteArray& getBytes() noexcept;
 
-  explicit Key(__uint128_t key) noexcept;
-
-  key_t get() noexcept;
-
-  const char* get() const noexcept;
+  const ByteArray& getBytes() const noexcept;
 
   bool operator==(const Key& other) const noexcept;
 
 private:
-  ByteArray data;
+  ByteArray bytes;
 };
 
 hash_t hashKey(const Key& key, seed_t seed = 0) noexcept;
 
 class Value final {
 public:
-  value_t get() const noexcept;
+  explicit Value(ByteArray bytes = ByteArray(0));
+
+  const ByteArray& getBytes() const noexcept;
+
+  bool operator==(const Value& other) const noexcept;
 
 private:
-  value_t value;
+  ByteArray bytes;
 };
 
 struct KeyValue final {
   Key key;
   Value value;
 };
+
+// TODO docs
+enum class PtrType { PRESENT, DELETED, EMPTY_PTR };
 
 /**
  * @brief A pointer determining the position of the associated value in the values file. Also stores
@@ -77,16 +91,16 @@ public:
    */
   explicit Ptr(ptr_t ptr) noexcept;
 
-  /**
+  /** TODO docs: fix index -> offset
    * @brief Construct a new Ptr pointing to the given index and with the given isPresent flag.
    * 
    * @param index 
    * @param isPresent 
    */
-  explicit Ptr(size_t index, bool isPresent) noexcept;
+  explicit Ptr(size_t offset, bool isPresent) noexcept;
 
   /**
-   * @brief Construct a new emptr Ptr.
+   * @brief Construct a new empty Ptr.
    * 
    */
   explicit Ptr() noexcept;
@@ -95,7 +109,10 @@ public:
    * @brief Get the actual index stored in this pointer.
    *
    */
-  ptr_t get() const noexcept;
+  size_t get() const noexcept;
+
+  // TODO docs
+  size_t getOffset() const noexcept;
 
   /**
    * @brief Get the raw pointer data (including control bits).
@@ -116,13 +133,11 @@ public:
    */
   void setValuePresent(bool isPresent) noexcept;
 
+  // TODO docs
+  PtrType getType() const noexcept;
+
   bool operator==(const Ptr& other) const noexcept;
   bool operator!=(const Ptr& other) const noexcept;
-
-  // TODO docs
-  enum class PtrType { PRESENT, DELETED, EMPTY_PTR };
-
-  PtrType getType() const noexcept;
 
 private:
   static constexpr ptr_t CONTROL_MASK = 0b10000000;
@@ -134,7 +149,7 @@ private:
  * @brief \b DO \b NOT \b CHANGE \b THIS \b !!!!!!!!!
  * 
  */
-static Ptr EMPTY_PTR = Ptr(Ptr::EMPTY_PTR_V);
+static Ptr EMPTY_PTR = Ptr();
 
 /**
  * @brief A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).

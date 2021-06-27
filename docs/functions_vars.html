@@ -69,7 +69,7 @@ $(function() {
 : <a class="el" href="structdoctest_1_1ContextOptions.html#a8ba5bfec2229bc2da9ab917f4bdee5e7">doctest::ContextOptions</a>
 </li>
 <li>aliveValuesCnt
-: <a class="el" href="classShard.html#add9303ccc9ebed081e0d4e2f9ea405a3">Shard</a>
+: <a class="el" href="classkvs_1_1shard_1_1Shard.html#a551d4cc504ca0c809250c87e20334f0a">kvs::shard::Shard</a>
 </li>
 </ul>
 
@@ -83,6 +83,10 @@ $(function() {
 </li>
 <li>buf
 : <a class="el" href="classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67">doctest::String</a>
+</li>
+<li>bytes
+: <a class="el" href="classkvs_1_1utils_1_1Key.html#ac8689f99107c5d7b4332ea06077b9fd5">kvs::utils::Key</a>
+, <a class="el" href="classkvs_1_1utils_1_1Value.html#ae02240a752d5ccc5d6b9b4749f8ecd23">kvs::utils::Value</a>
 </li>
 </ul>
 
@@ -114,12 +118,11 @@ $(function() {
 
 <h3><a id="index_d"></a>- d -</h3><ul>
 <li>data
-: <a class="el" href="classCacheMap.html#adc7cd25aa974f5e7ae69137026555fcb">CacheMap</a>
-, <a class="el" href="structdoctest_1_1QueryData.html#a8085a29db9a1cd5c7eff22ef44e9a9e8">doctest::QueryData</a>
+: <a class="el" href="structdoctest_1_1QueryData.html#a8085a29db9a1cd5c7eff22ef44e9a9e8">doctest::QueryData</a>
 , <a class="el" href="classdoctest_1_1String.html#a5c77ed634a1b81aea739a73fb01d986a">doctest::String</a>
+, <a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">kvs::cache_map::CacheMap</a>
 , <a class="el" href="classkvs_1_1storage__hash__table_1_1StorageHashTable.html#a09e4ba7b9e6417d93926b32df2b3495a">kvs::storage_hash_table::StorageHashTable</a>
 , <a class="el" href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">kvs::utils::ByteArray</a>
-, <a class="el" href="classkvs_1_1utils_1_1Key.html#aba640e581459d8b8a71def0d20bb12a4">kvs::utils::Key</a>
 </li>
 <li>duration
 : <a class="el" href="structdoctest_1_1ContextOptions.html#a0fc3e0c1cf669cffd1f826c005fc4223">doctest::ContextOptions</a>
@@ -154,7 +157,7 @@ $(function() {
 : <a class="el" href="classkvs_1_1storage_1_1Storage.html#ac56ca90eedae8c9aa302c092250aa62a">kvs::storage::Storage</a>
 </li>
 <li>filter
-: <a class="el" href="classShard.html#a7671964f2e07a41c9786b6a8e3d5302f">Shard</a>
+: <a class="el" href="classkvs_1_1shard_1_1Shard.html#a20844bf2388e4a2f7bcc757b4b80090f">kvs::shard::Shard</a>
 </li>
 <li>first
 : <a class="el" href="structdoctest_1_1ContextOptions.html#a9f26ee60a5259e73f9f25ce3f4883a97">doctest::ContextOptions</a>
@@ -180,9 +183,6 @@ $(function() {
 
 
 <h3><a id="index_i"></a>- i -</h3><ul>
-<li>index
-: <a class="el" href="classShard.html#abefece21372068eb7596f90990b71f2d">Shard</a>
-</li>
 <li>is_crash
 : <a class="el" href="structdoctest_1_1TestCaseException.html#af30d801dae6dd2f4ea01690bbf5faeca">doctest::TestCaseException</a>
 </li>
@@ -449,8 +449,11 @@ $(function() {
 : <a class="el" href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">KVS</a>
 </li>
 <li>size
-: <a class="el" href="classCacheMap.html#a2c9388000fc1d67535c682b15ae4d858">CacheMap</a>
-, <a class="el" href="structdoctest_1_1String_1_1view.html#a41d7343e928b0e23c973521aac5b59d3">doctest::String::view</a>
+: <a class="el" href="structdoctest_1_1String_1_1view.html#a41d7343e928b0e23c973521aac5b59d3">doctest::String::view</a>
+, <a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html#a859a1b1289aa3edd904ec35cdc0133f3">kvs::cache_map::CacheMap</a>
+</li>
+<li>storageDirectoryPath
+: <a class="el" href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">kvs::shard::Shard</a>
 </li>
 <li>subcase_filter_levels
 : <a class="el" href="structdoctest_1_1ContextOptions.html#a93281aa958eed5c2a1533d404b1ebeff">doctest::ContextOptions</a>
@@ -473,7 +476,6 @@ $(function() {
 : <a class="el" href="structdoctest_1_1detail_1_1deferred__false.html#abc8eec7a8439ab592f76068cb408d106">doctest::detail::deferred_false&lt; T &gt;</a>
 , <a class="el" href="structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1has__insertion__operator.html#a8e8e9abdead07386f3d1f16bbca64986">doctest::detail::has_insertion_operator_impl::has_insertion_operator&lt; T &gt;</a>
 , <a class="el" href="structkvs_1_1utils_1_1KeyValue.html#a43c32103af0c87b55f5ff2f3f0fe0379">kvs::utils::KeyValue</a>
-, <a class="el" href="classkvs_1_1utils_1_1Value.html#aaf49ec81ed5944d5c7765dc61f16c63e">kvs::utils::Value</a>
 </li>
 <li>version
 : <a class="el" href="structdoctest_1_1ContextOptions.html#a08931527a9e5e634e64a336e5493a7c1">doctest::ContextOptions</a>

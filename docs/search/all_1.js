@@ -1,7 +1,7 @@
 var searchData=
 [
   ['basic_5fostream_17',['basic_ostream',['../classbasic__ostream.html',1,'']]],
-  ['binary_5fassert_18',['binary_assert',['../namespacedoctest_1_1detail.html#a570279a22ca888528e87a426853a0288',1,'doctest::detail::binary_assert()'],['../structdoctest_1_1detail_1_1ResultBuilder.html#ab3d55b158b3ae687f80bca94db6bb701',1,'doctest::detail::ResultBuilder::binary_assert()']]],
+  ['binary_5fassert_18',['binary_assert',['../structdoctest_1_1detail_1_1ResultBuilder.html#ab3d55b158b3ae687f80bca94db6bb701',1,'doctest::detail::ResultBuilder::binary_assert()'],['../namespacedoctest_1_1detail.html#a570279a22ca888528e87a426853a0288',1,'doctest::detail::binary_assert()']]],
   ['binary_5fname_19',['binary_name',['../structdoctest_1_1ContextOptions.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
   ['bitset_20',['bitset',['../classkvs_1_1bloom__filter_1_1BloomFilter.html#a7d3e96dfc1b432706ff49cad92806e2b',1,'kvs::bloom_filter::BloomFilter']]],
   ['bloom_5ffilter_5fhash_5ffunctions_5fnumber_21',['BLOOM_FILTER_HASH_FUNCTIONS_NUMBER',['../namespacekvs_1_1utils.html#a9a39b70a28445b61801f025a976bcdca',1,'kvs::utils']]],
@@ -17,5 +17,6 @@ var searchData=
   ['buf_31',['buf',['../classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]],
   ['bytearray_32',['ByteArray',['../classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5',1,'kvs::utils::ByteArray::ByteArray()'],['../classkvs_1_1utils_1_1ByteArray.html',1,'kvs::utils::ByteArray']]],
   ['bytearray_2ecpp_33',['ByteArray.cpp',['../ByteArray_8cpp.html',1,'']]],
-  ['bytearray_2eh_34',['ByteArray.h',['../ByteArray_8h.html',1,'']]]
+  ['bytearray_2eh_34',['ByteArray.h',['../ByteArray_8h.html',1,'']]],
+  ['bytes_35',['bytes',['../classkvs_1_1utils_1_1Value.html#ae02240a752d5ccc5d6b9b4749f8ecd23',1,'kvs::utils::Value::bytes()'],['../classkvs_1_1utils_1_1Key.html#ac8689f99107c5d7b4332ea06077b9fd5',1,'kvs::utils::Key::bytes()']]]
 ];

@@ -67,7 +67,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
@@ -87,34 +86,28 @@ Collaboration diagram for kvs::utils::Ptr:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkvs_1_1utils_1_1Ptr__coll__graph.png" border="0" usemap="#akvs_1_1utils_1_1Ptr_coll__map" alt="Collaboration graph"/></div>
 <map name="akvs_1_1utils_1_1Ptr_coll__map" id="akvs_1_1utils_1_1Ptr_coll__map">
-<area shape="rect" title="A pointer determining the position of the associated value in the values file. Also stores informatio..." alt="" coords="39,160,177,369"/>
+<area shape="rect" title="A pointer determining the position of the associated value in the values file. Also stores informatio..." alt="" coords="39,160,177,384"/>
 <area shape="rect" title=" " alt="" coords="5,5,80,83"/>
 <area shape="rect" title=" " alt="" coords="103,5,246,83"/>
 </map>
 </div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
-Public Types</h2></td></tr>
-<tr class="memitem:a0745e629e52ee5bee0727c48f46e0728"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728">PtrType</a> { <a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728a720ff3fec5d13dcf3d3aec6d5726fc36">PRESENT</a>
-, <a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728a63c2867fdcae0e8e8413d7ac21b69b59">DELETED</a>
-, <a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728a89dfcc5d1486f1fb8d1e44a076aa6b9b">EMPTY_PTR</a>
- }</td></tr>
-<tr class="separator:a0745e629e52ee5bee0727c48f46e0728"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac3cd59f69a826d9127921be7c9afcb46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#ac3cd59f69a826d9127921be7c9afcb46">Ptr</a> (<a class="el" href="namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe">ptr_t</a> <a class="el" href="classkvs_1_1utils_1_1Ptr.html#aa0cce26fd7d78b1b982be93944cff31a">ptr</a>) noexcept</td></tr>
 <tr class="memdesc:ac3cd59f69a826d9127921be7c9afcb46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> from <b>raw</b> <b>data</b>.  <a href="classkvs_1_1utils_1_1Ptr.html#ac3cd59f69a826d9127921be7c9afcb46">More...</a><br /></td></tr>
 <tr class="separator:ac3cd59f69a826d9127921be7c9afcb46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5b2d64a6d33a0ed97fc2d621bbf5158"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#ab5b2d64a6d33a0ed97fc2d621bbf5158">Ptr</a> (size_t index, bool isPresent) noexcept</td></tr>
-<tr class="memdesc:ab5b2d64a6d33a0ed97fc2d621bbf5158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> pointing to the given index and with the given isPresent flag.  <a href="classkvs_1_1utils_1_1Ptr.html#ab5b2d64a6d33a0ed97fc2d621bbf5158">More...</a><br /></td></tr>
-<tr class="separator:ab5b2d64a6d33a0ed97fc2d621bbf5158"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a142b5df7df0c1f3a95b1758854027c67"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a142b5df7df0c1f3a95b1758854027c67">Ptr</a> (size_t offset, bool isPresent) noexcept</td></tr>
+<tr class="memdesc:a142b5df7df0c1f3a95b1758854027c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> pointing to the given index and with the given isPresent flag.  <a href="classkvs_1_1utils_1_1Ptr.html#a142b5df7df0c1f3a95b1758854027c67">More...</a><br /></td></tr>
+<tr class="separator:a142b5df7df0c1f3a95b1758854027c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8cac00ecbceb212fbceaac63ffddc9bb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a8cac00ecbceb212fbceaac63ffddc9bb">Ptr</a> () noexcept</td></tr>
-<tr class="memdesc:a8cac00ecbceb212fbceaac63ffddc9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new emptr <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>.  <a href="classkvs_1_1utils_1_1Ptr.html#a8cac00ecbceb212fbceaac63ffddc9bb">More...</a><br /></td></tr>
+<tr class="memdesc:a8cac00ecbceb212fbceaac63ffddc9bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new empty <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>.  <a href="classkvs_1_1utils_1_1Ptr.html#a8cac00ecbceb212fbceaac63ffddc9bb">More...</a><br /></td></tr>
 <tr class="separator:a8cac00ecbceb212fbceaac63ffddc9bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11ec6d9bb91b0cb6c9b51c5121d340e7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe">ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a11ec6d9bb91b0cb6c9b51c5121d340e7">get</a> () const noexcept</td></tr>
-<tr class="memdesc:a11ec6d9bb91b0cb6c9b51c5121d340e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actual index stored in this pointer.  <a href="classkvs_1_1utils_1_1Ptr.html#a11ec6d9bb91b0cb6c9b51c5121d340e7">More...</a><br /></td></tr>
-<tr class="separator:a11ec6d9bb91b0cb6c9b51c5121d340e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3b4e65c545d399e047fda4e19f743a"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a1a3b4e65c545d399e047fda4e19f743a">get</a> () const noexcept</td></tr>
+<tr class="memdesc:a1a3b4e65c545d399e047fda4e19f743a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the actual index stored in this pointer.  <a href="classkvs_1_1utils_1_1Ptr.html#a1a3b4e65c545d399e047fda4e19f743a">More...</a><br /></td></tr>
+<tr class="separator:a1a3b4e65c545d399e047fda4e19f743a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91dfabc2c8af704e77316540ac69ece0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a91dfabc2c8af704e77316540ac69ece0">getOffset</a> () const noexcept</td></tr>
+<tr class="separator:a91dfabc2c8af704e77316540ac69ece0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace450b5aa83e3dad4a2352c56684327a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe">ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#ace450b5aa83e3dad4a2352c56684327a">getRaw</a> () const noexcept</td></tr>
 <tr class="memdesc:ace450b5aa83e3dad4a2352c56684327a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the raw pointer data (including control bits).  <a href="classkvs_1_1utils_1_1Ptr.html#ace450b5aa83e3dad4a2352c56684327a">More...</a><br /></td></tr>
 <tr class="separator:ace450b5aa83e3dad4a2352c56684327a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,12 +117,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1b6da0a4c23efdbeb2bc86bf005160d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a1b6da0a4c23efdbeb2bc86bf005160d6">setValuePresent</a> (bool isPresent) noexcept</td></tr>
 <tr class="memdesc:a1b6da0a4c23efdbeb2bc86bf005160d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set state for the <a class="el" href="classkvs_1_1utils_1_1Value.html">Value</a> associated with this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>.  <a href="classkvs_1_1utils_1_1Ptr.html#a1b6da0a4c23efdbeb2bc86bf005160d6">More...</a><br /></td></tr>
 <tr class="separator:a1b6da0a4c23efdbeb2bc86bf005160d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa31bfd800bc28d9568d1a4f50451f583"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">PtrType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#aa31bfd800bc28d9568d1a4f50451f583">getType</a> () const noexcept</td></tr>
+<tr class="separator:aa31bfd800bc28d9568d1a4f50451f583"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7129ae45277f930b6ce881d668e23283"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a7129ae45277f930b6ce881d668e23283">operator==</a> (const <a class="el" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> &amp;other) const noexcept</td></tr>
 <tr class="separator:a7129ae45277f930b6ce881d668e23283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdc75b05c4e78fb1b930d00aeb4fb74b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#abdc75b05c4e78fb1b930d00aeb4fb74b">operator!=</a> (const <a class="el" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> &amp;other) const noexcept</td></tr>
 <tr class="separator:abdc75b05c4e78fb1b930d00aeb4fb74b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae621b02f3011afefaffc9d7aaa0492eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728">PtrType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#ae621b02f3011afefaffc9d7aaa0492eb">getType</a> () const noexcept</td></tr>
-<tr class="separator:ae621b02f3011afefaffc9d7aaa0492eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -149,35 +142,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. </p>
-</div><h2 class="groupheader">Member Enumeration Documentation</h2>
-<a id="a0745e629e52ee5bee0727c48f46e0728"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0745e629e52ee5bee0727c48f46e0728">&#9670;&nbsp;</a></span>PtrType</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728">kvs::utils::Ptr::PtrType</a></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a0745e629e52ee5bee0727c48f46e0728a720ff3fec5d13dcf3d3aec6d5726fc36"></a>PRESENT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0745e629e52ee5bee0727c48f46e0728a63c2867fdcae0e8e8413d7ac21b69b59"></a>DELETED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a0745e629e52ee5bee0727c48f46e0728a89dfcc5d1486f1fb8d1e44a076aa6b9b"></a>EMPTY_PTR&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac3cd59f69a826d9127921be7c9afcb46"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac3cd59f69a826d9127921be7c9afcb46">&#9670;&nbsp;</a></span>Ptr() <span class="overload">[1/3]</span></h2>
 
@@ -203,7 +168,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construct a new <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> from <b>raw</b> <b>data</b>. </p>
-<p>To create a <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> to some index, use <a class="el" href="classkvs_1_1utils_1_1Ptr.html#ab5b2d64a6d33a0ed97fc2d621bbf5158" title="Construct a new Ptr pointing to the given index and with the given isPresent flag.">Ptr(size_t, bool)</a>.</p>
+<p>To create a <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> to some index, use <a class="el" href="classkvs_1_1utils_1_1Ptr.html#a142b5df7df0c1f3a95b1758854027c67" title="Construct a new Ptr pointing to the given index and with the given isPresent flag.">Ptr(size_t, bool)</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ptr</td><td></td></tr>
@@ -213,8 +178,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ab5b2d64a6d33a0ed97fc2d621bbf5158"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5b2d64a6d33a0ed97fc2d621bbf5158">&#9670;&nbsp;</a></span>Ptr() <span class="overload">[2/3]</span></h2>
+<a id="a142b5df7df0c1f3a95b1758854027c67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a142b5df7df0c1f3a95b1758854027c67">&#9670;&nbsp;</a></span>Ptr() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -226,7 +191,7 @@ Static Private Attributes</h2></td></tr>
           <td class="memname">kvs::utils::Ptr::Ptr </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
+          <td class="paramname"><em>offset</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -248,6 +213,7 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Construct a new <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> pointing to the given index and with the given isPresent flag. </p>
+<p>TODO docs: fix index -&gt; offset</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index</td><td></td></tr>
@@ -281,13 +247,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Construct a new emptr <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>. </p>
+<p>Construct a new empty <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a11ec6d9bb91b0cb6c9b51c5121d340e7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11ec6d9bb91b0cb6c9b51c5121d340e7">&#9670;&nbsp;</a></span>get()</h2>
+<a id="a1a3b4e65c545d399e047fda4e19f743a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3b4e65c545d399e047fda4e19f743a">&#9670;&nbsp;</a></span>get()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -296,7 +262,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe">ptr_t</a> kvs::utils::Ptr::get </td>
+          <td class="memname">size_t kvs::utils::Ptr::get </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -310,6 +276,31 @@ Static Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get the actual index stored in this pointer. </p>
+
+</div>
+</div>
+<a id="a91dfabc2c8af704e77316540ac69ece0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a91dfabc2c8af704e77316540ac69ece0">&#9670;&nbsp;</a></span>getOffset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t kvs::utils::Ptr::getOffset </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -340,8 +331,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ae621b02f3011afefaffc9d7aaa0492eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae621b02f3011afefaffc9d7aaa0492eb">&#9670;&nbsp;</a></span>getType()</h2>
+<a id="aa31bfd800bc28d9568d1a4f50451f583"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa31bfd800bc28d9568d1a4f50451f583">&#9670;&nbsp;</a></span>getType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -350,7 +341,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classkvs_1_1utils_1_1Ptr.html#a0745e629e52ee5bee0727c48f46e0728">Ptr::PtrType</a> kvs::utils::Ptr::getType </td>
+          <td class="memname"><a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">PtrType</a> kvs::utils::Ptr::getType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>

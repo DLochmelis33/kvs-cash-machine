@@ -17,58 +17,42 @@ Collaboration diagram for kvs\+::utils\+::Key\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classkvs_1_1utils_1_1Key_a3ad0ef042e03055a44ad36290bb7ce07}{Key}} (\mbox{\hyperlink{namespacekvs_1_1utils_ab29a21fc7832efae7c3e6eca6b01dae2}{key\+\_\+t}} key) noexcept
+\mbox{\hyperlink{classkvs_1_1utils_1_1Key_a5cd64ea8a15377369ece0e6ef780f5b4}{Key}} (\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classkvs_1_1utils_1_1Key_ac8689f99107c5d7b4332ea06077b9fd5}{bytes}}=\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}}\{\mbox{\hyperlink{namespacekvs_1_1utils_addeb36ca6455ac8903f049050a74ac9d}{KEY\+\_\+\+SIZE}}\}) noexcept
 \item 
-\mbox{\hyperlink{classkvs_1_1utils_1_1Key_a512d7a506b55f06c479174bfd1c54cf0}{Key}} () noexcept
+\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \& \mbox{\hyperlink{classkvs_1_1utils_1_1Key_aa872dcc0976dcb26c4962458e7652352}{get\+Bytes}} () noexcept
 \item 
-\mbox{\hyperlink{classkvs_1_1utils_1_1Key_a4a75014055fc5f40eae764f11c51465b}{Key}} (\+\_\+\+\_\+uint128\+\_\+t key) noexcept
-\item 
-\mbox{\hyperlink{namespacekvs_1_1utils_ab29a21fc7832efae7c3e6eca6b01dae2}{key\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Key_adaace7ae3d9e8cb117dfaf2c15c36b5b}{get}} () noexcept
-\item 
-const char $\ast$ \mbox{\hyperlink{classkvs_1_1utils_1_1Key_ae14b295f122dd44458507030dc7455dc}{get}} () const noexcept
+const \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \& \mbox{\hyperlink{classkvs_1_1utils_1_1Key_a2df8d1fc38055fb450102b17b737123f}{get\+Bytes}} () const noexcept
 \item 
 bool \mbox{\hyperlink{classkvs_1_1utils_1_1Key_a0ce09bb3ece290c2981fba9bc385b6f9}{operator==}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&other) const noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classkvs_1_1utils_1_1Key_aba640e581459d8b8a71def0d20bb12a4}{data}}
+\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classkvs_1_1utils_1_1Key_ac8689f99107c5d7b4332ea06077b9fd5}{bytes}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_a3ad0ef042e03055a44ad36290bb7ce07}\label{classkvs_1_1utils_1_1Key_a3ad0ef042e03055a44ad36290bb7ce07}} 
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_a5cd64ea8a15377369ece0e6ef780f5b4}\label{classkvs_1_1utils_1_1Key_a5cd64ea8a15377369ece0e6ef780f5b4}} 
 \index{kvs::utils::Key@{kvs::utils::Key}!Key@{Key}}
 \index{Key@{Key}!kvs::utils::Key@{kvs::utils::Key}}
-\doxysubsubsection{\texorpdfstring{Key()}{Key()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily kvs\+::utils\+::\+Key\+::\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacekvs_1_1utils_ab29a21fc7832efae7c3e6eca6b01dae2}{key\+\_\+t}}}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
-
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_a512d7a506b55f06c479174bfd1c54cf0}\label{classkvs_1_1utils_1_1Key_a512d7a506b55f06c479174bfd1c54cf0}} 
-\index{kvs::utils::Key@{kvs::utils::Key}!Key@{Key}}
-\index{Key@{Key}!kvs::utils::Key@{kvs::utils::Key}}
-\doxysubsubsection{\texorpdfstring{Key()}{Key()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily kvs\+::utils\+::\+Key\+::\+Key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
-
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_a4a75014055fc5f40eae764f11c51465b}\label{classkvs_1_1utils_1_1Key_a4a75014055fc5f40eae764f11c51465b}} 
-\index{kvs::utils::Key@{kvs::utils::Key}!Key@{Key}}
-\index{Key@{Key}!kvs::utils::Key@{kvs::utils::Key}}
-\doxysubsubsection{\texorpdfstring{Key()}{Key()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily kvs\+::utils\+::\+Key\+::\+Key (\begin{DoxyParamCaption}\item[{\+\_\+\+\_\+uint128\+\_\+t}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
+\doxysubsubsection{\texorpdfstring{Key()}{Key()}}
+{\footnotesize\ttfamily kvs\+::utils\+::\+Key\+::\+Key (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}}}]{bytes = {\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}}\{\mbox{\hyperlink{namespacekvs_1_1utils_addeb36ca6455ac8903f049050a74ac9d}{KEY\+\_\+\+SIZE}}\}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_ae14b295f122dd44458507030dc7455dc}\label{classkvs_1_1utils_1_1Key_ae14b295f122dd44458507030dc7455dc}} 
-\index{kvs::utils::Key@{kvs::utils::Key}!get@{get}}
-\index{get@{get}!kvs::utils::Key@{kvs::utils::Key}}
-\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily const char $\ast$ kvs\+::utils\+::\+Key\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_a2df8d1fc38055fb450102b17b737123f}\label{classkvs_1_1utils_1_1Key_a2df8d1fc38055fb450102b17b737123f}} 
+\index{kvs::utils::Key@{kvs::utils::Key}!getBytes@{getBytes}}
+\index{getBytes@{getBytes}!kvs::utils::Key@{kvs::utils::Key}}
+\doxysubsubsection{\texorpdfstring{getBytes()}{getBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \& kvs\+::utils\+::\+Key\+::get\+Bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_adaace7ae3d9e8cb117dfaf2c15c36b5b}\label{classkvs_1_1utils_1_1Key_adaace7ae3d9e8cb117dfaf2c15c36b5b}} 
-\index{kvs::utils::Key@{kvs::utils::Key}!get@{get}}
-\index{get@{get}!kvs::utils::Key@{kvs::utils::Key}}
-\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \mbox{\hyperlink{namespacekvs_1_1utils_ab29a21fc7832efae7c3e6eca6b01dae2}{key\+\_\+t}} kvs\+::utils\+::\+Key\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_aa872dcc0976dcb26c4962458e7652352}\label{classkvs_1_1utils_1_1Key_aa872dcc0976dcb26c4962458e7652352}} 
+\index{kvs::utils::Key@{kvs::utils::Key}!getBytes@{getBytes}}
+\index{getBytes@{getBytes}!kvs::utils::Key@{kvs::utils::Key}}
+\doxysubsubsection{\texorpdfstring{getBytes()}{getBytes()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \& kvs\+::utils\+::\+Key\+::get\+Bytes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Key_a0ce09bb3ece290c2981fba9bc385b6f9}\label{classkvs_1_1utils_1_1Key_a0ce09bb3ece290c2981fba9bc385b6f9}} 
 \index{kvs::utils::Key@{kvs::utils::Key}!operator==@{operator==}}
@@ -79,11 +63,11 @@ bool \mbox{\hyperlink{classkvs_1_1utils_1_1Key_a0ce09bb3ece290c2981fba9bc385b6f9
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_aba640e581459d8b8a71def0d20bb12a4}\label{classkvs_1_1utils_1_1Key_aba640e581459d8b8a71def0d20bb12a4}} 
-\index{kvs::utils::Key@{kvs::utils::Key}!data@{data}}
-\index{data@{data}!kvs::utils::Key@{kvs::utils::Key}}
-\doxysubsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} kvs\+::utils\+::\+Key\+::data\hspace{0.3cm}{\ttfamily [private]}}
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Key_ac8689f99107c5d7b4332ea06077b9fd5}\label{classkvs_1_1utils_1_1Key_ac8689f99107c5d7b4332ea06077b9fd5}} 
+\index{kvs::utils::Key@{kvs::utils::Key}!bytes@{bytes}}
+\index{bytes@{bytes}!kvs::utils::Key@{kvs::utils::Key}}
+\doxysubsubsection{\texorpdfstring{bytes}{bytes}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} kvs\+::utils\+::\+Key\+::bytes\hspace{0.3cm}{\ttfamily [private]}}
 
 
 

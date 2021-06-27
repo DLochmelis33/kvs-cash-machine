@@ -1,0 +1,118 @@
+\hypertarget{classkvs_1_1cache__map_1_1CacheMap}{}\doxysection{kvs\+::cache\+\_\+map\+::Cache\+Map Class Reference}
+\label{classkvs_1_1cache__map_1_1CacheMap}\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+
+
+Cache map. Is stored in RAM.  
+
+
+
+
+{\ttfamily \#include $<$Cache\+Map.\+h$>$}
+
+
+
+Collaboration diagram for kvs\+::cache\+\_\+map\+::Cache\+Map\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{classkvs_1_1cache__map_1_1CacheMap__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a29a003bbf66535b0fdfb1af4d1a8dddf}{Cache\+Map}} () noexcept
+\item 
+std\+::optional$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a0eb05d3c0b5cdffecf57b15b8c900943}{put\+Or\+Displace}} (\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} entry) noexcept
+\begin{DoxyCompactList}\small\item\em Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} $>$ \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_afe612a6e3fb1c3e60ef13cf801210dbf}{get}} (\mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} key) const noexcept
+\begin{DoxyCompactList}\small\item\em Find a Ptr by Key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a35964877a9e96734d3f42c3c4812e56b}{clear}} () noexcept
+\begin{DoxyCompactList}\small\item\em Clear the entire map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_ad1e5352e3d0ec4f627ab71ed311e486b}{data}}
+\begin{DoxyCompactList}\small\item\em The internal storage of the map. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a859a1b1289aa3edd904ec35cdc0133f3}{size}}
+\begin{DoxyCompactList}\small\item\em The number of elements present in the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Cache map. Is stored in RAM. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a29a003bbf66535b0fdfb1af4d1a8dddf}\label{classkvs_1_1cache__map_1_1CacheMap_a29a003bbf66535b0fdfb1af4d1a8dddf}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!CacheMap@{CacheMap}}
+\index{CacheMap@{CacheMap}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{CacheMap()}{CacheMap()}}
+{\footnotesize\ttfamily kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::\+Cache\+Map (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a35964877a9e96734d3f42c3c4812e56b}\label{classkvs_1_1cache__map_1_1CacheMap_a35964877a9e96734d3f42c3c4812e56b}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!clear@{clear}}
+\index{clear@{clear}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Clear the entire map. 
+
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_afe612a6e3fb1c3e60ef13cf801210dbf}\label{classkvs_1_1cache__map_1_1CacheMap_afe612a6e3fb1c3e60ef13cf801210dbf}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!get@{get}}
+\index{get@{get}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}$>$ kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Find a Ptr by Key. 
+
+\begin{DoxyReturn}{Returns}
+The requested Ptr or nothing, if no Entry with given Key is present. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a0eb05d3c0b5cdffecf57b15b8c900943}\label{classkvs_1_1cache__map_1_1CacheMap_a0eb05d3c0b5cdffecf57b15b8c900943}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!putOrDisplace@{putOrDisplace}}
+\index{putOrDisplace@{putOrDisplace}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{putOrDisplace()}{putOrDisplace()}}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}$>$ kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::put\+Or\+Displace (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}}]{entry }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. 
+
+\begin{DoxyReturn}{Returns}
+Displaced Entry, if any. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_ad1e5352e3d0ec4f627ab71ed311e486b}\label{classkvs_1_1cache__map_1_1CacheMap_ad1e5352e3d0ec4f627ab71ed311e486b}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!data@{data}}
+\index{data@{data}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}$>$ kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::data\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The internal storage of the map. 
+
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a859a1b1289aa3edd904ec35cdc0133f3}\label{classkvs_1_1cache__map_1_1CacheMap_a859a1b1289aa3edd904ec35cdc0133f3}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!size@{size}}
+\index{size@{size}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{size}{size}}
+{\footnotesize\ttfamily size\+\_\+t kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::size\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The number of elements present in the map. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{CacheMap_8h}{Cache\+Map.\+h}}\end{DoxyCompactItemize}

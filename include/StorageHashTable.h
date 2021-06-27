@@ -55,7 +55,7 @@ public:
    * 
    * @return std::vector<Entry> 
    */
-  const std::vector<Entry> getEntries() const noexcept;
+  std::vector<Entry> getEntries() const noexcept;
 
 private:
   /**

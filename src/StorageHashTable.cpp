@@ -16,7 +16,7 @@ StorageHashTable::StorageHashTable(const ByteArray array) {
 
   for (size_t i = 0; i < dataSize; i++) {
     Key key;
-    memcpy(key.get(), array.get() + (i * entrySize), KEY_SIZE);
+    memcpy(key.getBytes().get(), array.get() + (i * entrySize), KEY_SIZE);
     ptr_t p =
         *reinterpret_cast<const ptr_t*>(array.get() + i * entrySize + KEY_SIZE);
     data[i] = Entry(key, Ptr(p));
@@ -31,7 +31,7 @@ ByteArray StorageHashTable::serializeToByteArray() const noexcept {
 
   for (size_t i = 0; i < data.size(); i++) {
     auto [key, ptr] = data[i];
-    memcpy(result.get() + (i * entrySize), key.get(), KEY_SIZE);
+    memcpy(result.get() + (i * entrySize), key.getBytes().get(), KEY_SIZE);
     result.get()[i * entrySize + KEY_SIZE] = ptr.getRaw();
   }
   memcpy(result.get() + (resultLength - sizeof(size_t)),
@@ -95,7 +95,7 @@ Ptr& StorageHashTable::get(const Key& key) noexcept {
   return data[newIndex].ptr;
 }
 
-const std::vector<Entry> StorageHashTable::getEntries() const noexcept {
+std::vector<Entry> StorageHashTable::getEntries() const noexcept {
   std::vector<Entry> result;
   for (auto [key, ptr] : data) {
     if (ptr != EMPTY_PTR)

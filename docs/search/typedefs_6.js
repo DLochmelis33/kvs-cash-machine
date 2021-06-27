@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ptr_5ft_1161',['ptr_t',['../namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe',1,'kvs::utils']]]
+  ['reportercreatorfunc_1191',['reporterCreatorFunc',['../namespacedoctest_1_1detail.html#a030c0c44c25bdebe6a83858d1f454f72',1,'doctest::detail']]]
 ];

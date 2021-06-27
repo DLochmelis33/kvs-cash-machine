@@ -69,6 +69,7 @@ $(function() {
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
@@ -91,25 +92,33 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted.  <a href="classkvs_1_1utils_1_1Ptr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for entries in hash tables (i.e. <a class="el" href="classCacheMap.html" title="Cache map. Is stored in RAM.">CacheMap</a> and StorageHashTable).  <a href="structkvs_1_1utils_1_1Entry.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).  <a href="structkvs_1_1utils_1_1Entry.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab29a21fc7832efae7c3e6eca6b01dae2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#ab29a21fc7832efae7c3e6eca6b01dae2">key_t</a> = char *</td></tr>
-<tr class="separator:ab29a21fc7832efae7c3e6eca6b01dae2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf8b9c7f9457db4120829b238ce88431"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#aaf8b9c7f9457db4120829b238ce88431">value_t</a> = char *</td></tr>
-<tr class="separator:aaf8b9c7f9457db4120829b238ce88431"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3328f5d629385bc4333f74a83596e1fe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe">ptr_t</a> = unsigned char</td></tr>
 <tr class="separator:a3328f5d629385bc4333f74a83596e1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27f1fda06a7533a9f16ba45d443f98c7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7">hash_t</a> = uint64_t</td></tr>
-<tr class="separator:a27f1fda06a7533a9f16ba45d443f98c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ca84ce63a01b9456bafdc403ffe8ed5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a5ca84ce63a01b9456bafdc403ffe8ed5">seed_t</a> = <a class="el" href="namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7">hash_t</a></td></tr>
+<tr class="memitem:abf384e438bebfb25f264b6cedfaa51e7"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#abf384e438bebfb25f264b6cedfaa51e7">hash_t</a> = XXH64_hash_t</td></tr>
+<tr class="separator:abf384e438bebfb25f264b6cedfaa51e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ca84ce63a01b9456bafdc403ffe8ed5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a5ca84ce63a01b9456bafdc403ffe8ed5">seed_t</a> = <a class="el" href="namespacekvs_1_1utils.html#abf384e438bebfb25f264b6cedfaa51e7">hash_t</a></td></tr>
 <tr class="separator:a5ca84ce63a01b9456bafdc403ffe8ed5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13db4e78a1fbfd9a5adaec1986834283"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> = uint16_t</td></tr>
+<tr class="separator:a13db4e78a1fbfd9a5adaec1986834283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9de0de755051dacc6e2530e016f2be70"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a9de0de755051dacc6e2530e016f2be70">values_cnt_t</a> = uint8_t</td></tr>
+<tr class="separator:a9de0de755051dacc6e2530e016f2be70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a2109c4ca654740f8857bfd783ceadd53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">PtrType</a> { <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36">PRESENT</a>
+, <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59">DELETED</a>
+, <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b">EMPTY_PTR</a>
+ }</td></tr>
+<tr class="separator:a2109c4ca654740f8857bfd783ceadd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5343a7054666f26f837da2eaf405de1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7">hash_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a5343a7054666f26f837da2eaf405de1a">hashKey</a> (const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key, <a class="el" href="namespacekvs_1_1utils.html#a5ca84ce63a01b9456bafdc403ffe8ed5">seed_t</a> seed=0) noexcept</td></tr>
+<tr class="memitem:a5343a7054666f26f837da2eaf405de1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacekvs_1_1utils.html#abf384e438bebfb25f264b6cedfaa51e7">hash_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a5343a7054666f26f837da2eaf405de1a">hashKey</a> (const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key, <a class="el" href="namespacekvs_1_1utils.html#a5ca84ce63a01b9456bafdc403ffe8ed5">seed_t</a> seed=0) noexcept</td></tr>
 <tr class="separator:a5343a7054666f26f837da2eaf405de1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
@@ -124,6 +133,8 @@ Variables</h2></td></tr>
 <tr class="separator:a9edace8f2922eecb69aa0af572ecc7a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a81b2504774f36d34be0ee79ce4ebff"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a4a81b2504774f36d34be0ee79ce4ebff">SHARD_NUMBER</a> = 4981</td></tr>
 <tr class="separator:a4a81b2504774f36d34be0ee79ce4ebff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bd35bcc3182c27eaf8e678d6d8a32bf"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a5bd35bcc3182c27eaf8e678d6d8a32bf">MAX_OUTDATED_RECORDS_LOAD_FACTOR</a> = 0.5</td></tr>
+<tr class="separator:a5bd35bcc3182c27eaf8e678d6d8a32bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a681ae91ffea4696bc012ef7e2b4fc2ce"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a681ae91ffea4696bc012ef7e2b4fc2ce">BLOOM_FILTER_SIZE</a> = 5000</td></tr>
 <tr class="separator:a681ae91ffea4696bc012ef7e2b4fc2ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a39b70a28445b61801f025a976bcdca"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a9a39b70a28445b61801f025a976bcdca">BLOOM_FILTER_HASH_FUNCTIONS_NUMBER</a> = 5</td></tr>
@@ -132,30 +143,22 @@ Variables</h2></td></tr>
 <tr class="separator:ac1d4507ce05562ffb2de5f829cab397a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d1f7c3f7075ce9ef77956c7e6a03f5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a88d1f7c3f7075ce9ef77956c7e6a03f5">TABLE_MAX_SIZE</a> = 5000000</td></tr>
 <tr class="separator:a88d1f7c3f7075ce9ef77956c7e6a03f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c40337228a797bb66bac7905740ba90"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">STORAGE_HASH_TABLE_LOAD_FACTOR</a> = <a class="el" href="namespacekvs_1_1utils.html#a9edace8f2922eecb69aa0af572ecc7a2">MAP_LOAD_FACTOR</a></td></tr>
+<tr class="separator:a0c40337228a797bb66bac7905740ba90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71f4cddbd64d2661a167643cfbf4724e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a71f4cddbd64d2661a167643cfbf4724e">STORAGE_HASH_TABLE_INITIAL_SIZE</a></td></tr>
+<tr class="separator:a71f4cddbd64d2661a167643cfbf4724e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e2bb2e3084ebe05ab38f84e93fb780"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#ae5e2bb2e3084ebe05ab38f84e93fb780">STORAGE_DIRECTORY_PATH</a> = &quot;../data/&quot;</td></tr>
+<tr class="separator:ae5e2bb2e3084ebe05ab38f84e93fb780"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="a27f1fda06a7533a9f16ba45d443f98c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27f1fda06a7533a9f16ba45d443f98c7">&#9670;&nbsp;</a></span>hash_t</h2>
+<a id="abf384e438bebfb25f264b6cedfaa51e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf384e438bebfb25f264b6cedfaa51e7">&#9670;&nbsp;</a></span>hash_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7">kvs::utils::hash_t</a> = typedef uint64_t</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab29a21fc7832efae7c3e6eca6b01dae2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab29a21fc7832efae7c3e6eca6b01dae2">&#9670;&nbsp;</a></span>key_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#ab29a21fc7832efae7c3e6eca6b01dae2">kvs::utils::key_t</a> = typedef char*</td>
+          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#abf384e438bebfb25f264b6cedfaa51e7">kvs::utils::hash_t</a> = typedef XXH64_hash_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -183,24 +186,66 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#a5ca84ce63a01b9456bafdc403ffe8ed5">kvs::utils::seed_t</a> = typedef <a class="el" href="namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7">hash_t</a></td>
+          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#a5ca84ce63a01b9456bafdc403ffe8ed5">kvs::utils::seed_t</a> = typedef <a class="el" href="namespacekvs_1_1utils.html#abf384e438bebfb25f264b6cedfaa51e7">hash_t</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aaf8b9c7f9457db4120829b238ce88431"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf8b9c7f9457db4120829b238ce88431">&#9670;&nbsp;</a></span>value_t</h2>
+<a id="a13db4e78a1fbfd9a5adaec1986834283"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13db4e78a1fbfd9a5adaec1986834283">&#9670;&nbsp;</a></span>shard_index_t</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#aaf8b9c7f9457db4120829b238ce88431">kvs::utils::value_t</a> = typedef char*</td>
+          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">kvs::utils::shard_index_t</a> = typedef uint16_t</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9de0de755051dacc6e2530e016f2be70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9de0de755051dacc6e2530e016f2be70">&#9670;&nbsp;</a></span>values_cnt_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacekvs_1_1utils.html#a9de0de755051dacc6e2530e016f2be70">kvs::utils::values_cnt_t</a> = typedef uint8_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a2109c4ca654740f8857bfd783ceadd53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2109c4ca654740f8857bfd783ceadd53">&#9670;&nbsp;</a></span>PtrType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">kvs::utils::PtrType</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36"></a>PRESENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59"></a>DELETED&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b"></a>EMPTY_PTR&#160;</td><td class="fielddoc"></td></tr>
+</table>
 
 </div>
 </div>
@@ -215,7 +260,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespacekvs_1_1utils.html#a27f1fda06a7533a9f16ba45d443f98c7">hash_t</a> kvs::utils::hashKey </td>
+          <td class="memname"><a class="el" href="namespacekvs_1_1utils.html#abf384e438bebfb25f264b6cedfaa51e7">hash_t</a> kvs::utils::hashKey </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;&#160;</td>
           <td class="paramname"><em>key</em>, </td>
@@ -352,6 +397,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a5bd35bcc3182c27eaf8e678d6d8a32bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bd35bcc3182c27eaf8e678d6d8a32bf">&#9670;&nbsp;</a></span>MAX_OUTDATED_RECORDS_LOAD_FACTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double kvs::utils::MAX_OUTDATED_RECORDS_LOAD_FACTOR = 0.5</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4a81b2504774f36d34be0ee79ce4ebff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a81b2504774f36d34be0ee79ce4ebff">&#9670;&nbsp;</a></span>SHARD_NUMBER</h2>
 
@@ -363,6 +430,67 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">constexpr size_t kvs::utils::SHARD_NUMBER = 4981</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae5e2bb2e3084ebe05ab38f84e93fb780"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5e2bb2e3084ebe05ab38f84e93fb780">&#9670;&nbsp;</a></span>STORAGE_DIRECTORY_PATH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string kvs::utils::STORAGE_DIRECTORY_PATH = &quot;../data/&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a71f4cddbd64d2661a167643cfbf4724e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71f4cddbd64d2661a167643cfbf4724e">&#9670;&nbsp;</a></span>STORAGE_HASH_TABLE_INITIAL_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t kvs::utils::STORAGE_HASH_TABLE_INITIAL_SIZE</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">=</div>
+<div class="line">    23 * <a class="code" href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">STORAGE_HASH_TABLE_LOAD_FACTOR</a></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html_a0c40337228a797bb66bac7905740ba90"><div class="ttname"><a href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">kvs::utils::STORAGE_HASH_TABLE_LOAD_FACTOR</a></div><div class="ttdeci">constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:22</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0c40337228a797bb66bac7905740ba90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c40337228a797bb66bac7905740ba90">&#9670;&nbsp;</a></span>STORAGE_HASH_TABLE_LOAD_FACTOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double kvs::utils::STORAGE_HASH_TABLE_LOAD_FACTOR = <a class="el" href="namespacekvs_1_1utils.html#a9edace8f2922eecb69aa0af572ecc7a2">MAP_LOAD_FACTOR</a></td>
         </tr>
       </table>
   </td>
