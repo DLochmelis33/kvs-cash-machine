@@ -1,7 +1,10 @@
 #include "CacheMap.h"
 #include "doctest.h"
+#include <bitset>
 #include <cstring>
+#include <iostream>
 #include <random>
+#include <sstream>
 #include <unordered_map>
 
 namespace kvs_test::cache_map {
@@ -13,6 +16,26 @@ Key generateKey(size_t value) {
   ByteArray byteArray(KEY_SIZE);
   std::memcpy(byteArray.get(), reinterpret_cast<char*>(&value), sizeof(size_t));
   return Key{byteArray};
+}
+
+std::string toBin(Key key) {
+  std::stringstream ss;
+  for (size_t i = KEY_SIZE - 1; i < KEY_SIZE; i--) {
+    std::bitset<8> rep(key.getBytes().get()[i]);
+    ss << rep;
+  }
+  return ss.str();
+}
+
+std::string toBin(Ptr ptr) {
+  ptr_t p = ptr.getRaw();
+  std::stringstream ss;
+  ss << std::bitset<8>(p);
+  return ss.str();
+}
+
+size_t keyget(Key key) {
+  return *reinterpret_cast<size_t*>(key.getBytes().get());
 }
 
 TEST_CASE("test CacheMap") {
@@ -74,32 +97,40 @@ TEST_CASE("test CacheMap") {
     CHECK((opt = map.putOrDisplace(e5), opt.has_value()));
     CHECK((opt = map.putOrDisplace(e6), opt.has_value()));
 
-    for (size_t i = 0; i < 100; i++) map.putOrDisplace(e1); // probabilistic
+    for (size_t i = 10; i < 5000; i++)
+      map.putOrDisplace(Entry(generateKey(i), p2)); // probabilistic
 
     CHECK(map.get(e2.key) == EMPTY_PTR);
+    CHECK(map.get(e3.key) == EMPTY_PTR);
+    CHECK(map.get(e4.key) == EMPTY_PTR);
+    CHECK(map.get(e5.key) == EMPTY_PTR);
+    CHECK(map.get(e6.key) == EMPTY_PTR);
   }
 
   SUBCASE("test stress") {
     std::random_device rd;
     std::mt19937_64 gen(rd());
-    std::uniform_int_distribution<uint64_t> keyDistr;
+    std::uniform_int_distribution<uint64_t> keyDistr(0, 5000);
     srand(time(NULL));
 
     std::unordered_map<uint64_t, ptr_t> realMap;
-    CacheMap map(20000);
+    CacheMap map(5000);
 
-    for (size_t ops = 0; ops < 50000; ops++) {
-      uint64_t k = keyDistr(gen);
-      ptr_t p = static_cast<unsigned char>(rand() & 0b01111111);
-      if (p == 0b01111111)
+    for (size_t ops = 0; ops < 15000; ops++) {
+      size_t k = keyDistr(gen);
+      ptr_t p = static_cast<unsigned char>(rand());
+      if (p == Ptr::EMPTY_PTR_V) // EMPTY_PTR_V
         p--;
       Key key = generateKey(k);
-      Ptr ptr(rand(), rand());
+      Ptr ptr(p);
       Entry entry(key, ptr);
 
       if (rand() & 1) {
         // put
-        map.putOrDisplace(entry);
+        std::optional<Entry> displaced = map.putOrDisplace(entry);
+        if (displaced.has_value())
+          realMap[keyget(displaced.value().key)] = Ptr::EMPTY_PTR_V;
+
         realMap[k] = p;
       } else {
         // get
@@ -107,7 +138,7 @@ TEST_CASE("test CacheMap") {
         ptr_t real =
             (realMap.find(k) == realMap.end() ? Ptr::EMPTY_PTR_V : realMap[k]);
         // CHECK will spam the terminal
-        REQUIRE(got.get() == real);
+        REQUIRE(got.getRaw() == real);
       }
     }
   }

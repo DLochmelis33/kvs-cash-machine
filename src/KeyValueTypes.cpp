@@ -47,12 +47,14 @@ hash_t hashKey(const Key& key, seed_t seed) noexcept {
 
 Ptr::Ptr(ptr_t ptr_) noexcept : ptr(ptr_) {
   static_assert((EMPTY_PTR_V & CONTROL_MASK) == false);
+  static_assert((NONEXISTENT_V & CONTROL_MASK) == false);
+  static_assert((SYNC_DELETED_V & CONTROL_MASK) == false);
 }
 
 Ptr::Ptr(size_t offset, bool isPresent) noexcept {
   assert(offset % VALUE_SIZE == 0);
   size_t index = offset / VALUE_SIZE;
-  assert(index >= EMPTY_PTR_V);
+  assert(index <= 120); // all above are reserved
   ptr = index;
   setValuePresent(isPresent);
 }
@@ -70,6 +72,7 @@ ptr_t Ptr::getRaw() const noexcept { return ptr; }
 bool Ptr::isValuePresent() const noexcept { return ptr & CONTROL_MASK; }
 
 void Ptr::setValuePresent(bool isPresent) noexcept {
+  assert(getType() == PtrType::PRESENT || getType() == PtrType::DELETED);
   if (isPresent) {
     ptr |= CONTROL_MASK;
   } else {
@@ -78,13 +81,17 @@ void Ptr::setValuePresent(bool isPresent) noexcept {
 }
 
 PtrType Ptr::getType() const noexcept {
-  if (ptr == EMPTY_PTR_V) {
+  if (ptr == EMPTY_PTR_V)
     return PtrType::EMPTY_PTR;
-  }
-  if (isValuePresent()) {
+  if (ptr == NONEXISTENT_V)
+    return PtrType::NONEXISTENT;
+  if (ptr == SYNC_DELETED_V)
+    return PtrType::SYNC_DELETED;
+
+  if (isValuePresent())
     return PtrType::PRESENT;
-  }
-  return PtrType::DELETED;
+  else
+    return PtrType::DELETED;
 }
 
 bool Ptr::operator==(const Ptr& other) const noexcept {
