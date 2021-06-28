@@ -33,6 +33,8 @@ constexpr double defaultRemoveOperationsRate =
     0.4; // from write and remove operations
 std::uniform_int_distribution<uint32_t> opDistr(0, maxOpDistrRange);
 
+constexpr size_t defaultRecentKeysSize = 500;
+
 struct Stats {
   uint64_t sumOperationsNanos = 0;
   uint64_t sumReadOperationsNanos = 0;
@@ -121,6 +123,17 @@ Value generateRandomValue() {
   return Value{generateRandomByteArray(VALUE_SIZE)};
 }
 
+Key generateRandomKeyWithCacheAccessProbability(std::vector<Key>& recentKeys,
+                                                size_t size,
+                                                double cacheAccessProbability) {
+  uint32_t num = opDistr(gen);
+  uint32_t maxCacheNum = maxOpDistrRange * cacheAccessProbability;
+  if (num > maxCacheNum || size == 0) {
+    return generateRandomKey();
+  }
+  return recentKeys[num % size];
+}
+
 Key generateNewRandomKey(std::unordered_set<Key>& keys) {
   Key key = generateRandomKey();
   while (keys.find(key) != keys.end()) {
@@ -151,7 +164,6 @@ void testRandomAccess(size_t setupElementsSize,
 
   Stats stats{};
 
-  std::optional<Value> lastReadValue;
   for (size_t i = 0; i < benchmarkOperationsNumber; ++i) {
     Key key = generateRandomKey();
     uint8_t operationCode = generateRandomOperationCode(readOperationsRate);
@@ -162,7 +174,6 @@ void testRandomAccess(size_t setupElementsSize,
     case 0: {
       std::optional<Value> value = kvs.get(key);
       end = std::chrono::high_resolution_clock::now();
-      lastReadValue = value;
       break;
     }
     case 1: {
@@ -186,6 +197,63 @@ void testRandomAccess(size_t setupElementsSize,
   clearUp();
 }
 
+void testCacheAccessWithProbability(size_t setupElementsSize,
+                                    size_t benchmarkOperationsNumber,
+                                    double readOperationsRate,
+                                    double cacheAccessProbability) {
+  KVS kvs = setupKVS(setupElementsSize);
+
+  Stats stats{};
+  std::vector<Key> recentKeys(defaultRecentKeysSize);
+  size_t recentKeysSize = 0;
+  size_t recentKeysPos = 0;
+
+  for (size_t i = 0; i < benchmarkOperationsNumber; ++i) {
+    Key key = generateRandomKeyWithCacheAccessProbability(
+        recentKeys, recentKeysSize, cacheAccessProbability);
+    uint8_t operationCode = generateRandomOperationCode(readOperationsRate);
+
+    auto begin = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point end;
+    switch (operationCode) {
+    case 0: {
+      std::optional<Value> value = kvs.get(key);
+      end = std::chrono::high_resolution_clock::now();
+      break;
+    }
+    case 1: {
+      kvs.remove(key);
+      end = std::chrono::high_resolution_clock::now();
+      break;
+    }
+    case 2: {
+      kvs.add(key, generateRandomValue());
+      end = std::chrono::high_resolution_clock::now();
+      break;
+    }
+    }
+    auto duration =
+        std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin)
+            .count();
+    applyDuration(duration, stats, operationCode);
+
+    if (recentKeysSize < recentKeys.size()) {
+      recentKeys[recentKeysSize] = key;
+      ++recentKeysSize;
+      ++recentKeysPos;
+    } else {
+      if (recentKeysPos >= recentKeysSize) {
+        recentKeysPos %= recentKeysSize;
+      }
+      recentKeys[recentKeysPos] = key;
+      ++recentKeysPos;
+    }
+  }
+
+  printAverageStats(std::cerr, stats);
+  clearUp();
+}
+
 } // namespace benchmark
 
 int main() {
@@ -197,12 +265,12 @@ int main() {
   benchmark::testRandomAccess(setupElementsSize, benchmarkOperationsNumber,
                               readOperationsRate);
 
-  /*double cacheAccessProbability = 0.7;
+  double cacheAccessProbability = 0.7;
   benchmark::testCacheAccessWithProbability(
       setupElementsSize, benchmarkOperationsNumber, readOperationsRate,
       cacheAccessProbability);
 
-  size_t fullMissesPeriod = 1000;
+  /*size_t fullMissesPeriod = 1000;
   benchmark::testCacheAccessWithPeriodicFullMisses(
       setupElementsSize, benchmarkOperationsNumber, readOperationsRate,
       fullMissesPeriod);
