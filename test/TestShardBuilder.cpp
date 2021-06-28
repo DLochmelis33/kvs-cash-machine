@@ -90,13 +90,14 @@ TEST_CASE("test ShardBuilder") {
     }
     REQUIRE_FALSE(shard.isRebuildRequired(shardIndex));
 
-    values_cnt_t removedValuesCnt = notUpdatedCacheMapRemovedEntriesCnt;
+    values_cnt_t removedValuesCnt = notUpdatedCacheMapRemovedEntriesCnt + 1;
     while (!shard.isRebuildRequired(shardIndex)) {
       elements[removedValuesCnt].first.ptr.setValuePresent(false);
       auto [entry, value] = elements[removedValuesCnt];
       Entry removeEntry = shard.removeEntry(shardIndex, entry.key);
       REQUIRE(removeEntry.key == entry.key);
       REQUIRE(removeEntry.ptr == entry.ptr);
+      removeEntry.second.ptr = Ptr{PtrType::NONEXISTENT};
       std::optional<Entry> displacedEntry = cacheMap.putOrDisplace(removeEntry);
       REQUIRE_FALSE(displacedEntry.has_value());
       ++removedValuesCnt;
@@ -151,8 +152,7 @@ TEST_CASE("test ShardBuilder") {
       REQUIRE_FALSE(readValue.has_value());
       CHECK(readEntry.key == entry.key);
       CHECK(readEntry.ptr.getType() == PtrType::EMPTY_PTR);
-      //CHECK(cacheMap.get(entry.key).getType() == PtrType::NONEXISTENT);
-      // TODO ?
+      CHECK(cacheMap.get(entry.key).getType() == PtrType::NONEXISTENT);
     }
 
     Ptr otherShardEntryPtr = cacheMap.get(otherShardEntry.key);

@@ -47,9 +47,12 @@ ShardBuilder::rebuildShard(const Shard& shard, shard_index_t shardIndex,
     const Key& key = shardEntry.key;
     Ptr cacheMapPtr = cacheMap.get(key);
     switch (cacheMapPtr.getType()) {
-    case PtrType::DELETED: {
-      cacheMapUpdatedEntries.emplace_back(key, Ptr{});
-      // cacheMapUpdatedEntries.emplace_back(key, Ptr{PtrType::NONEXISTENT});
+    case PtrType::DELETED: { // == not sync deleted
+      cacheMapUpdatedEntries.emplace_back(key, Ptr{PtrType::NONEXISTENT});
+      break;
+    }
+    case PtrType::NONEXISTENT: { // == sync deleted
+      assert(shardEntry.ptr.getType() == PtrType::NONEXISTENT);
       break;
     }
     case PtrType::EMPTY_PTR: {
@@ -68,9 +71,6 @@ ShardBuilder::rebuildShard(const Shard& shard, shard_index_t shardIndex,
       cacheMapUpdatedEntries.emplace_back(key, Ptr{newOffset, true});
       break;
     }
-      /*case PtrType::NONEXISTENT: {
-                                 throw std::logic_error("unreachable");
-                               }*/
     }
   }
   newValuesStorage.close();

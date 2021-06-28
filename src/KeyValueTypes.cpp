@@ -59,6 +59,8 @@ Ptr::Ptr(size_t offset, bool isPresent) noexcept {
   setValuePresent(isPresent);
 }
 
+Ptr::Ptr(PtrType type) noexcept : ptr{0} {}
+
 Ptr::Ptr() noexcept : Ptr(Ptr::EMPTY_PTR_V) {}
 
 size_t Ptr::get() const noexcept { return ptr & ~CONTROL_MASK; }

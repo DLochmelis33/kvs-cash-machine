@@ -30,6 +30,8 @@ Shard::readValue(shard_index_t shardIndex, const Key& key) const {
   case PtrType::PRESENT:
     return std::make_pair(Entry{key, ptr},
                           std::optional{readValueDirectly(shardIndex, ptr)});
+  case PtrType::NONEXISTENT:
+    throw std::logic_error("NONEXISTENT is forbidden in StorageHashTable");
   }
   throw std::logic_error("unreachable");
 }
@@ -71,6 +73,9 @@ Entry Shard::writeValue(shard_index_t shardIndex, const Key& key,
 
     return newEntry;
   }
+  case PtrType::NONEXISTENT: {
+    throw std::logic_error("NONEXISTENT is forbidden in StorageHashTable");
+  }
   }
   throw std::logic_error("unreachable");
 }
@@ -87,7 +92,7 @@ Entry Shard::removeEntry(shard_index_t shardIndex, const Key& key) {
     return Entry{key, ptr};
   case PtrType::EMPTY_PTR:
     return Entry{key};
-  case PtrType::PRESENT:
+  case PtrType::PRESENT: {
     --aliveValuesCnt;
     ptr.setValuePresent(false);
     Entry updatedEntry{key, ptr};
@@ -95,6 +100,10 @@ Entry Shard::removeEntry(shard_index_t shardIndex, const Key& key) {
     storage::writeFile(getStorageHashTableFilePath(shardIndex),
                        storageHashTable.serializeToByteArray());
     return updatedEntry;
+  }
+  case PtrType::NONEXISTENT: {
+    throw std::logic_error("NONEXISTENT is forbidden in StorageHashTable");
+  }
   }
   throw std::logic_error("unreachable");
 }

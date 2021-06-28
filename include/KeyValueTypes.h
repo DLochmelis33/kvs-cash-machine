@@ -74,7 +74,7 @@ struct KeyValue final {
  * SYNC_DELETED - this Ptr points to nowhere, was lazily deleted in CacheMap and then synced with the Shard
  * NONEXISTENT - this Ptr points to nowhere, but it was PRESENT before and the current corresponding Key is valid
  * EMPTY_PTR - this Ptr is equivalent to NULL
- * 
+ *
  */
 enum class PtrType { PRESENT, DELETED, EMPTY_PTR, NONEXISTENT, SYNC_DELETED };
 
@@ -102,6 +102,9 @@ public:
    * @param ptr 
    */
   explicit Ptr(ptr_t ptr) noexcept;
+
+  // TODO docs
+  explicit Ptr(PtrType type) noexcept;
 
   /** 
    * @brief Construct a new Ptr pointing to the given offset and with the given isPresent flag.
