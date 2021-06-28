@@ -10,7 +10,7 @@ using kvs::shard::ShardBuilder;
 KVS::KVS() : shards(), cacheMap(CACHE_MAP_SIZE) {
   shards.reserve(SHARD_NUMBER);
   for (shard_index_t i = 0; i < SHARD_NUMBER; i++)
-    shards[i] = ShardBuilder::createShard(i);
+    shards.push_back(ShardBuilder::createShard(i));
 }
 
 void KVS::pushOperation(Entry displaced) {

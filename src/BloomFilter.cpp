@@ -3,7 +3,7 @@
 
 namespace kvs::bloom_filter {
 
-BloomFilter::BloomFilter() noexcept {
+BloomFilter::BloomFilter() noexcept : seeds() {
   std::random_device rd;
   std::mt19937_64 gen(rd());
   std::uniform_int_distribution<seed_t> distr; // from 0 to type::max by default
