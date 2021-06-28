@@ -1,5 +1,7 @@
 #include "KVS.h"
 
+#include <chrono>
+#include <cstdint>
 #include <filesystem>
 #include <iostream>
 #include <limits>
@@ -26,6 +28,83 @@ std::random_device rd;
 std::mt19937_64 gen(rd());
 std::uniform_int_distribution<char> charDistr(std::numeric_limits<char>::min(),
                                               std::numeric_limits<char>::max());
+constexpr uint32_t maxOpDistrRange = 1e6;
+constexpr double defaultRemoveOperationsRate =
+    0.4; // from write and remove operations
+std::uniform_int_distribution<uint32_t> opDistr(0, maxOpDistrRange);
+
+struct Stats {
+  uint64_t sumOperationsNanos = 0;
+  uint64_t sumReadOperationsNanos = 0;
+  uint64_t sumWriteOperationsNanos = 0;
+
+  uint64_t operationsCnt = 0;
+  uint64_t readOperationsCnt = 0;
+  uint64_t writeOperationsCnt = 0;
+
+  uint64_t maxReadOperationNanos = 0;
+  uint64_t maxWriteOperationNanos = 0;
+
+  uint64_t minReadOperationNanos = std::numeric_limits<uint64_t>::max();
+  uint64_t minWriteOperationNanos = std::numeric_limits<uint64_t>::max();
+};
+
+void applyDuration(uint64_t duration, Stats& stats, uint8_t operationCode) {
+  stats.sumOperationsNanos += duration;
+  ++stats.operationsCnt;
+  if (operationCode == 0) {
+    ++stats.readOperationsCnt;
+    stats.sumReadOperationsNanos += duration;
+    stats.maxReadOperationNanos = duration > stats.maxReadOperationNanos
+                                      ? duration
+                                      : stats.maxReadOperationNanos;
+    stats.minReadOperationNanos = duration < stats.minReadOperationNanos
+                                      ? duration
+                                      : stats.minReadOperationNanos;
+  } else if (operationCode == 2) {
+    ++stats.writeOperationsCnt;
+    stats.sumWriteOperationsNanos += duration;
+    stats.maxWriteOperationNanos = duration > stats.maxWriteOperationNanos
+                                       ? duration
+                                       : stats.maxWriteOperationNanos;
+    stats.minWriteOperationNanos = duration < stats.minWriteOperationNanos
+                                       ? duration
+                                       : stats.minWriteOperationNanos;
+  }
+}
+
+void printAverageStats(std::ostream& outs, const Stats& stats) {
+  outs << "Benchmark stats in nanos:\n";
+
+  outs << "avg operation = " + stats.sumOperationsNanos / stats.operationsCnt
+       << "\n";
+  outs << "avg read operation = " +
+              stats.sumReadOperationsNanos / stats.readOperationsCnt
+       << "\n";
+  outs << "avg write operation = " +
+              stats.sumWriteOperationsNanos / stats.writeOperationsCnt
+       << "\n";
+
+  outs << "min/max read operation = " << stats.minReadOperationNanos << " / "
+       << stats.maxReadOperationNanos << "\n";
+  outs << "min/max write operation = " << stats.minWriteOperationNanos << " / "
+       << stats.maxWriteOperationNanos << "\n";
+}
+
+uint8_t generateRandomOperationCode(
+    double readOperationsRate,
+    double removeOperationsRate = defaultRemoveOperationsRate) {
+  uint32_t num = opDistr(gen);
+  uint32_t maxReadNum = maxOpDistrRange * readOperationsRate;
+  if (num <= maxReadNum) {
+    return 0;
+  }
+  uint32_t writeRemoveNum = num - maxReadNum;
+  if (writeRemoveNum < writeRemoveNum * removeOperationsRate) {
+    return 1;
+  }
+  return 2;
+}
 
 ByteArray generateRandomByteArray(size_t size) {
   ByteArray bytes(size);
@@ -57,8 +136,7 @@ KVS setupKVS(size_t setupElementsSize) {
   std::unordered_set<Key> keys;
   for (size_t i = 0; i < setupElementsSize; ++i) {
     kvs.add(generateNewRandomKey(keys), generateRandomValue());
-    // x2
-    // make random operation
+    // TODO: (?) make random operation
   }
   std::cerr << "KVS set up finished\n";
   return kvs;
@@ -71,9 +149,40 @@ void testRandomAccess(size_t setupElementsSize,
                       double readOperationsRate) {
   KVS kvs = setupKVS(setupElementsSize);
 
-  //
-  // out
-  //
+  Stats stats{};
+
+  std::optional<Value> lastReadValue;
+  for (size_t i = 0; i < benchmarkOperationsNumber; ++i) {
+    Key key = generateRandomKey();
+    uint8_t operationCode = generateRandomOperationCode(readOperationsRate);
+
+    auto begin = std::chrono::high_resolution_clock::now();
+    std::chrono::high_resolution_clock::time_point end;
+    switch (operationCode) {
+    case 0: {
+      std::optional<Value> value = kvs.get(key);
+      end = std::chrono::high_resolution_clock::now();
+      lastReadValue = value;
+      break;
+    }
+    case 1: {
+      kvs.remove(key);
+      end = std::chrono::high_resolution_clock::now();
+      break;
+    }
+    case 2: {
+      kvs.add(key, generateRandomValue());
+      end = std::chrono::high_resolution_clock::now();
+      break;
+    }
+    }
+    auto duration =
+        std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin)
+            .count();
+    applyDuration(duration, stats, operationCode);
+  }
+
+  printAverageStats(std::cerr, stats);
   clearUp();
 }
 
