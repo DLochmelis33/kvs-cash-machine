@@ -75,7 +75,7 @@ struct KeyValue final {
  * EMPTY_PTR - this Ptr is equivalent to NULL
  * 
  */
-enum class PtrType { PRESENT, DELETED, EMPTY_PTR, NONEXISTENT, SYNC_DELETED };
+enum class PtrType { PRESENT, DELETED, EMPTY_PTR, NONEXISTENT/*, SYNC_DELETED */};
 
 /**
  * @brief A pointer determining the position of the associated value in the values file. Also stores
@@ -91,7 +91,7 @@ public:
    */
   static constexpr ptr_t EMPTY_PTR_V = 0b01111111;
   static constexpr ptr_t NONEXISTENT_V = 0b01111110;
-  static constexpr ptr_t SYNC_DELETED_V = 0b01111101;
+  // static constexpr ptr_t SYNC_DELETED_V = 0b01111101;
 
   /**
    * @brief Construct a new Ptr from \b raw \b data.
@@ -112,7 +112,7 @@ public:
    * @brief Construct a new empty Ptr.
    * 
    */
-  explicit Ptr() noexcept;
+  explicit Ptr(PtrType type = PtrType::EMPTY_PTR) noexcept;
 
   /**
    * @brief Get the actual index stored in this pointer.
