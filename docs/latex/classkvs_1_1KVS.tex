@@ -1,0 +1,160 @@
+\hypertarget{classkvs_1_1KVS}{}\doxysection{kvs\+::KVS Class Reference}
+\label{classkvs_1_1KVS}\index{kvs::KVS@{kvs::KVS}}
+
+
+The class that provides an access to a key-\/value storage.  
+
+
+
+
+{\ttfamily \#include $<$KVS.\+h$>$}
+
+
+
+Collaboration diagram for kvs\+::KVS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classkvs_1_1KVS__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classkvs_1_1KVS_a534534fcda1c0bbb5c3fa81e7ffca235}{KVS}} ()
+\item 
+void \mbox{\hyperlink{classkvs_1_1KVS_a217f1871a6b09944d85408803de01bf5}{add}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key, const \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \&value)
+\begin{DoxyCompactList}\small\item\em Add a Key\+Value to the storage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classkvs_1_1KVS_a7c8939cb3dd5832de711caeefed81115}{remove}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
+\begin{DoxyCompactList}\small\item\em Remove the Key and associated Value from storage. Lazy operation. \end{DoxyCompactList}\item 
+std\+::optional$<$ \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} $>$ \mbox{\hyperlink{classkvs_1_1KVS_afea8bd8c4207e9ac0273df724f640f10}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
+\begin{DoxyCompactList}\small\item\em Get the Value associated with the Key. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classkvs_1_1KVS_ae1805febc7b03075273809efbbca62f9}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Clear the storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classkvs_1_1KVS_a5b146f54114d9721758e230eed1ccd9f}{rebuild\+Shard}} (size\+\_\+t shard\+Index)
+\begin{DoxyCompactList}\small\item\em Rebuilds the shard with the given index. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classkvs_1_1KVS_a37cf61d6279dd40bc7ef8df4d7005322}{push\+Operation}} (\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} displaced)
+\begin{DoxyCompactList}\small\item\em When an entry is displaced from the Cache\+Map, the corresponding operation should be pushed to the shard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} $>$ \mbox{\hyperlink{classkvs_1_1KVS_a0bb570c223eef2643a7efd69ec5c3320}{shards}}
+\begin{DoxyCompactList}\small\item\em Shard objects representing... shards? \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap}{Cache\+Map}} \mbox{\hyperlink{classkvs_1_1KVS_a2788bcab6c2be39215f246771c015f35}{cache\+Map}}
+\begin{DoxyCompactList}\small\item\em Cache map, stored in RAM. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The class that provides an access to a key-\/value storage. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classkvs_1_1KVS_a534534fcda1c0bbb5c3fa81e7ffca235}\label{classkvs_1_1KVS_a534534fcda1c0bbb5c3fa81e7ffca235}} 
+\index{kvs::KVS@{kvs::KVS}!KVS@{KVS}}
+\index{KVS@{KVS}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{KVS()}{KVS()}}
+{\footnotesize\ttfamily kvs\+::\+KVS\+::\+KVS (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classkvs_1_1KVS_a217f1871a6b09944d85408803de01bf5}\label{classkvs_1_1KVS_a217f1871a6b09944d85408803de01bf5}} 
+\index{kvs::KVS@{kvs::KVS}!add@{add}}
+\index{add@{add}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void kvs\+::\+KVS\+::add (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key,  }\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Add a Key\+Value to the storage. 
+
+\mbox{\Hypertarget{classkvs_1_1KVS_ae1805febc7b03075273809efbbca62f9}\label{classkvs_1_1KVS_ae1805febc7b03075273809efbbca62f9}} 
+\index{kvs::KVS@{kvs::KVS}!clear@{clear}}
+\index{clear@{clear}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily void kvs\+::\+KVS\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Clear the storage. 
+
+\mbox{\Hypertarget{classkvs_1_1KVS_afea8bd8c4207e9ac0273df724f640f10}\label{classkvs_1_1KVS_afea8bd8c4207e9ac0273df724f640f10}} 
+\index{kvs::KVS@{kvs::KVS}!get@{get}}
+\index{get@{get}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily std\+::optional$<$\mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}}$>$ kvs\+::\+KVS\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Get the Value associated with the Key. 
+
+\begin{DoxyReturn}{Returns}
+The Value associated with the Key or nothing, if no such Value is present. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classkvs_1_1KVS_a37cf61d6279dd40bc7ef8df4d7005322}\label{classkvs_1_1KVS_a37cf61d6279dd40bc7ef8df4d7005322}} 
+\index{kvs::KVS@{kvs::KVS}!pushOperation@{pushOperation}}
+\index{pushOperation@{pushOperation}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{pushOperation()}{pushOperation()}}
+{\footnotesize\ttfamily void kvs\+::\+KVS\+::push\+Operation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}}]{displaced }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+When an entry is displaced from the Cache\+Map, the corresponding operation should be pushed to the shard. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em displaced} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classkvs_1_1KVS_a5b146f54114d9721758e230eed1ccd9f}\label{classkvs_1_1KVS_a5b146f54114d9721758e230eed1ccd9f}} 
+\index{kvs::KVS@{kvs::KVS}!rebuildShard@{rebuildShard}}
+\index{rebuildShard@{rebuildShard}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{rebuildShard()}{rebuildShard()}}
+{\footnotesize\ttfamily void kvs\+::\+KVS\+::rebuild\+Shard (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{shard\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Rebuilds the shard with the given index. 
+
+\mbox{\Hypertarget{classkvs_1_1KVS_a7c8939cb3dd5832de711caeefed81115}\label{classkvs_1_1KVS_a7c8939cb3dd5832de711caeefed81115}} 
+\index{kvs::KVS@{kvs::KVS}!remove@{remove}}
+\index{remove@{remove}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void kvs\+::\+KVS\+::remove (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})}
+
+
+
+Remove the Key and associated Value from storage. Lazy operation. 
+
+Call shard rebuilding after removal if necessary. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classkvs_1_1KVS_a2788bcab6c2be39215f246771c015f35}\label{classkvs_1_1KVS_a2788bcab6c2be39215f246771c015f35}} 
+\index{kvs::KVS@{kvs::KVS}!cacheMap@{cacheMap}}
+\index{cacheMap@{cacheMap}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{cacheMap}{cacheMap}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap}{Cache\+Map}} kvs\+::\+KVS\+::cache\+Map\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Cache map, stored in RAM. 
+
+\mbox{\Hypertarget{classkvs_1_1KVS_a0bb570c223eef2643a7efd69ec5c3320}\label{classkvs_1_1KVS_a0bb570c223eef2643a7efd69ec5c3320}} 
+\index{kvs::KVS@{kvs::KVS}!shards@{shards}}
+\index{shards@{shards}!kvs::KVS@{kvs::KVS}}
+\doxysubsubsection{\texorpdfstring{shards}{shards}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}}$>$ kvs\+::\+KVS\+::shards\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Shard objects representing... shards? 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{KVS_8h}{KVS.\+h}}\item 
+src/\mbox{\hyperlink{KVS_8cpp}{KVS.\+cpp}}\end{DoxyCompactItemize}

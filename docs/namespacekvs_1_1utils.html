@@ -110,10 +110,16 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a2109c4ca654740f8857bfd783ceadd53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">PtrType</a> { <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36">PRESENT</a>
+<tr class="memitem:a2109c4ca654740f8857bfd783ceadd53"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">PtrType</a> { <br />
+&#160;&#160;<a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36">PRESENT</a>
 , <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59">DELETED</a>
 , <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b">EMPTY_PTR</a>
+, <a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a1fc1653b5a3c196b7e79f563924b202d">NONEXISTENT</a>
+, <br />
+&#160;&#160;<a class="el" href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53a873bc4aa9b37a713281d9926617d5e50">SYNC_DELETED</a>
+<br />
  }</td></tr>
+<tr class="memdesc:a2109c4ca654740f8857bfd783ceadd53"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience class to check Ptr's type.  <a href="namespacekvs_1_1utils.html#a2109c4ca654740f8857bfd783ceadd53">More...</a><br /></td></tr>
 <tr class="separator:a2109c4ca654740f8857bfd783ceadd53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
@@ -241,10 +247,15 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>A convenience class to check <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>'s type. </p>
+<p>PRESENT - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to an actual value DELETED - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a value that existed before, but now is deleted from <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> SYNC_DELETED - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to nowhere, was lazily deleted in CacheMap and then synced with the Shard NONEXISTENT - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to nowhere, but it was PRESENT before and the current corresponding <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> is valid EMPTY_PTR - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> is equivalent to NULL </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36"></a>PRESENT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59"></a>DELETED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b"></a>EMPTY_PTR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a1fc1653b5a3c196b7e79f563924b202d"></a>NONEXISTENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a873bc4aa9b37a713281d9926617d5e50"></a>SYNC_DELETED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>

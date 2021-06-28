@@ -2,7 +2,7 @@
 \label{classkvs_1_1shard_1_1Shard}\index{kvs::shard::Shard@{kvs::shard::Shard}}
 
 
-A single part of \mbox{\hyperlink{classKVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads hash tables into RAM from disk when necessary.  
+A single part of \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads hash tables into RAM from disk when necessary.  
 
 
 
@@ -76,7 +76,7 @@ class \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a75f5d7eb5774c232dbb08b3c2a02d
 
 
 \doxysubsection{Detailed Description}
-A single part of \mbox{\hyperlink{classKVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads hash tables into RAM from disk when necessary. 
+A single part of \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads hash tables into RAM from disk when necessary. 
 
 Instantiated via \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder}{Shard\+Builder}} class static method. 
 
@@ -106,7 +106,7 @@ Instantiated via \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder}{Shard\+Buil
 
 Decrease the counter of non-\/deleted elements in this shard. 
 
-Used by \mbox{\hyperlink{classKVS}{KVS}} when an entry in Cache\+Map is marked as deleted. \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_af17942d3a550b4a8db890f4f6e428ca1}\label{classkvs_1_1shard_1_1Shard_af17942d3a550b4a8db890f4f6e428ca1}} 
+Used by \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} when an entry in Cache\+Map is marked as deleted. \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_af17942d3a550b4a8db890f4f6e428ca1}\label{classkvs_1_1shard_1_1Shard_af17942d3a550b4a8db890f4f6e428ca1}} 
 \index{kvs::shard::Shard@{kvs::shard::Shard}!getShardDirectoryPath@{getShardDirectoryPath}}
 \index{getShardDirectoryPath@{getShardDirectoryPath}!kvs::shard::Shard@{kvs::shard::Shard}}
 \doxysubsubsection{\texorpdfstring{getShardDirectoryPath()}{getShardDirectoryPath()}}
@@ -144,7 +144,7 @@ Get the index of a shard that contains the Key.
 
 Increase the counter of non-\/deleted elements in this shard. 
 
-Used by \mbox{\hyperlink{classKVS}{KVS}} when a deleted element in Cache\+Map is added again. \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_a4d05c036d04dee10904192f30e951eba}\label{classkvs_1_1shard_1_1Shard_a4d05c036d04dee10904192f30e951eba}} 
+Used by \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} when a deleted element in Cache\+Map is added again. \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_a4d05c036d04dee10904192f30e951eba}\label{classkvs_1_1shard_1_1Shard_a4d05c036d04dee10904192f30e951eba}} 
 \index{kvs::shard::Shard@{kvs::shard::Shard}!isRebuildRequired@{isRebuildRequired}}
 \index{isRebuildRequired@{isRebuildRequired}!kvs::shard::Shard@{kvs::shard::Shard}}
 \doxysubsubsection{\texorpdfstring{isRebuildRequired()}{isRebuildRequired()}}

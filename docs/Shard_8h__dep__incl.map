@@ -1,7 +1,8 @@
 <map id="include/Shard.h" name="include/Shard.h">
 <area shape="rect" id="node1" title=" " alt="" coords="154,5,265,32"/>
 <area shape="rect" id="node2" href="$KVS_8h.html" title=" " alt="" coords="5,80,109,107"/>
-<area shape="rect" id="node3" href="$ShardBuilder_8h.html" title=" " alt="" coords="134,80,285,107"/>
-<area shape="rect" id="node5" href="$Shard_8cpp.html" title=" " alt="" coords="309,80,411,107"/>
-<area shape="rect" id="node4" href="$ShardBuilder_8cpp.html" title=" " alt="" coords="138,155,281,181"/>
+<area shape="rect" id="node4" href="$ShardBuilder_8h.html" title=" " alt="" coords="134,80,285,107"/>
+<area shape="rect" id="node6" href="$Shard_8cpp.html" title=" " alt="" coords="309,80,411,107"/>
+<area shape="rect" id="node3" href="$KVS_8cpp.html" title=" " alt="" coords="15,155,110,181"/>
+<area shape="rect" id="node5" href="$ShardBuilder_8cpp.html" title=" " alt="" coords="138,155,281,181"/>
 </map>

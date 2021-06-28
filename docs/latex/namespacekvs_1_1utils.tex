@@ -31,11 +31,15 @@ using \mbox{\hyperlink{namespacekvs_1_1utils_a9de0de755051dacc6e2530e016f2be70}{
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum class \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{Ptr\+Type}} \{ \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}{PRESENT}}
+enum class \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{Ptr\+Type}} \{ \newline
+\mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}{PRESENT}}
 , \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59}{DELETED}}
 , \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b}{EMPTY\+\_\+\+PTR}}
+, \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a1fc1653b5a3c196b7e79f563924b202d}{NONEXISTENT}}
+, \newline
+\mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a873bc4aa9b37a713281d9926617d5e50}{SYNC\+\_\+\+DELETED}}
  \}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em A convenience class to check Ptr\textquotesingle{}s type. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -112,7 +116,11 @@ const std\+::string \mbox{\hyperlink{namespacekvs_1_1utils_ae5e2bb2e3084ebe05ab3
 \doxysubsubsection{\texorpdfstring{PtrType}{PtrType}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{kvs\+::utils\+::\+Ptr\+Type}}\hspace{0.3cm}{\ttfamily [strong]}}
 
-\begin{DoxyEnumFields}{Enumerator}
+
+
+A convenience class to check \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}\textquotesingle{}s type. 
+
+PRESENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to an actual value DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to a value that existed before, but now is deleted from \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} SYNC\+\_\+\+DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, was lazily deleted in Cache\+Map and then synced with the Shard NONEXISTENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, but it was PRESENT before and the current corresponding \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} is valid EMPTY\+\_\+\+PTR -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} is equivalent to NULL \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{PRESENT@{PRESENT}!kvs::utils@{kvs::utils}}\index{kvs::utils@{kvs::utils}!PRESENT@{PRESENT}}}\mbox{\Hypertarget{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}\label{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}} 
 PRESENT&\\
 \hline
@@ -123,6 +131,14 @@ DELETED&\\
 
 \raisebox{\heightof{T}}[0pt][0pt]{\index{EMPTY\_PTR@{EMPTY\_PTR}!kvs::utils@{kvs::utils}}\index{kvs::utils@{kvs::utils}!EMPTY\_PTR@{EMPTY\_PTR}}}\mbox{\Hypertarget{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b}\label{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b}} 
 EMPTY\+\_\+\+PTR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{NONEXISTENT@{NONEXISTENT}!kvs::utils@{kvs::utils}}\index{kvs::utils@{kvs::utils}!NONEXISTENT@{NONEXISTENT}}}\mbox{\Hypertarget{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a1fc1653b5a3c196b7e79f563924b202d}\label{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a1fc1653b5a3c196b7e79f563924b202d}} 
+NONEXISTENT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{SYNC\_DELETED@{SYNC\_DELETED}!kvs::utils@{kvs::utils}}\index{kvs::utils@{kvs::utils}!SYNC\_DELETED@{SYNC\_DELETED}}}\mbox{\Hypertarget{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a873bc4aa9b37a713281d9926617d5e50}\label{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a873bc4aa9b37a713281d9926617d5e50}} 
+SYNC\+\_\+\+DELETED&\\
 \hline
 
 \end{DoxyEnumFields}

@@ -78,42 +78,53 @@ $(function() {
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;optional&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="classKVS.html">   13</a></span>&#160;<span class="keyword">class </span><a class="code" href="classKVS.html">KVS</a> final {</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacekvs.html">kvs</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using namespace </span>utils;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">using</span> <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">using</span> <a class="code" href="classkvs_1_1shard_1_1Shard.html">kvs::shard::Shard</a>;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classKVS.html#a63c84c6f0a2be545458351d72b5ebf57">   16</a></span>&#160;  <a class="code" href="classKVS.html#a63c84c6f0a2be545458351d72b5ebf57">KVS</a>();</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">   22</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">add</a>(KeyValue keyValue);</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classkvs_1_1KVS.html">KVS</a> final {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classkvs_1_1KVS.html">KVS</a>();</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">   30</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">remove</a>(Key key);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">   37</a></span>&#160;  std::optional&lt;Value&gt; <a class="code" href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">get</a>(Key key);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classKVS.html#a0ed6f47f1cd2e0b53e8e293974386959">   43</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classKVS.html#a0ed6f47f1cd2e0b53e8e293974386959">clear</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">void</span> add(<span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key, <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a>&amp; value);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html#a7c8939cb3dd5832de711caeefed81115">   36</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classkvs_1_1KVS.html#a7c8939cb3dd5832de711caeefed81115">remove</a>(<span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html#afea8bd8c4207e9ac0273df724f640f10">   43</a></span>&#160;  std::optional&lt;Value&gt; <a class="code" href="classkvs_1_1KVS.html#afea8bd8c4207e9ac0273df724f640f10">get</a>(<span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">   51</a></span>&#160;   <span class="keywordtype">void</span> <a class="code" href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">rebuildShard</a>(<span class="keywordtype">size_t</span> shardIndex);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">   60</a></span>&#160;  CacheMap <a class="code" href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">cacheMap</a>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">   66</a></span>&#160;  std::vector&lt;Shard&gt; <a class="code" href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">shards</a>;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html#ae1805febc7b03075273809efbbca62f9">   49</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classkvs_1_1KVS.html#ae1805febc7b03075273809efbbca62f9">clear</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html#a5b146f54114d9721758e230eed1ccd9f">   56</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classkvs_1_1KVS.html#a5b146f54114d9721758e230eed1ccd9f">rebuildShard</a>(<span class="keywordtype">size_t</span> shardIndex);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html#a0bb570c223eef2643a7efd69ec5c3320">   63</a></span>&#160;  std::vector&lt;Shard&gt; <a class="code" href="classkvs_1_1KVS.html#a0bb570c223eef2643a7efd69ec5c3320">shards</a>;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="classkvs_1_1KVS.html#a2788bcab6c2be39215f246771c015f35">   69</a></span>&#160;  <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html">CacheMap</a> <a class="code" href="classkvs_1_1KVS.html#a2788bcab6c2be39215f246771c015f35">cacheMap</a>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> pushOperation(<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> displaced);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;};</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;} <span class="comment">// namespace kvs</span></div>
 <div class="ttc" id="aCacheMap_8h_html"><div class="ttname"><a href="CacheMap_8h.html">CacheMap.h</a></div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
 <div class="ttc" id="aShard_8h_html"><div class="ttname"><a href="Shard_8h.html">Shard.h</a></div></div>
-<div class="ttc" id="aclassKVS_html"><div class="ttname"><a href="classKVS.html">KVS</a></div><div class="ttdoc">The class that provides an access to a key-value storage.</div><div class="ttdef"><b>Definition:</b> KVS.h:13</div></div>
-<div class="ttc" id="aclassKVS_html_a0ed6f47f1cd2e0b53e8e293974386959"><div class="ttname"><a href="classKVS.html#a0ed6f47f1cd2e0b53e8e293974386959">KVS::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the storage.</div></div>
-<div class="ttc" id="aclassKVS_html_a63c84c6f0a2be545458351d72b5ebf57"><div class="ttname"><a href="classKVS.html#a63c84c6f0a2be545458351d72b5ebf57">KVS::KVS</a></div><div class="ttdeci">KVS()</div></div>
-<div class="ttc" id="aclassKVS_html_a6ddd61c7a1a01de30e81401f279d66bd"><div class="ttname"><a href="classKVS.html#a6ddd61c7a1a01de30e81401f279d66bd">KVS::rebuildShard</a></div><div class="ttdeci">void rebuildShard(size_t shardIndex)</div><div class="ttdoc">Rebuilds the shard with the given index.</div></div>
-<div class="ttc" id="aclassKVS_html_a97281f5996ec9416d6d6042851c2945f"><div class="ttname"><a href="classKVS.html#a97281f5996ec9416d6d6042851c2945f">KVS::remove</a></div><div class="ttdeci">void remove(Key key)</div><div class="ttdoc">Remove the Key and associated Value from storage. Lazy operation.</div></div>
-<div class="ttc" id="aclassKVS_html_aa1bad605dc68f365d0efcaa13244a163"><div class="ttname"><a href="classKVS.html#aa1bad605dc68f365d0efcaa13244a163">KVS::get</a></div><div class="ttdeci">std::optional&lt; Value &gt; get(Key key)</div><div class="ttdoc">Get the Value associated with the Key.</div></div>
-<div class="ttc" id="aclassKVS_html_aa1c5673ea8f4b49e195df583ddd963a8"><div class="ttname"><a href="classKVS.html#aa1c5673ea8f4b49e195df583ddd963a8">KVS::cacheMap</a></div><div class="ttdeci">CacheMap cacheMap</div><div class="ttdoc">Cache map, stored in RAM.</div><div class="ttdef"><b>Definition:</b> KVS.h:60</div></div>
-<div class="ttc" id="aclassKVS_html_aac89451d61d6f16c85d17b8eaaf36fd0"><div class="ttname"><a href="classKVS.html#aac89451d61d6f16c85d17b8eaaf36fd0">KVS::shards</a></div><div class="ttdeci">std::vector&lt; Shard &gt; shards</div><div class="ttdoc">Shard objects representing... shards?</div><div class="ttdef"><b>Definition:</b> KVS.h:66</div></div>
-<div class="ttc" id="aclassKVS_html_ae5eb6a7ac3640a482884a20b5f424b47"><div class="ttname"><a href="classKVS.html#ae5eb6a7ac3640a482884a20b5f424b47">KVS::add</a></div><div class="ttdeci">void add(KeyValue keyValue)</div><div class="ttdoc">Add a KeyValue to the storage.</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html"><div class="ttname"><a href="classkvs_1_1KVS.html">kvs::KVS</a></div><div class="ttdoc">The class that provides an access to a key-value storage.</div><div class="ttdef"><b>Definition:</b> KVS.h:19</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html_a0bb570c223eef2643a7efd69ec5c3320"><div class="ttname"><a href="classkvs_1_1KVS.html#a0bb570c223eef2643a7efd69ec5c3320">kvs::KVS::shards</a></div><div class="ttdeci">std::vector&lt; Shard &gt; shards</div><div class="ttdoc">Shard objects representing... shards?</div><div class="ttdef"><b>Definition:</b> KVS.h:63</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html_a2788bcab6c2be39215f246771c015f35"><div class="ttname"><a href="classkvs_1_1KVS.html#a2788bcab6c2be39215f246771c015f35">kvs::KVS::cacheMap</a></div><div class="ttdeci">CacheMap cacheMap</div><div class="ttdoc">Cache map, stored in RAM.</div><div class="ttdef"><b>Definition:</b> KVS.h:69</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html_a5b146f54114d9721758e230eed1ccd9f"><div class="ttname"><a href="classkvs_1_1KVS.html#a5b146f54114d9721758e230eed1ccd9f">kvs::KVS::rebuildShard</a></div><div class="ttdeci">void rebuildShard(size_t shardIndex)</div><div class="ttdoc">Rebuilds the shard with the given index.</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html_a7c8939cb3dd5832de711caeefed81115"><div class="ttname"><a href="classkvs_1_1KVS.html#a7c8939cb3dd5832de711caeefed81115">kvs::KVS::remove</a></div><div class="ttdeci">void remove(const Key &amp;key)</div><div class="ttdoc">Remove the Key and associated Value from storage. Lazy operation.</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html_ae1805febc7b03075273809efbbca62f9"><div class="ttname"><a href="classkvs_1_1KVS.html#ae1805febc7b03075273809efbbca62f9">kvs::KVS::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">Clear the storage.</div></div>
+<div class="ttc" id="aclasskvs_1_1KVS_html_afea8bd8c4207e9ac0273df724f640f10"><div class="ttname"><a href="classkvs_1_1KVS.html#afea8bd8c4207e9ac0273df724f640f10">kvs::KVS::get</a></div><div class="ttdeci">std::optional&lt; Value &gt; get(const Key &amp;key)</div><div class="ttdoc">Get the Value associated with the Key.</div></div>
+<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:15</div></div>
+<div class="ttc" id="aclasskvs_1_1shard_1_1Shard_html"><div class="ttname"><a href="classkvs_1_1shard_1_1Shard.html">kvs::shard::Shard</a></div><div class="ttdoc">A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...</div><div class="ttdef"><b>Definition:</b> Shard.h:19</div></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1Key_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Key.html">kvs::utils::Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:35</div></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1Value_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Value.html">kvs::utils::Value</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:51</div></div>
+<div class="ttc" id="anamespacekvs_html"><div class="ttname"><a href="namespacekvs.html">kvs</a></div><div class="ttdef"><b>Definition:</b> BloomFilter.h:7</div></div>
+<div class="ttc" id="astructkvs_1_1utils_1_1Entry_html"><div class="ttname"><a href="structkvs_1_1utils_1_1Entry.html">kvs::utils::Entry</a></div><div class="ttdoc">A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable).</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:167</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

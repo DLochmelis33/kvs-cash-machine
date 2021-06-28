@@ -48,7 +48,8 @@ std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
         foundIndex -= 1;
     } else {
       foundIndex = randomIndex;
-      for (size_t i = randomIndex - 1; i != randomIndex; i--) {
+      for (size_t i = (randomIndex == 0 ? data.size() - 1 : randomIndex - 1);
+           i != randomIndex; i--) {
         if (!emptyCheck(data[i])) {
           foundIndex = i;
           break;
@@ -66,8 +67,8 @@ std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
 
   // now actually put the Entry into the map
   auto entryCheck = [&entry](const Entry& e) {
-    return e.ptr == EMPTY_PTR || // either no such key before and new empty spot
-           e.key == entry.key; // or there is such key
+    return e.key == entry.key || // or there is such key
+           e.ptr == EMPTY_PTR; // either no such key before and new empty spot
   };
 
   if (!entryCheck(data[keyIndex])) {
@@ -82,7 +83,7 @@ std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
   return displaced;
 }
 
-Ptr CacheMap::get(const Key& key) const noexcept {
+Ptr& CacheMap::get(const Key& key) noexcept {
   size_t keyIndex = hashKey(key) % data.size();
   if (data[keyIndex].key == key)
     return data[keyIndex].ptr;

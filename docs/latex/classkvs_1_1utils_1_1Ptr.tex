@@ -16,7 +16,7 @@ Collaboration diagram for kvs\+::utils\+::Ptr\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=277pt]{classkvs_1_1utils_1_1Ptr__coll__graph}
+\includegraphics[width=289pt]{classkvs_1_1utils_1_1Ptr__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -25,7 +25,7 @@ Collaboration diagram for kvs\+::utils\+::Ptr\+:
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_ac3cd59f69a826d9127921be7c9afcb46}{Ptr}} (\mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_aa0cce26fd7d78b1b982be93944cff31a}{ptr}}) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} from {\bfseries{raw}} {\bfseries{data}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a142b5df7df0c1f3a95b1758854027c67}{Ptr}} (size\+\_\+t offset, bool is\+Present) noexcept
-\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} pointing to the given index and with the given is\+Present flag. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} pointing to the given offset and with the given is\+Present flag. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a8cac00ecbceb212fbceaac63ffddc9bb}{Ptr}} () noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new empty \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a1a3b4e65c545d399e047fda4e19f743a}{get}} () const noexcept
@@ -48,7 +48,11 @@ bool \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_abdc75b05c4e78fb1b930d00aeb4fb74b
 \begin{DoxyCompactItemize}
 \item 
 static constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_aa7c17d1e4214eaf834ec13350909cc90}{EMPTY\+\_\+\+PTR\+\_\+V}} = 0b01111111
-\begin{DoxyCompactList}\small\item\em A reserved value resembling a pointer to nowhere. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Reserved values for specific pointers. \end{DoxyCompactList}\item 
+static constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a2cc5d756442c14ae0186dc99b0ffbcc2}{NONEXISTENT\+\_\+V}} = 0b01111110
+\item 
+static constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_ac10bdadaae845061ed6c13adc8c07a0c}{SYNC\+\_\+\+DELETED\+\_\+V}} = 0b01111101
+\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -90,17 +94,8 @@ To create a \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} to some index, use 
 
 
 
-Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} pointing to the given index and with the given is\+Present flag. 
+Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} pointing to the given offset and with the given is\+Present flag. 
 
-TODO docs\+: fix index -\/$>$ offset
-
-
-\begin{DoxyParams}{Parameters}
-{\em index} & \\
-\hline
-{\em is\+Present} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a8cac00ecbceb212fbceaac63ffddc9bb}\label{classkvs_1_1utils_1_1Ptr_a8cac00ecbceb212fbceaac63ffddc9bb}} 
 \index{kvs::utils::Ptr@{kvs::utils::Ptr}!Ptr@{Ptr}}
 \index{Ptr@{Ptr}!kvs::utils::Ptr@{kvs::utils::Ptr}}
@@ -200,13 +195,25 @@ Set state for the \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} associate
 
 
 
-A reserved value resembling a pointer to nowhere. 
+Reserved values for specific pointers. 
+
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a2cc5d756442c14ae0186dc99b0ffbcc2}\label{classkvs_1_1utils_1_1Ptr_a2cc5d756442c14ae0186dc99b0ffbcc2}} 
+\index{kvs::utils::Ptr@{kvs::utils::Ptr}!NONEXISTENT\_V@{NONEXISTENT\_V}}
+\index{NONEXISTENT\_V@{NONEXISTENT\_V}!kvs::utils::Ptr@{kvs::utils::Ptr}}
+\doxysubsubsection{\texorpdfstring{NONEXISTENT\_V}{NONEXISTENT\_V}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} kvs\+::utils\+::\+Ptr\+::\+NONEXISTENT\+\_\+V = 0b01111110\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_aa0cce26fd7d78b1b982be93944cff31a}\label{classkvs_1_1utils_1_1Ptr_aa0cce26fd7d78b1b982be93944cff31a}} 
 \index{kvs::utils::Ptr@{kvs::utils::Ptr}!ptr@{ptr}}
 \index{ptr@{ptr}!kvs::utils::Ptr@{kvs::utils::Ptr}}
 \doxysubsubsection{\texorpdfstring{ptr}{ptr}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} kvs\+::utils\+::\+Ptr\+::ptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_ac10bdadaae845061ed6c13adc8c07a0c}\label{classkvs_1_1utils_1_1Ptr_ac10bdadaae845061ed6c13adc8c07a0c}} 
+\index{kvs::utils::Ptr@{kvs::utils::Ptr}!SYNC\_DELETED\_V@{SYNC\_DELETED\_V}}
+\index{SYNC\_DELETED\_V@{SYNC\_DELETED\_V}!kvs::utils::Ptr@{kvs::utils::Ptr}}
+\doxysubsubsection{\texorpdfstring{SYNC\_DELETED\_V}{SYNC\_DELETED\_V}}
+{\footnotesize\ttfamily constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} kvs\+::utils\+::\+Ptr\+::\+SYNC\+\_\+\+DELETED\+\_\+V = 0b01111101\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [constexpr]}}
 
 
 

@@ -6,6 +6,12 @@
 #include <optional>
 #include <vector>
 
+namespace kvs {
+
+using namespace utils;
+using kvs::cache_map::CacheMap;
+using kvs::shard::Shard;
+
 /**
  * @brief The class that provides an access to a key-value storage.
  *
@@ -19,7 +25,7 @@ public:
      * @brief Add a KeyValue to the storage.
      *
      */
-  void add(KeyValue keyValue);
+  void add(const Key& key, const Value& value);
 
   /**
      * @brief Remove the Key and associated Value from storage. Lazy operation.
@@ -27,14 +33,14 @@ public:
      * Call shard rebuilding after removal if necessary.
      *
      */
-  void remove(Key key);
+  void remove(const Key& key);
 
   /**
      * @brief Get the Value associated with the Key.
      *
      * @return The Value associated with the Key or nothing, if no such Value is present.
      */
-  std::optional<Value> get(Key key);
+  std::optional<Value> get(const Key& key);
 
   /**
      * @brief Clear the storage.
@@ -43,25 +49,31 @@ public:
   void clear();
 
 private:
-
-   /**
+  /**
     * @brief Rebuilds the shard with the given index.
     * 
     */
-   void rebuildShard(size_t shardIndex);
-
+  void rebuildShard(size_t shardIndex);
 
 private:
+  /**
+   * @brief Shard objects representing... shards?
+   * 
+   */
+  std::vector<Shard> shards;
 
-   /**
+  /**
     * @brief Cache map, stored in RAM.
     * 
     */
   CacheMap cacheMap;
 
   /**
-   * @brief Shard objects representing... shards?
-   * 
-   */
-  std::vector<Shard> shards;
+    * @brief When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard.
+    * 
+    * @param displaced 
+    */
+  void pushOperation(Entry displaced);
 };
+
+} // namespace kvs
