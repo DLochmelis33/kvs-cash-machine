@@ -18,7 +18,9 @@ Collaboration diagram for kvs\+::shard\+::Shard\+Builder\+:
 \begin{DoxyCompactItemize}
 \item 
 static \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder_a858dc60df2eb217fcc0b3a78690c7478}{create\+Shard}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index)
-\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} object. \end{DoxyCompactList}\item 
+static std\+::pair$<$ \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}}, std\+::vector$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ $>$ \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder_a4834874510c2a1d82d4754dd1bddf930}{rebuild\+Shard}} (const \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} \&shard, \mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, const \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap}{kvs\+::cache\+\_\+map\+::\+Cache\+Map}} \&cache\+Map)
+\begin{DoxyCompactList}\small\item\em Rebuild the \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} according to delayed removals stored in Cache\+Map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Member Function Documentation}
@@ -32,7 +34,31 @@ static \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} \mbox{\hyperlink{cla
 
 Create a \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} object. 
 
-A factory method for consistency. 
+A factory method for consistency. \mbox{\Hypertarget{classkvs_1_1shard_1_1ShardBuilder_a4834874510c2a1d82d4754dd1bddf930}\label{classkvs_1_1shard_1_1ShardBuilder_a4834874510c2a1d82d4754dd1bddf930}} 
+\index{kvs::shard::ShardBuilder@{kvs::shard::ShardBuilder}!rebuildShard@{rebuildShard}}
+\index{rebuildShard@{rebuildShard}!kvs::shard::ShardBuilder@{kvs::shard::ShardBuilder}}
+\doxysubsubsection{\texorpdfstring{rebuildShard()}{rebuildShard()}}
+{\footnotesize\ttfamily std\+::pair$<$ \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}}, std\+::vector$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ $>$ kvs\+::shard\+::\+Shard\+Builder\+::rebuild\+Shard (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} \&}]{shard,  }\item[{\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}}}]{shard\+Index,  }\item[{const \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap}{kvs\+::cache\+\_\+map\+::\+Cache\+Map}} \&}]{cache\+Map }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Rebuild the \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} according to delayed removals stored in Cache\+Map. 
+
+The old shard is modified, but it is intended to be removed with a new \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}}. The old \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} is disallowed to use after calling this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em shard} & The \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} to rebuild. \\
+\hline
+{\em cache\+Map} & The Cache\+Map to read information about delayed removals from. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair.\+first -\/ The newly created \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} to replace the old one. 
+
+pair.\+second -\/ Entries in Cache\+Map that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY\+\_\+\+PTR. 
+\end{DoxyReturn}
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

@@ -87,19 +87,21 @@ $(function() {
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <span class="keyword">static</span> <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a> createShard(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="comment">//static std::pair&lt;Shard, std::vector&lt;Entry&gt;&gt;</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  <span class="comment">//rebuildShard(const Shard&amp; shard, const kvs::cache_map::CacheMap&amp; cacheMap);</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;};</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;} <span class="comment">// namespace kvs::shard</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">static</span> std::pair&lt;Shard, std::vector&lt;Entry&gt;&gt;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  rebuildShard(<span class="keyword">const</span> <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a>&amp; shard, <a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;               <span class="keyword">const</span> <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a>&amp; cacheMap);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;};</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;} <span class="comment">// namespace kvs::shard</span></div>
 <div class="ttc" id="aCacheMap_8h_html"><div class="ttname"><a href="CacheMap_8h.html">CacheMap.h</a></div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
 <div class="ttc" id="aShard_8h_html"><div class="ttname"><a href="Shard_8h.html">Shard.h</a></div></div>
+<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:15</div></div>
 <div class="ttc" id="aclasskvs_1_1shard_1_1ShardBuilder_html"><div class="ttname"><a href="classkvs_1_1shard_1_1ShardBuilder.html">kvs::shard::ShardBuilder</a></div><div class="ttdef"><b>Definition:</b> ShardBuilder.h:13</div></div>
 <div class="ttc" id="aclasskvs_1_1shard_1_1Shard_html"><div class="ttname"><a href="classkvs_1_1shard_1_1Shard.html">kvs::shard::Shard</a></div><div class="ttdoc">A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...</div><div class="ttdef"><b>Definition:</b> Shard.h:19</div></div>
 <div class="ttc" id="anamespacekvs_1_1shard_html"><div class="ttname"><a href="namespacekvs_1_1shard.html">kvs::shard</a></div><div class="ttdef"><b>Definition:</b> Shard.h:9</div></div>
 <div class="ttc" id="anamespacekvs_1_1utils_html"><div class="ttname"><a href="namespacekvs_1_1utils.html">kvs::utils</a></div><div class="ttdef"><b>Definition:</b> ByteArray.h:5</div></div>
-<div class="ttc" id="anamespacekvs_1_1utils_html_a13db4e78a1fbfd9a5adaec1986834283"><div class="ttname"><a href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">kvs::utils::shard_index_t</a></div><div class="ttdeci">uint16_t shard_index_t</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:32</div></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html_a13db4e78a1fbfd9a5adaec1986834283"><div class="ttname"><a href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">kvs::utils::shard_index_t</a></div><div class="ttdeci">uint16_t shard_index_t</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:33</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

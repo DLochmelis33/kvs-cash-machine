@@ -65,6 +65,8 @@ constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f8
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}{TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 5000000
 \item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a951c2cffbb4c73ca1d379b430e7cc4f0}{SHARD\+\_\+\+EXPECTED\+\_\+\+SIZE}} = 23
+\item 
 constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}{STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+LOAD\+\_\+\+FACTOR}} = \mbox{\hyperlink{namespacekvs_1_1utils_a9edace8f2922eecb69aa0af572ecc7a2}{MAP\+\_\+\+LOAD\+\_\+\+FACTOR}}
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a71f4cddbd64d2661a167643cfbf4724e}{STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+INITIAL\+\_\+\+SIZE}}
@@ -117,7 +119,9 @@ const std\+::string \mbox{\hyperlink{namespacekvs_1_1utils_ae5e2bb2e3084ebe05ab3
 
 A convenience class to check \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}\textquotesingle{}s type. 
 
-PRESENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to an actual value DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to a value that existed before, but now is deleted from \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} SYNC\+\_\+\+DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, was lazily deleted in Cache\+Map and then synced with the Shard NONEXISTENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, but it was PRESENT before and the current corresponding \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} is valid EMPTY\+\_\+\+PTR -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} is equivalent to NULL \begin{DoxyEnumFields}{Enumerator}
+PRESENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to an actual value DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to a value that existed before, but now is deleted from \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} SYNC\+\_\+\+DELETED (deprecated, see NONEXSITENT) -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, was lazily deleted in Cache\+Map and then synced with the Shard NONEXISTENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, but it was PRESENT before and the current corresponding \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} is valid EMPTY\+\_\+\+PTR -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} is equivalent to NULL
+
+NONEXISTENT is forbidden in Storage\+Hash\+Table \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{PRESENT@{PRESENT}!kvs::utils@{kvs::utils}}\index{kvs::utils@{kvs::utils}!PRESENT@{PRESENT}}}\mbox{\Hypertarget{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}\label{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}} 
 PRESENT&\\
 \hline
@@ -183,6 +187,12 @@ NONEXISTENT&\\
 \doxysubsubsection{\texorpdfstring{MAX\_OUTDATED\_RECORDS\_LOAD\_FACTOR}{MAX\_OUTDATED\_RECORDS\_LOAD\_FACTOR}}
 {\footnotesize\ttfamily constexpr double kvs\+::utils\+::\+MAX\+\_\+\+OUTDATED\+\_\+\+RECORDS\+\_\+\+LOAD\+\_\+\+FACTOR = 0.\+5\hspace{0.3cm}{\ttfamily [constexpr]}}
 
+\mbox{\Hypertarget{namespacekvs_1_1utils_a951c2cffbb4c73ca1d379b430e7cc4f0}\label{namespacekvs_1_1utils_a951c2cffbb4c73ca1d379b430e7cc4f0}} 
+\index{kvs::utils@{kvs::utils}!SHARD\_EXPECTED\_SIZE@{SHARD\_EXPECTED\_SIZE}}
+\index{SHARD\_EXPECTED\_SIZE@{SHARD\_EXPECTED\_SIZE}!kvs::utils@{kvs::utils}}
+\doxysubsubsection{\texorpdfstring{SHARD\_EXPECTED\_SIZE}{SHARD\_EXPECTED\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+SHARD\+\_\+\+EXPECTED\+\_\+\+SIZE = 23\hspace{0.3cm}{\ttfamily [constexpr]}}
+
 \mbox{\Hypertarget{namespacekvs_1_1utils_a4a81b2504774f36d34be0ee79ce4ebff}\label{namespacekvs_1_1utils_a4a81b2504774f36d34be0ee79ce4ebff}} 
 \index{kvs::utils@{kvs::utils}!SHARD\_NUMBER@{SHARD\_NUMBER}}
 \index{SHARD\_NUMBER@{SHARD\_NUMBER}!kvs::utils@{kvs::utils}}
@@ -204,7 +214,7 @@ NONEXISTENT&\\
 {\bfseries Initial value\+:}
 \begin{DoxyCode}{0}
 \DoxyCodeLine{=}
-\DoxyCodeLine{    23 * \mbox{\hyperlink{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}{STORAGE\_HASH\_TABLE\_LOAD\_FACTOR}}}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacekvs_1_1utils_a951c2cffbb4c73ca1d379b430e7cc4f0}{SHARD\_EXPECTED\_SIZE}} * \mbox{\hyperlink{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}{STORAGE\_HASH\_TABLE\_LOAD\_FACTOR}}}
 
 \end{DoxyCode}
 \mbox{\Hypertarget{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}\label{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}} 

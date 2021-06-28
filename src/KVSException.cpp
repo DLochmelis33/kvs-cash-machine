@@ -17,10 +17,14 @@ const char* KVSException::what() const noexcept {
     return "Failed to read storage file";
   case KVSErrorType::STORAGE_WRITE_FAILED:
     return "Failed to write to storage file";
-  case KVSErrorType::TABLE_INVALID_BUILD_DATA:
-    return "Failed to build StorageHashTable: invalid data";
   case KVSErrorType::PTR_INDEX_OUT_OF_BOUNDS:
     return "Failed to create Ptr object: index is too large";
+  case KVSErrorType::TABLE_INVALID_BUILD_DATA:
+    return "Failed to build StorageHashTable: invalid data";
+  case KVSErrorType::FAILED_TO_CREATE_SHARD_DIRECTORY:
+    return "Failed to create shard directory";
+  case KVSErrorType::SHARD_REBUILDER_FAILED_TO_REPLACE_OLD_FILES:
+    return "ShardRebuilder failed to move new shard files to old ones";
   }
   return "<unsupported exception type>";
 }

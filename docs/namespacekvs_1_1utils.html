@@ -145,6 +145,8 @@ Variables</h2></td></tr>
 <tr class="separator:ac1d4507ce05562ffb2de5f829cab397a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88d1f7c3f7075ce9ef77956c7e6a03f5"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a88d1f7c3f7075ce9ef77956c7e6a03f5">TABLE_MAX_SIZE</a> = 5000000</td></tr>
 <tr class="separator:a88d1f7c3f7075ce9ef77956c7e6a03f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a951c2cffbb4c73ca1d379b430e7cc4f0"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a951c2cffbb4c73ca1d379b430e7cc4f0">SHARD_EXPECTED_SIZE</a> = 23</td></tr>
+<tr class="separator:a951c2cffbb4c73ca1d379b430e7cc4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0c40337228a797bb66bac7905740ba90"><td class="memItemLeft" align="right" valign="top">constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">STORAGE_HASH_TABLE_LOAD_FACTOR</a> = <a class="el" href="namespacekvs_1_1utils.html#a9edace8f2922eecb69aa0af572ecc7a2">MAP_LOAD_FACTOR</a></td></tr>
 <tr class="separator:a0c40337228a797bb66bac7905740ba90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a71f4cddbd64d2661a167643cfbf4724e"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1utils.html#a71f4cddbd64d2661a167643cfbf4724e">STORAGE_HASH_TABLE_INITIAL_SIZE</a></td></tr>
@@ -245,7 +247,8 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>A convenience class to check <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a>'s type. </p>
-<p>PRESENT - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to an actual value DELETED - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a value that existed before, but now is deleted from <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> SYNC_DELETED - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to nowhere, was lazily deleted in CacheMap and then synced with the Shard NONEXISTENT - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to nowhere, but it was PRESENT before and the current corresponding <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> is valid EMPTY_PTR - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> is equivalent to NULL </p>
+<p>PRESENT - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to an actual value DELETED - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to a value that existed before, but now is deleted from <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> SYNC_DELETED (deprecated, see NONEXSITENT) - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to nowhere, was lazily deleted in CacheMap and then synced with the Shard NONEXISTENT - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> points to nowhere, but it was PRESENT before and the current corresponding <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> is valid EMPTY_PTR - this <a class="el" href="classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio...">Ptr</a> is equivalent to NULL</p>
+<p>NONEXISTENT is forbidden in StorageHashTable </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36"></a>PRESENT&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a2109c4ca654740f8857bfd783ceadd53a63c2867fdcae0e8e8413d7ac21b69b59"></a>DELETED&#160;</td><td class="fielddoc"></td></tr>
@@ -425,6 +428,28 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a951c2cffbb4c73ca1d379b430e7cc4f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a951c2cffbb4c73ca1d379b430e7cc4f0">&#9670;&nbsp;</a></span>SHARD_EXPECTED_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr size_t kvs::utils::SHARD_EXPECTED_SIZE = 23</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a4a81b2504774f36d34be0ee79ce4ebff"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4a81b2504774f36d34be0ee79ce4ebff">&#9670;&nbsp;</a></span>SHARD_NUMBER</h2>
 
@@ -481,8 +506,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">=</div>
-<div class="line">    23 * <a class="code" href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">STORAGE_HASH_TABLE_LOAD_FACTOR</a></div>
-<div class="ttc" id="anamespacekvs_1_1utils_html_a0c40337228a797bb66bac7905740ba90"><div class="ttname"><a href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">kvs::utils::STORAGE_HASH_TABLE_LOAD_FACTOR</a></div><div class="ttdeci">constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:22</div></div>
+<div class="line">    <a class="code" href="namespacekvs_1_1utils.html#a951c2cffbb4c73ca1d379b430e7cc4f0">SHARD_EXPECTED_SIZE</a> * <a class="code" href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">STORAGE_HASH_TABLE_LOAD_FACTOR</a></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html_a0c40337228a797bb66bac7905740ba90"><div class="ttname"><a href="namespacekvs_1_1utils.html#a0c40337228a797bb66bac7905740ba90">kvs::utils::STORAGE_HASH_TABLE_LOAD_FACTOR</a></div><div class="ttdeci">constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:23</div></div>
+<div class="ttc" id="anamespacekvs_1_1utils_html_a951c2cffbb4c73ca1d379b430e7cc4f0"><div class="ttname"><a href="namespacekvs_1_1utils.html#a951c2cffbb4c73ca1d379b430e7cc4f0">kvs::utils::SHARD_EXPECTED_SIZE</a></div><div class="ttdeci">constexpr size_t SHARD_EXPECTED_SIZE</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:22</div></div>
 </div><!-- fragment -->
 </div>
 </div>

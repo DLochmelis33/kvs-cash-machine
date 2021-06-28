@@ -31,8 +31,9 @@ public:
    * @return pair.first - The newly created Shard to replace the old one.
    * @return pair.second - Entries in CacheMap that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY_PTR.
    */
-  //static std::pair<Shard, std::vector<Entry>>
-  //rebuildShard(const Shard& shard, const kvs::cache_map::CacheMap& cacheMap);
+  static std::pair<Shard, std::vector<Entry>>
+  rebuildShard(const Shard& shard, shard_index_t shardIndex,
+               const kvs::cache_map::CacheMap& cacheMap);
 };
 
 } // namespace kvs::shard
