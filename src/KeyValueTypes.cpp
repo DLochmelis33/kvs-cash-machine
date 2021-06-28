@@ -30,7 +30,12 @@ bool Value::operator==(const Value& other) const noexcept {
   }
   const char* charBytes = bytes.get();
   const char* otherCharBytes = other.bytes.get();
-  return memcmp(charBytes, otherCharBytes, VALUE_SIZE);
+  for (size_t i = 0, size = bytes.length(); i < size; ++i) {
+    if (charBytes[i] != otherCharBytes[i]) {
+      return false;
+    }
+  }
+  return true;
 }
 
 hash_t hashKey(const Key& key, seed_t seed) noexcept {

@@ -78,19 +78,17 @@ void applyDuration(uint64_t duration, Stats& stats, uint8_t operationCode) {
 void printAverageStats(std::ostream& outs, const Stats& stats) {
   outs << "Benchmark stats in nanos:\n";
 
-  outs << "avg operation = " + stats.sumOperationsNanos / stats.operationsCnt
+  outs << "avg operation = " << stats.sumOperationsNanos / stats.operationsCnt
        << "\n";
-  outs << "avg read operation = " +
-              stats.sumReadOperationsNanos / stats.readOperationsCnt
-       << "\n";
-  outs << "avg write operation = " +
-              stats.sumWriteOperationsNanos / stats.writeOperationsCnt
-       << "\n";
+  outs << "avg read operation = "
+       << stats.sumReadOperationsNanos / stats.readOperationsCnt << "\n";
+  outs << "avg write operation = "
+       << stats.sumWriteOperationsNanos / stats.writeOperationsCnt << "\n";
 
   outs << "min/max read operation = " << stats.minReadOperationNanos << " / "
        << stats.maxReadOperationNanos << "\n";
   outs << "min/max write operation = " << stats.minWriteOperationNanos << " / "
-       << stats.maxWriteOperationNanos << "\n";
+       << stats.maxWriteOperationNanos << "\n\n";
 }
 
 uint8_t generateRandomOperationCode(

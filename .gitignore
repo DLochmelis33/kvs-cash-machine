@@ -1,4 +1,5 @@
 *.swp
 build/
 .vscode/
-data
+data/
+.test-data/

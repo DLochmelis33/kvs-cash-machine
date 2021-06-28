@@ -8,7 +8,7 @@
 
 namespace kvs::utils {
 
-constexpr size_t VALUE_SIZE = 2048;
+constexpr size_t VALUE_SIZE = 16;
 constexpr size_t KEY_SIZE = 16;
 constexpr size_t CACHE_MAP_SIZE = 5000;
 constexpr double MAP_LOAD_FACTOR = 1.5;
@@ -17,7 +17,7 @@ constexpr double MAX_OUTDATED_RECORDS_LOAD_FACTOR = 0.5;
 constexpr size_t BLOOM_FILTER_SIZE = 5000; // TODO
 constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER = 5; // TODO
 constexpr double TABLE_EXPANSION_FACTOR = 2;
-constexpr size_t TABLE_MAX_SIZE = 5000000; // TODO
+constexpr size_t TABLE_MAX_SIZE = 5000; // TODO
 
 constexpr size_t SHARD_EXPECTED_SIZE = 23;
 constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR = MAP_LOAD_FACTOR;
