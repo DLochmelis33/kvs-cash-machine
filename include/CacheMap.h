@@ -28,9 +28,9 @@ public:
   /**
      * @brief Find a Ptr by Key.
      *
-     * @return The requested Ptr or nothing, if no Entry with given Key is present.
+     * @return The requested Ptr or EMPTY_PTR, if no Entry with given Key is present.
      */
-  Ptr get(Key key) const noexcept;
+  Ptr& get(const Key& key) noexcept;
 
   /**
      * @brief Clear the entire map.
@@ -49,7 +49,7 @@ private:
      * @brief The number of elements present in the map.
      *
      */
-  size_t size;
+  size_t usedSize;
 };
 
 } // namespace kvs::cache_map

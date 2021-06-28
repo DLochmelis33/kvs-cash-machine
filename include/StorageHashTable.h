@@ -38,7 +38,7 @@ public:
   /**
      * @brief Find the Ptr associated with the key.
      *
-     * @return The requested Ptr or nothing, if no Entry with given Key is present.
+     * @return The requested Ptr or EMPTY_PTR, if no Entry with given Key is present.
      */
   Ptr& get(const Key& key) noexcept;
 

@@ -141,20 +141,20 @@ TEST_CASE("test StorageHashTable") {
     SUBCASE("stress") {
       std::random_device rd;
       std::mt19937_64 gen(rd());
-      std::uniform_int_distribution<uint64_t> keyDistr;
+      std::uniform_int_distribution<uint64_t> keyDistr(0, 5000);
       srand(time(NULL));
 
-      static_assert(TABLE_MAX_SIZE >= 20000);
+      static_assert(TABLE_MAX_SIZE >= 5000);
       std::unordered_map<uint64_t, ptr_t> realMap;
-      StorageHashTable table(20000);
+      StorageHashTable table(5000);
 
-      for (size_t ops = 0; ops < 10000; ops++) {
+      for (size_t ops = 0; ops < 15000; ops++) {
         uint64_t k = keyDistr(gen);
-        ptr_t p = static_cast<unsigned char>(rand() & 0b01111111);
-        if (p == 0b01111111)
+        ptr_t p = static_cast<unsigned char>(rand());
+        if (p == Ptr::EMPTY_PTR_V)
           p--;
         Key key = generateKey(k);
-        Ptr ptr(rand(), rand());
+        Ptr ptr(p);
         Entry entry(key, ptr);
 
         if (rand() & 1) {
@@ -167,7 +167,7 @@ TEST_CASE("test StorageHashTable") {
           ptr_t real = (realMap.find(k) == realMap.end() ? Ptr::EMPTY_PTR_V
                                                          : realMap[k]);
           // CHECK will spam the terminal
-          REQUIRE(got.get() == real);
+          REQUIRE(got.getRaw() == real);
         }
       }
     }

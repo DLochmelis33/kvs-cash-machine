@@ -77,8 +77,9 @@ void StorageHashTable::put(const Entry& entry) noexcept {
     assert(keyIndex != newIndex);
     keyIndex = newIndex;
   }
+  if (data[keyIndex].ptr == EMPTY_PTR)
+    usedSize++;
   data[keyIndex] = entry;
-  usedSize++;
 
   if (usedSize * MAP_LOAD_FACTOR > data.size())
     expand();

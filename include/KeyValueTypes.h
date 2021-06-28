@@ -66,8 +66,17 @@ struct KeyValue final {
   Value value;
 };
 
-// TODO docs
-enum class PtrType { PRESENT, DELETED, EMPTY_PTR };
+/**
+ * @brief A convenience class to check Ptr's type.
+ * 
+ * PRESENT - this Ptr points to an actual value
+ * DELETED - this Ptr points to a value that existed before, but now is deleted from KVS
+ * SYNC_DELETED - this Ptr points to nowhere, was lazily deleted in CacheMap and then synced with the Shard
+ * NONEXISTENT - this Ptr points to nowhere, but it was PRESENT before and the current corresponding Key is valid
+ * EMPTY_PTR - this Ptr is equivalent to NULL
+ * 
+ */
+enum class PtrType { PRESENT, DELETED, EMPTY_PTR, NONEXISTENT, SYNC_DELETED };
 
 /**
  * @brief A pointer determining the position of the associated value in the values file. Also stores
@@ -78,10 +87,12 @@ class Ptr final {
 
 public:
   /**
-   * @brief A reserved value resembling a pointer to nowhere.
+   * @brief Reserved values for specific pointers.
    *
    */
   static constexpr ptr_t EMPTY_PTR_V = 0b01111111;
+  static constexpr ptr_t NONEXISTENT_V = 0b01111110;
+  static constexpr ptr_t SYNC_DELETED_V = 0b01111101;
 
   /**
    * @brief Construct a new Ptr from \b raw \b data.
@@ -92,11 +103,9 @@ public:
    */
   explicit Ptr(ptr_t ptr) noexcept;
 
-  /** TODO docs: fix index -> offset
-   * @brief Construct a new Ptr pointing to the given index and with the given isPresent flag.
+  /** 
+   * @brief Construct a new Ptr pointing to the given offset and with the given isPresent flag.
    * 
-   * @param index 
-   * @param isPresent 
    */
   explicit Ptr(size_t offset, bool isPresent) noexcept;
 
