@@ -96,6 +96,20 @@ Ptr& CacheMap::get(const Key& key) noexcept {
   return data[foundIndex].ptr;
 }
 
+// TODO fix copypaste
+const Ptr& CacheMap::get(const Key& key) const noexcept {
+  size_t keyIndex = hashKey(key) % data.size();
+  if (data[keyIndex].key == key)
+    return data[keyIndex].ptr;
+
+  size_t foundIndex =
+      findNextByPredicate(data, keyIndex, [&key](const Entry& e) {
+        return e.key == key || e.ptr == EMPTY_PTR;
+      });
+  assert(foundIndex != keyIndex);
+  return data[foundIndex].ptr;
+}
+
 void CacheMap::clear() noexcept {
   size_t size = data.size();
   data.clear();

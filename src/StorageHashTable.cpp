@@ -96,6 +96,18 @@ Ptr& StorageHashTable::get(const Key& key) noexcept {
   return data[newIndex].ptr;
 }
 
+// TODO fix copypaste
+const Ptr& StorageHashTable::get(const Key& key) const noexcept {
+  size_t keyIndex = hashKey(key) % data.size();
+  if (data[keyIndex].key == key)
+    return data[keyIndex].ptr;
+  size_t newIndex = findNextByPredicate(
+      data, keyIndex, [&key](Entry e) { return e.key == key; });
+  if (newIndex == keyIndex)
+    return EMPTY_PTR;
+  return data[newIndex].ptr;
+}
+
 std::vector<Entry> StorageHashTable::getEntries() const noexcept {
   std::vector<Entry> result;
   for (auto [key, ptr] : data) {

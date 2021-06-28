@@ -1,5 +1,6 @@
 #include "KVS.h"
 #include "ShardBuilder.h"
+#include <cassert>
 
 namespace kvs {
 
@@ -43,21 +44,45 @@ void KVS::pushOperation(Entry displaced) {
   auto [key, ptr] = displaced;
   shard_index_t shardIndex = Shard::getShardIndex(key);
   switch (ptr.getType()) {
-  case PtrType::PRESENT:
-    break;
 
   case PtrType::DELETED:
     shards[shardIndex].removeEntry(shardIndex, key);
+    if (shards[shardIndex].isRebuildRequired(shardIndex)) {
+      // TODO
+      //   rebuildShard(shardIndex);
+    }
+    break;
+
+  case PtrType::PRESENT:
+    [[fallthrough]];
+  case PtrType::SYNC_DELETED:
+    [[fallthrough]];
+  case PtrType::NONEXISTENT:
+    break;
+  case PtrType::EMPTY_PTR:
+    assert(false);
+  }
+}
+
+std::optional<Value> KVS::get(const Key& key) {
+  shard_index_t shardIndex = Shard::getShardIndex(key);
+  Ptr& ptr = cacheMap.get(key);
+  switch (ptr.getType()) {
+  case PtrType::PRESENT:
+    // lazy deletion
+    ptr.setValuePresent(false);
     break;
 
   case PtrType::SYNC_DELETED:
+    [[fallthrough]];
+  case PtrType::DELETED:
     break;
 
   case PtrType::NONEXISTENT:
-    break;
-
+    [[fallthrough]];
   case PtrType::EMPTY_PTR:
-    break;
+    Entry newEntry = shards[shardIndex].removeEntry(shardIndex, key);
+    // TODO in progress
   }
 }
 
