@@ -27,7 +27,7 @@ size_t findNextByPredicate(const std::vector<Entry>& data, size_t fromIndex,
 
 std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
   auto [key, ptr] = entry;
-  size_t keyIndex = hashKey(key);
+  size_t keyIndex = hashKey(key) % data.size();
 
   std::random_device rd;
   std::mt19937 gen(rd());
@@ -36,7 +36,7 @@ std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
   std::optional<Entry> displaced;
   if (usedSize * MAP_LOAD_FACTOR > data.size()) {
     // randomly delete one of the entries
-    size_t randomIndex = distr(gen()) % data.size();
+    size_t randomIndex = distr(gen) % data.size();
     size_t foundIndex;
     auto emptyCheck = [](const Entry& e) { return e.ptr == EMPTY_PTR; };
     if (data[randomIndex].ptr != EMPTY_PTR) {
@@ -47,7 +47,8 @@ std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
       else
         foundIndex -= 1;
     } else {
-      for (size_t i = foundIndex - 1; i != foundIndex; i--) {
+      foundIndex = randomIndex;
+      for (size_t i = randomIndex - 1; i != randomIndex; i--) {
         if (!emptyCheck(data[i])) {
           foundIndex = i;
           break;
@@ -74,10 +75,31 @@ std::optional<Entry> CacheMap::putOrDisplace(Entry entry) noexcept {
     assert(keyIndex != newIndex);
     keyIndex = newIndex;
   }
+  if (data[keyIndex].ptr == EMPTY_PTR)
+    usedSize++;
   data[keyIndex] = entry;
-  usedSize++;
 
   return displaced;
+}
+
+Ptr CacheMap::get(const Key& key) const noexcept {
+  size_t keyIndex = hashKey(key) % data.size();
+  if (data[keyIndex].key == key)
+    return data[keyIndex].ptr;
+
+  size_t foundIndex =
+      findNextByPredicate(data, keyIndex, [&key](const Entry& e) {
+        return e.key == key || e.ptr == EMPTY_PTR;
+      });
+  assert(foundIndex != keyIndex);
+  return data[foundIndex].ptr;
+}
+
+void CacheMap::clear() noexcept {
+  size_t size = data.size();
+  data.clear();
+  data.resize(size);
+  usedSize = 0;
 }
 
 } // namespace kvs::cache_map

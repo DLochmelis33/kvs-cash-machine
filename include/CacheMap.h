@@ -30,7 +30,7 @@ public:
      *
      * @return The requested Ptr or EMPTY_PTR, if no Entry with given Key is present.
      */
-  Ptr get(Key key) const noexcept;
+  Ptr get(const Key& key) const noexcept;
 
   /**
      * @brief Clear the entire map.
@@ -50,7 +50,6 @@ private:
      *
      */
   size_t usedSize;
-
 };
 
 } // namespace kvs::cache_map
