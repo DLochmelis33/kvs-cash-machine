@@ -19,9 +19,10 @@ constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER = 5; // TODO
 constexpr double TABLE_EXPANSION_FACTOR = 2;
 constexpr size_t TABLE_MAX_SIZE = 5000000; // TODO
 
+constexpr size_t SHARD_EXPECTED_SIZE = 23;
 constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR = MAP_LOAD_FACTOR;
 constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE =
-    23 * STORAGE_HASH_TABLE_LOAD_FACTOR;
+    SHARD_EXPECTED_SIZE * STORAGE_HASH_TABLE_LOAD_FACTOR;
 
 const std::string STORAGE_DIRECTORY_PATH = "../data/";
 
@@ -70,12 +71,19 @@ struct KeyValue final {
  * 
  * PRESENT - this Ptr points to an actual value
  * DELETED - this Ptr points to a value that existed before, but now is deleted from KVS
- * SYNC_DELETED - this Ptr points to nowhere, was lazily deleted in CacheMap and then synced with the Shard
+ * SYNC_DELETED (deprecated, see NONEXSITENT) - this Ptr points to nowhere, was lazily deleted in CacheMap and then synced with the Shard
  * NONEXISTENT - this Ptr points to nowhere, but it was PRESENT before and the current corresponding Key is valid
  * EMPTY_PTR - this Ptr is equivalent to NULL
- * 
+ *
+ * NONEXISTENT is forbidden in StorageHashTable
+ *
  */
-enum class PtrType { PRESENT, DELETED, EMPTY_PTR, NONEXISTENT/*, SYNC_DELETED */};
+enum class PtrType {
+  PRESENT,
+  DELETED,
+  EMPTY_PTR,
+  NONEXISTENT /*, SYNC_DELETED */
+};
 
 /**
  * @brief A pointer determining the position of the associated value in the values file. Also stores
@@ -109,7 +117,7 @@ public:
   explicit Ptr(size_t offset, bool isPresent) noexcept;
 
   /**
-   * @brief Construct a new empty Ptr.
+   * @brief Construct a new empty Ptr. // TODO docs
    * 
    */
   explicit Ptr(PtrType type = PtrType::EMPTY_PTR) noexcept;

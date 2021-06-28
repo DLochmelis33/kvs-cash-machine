@@ -67,8 +67,8 @@ Ptr::Ptr(PtrType type) noexcept {
   case PtrType::NONEXISTENT:
     ptr = NONEXISTENT_V;
     break;
-  // case PtrType::SYNC_DELETED:
-  //   ptr = SYNC_DELETED_V;
+    // case PtrType::SYNC_DELETED:
+    //   ptr = SYNC_DELETED_V;
     break;
   default:
     assert(false && "cannot create non-special ptr without a value");
