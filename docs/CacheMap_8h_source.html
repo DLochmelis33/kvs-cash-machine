@@ -88,20 +88,21 @@ $(function() {
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  std::optional&lt;Entry&gt; putOrDisplace(<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> entry) noexcept;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a>&amp; get(<span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key) noexcept;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  <span class="keywordtype">void</span> clear() noexcept;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">   46</a></span>&#160;  std::vector&lt;Entry&gt; <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">data</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7">   52</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7">usedSize</a>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;} <span class="comment">// namespace kvs::cache_map</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a>&amp; get(<span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key) <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <span class="keywordtype">void</span> clear() noexcept;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">   47</a></span>&#160;  std::vector&lt;Entry&gt; <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">data</a>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7">   53</a></span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7">usedSize</a>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;} <span class="comment">// namespace kvs::cache_map</span></div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
 <div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a></div><div class="ttdoc">Cache map. Is stored in RAM.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:15</div></div>
-<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html_a073b60994f73347ed5397cc890c05aa7"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7">kvs::cache_map::CacheMap::usedSize</a></div><div class="ttdeci">size_t usedSize</div><div class="ttdoc">The number of elements present in the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:52</div></div>
-<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html_ad1e5352e3d0ec4f627ab71ed311e486b"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">kvs::cache_map::CacheMap::data</a></div><div class="ttdeci">std::vector&lt; Entry &gt; data</div><div class="ttdoc">The internal storage of the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:46</div></div>
+<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html_a073b60994f73347ed5397cc890c05aa7"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7">kvs::cache_map::CacheMap::usedSize</a></div><div class="ttdeci">size_t usedSize</div><div class="ttdoc">The number of elements present in the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:53</div></div>
+<div class="ttc" id="aclasskvs_1_1cache__map_1_1CacheMap_html_ad1e5352e3d0ec4f627ab71ed311e486b"><div class="ttname"><a href="classkvs_1_1cache__map_1_1CacheMap.html#ad1e5352e3d0ec4f627ab71ed311e486b">kvs::cache_map::CacheMap::data</a></div><div class="ttdeci">std::vector&lt; Entry &gt; data</div><div class="ttdoc">The internal storage of the map.</div><div class="ttdef"><b>Definition:</b> CacheMap.h:47</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1Key_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Key.html">kvs::utils::Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:35</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1Ptr_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Ptr.html">kvs::utils::Ptr</a></div><div class="ttdoc">A pointer determining the position of the associated value in the values file. Also stores informatio...</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:85</div></div>
 <div class="ttc" id="anamespacekvs_1_1cache__map_html"><div class="ttname"><a href="namespacekvs_1_1cache__map.html">kvs::cache_map</a></div><div class="ttdef"><b>Definition:</b> CacheMap.h:7</div></div>

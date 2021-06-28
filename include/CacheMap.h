@@ -31,6 +31,7 @@ public:
      * @return The requested Ptr or EMPTY_PTR, if no Entry with given Key is present.
      */
   Ptr& get(const Key& key) noexcept;
+  const Ptr& get(const Key& key) const noexcept;
 
   /**
      * @brief Clear the entire map.

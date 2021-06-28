@@ -16,7 +16,7 @@ Collaboration diagram for kvs\+::cache\+\_\+map\+::Cache\+Map\+:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=236pt]{classkvs_1_1cache__map_1_1CacheMap__coll__graph}
+\includegraphics[width=237pt]{classkvs_1_1cache__map_1_1CacheMap__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -28,6 +28,8 @@ std\+::optional$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \mb
 \begin{DoxyCompactList}\small\item\em Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a18328805e042c27099c2d4d383b2fb16}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key) noexcept
 \begin{DoxyCompactList}\small\item\em Find a Ptr by Key. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a5f5b8b3ba55dd233e7a98c7b3ff7ab50}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key) const noexcept
+\item 
 void \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a35964877a9e96734d3f42c3c4812e56b}{clear}} () noexcept
 \begin{DoxyCompactList}\small\item\em Clear the entire map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
@@ -62,10 +64,16 @@ Cache map. Is stored in RAM.
 
 Clear the entire map. 
 
+\mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a5f5b8b3ba55dd233e7a98c7b3ff7ab50}\label{classkvs_1_1cache__map_1_1CacheMap_a5f5b8b3ba55dd233e7a98c7b3ff7ab50}} 
+\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!get@{get}}
+\index{get@{get}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
 \mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a18328805e042c27099c2d4d383b2fb16}\label{classkvs_1_1cache__map_1_1CacheMap_a18328805e042c27099c2d4d383b2fb16}} 
 \index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}!get@{get}}
 \index{get@{get}!kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
-\doxysubsubsection{\texorpdfstring{get()}{get()}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& kvs\+::cache\+\_\+map\+::\+Cache\+Map\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 

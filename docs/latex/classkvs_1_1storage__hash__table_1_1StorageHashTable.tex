@@ -30,6 +30,8 @@ Collaboration diagram for kvs\+::storage\+\_\+hash\+\_\+table\+::Storage\+Hash\+
 \begin{DoxyCompactList}\small\item\em Serialize the table into a Byte\+Array. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTable_a0e4a5843fa175d1e36d1623f6859eb51}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key) noexcept
 \begin{DoxyCompactList}\small\item\em Find the Ptr associated with the key. \end{DoxyCompactList}\item 
+const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTable_a7aa9f6b2664c6093d5a0a3209a9b9e17}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key) const noexcept
+\item 
 void \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTable_a5df2feda0ae3e314c77e30aa5bc5b3f5}{put}} (const \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \&entry) noexcept
 \begin{DoxyCompactList}\small\item\em Put an Entry into the table. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTable_a73cb6562228c610b164aff1a4601ab94}{get\+Entries}} () const noexcept
@@ -99,10 +101,16 @@ Needs to be called once the number of elements exceeds capacity $\ast$ a predefi
 {\em \mbox{\hyperlink{classkvs_1_1KVSException}{KVSException}}} & if the table is already expanded \\
 \hline
 \end{DoxyExceptions}
+\mbox{\Hypertarget{classkvs_1_1storage__hash__table_1_1StorageHashTable_a7aa9f6b2664c6093d5a0a3209a9b9e17}\label{classkvs_1_1storage__hash__table_1_1StorageHashTable_a7aa9f6b2664c6093d5a0a3209a9b9e17}} 
+\index{kvs::storage\_hash\_table::StorageHashTable@{kvs::storage\_hash\_table::StorageHashTable}!get@{get}}
+\index{get@{get}!kvs::storage\_hash\_table::StorageHashTable@{kvs::storage\_hash\_table::StorageHashTable}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& kvs\+::storage\+\_\+hash\+\_\+table\+::\+Storage\+Hash\+Table\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
 \mbox{\Hypertarget{classkvs_1_1storage__hash__table_1_1StorageHashTable_a0e4a5843fa175d1e36d1623f6859eb51}\label{classkvs_1_1storage__hash__table_1_1StorageHashTable_a0e4a5843fa175d1e36d1623f6859eb51}} 
 \index{kvs::storage\_hash\_table::StorageHashTable@{kvs::storage\_hash\_table::StorageHashTable}!get@{get}}
 \index{get@{get}!kvs::storage\_hash\_table::StorageHashTable@{kvs::storage\_hash\_table::StorageHashTable}}
-\doxysubsubsection{\texorpdfstring{get()}{get()}}
+\doxysubsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& kvs\+::storage\+\_\+hash\+\_\+table\+::\+Storage\+Hash\+Table\+::get (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
