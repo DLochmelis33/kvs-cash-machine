@@ -67,7 +67,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a>  </div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">kvs::cache_map Namespace Reference</div>  </div>
 </div><!--header-->
@@ -78,7 +79,51 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html">CacheMap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cache map. Is stored in RAM.  <a href="classkvs_1_1cache__map_1_1CacheMap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a11b92264a6c5f8fdde17237c9112a7b3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1cache__map.html#a11b92264a6c5f8fdde17237c9112a7b3">findNextByPredicate</a> (const std::vector&lt; <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &gt; &amp;data, size_t fromIndex, std::function&lt; bool(const <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &amp;)&gt; predicate)</td></tr>
+<tr class="memdesc:a11b92264a6c5f8fdde17237c9112a7b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find the next entry by predicate <b>exclusively</b> after fromIndex.  <a href="namespacekvs_1_1cache__map.html#a11b92264a6c5f8fdde17237c9112a7b3">More...</a><br /></td></tr>
+<tr class="separator:a11b92264a6c5f8fdde17237c9112a7b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a11b92264a6c5f8fdde17237c9112a7b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11b92264a6c5f8fdde17237c9112a7b3">&#9670;&nbsp;</a></span>findNextByPredicate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t kvs::cache_map::findNextByPredicate </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>fromIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::function&lt; bool(const <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &amp;)&gt;&#160;</td>
+          <td class="paramname"><em>predicate</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find the next entry by predicate <b>exclusively</b> after fromIndex. </p>
+<dl class="section return"><dt>Returns</dt><dd>size_t The found index <b>or</b> fromIndex, if no entry was found. </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

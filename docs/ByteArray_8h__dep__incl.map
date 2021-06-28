@@ -1,18 +1,19 @@
 <map id="include/ByteArray.h" name="include/ByteArray.h">
-<area shape="rect" id="node1" title=" " alt="" coords="621,5,754,32"/>
-<area shape="rect" id="node2" href="$KeyValueTypes_8h.html" title=" " alt="" coords="386,80,552,107"/>
-<area shape="rect" id="node13" href="$KeyValueTypes_8cpp.html" title=" " alt="" coords="583,155,742,181"/>
-<area shape="rect" id="node14" href="$Storage_8h.html" title=" " alt="" coords="766,155,889,181"/>
-<area shape="rect" id="node16" href="$ByteArray_8cpp.html" title=" " alt="" coords="751,80,875,107"/>
-<area shape="rect" id="node3" href="$BloomFilter_8h.html" title=" " alt="" coords="263,155,406,181"/>
-<area shape="rect" id="node4" href="$Shard_8h.html" title=" " alt="" coords="346,229,456,256"/>
-<area shape="rect" id="node5" href="$KVS_8h.html" title=" " alt="" coords="308,304,412,331"/>
-<area shape="rect" id="node6" href="$ShardBuilder_8h.html" title=" " alt="" coords="75,304,226,331"/>
-<area shape="rect" id="node10" href="$CacheMap_8h.html" title=" " alt="" coords="24,229,162,256"/>
-<area shape="rect" id="node11" href="$StorageHashTable_8h.html" title=" " alt="" coords="583,229,768,256"/>
-<area shape="rect" id="node9" href="$BloomFilter_8cpp.html" title=" " alt="" coords="187,229,322,256"/>
-<area shape="rect" id="node8" href="$Shard_8cpp.html" title=" " alt="" coords="436,304,539,331"/>
-<area shape="rect" id="node7" href="$ShardBuilder_8cpp.html" title=" " alt="" coords="506,379,648,405"/>
-<area shape="rect" id="node12" href="$StorageHashTable_8cpp.html" title=" " alt="" coords="614,304,790,331"/>
-<area shape="rect" id="node15" href="$Storage_8cpp.html" title=" " alt="" coords="866,229,979,256"/>
+<area shape="rect" id="node1" title=" " alt="" coords="665,5,799,32"/>
+<area shape="rect" id="node2" href="$KeyValueTypes_8h.html" title=" " alt="" coords="430,80,597,107"/>
+<area shape="rect" id="node14" href="$KeyValueTypes_8cpp.html" title=" " alt="" coords="627,155,786,181"/>
+<area shape="rect" id="node15" href="$Storage_8h.html" title=" " alt="" coords="811,155,933,181"/>
+<area shape="rect" id="node17" href="$ByteArray_8cpp.html" title=" " alt="" coords="795,80,919,107"/>
+<area shape="rect" id="node3" href="$BloomFilter_8h.html" title=" " alt="" coords="307,155,450,181"/>
+<area shape="rect" id="node4" href="$Shard_8h.html" title=" " alt="" coords="390,229,501,256"/>
+<area shape="rect" id="node5" href="$KVS_8h.html" title=" " alt="" coords="160,304,264,331"/>
+<area shape="rect" id="node6" href="$ShardBuilder_8h.html" title=" " alt="" coords="334,304,485,331"/>
+<area shape="rect" id="node10" href="$CacheMap_8h.html" title=" " alt="" coords="68,229,207,256"/>
+<area shape="rect" id="node12" href="$StorageHashTable_8h.html" title=" " alt="" coords="627,229,813,256"/>
+<area shape="rect" id="node9" href="$BloomFilter_8cpp.html" title=" " alt="" coords="231,229,366,256"/>
+<area shape="rect" id="node8" href="$Shard_8cpp.html" title=" " alt="" coords="509,304,611,331"/>
+<area shape="rect" id="node7" href="$ShardBuilder_8cpp.html" title=" " alt="" coords="578,379,721,405"/>
+<area shape="rect" id="node11" href="$CacheMap_8cpp.html" title=" " alt="" coords="5,304,136,331"/>
+<area shape="rect" id="node13" href="$StorageHashTable_8cpp.html" title=" " alt="" coords="687,304,863,331"/>
+<area shape="rect" id="node16" href="$Storage_8cpp.html" title=" " alt="" coords="938,229,1051,256"/>
 </map>
