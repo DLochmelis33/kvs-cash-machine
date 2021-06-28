@@ -21,8 +21,7 @@ void KVS::pushOperation(Entry displaced) {
   case PtrType::DELETED: {
     shards[shardIndex].removeEntry(shardIndex, key);
     if (shards[shardIndex].isRebuildRequired(shardIndex)) {
-      // TODO
-      //   rebuildShard(shardIndex);
+      rebuildShard(shardIndex);
     }
     break;
   }
@@ -67,7 +66,52 @@ void KVS::add(const Key& key, const Value& value) {
   }
 }
 
-std::optional<Value> KVS::get(const Key& key) {}
+std::optional<Value> KVS::get(const Key& key) {
+  shard_index_t shardIndex = Shard::getShardIndex(key);
+  Ptr& ptr = cacheMap.get(key);
+  switch (ptr.getType()) {
+
+  case PtrType::PRESENT: {
+    return std::optional<Value>(
+        shards[shardIndex].readValueDirectly(shardIndex, ptr));
+  }
+
+  case PtrType::NONEXISTENT:
+    [[fallthrough]];
+  case PtrType::DELETED: {
+    return std::optional<Value>();
+  }
+
+  case PtrType::EMPTY_PTR: {
+    auto [newEntry, optValue] = shards[shardIndex].readValue(shardIndex, key);
+    switch (newEntry.ptr.getType()) {
+
+    case PtrType::PRESENT: {
+      std::optional<Entry> displaced = cacheMap.putOrDisplace(newEntry);
+      if (displaced.has_value())
+        pushOperation(displaced.value());
+
+      break;
+    }
+
+    case PtrType::EMPTY_PTR:
+      [[fallthrough]];
+    case PtrType::DELETED: {
+      std::optional<Entry> displaced = cacheMap.putOrDisplace(
+          Entry(newEntry.key, Ptr(PtrType::NONEXISTENT)));
+      if (displaced.has_value())
+        pushOperation(displaced.value());
+    }
+
+    case PtrType::NONEXISTENT: {
+      assert(false && "returning NONEXISTENT Ptr from readValue() is illegal");
+    }
+    }
+
+    return optValue;
+  }
+  }
+}
 
 void KVS::remove(const Key& key) {
   shard_index_t shardIndex = Shard::getShardIndex(key);
@@ -89,28 +133,37 @@ void KVS::remove(const Key& key) {
     switch (newEntry.ptr.getType()) {
 
     case PtrType::PRESENT: {
-      std::optional<Entry> displaced = cacheMap.putOrDisplace(newEntry);
-      if (displaced.has_value())
-        pushOperation(displaced.value());
-    }
-
-    case PtrType::DELETED: {
-      std::optional<Entry> displaced =
-          cacheMap.putOrDisplace(Entry(newEntry.key, Ptr()));
-      if (displaced.has_value())
-        pushOperation(displaced.value());
+      assert(false &&
+             "returning PRESENT Ptr from removeEntry() makes no sense");
     }
 
     case PtrType::NONEXISTENT: {
-      assert(false && "NONEXISTENT pointer inside shard is illegal");
+      assert(false &&
+             "returning NONEXISTENT Ptr from removeEntry() is illegal");
     }
 
+    case PtrType::DELETED:
+      [[fallthrough]];
     case PtrType::EMPTY_PTR: {
+      std::optional<Entry> displaced = cacheMap.putOrDisplace(
+          Entry(newEntry.key, Ptr(PtrType::NONEXISTENT)));
+      if (displaced.has_value())
+        pushOperation(displaced.value());
+
+      break;
     }
     }
     break;
   }
   }
+}
+
+void KVS::rebuildShard(shard_index_t shardIndex) {
+  // TODO
+}
+
+void KVS::clear() {
+  // TODO
 }
 
 } // namespace kvs

@@ -53,7 +53,7 @@ private:
     * @brief Rebuilds the shard with the given index.
     * 
     */
-  void rebuildShard(size_t shardIndex);
+  void rebuildShard(shard_index_t shardIndex);
 
 private:
   /**

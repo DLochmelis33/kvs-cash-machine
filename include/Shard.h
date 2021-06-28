@@ -27,8 +27,7 @@ public:
   /**
      * @brief Read a value from this shard.
      *
-     * @return pair.first - the Entry corresponding to the Key. Used to update the CacheMap.
-     * @return pair.second - the actual Value or nothing, if none is present.
+     * @return pair.first - the Entry corresponding to the Key. Used to update the CacheMap. \n pair.second - the actual Value or nothing, if none is present.
      */
   std::pair<Entry, std::optional<Value>> readValue(shard_index_t shardIndex,
                                                    const Key& key) const;

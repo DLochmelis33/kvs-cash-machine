@@ -7,7 +7,7 @@ var searchData=
   ['readfile_599',['readFile',['../namespacekvs_1_1storage.html#a3ad6708a61b915141b087e88f5839769',1,'kvs::storage']]],
   ['readvalue_600',['readValue',['../classkvs_1_1shard_1_1Shard.html#ac968e0270380f308c16775ad9d1b074f',1,'kvs::shard::Shard']]],
   ['readvaluedirectly_601',['readValueDirectly',['../classkvs_1_1shard_1_1Shard.html#a4f8f4843559ac6c1e7ff339fa53afd62',1,'kvs::shard::Shard']]],
-  ['rebuildshard_602',['rebuildShard',['../classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930',1,'kvs::shard::ShardBuilder::rebuildShard()'],['../classkvs_1_1KVS.html#a5b146f54114d9721758e230eed1ccd9f',1,'kvs::KVS::rebuildShard()']]],
+  ['rebuildshard_602',['rebuildShard',['../classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930',1,'kvs::shard::ShardBuilder::rebuildShard()'],['../classkvs_1_1KVS.html#ac4f35134777c7bb68fd869be2b1d8e13',1,'kvs::KVS::rebuildShard()']]],
   ['red_603',['Red',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a67beb0a8d937993ad8b8cf6a238271f9',1,'doctest::Color']]],
   ['register_5fexception_5ftranslator_604',['REGISTER_EXCEPTION_TRANSLATOR',['../doctest_8h.html#aac0f523c848194e94f7fb3425bd92350',1,'doctest.h']]],
   ['register_5flistener_605',['REGISTER_LISTENER',['../doctest_8h.html#a73d9b6c21c3dc11f592c0f1496efa4e0',1,'doctest.h']]],

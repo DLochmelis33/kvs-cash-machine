@@ -86,53 +86,53 @@ $(function() {
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keyword">static</span> <a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> getShardIndex(<span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key) noexcept;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  std::pair&lt;Entry, std::optional&lt;Value&gt;&gt; readValue(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                                                   <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  <a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> writeValue(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key,</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a>&amp; value);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> removeEntry(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key);</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a> readValueDirectly(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> ptr) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keywordtype">void</span> writeValueDirectly(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> ptr,</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a>&amp; value);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> incrementAliveValuesCnt() noexcept;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  <span class="keywordtype">void</span> decrementAliveValuesCnt() noexcept;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordtype">bool</span> isRebuildRequired(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="comment">// TODO docs</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">   94</a></span>&#160;  <span class="keyword">static</span> std::string <a class="code" href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">storageDirectoryPath</a>; <span class="comment">// = STORAGE_DIRECTORY_PATH</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keyword">static</span> std::string getShardDirectoryPath(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) noexcept;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  <span class="keyword">static</span> std::string getValuesFilePath(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) noexcept;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keyword">static</span> std::string</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  getStorageHashTableFilePath(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) noexcept;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="comment">// TODO docs: description</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a>() noexcept;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  explicit <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a>(const std::vector&lt;<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&gt;&amp; storageHashTableEntries) noexcept;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#a551d4cc504ca0c809250c87e20334f0a">  112</a></span>&#160;  <a class="code" href="namespacekvs_1_1utils.html#a9de0de755051dacc6e2530e016f2be70">values_cnt_t</a> aliveValuesCnt;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#a20844bf2388e4a2f7bcc757b4b80090f">  118</a></span>&#160;  bloom_filter::BloomFilter filter;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#a75f5d7eb5774c232dbb08b3c2a02dbd6">  120</a></span>&#160;  friend class <a class="code" href="classkvs_1_1shard_1_1ShardBuilder.html">ShardBuilder</a>;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;};</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;} <span class="comment">// namespace kvs::shard</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  std::pair&lt;Entry, std::optional&lt;Value&gt;&gt; readValue(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex,</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                                                   <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;  <a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> writeValue(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key,</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                   <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a>&amp; value);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a> removeEntry(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Key.html">Key</a>&amp; key);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;  <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a> readValueDirectly(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> ptr) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keywordtype">void</span> writeValueDirectly(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <a class="code" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> ptr,</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                          <span class="keyword">const</span> <a class="code" href="classkvs_1_1utils_1_1Value.html">Value</a>&amp; value);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keywordtype">void</span> incrementAliveValuesCnt() noexcept;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;  <span class="keywordtype">void</span> decrementAliveValuesCnt() noexcept;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  <span class="keywordtype">bool</span> isRebuildRequired(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// TODO docs</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">   93</a></span>&#160;  <span class="keyword">static</span> std::string <a class="code" href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">storageDirectoryPath</a>; <span class="comment">// = STORAGE_DIRECTORY_PATH</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">static</span> std::string getShardDirectoryPath(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) noexcept;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  <span class="keyword">static</span> std::string getValuesFilePath(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) noexcept;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <span class="keyword">static</span> std::string</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  getStorageHashTableFilePath(<a class="code" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex) noexcept;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="comment">// TODO docs: description</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a>() noexcept;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;  explicit <a class="code" href="classkvs_1_1shard_1_1Shard.html">Shard</a>(const std::vector&lt;<a class="code" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&gt;&amp; storageHashTableEntries) noexcept;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#a551d4cc504ca0c809250c87e20334f0a">  111</a></span>&#160;  <a class="code" href="namespacekvs_1_1utils.html#a9de0de755051dacc6e2530e016f2be70">values_cnt_t</a> aliveValuesCnt;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#a20844bf2388e4a2f7bcc757b4b80090f">  117</a></span>&#160;  bloom_filter::BloomFilter filter;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classkvs_1_1shard_1_1Shard.html#a75f5d7eb5774c232dbb08b3c2a02dbd6">  119</a></span>&#160;  friend class <a class="code" href="classkvs_1_1shard_1_1ShardBuilder.html">ShardBuilder</a>;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;};</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;} <span class="comment">// namespace kvs::shard</span></div>
 <div class="ttc" id="aBloomFilter_8h_html"><div class="ttname"><a href="BloomFilter_8h.html">BloomFilter.h</a></div></div>
 <div class="ttc" id="aKeyValueTypes_8h_html"><div class="ttname"><a href="KeyValueTypes_8h.html">KeyValueTypes.h</a></div></div>
 <div class="ttc" id="aclasskvs_1_1shard_1_1ShardBuilder_html"><div class="ttname"><a href="classkvs_1_1shard_1_1ShardBuilder.html">kvs::shard::ShardBuilder</a></div><div class="ttdef"><b>Definition:</b> ShardBuilder.h:13</div></div>
 <div class="ttc" id="aclasskvs_1_1shard_1_1Shard_html"><div class="ttname"><a href="classkvs_1_1shard_1_1Shard.html">kvs::shard::Shard</a></div><div class="ttdoc">A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...</div><div class="ttdef"><b>Definition:</b> Shard.h:19</div></div>
-<div class="ttc" id="aclasskvs_1_1shard_1_1Shard_html_acfce9f7a423561d91367d0c635964283"><div class="ttname"><a href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">kvs::shard::Shard::storageDirectoryPath</a></div><div class="ttdeci">static std::string storageDirectoryPath</div><div class="ttdef"><b>Definition:</b> Shard.h:94</div></div>
+<div class="ttc" id="aclasskvs_1_1shard_1_1Shard_html_acfce9f7a423561d91367d0c635964283"><div class="ttname"><a href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">kvs::shard::Shard::storageDirectoryPath</a></div><div class="ttdeci">static std::string storageDirectoryPath</div><div class="ttdef"><b>Definition:</b> Shard.h:93</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1Key_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Key.html">kvs::utils::Key</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:36</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1Ptr_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Ptr.html">kvs::utils::Ptr</a></div><div class="ttdoc">A pointer determining the position of the associated value in the values file. Also stores informatio...</div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:93</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1Value_html"><div class="ttname"><a href="classkvs_1_1utils_1_1Value.html">kvs::utils::Value</a></div><div class="ttdef"><b>Definition:</b> KeyValueTypes.h:52</div></div>

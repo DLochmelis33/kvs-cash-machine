@@ -6,7 +6,7 @@ var searchData=
   ['readfile_1008',['readFile',['../namespacekvs_1_1storage.html#a3ad6708a61b915141b087e88f5839769',1,'kvs::storage']]],
   ['readvalue_1009',['readValue',['../classkvs_1_1shard_1_1Shard.html#ac968e0270380f308c16775ad9d1b074f',1,'kvs::shard::Shard']]],
   ['readvaluedirectly_1010',['readValueDirectly',['../classkvs_1_1shard_1_1Shard.html#a4f8f4843559ac6c1e7ff339fa53afd62',1,'kvs::shard::Shard']]],
-  ['rebuildshard_1011',['rebuildShard',['../classkvs_1_1KVS.html#a5b146f54114d9721758e230eed1ccd9f',1,'kvs::KVS::rebuildShard()'],['../classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930',1,'kvs::shard::ShardBuilder::rebuildShard()']]],
+  ['rebuildshard_1011',['rebuildShard',['../classkvs_1_1KVS.html#ac4f35134777c7bb68fd869be2b1d8e13',1,'kvs::KVS::rebuildShard()'],['../classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930',1,'kvs::shard::ShardBuilder::rebuildShard()']]],
   ['registerexceptiontranslator_1012',['registerExceptionTranslator',['../namespacedoctest.html#a8e23e6bb4c6982688652060dbe41385d',1,'doctest']]],
   ['registerexceptiontranslatorimpl_1013',['registerExceptionTranslatorImpl',['../namespacedoctest_1_1detail.html#a3887426da16e0d12e6f0e270a767a6a5',1,'doctest::detail']]],
   ['registerreporter_1014',['registerReporter',['../namespacedoctest.html#a9e878a811f7bf0a615b3a39de3004673',1,'doctest']]],
