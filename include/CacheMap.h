@@ -15,7 +15,7 @@ using namespace kvs::utils;
 class CacheMap final {
 
 public:
-  CacheMap() noexcept;
+  CacheMap(size_t size) noexcept;
 
   /**
      * @brief Put Ptr by Key. If not enough space, displace a random Entry and return it. If an
@@ -30,7 +30,7 @@ public:
      *
      * @return The requested Ptr or nothing, if no Entry with given Key is present.
      */
-  std::optional<Ptr> get(Key key) const noexcept;
+  Ptr get(Key key) const noexcept;
 
   /**
      * @brief Clear the entire map.
