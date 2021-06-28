@@ -159,7 +159,13 @@ void KVS::remove(const Key& key) {
 }
 
 void KVS::rebuildShard(shard_index_t shardIndex) {
-  // TODO
+  auto [newShard, newEntries] =
+      ShardBuilder::rebuildShard(shards[shardIndex], shardIndex, cacheMap);
+  shards[shardIndex] = newShard;
+  for (const Entry& newEntry : newEntries) {
+    std::optional<Entry> displaced = cacheMap.putOrDisplace(newEntry);
+    assert(!displaced.has_value());
+  }
 }
 
 void KVS::clear() {
