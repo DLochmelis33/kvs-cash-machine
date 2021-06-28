@@ -12,6 +12,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra -pedantic -g")
 
 set(KVS_SRC src/ByteArray.cpp src/KVSException.cpp src/Storage.cpp src/BloomFilter.cpp src/KeyValueTypes.cpp src/StorageHashTable.cpp src/Shard.cpp src/ShardBuilder.cpp)
 set(TEST_SRC test/TestMain.cpp test/TestByteArray.cpp test/TestStorage.cpp test/TestBloomFilter.cpp test/TestStorageHashTable.cpp test/TestShard.cpp test/TestShardBuilder.cpp)
+#set(TEST_SRC test/TestMain.cpp test/TestShard.cpp)
 set(SRC_LIST ${KVS_SRC} ${TEST_SRC})
 
 include_directories(include/)

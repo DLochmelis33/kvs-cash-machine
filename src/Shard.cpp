@@ -61,12 +61,14 @@ Entry Shard::writeValue(shard_index_t shardIndex, const Key& key,
     size_t offset = storage.append(value.getBytes());
     storage.close();
     ++aliveValuesCnt;
+    filter.add(key);
 
     Ptr newPtr{offset, true};
     Entry newEntry{key, newPtr};
     storageHashTable.put(newEntry);
     storage::writeFile(getStorageHashTableFilePath(shardIndex),
                        storageHashTable.serializeToByteArray());
+
     return newEntry;
   }
   }
