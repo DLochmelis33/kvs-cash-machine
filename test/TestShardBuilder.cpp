@@ -90,19 +90,21 @@ TEST_CASE("test ShardBuilder") {
     }
     REQUIRE_FALSE(shard.isRebuildRequired(shardIndex));
 
-    values_cnt_t removedValuesCnt = notUpdatedCacheMapRemovedEntriesCnt + 1;
+    values_cnt_t removedValuesCnt = notUpdatedCacheMapRemovedEntriesCnt;
     while (!shard.isRebuildRequired(shardIndex)) {
       elements[removedValuesCnt].first.ptr.setValuePresent(false);
       auto [entry, value] = elements[removedValuesCnt];
       Entry removeEntry = shard.removeEntry(shardIndex, entry.key);
       REQUIRE(removeEntry.key == entry.key);
       REQUIRE(removeEntry.ptr == entry.ptr);
-      removeEntry.second.ptr = Ptr{PtrType::NONEXISTENT};
+      removeEntry.ptr = Ptr{PtrType::NONEXISTENT};
       std::optional<Entry> displacedEntry = cacheMap.putOrDisplace(removeEntry);
       REQUIRE_FALSE(displacedEntry.has_value());
       ++removedValuesCnt;
     }
     REQUIRE(shard.isRebuildRequired(shardIndex));
+    REQUIRE(std::filesystem::file_size(valuesFilePath) ==
+            valuesCnt * VALUE_SIZE);
 
     Entry otherShardEntry{generateKey(valuesCnt), Ptr{10 * VALUE_SIZE, true}};
     std::optional<Entry> displacedEntry =
