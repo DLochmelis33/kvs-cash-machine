@@ -111,6 +111,7 @@ std::optional<Value> KVS::get(const Key& key) {
     return optValue;
   }
   }
+  throw std::logic_error("unreachable");
 }
 
 void KVS::remove(const Key& key) {

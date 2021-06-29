@@ -45,7 +45,7 @@ enum class \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783cead
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a100686ddd2d16ac96e0b0ba8031ed81c}{VALUE\+\_\+\+SIZE}} = 16
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a100686ddd2d16ac96e0b0ba8031ed81c}{VALUE\+\_\+\+SIZE}} = 2048
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_addeb36ca6455ac8903f049050a74ac9d}{KEY\+\_\+\+SIZE}} = 16
 \item 
@@ -57,19 +57,19 @@ constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a4a81b2504774f36d34
 \item 
 constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a5bd35bcc3182c27eaf8e678d6d8a32bf}{MAX\+\_\+\+OUTDATED\+\_\+\+RECORDS\+\_\+\+LOAD\+\_\+\+FACTOR}} = 0.\+5
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a681ae91ffea4696bc012ef7e2b4fc2ce}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 5000
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a681ae91ffea4696bc012ef7e2b4fc2ce}{BLOOM\+\_\+\+FILTER\+\_\+\+SIZE}} = 19
 \item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a9a39b70a28445b61801f025a976bcdca}{BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 5
-\item 
-constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f829cab397a}{TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
-\item 
-constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}{TABLE\+\_\+\+MAX\+\_\+\+SIZE}} = 5000
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a9a39b70a28445b61801f025a976bcdca}{BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER}} = 2
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a951c2cffbb4c73ca1d379b430e7cc4f0}{SHARD\+\_\+\+EXPECTED\+\_\+\+SIZE}} = 23
+\item 
+constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a37520aff4fd119e1addb46de73a10e88}{STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR}} = 2
 \item 
 constexpr double \mbox{\hyperlink{namespacekvs_1_1utils_a0c40337228a797bb66bac7905740ba90}{STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+LOAD\+\_\+\+FACTOR}} = \mbox{\hyperlink{namespacekvs_1_1utils_a9edace8f2922eecb69aa0af572ecc7a2}{MAP\+\_\+\+LOAD\+\_\+\+FACTOR}}
 \item 
 constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a71f4cddbd64d2661a167643cfbf4724e}{STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+INITIAL\+\_\+\+SIZE}}
+\item 
+constexpr size\+\_\+t \mbox{\hyperlink{namespacekvs_1_1utils_a35bb3dc5d37f59b4d2bf75631a152425}{STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+MAX\+\_\+\+SIZE}}
 \item 
 const std\+::string \mbox{\hyperlink{namespacekvs_1_1utils_ae5e2bb2e3084ebe05ab38f84e93fb780}{STORAGE\+\_\+\+DIRECTORY\+\_\+\+PATH}} = \char`\"{}../data/\char`\"{}
 \end{DoxyCompactItemize}
@@ -155,13 +155,13 @@ NONEXISTENT&\\
 \index{kvs::utils@{kvs::utils}!BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER@{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}}
 \index{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER@{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}!kvs::utils@{kvs::utils}}
 \doxysubsubsection{\texorpdfstring{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}{BLOOM\_FILTER\_HASH\_FUNCTIONS\_NUMBER}}
-{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER = 5\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+HASH\+\_\+\+FUNCTIONS\+\_\+\+NUMBER = 2\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{namespacekvs_1_1utils_a681ae91ffea4696bc012ef7e2b4fc2ce}\label{namespacekvs_1_1utils_a681ae91ffea4696bc012ef7e2b4fc2ce}} 
 \index{kvs::utils@{kvs::utils}!BLOOM\_FILTER\_SIZE@{BLOOM\_FILTER\_SIZE}}
 \index{BLOOM\_FILTER\_SIZE@{BLOOM\_FILTER\_SIZE}!kvs::utils@{kvs::utils}}
 \doxysubsubsection{\texorpdfstring{BLOOM\_FILTER\_SIZE}{BLOOM\_FILTER\_SIZE}}
-{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE = 5000\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+BLOOM\+\_\+\+FILTER\+\_\+\+SIZE = 19\hspace{0.3cm}{\ttfamily [constexpr]}}
 
 \mbox{\Hypertarget{namespacekvs_1_1utils_aa40f8db5aefd3c971d1387c09f331198}\label{namespacekvs_1_1utils_aa40f8db5aefd3c971d1387c09f331198}} 
 \index{kvs::utils@{kvs::utils}!CACHE\_MAP\_SIZE@{CACHE\_MAP\_SIZE}}
@@ -205,6 +205,12 @@ NONEXISTENT&\\
 \doxysubsubsection{\texorpdfstring{STORAGE\_DIRECTORY\_PATH}{STORAGE\_DIRECTORY\_PATH}}
 {\footnotesize\ttfamily const std\+::string kvs\+::utils\+::\+STORAGE\+\_\+\+DIRECTORY\+\_\+\+PATH = \char`\"{}../data/\char`\"{}}
 
+\mbox{\Hypertarget{namespacekvs_1_1utils_a37520aff4fd119e1addb46de73a10e88}\label{namespacekvs_1_1utils_a37520aff4fd119e1addb46de73a10e88}} 
+\index{kvs::utils@{kvs::utils}!STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR@{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR}}
+\index{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR@{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR}!kvs::utils@{kvs::utils}}
+\doxysubsubsection{\texorpdfstring{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR}{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR}}
+{\footnotesize\ttfamily constexpr double kvs\+::utils\+::\+STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR = 2\hspace{0.3cm}{\ttfamily [constexpr]}}
+
 \mbox{\Hypertarget{namespacekvs_1_1utils_a71f4cddbd64d2661a167643cfbf4724e}\label{namespacekvs_1_1utils_a71f4cddbd64d2661a167643cfbf4724e}} 
 \index{kvs::utils@{kvs::utils}!STORAGE\_HASH\_TABLE\_INITIAL\_SIZE@{STORAGE\_HASH\_TABLE\_INITIAL\_SIZE}}
 \index{STORAGE\_HASH\_TABLE\_INITIAL\_SIZE@{STORAGE\_HASH\_TABLE\_INITIAL\_SIZE}!kvs::utils@{kvs::utils}}
@@ -223,21 +229,22 @@ NONEXISTENT&\\
 \doxysubsubsection{\texorpdfstring{STORAGE\_HASH\_TABLE\_LOAD\_FACTOR}{STORAGE\_HASH\_TABLE\_LOAD\_FACTOR}}
 {\footnotesize\ttfamily constexpr double kvs\+::utils\+::\+STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+LOAD\+\_\+\+FACTOR = \mbox{\hyperlink{namespacekvs_1_1utils_a9edace8f2922eecb69aa0af572ecc7a2}{MAP\+\_\+\+LOAD\+\_\+\+FACTOR}}\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f829cab397a}\label{namespacekvs_1_1utils_ac1d4507ce05562ffb2de5f829cab397a}} 
-\index{kvs::utils@{kvs::utils}!TABLE\_EXPANSION\_FACTOR@{TABLE\_EXPANSION\_FACTOR}}
-\index{TABLE\_EXPANSION\_FACTOR@{TABLE\_EXPANSION\_FACTOR}!kvs::utils@{kvs::utils}}
-\doxysubsubsection{\texorpdfstring{TABLE\_EXPANSION\_FACTOR}{TABLE\_EXPANSION\_FACTOR}}
-{\footnotesize\ttfamily constexpr double kvs\+::utils\+::\+TABLE\+\_\+\+EXPANSION\+\_\+\+FACTOR = 2\hspace{0.3cm}{\ttfamily [constexpr]}}
+\mbox{\Hypertarget{namespacekvs_1_1utils_a35bb3dc5d37f59b4d2bf75631a152425}\label{namespacekvs_1_1utils_a35bb3dc5d37f59b4d2bf75631a152425}} 
+\index{kvs::utils@{kvs::utils}!STORAGE\_HASH\_TABLE\_MAX\_SIZE@{STORAGE\_HASH\_TABLE\_MAX\_SIZE}}
+\index{STORAGE\_HASH\_TABLE\_MAX\_SIZE@{STORAGE\_HASH\_TABLE\_MAX\_SIZE}!kvs::utils@{kvs::utils}}
+\doxysubsubsection{\texorpdfstring{STORAGE\_HASH\_TABLE\_MAX\_SIZE}{STORAGE\_HASH\_TABLE\_MAX\_SIZE}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+STORAGE\+\_\+\+HASH\+\_\+\+TABLE\+\_\+\+MAX\+\_\+\+SIZE\hspace{0.3cm}{\ttfamily [constexpr]}}
 
-\mbox{\Hypertarget{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}\label{namespacekvs_1_1utils_a88d1f7c3f7075ce9ef77956c7e6a03f5}} 
-\index{kvs::utils@{kvs::utils}!TABLE\_MAX\_SIZE@{TABLE\_MAX\_SIZE}}
-\index{TABLE\_MAX\_SIZE@{TABLE\_MAX\_SIZE}!kvs::utils@{kvs::utils}}
-\doxysubsubsection{\texorpdfstring{TABLE\_MAX\_SIZE}{TABLE\_MAX\_SIZE}}
-{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+TABLE\+\_\+\+MAX\+\_\+\+SIZE = 5000\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacekvs_1_1utils_a37520aff4fd119e1addb46de73a10e88}{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR}} * \mbox{\hyperlink{namespacekvs_1_1utils_a37520aff4fd119e1addb46de73a10e88}{STORAGE\_HASH\_TABLE\_EXPANSION\_FACTOR}} *}
+\DoxyCodeLine{    \mbox{\hyperlink{namespacekvs_1_1utils_a71f4cddbd64d2661a167643cfbf4724e}{STORAGE\_HASH\_TABLE\_INITIAL\_SIZE}}}
 
+\end{DoxyCode}
 \mbox{\Hypertarget{namespacekvs_1_1utils_a100686ddd2d16ac96e0b0ba8031ed81c}\label{namespacekvs_1_1utils_a100686ddd2d16ac96e0b0ba8031ed81c}} 
 \index{kvs::utils@{kvs::utils}!VALUE\_SIZE@{VALUE\_SIZE}}
 \index{VALUE\_SIZE@{VALUE\_SIZE}!kvs::utils@{kvs::utils}}
 \doxysubsubsection{\texorpdfstring{VALUE\_SIZE}{VALUE\_SIZE}}
-{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+VALUE\+\_\+\+SIZE = 16\hspace{0.3cm}{\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr size\+\_\+t kvs\+::utils\+::\+VALUE\+\_\+\+SIZE = 2048\hspace{0.3cm}{\ttfamily [constexpr]}}
 

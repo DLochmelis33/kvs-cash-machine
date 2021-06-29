@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['table_5fexpansion_5ffactor_1191',['TABLE_EXPANSION_FACTOR',['../namespacekvs_1_1utils.html#ac1d4507ce05562ffb2de5f829cab397a',1,'kvs::utils']]],
-  ['table_5fmax_5fsize_1192',['TABLE_MAX_SIZE',['../namespacekvs_1_1utils.html#a88d1f7c3f7075ce9ef77956c7e6a03f5',1,'kvs::utils']]]
+  ['usedsize_1192',['usedSize',['../classkvs_1_1cache__map_1_1CacheMap.html#a073b60994f73347ed5397cc890c05aa7',1,'kvs::cache_map::CacheMap::usedSize()'],['../classkvs_1_1storage__hash__table_1_1StorageHashTable.html#ae20d9b7e7e77cf76e364a1d17fc73a44',1,'kvs::storage_hash_table::StorageHashTable::usedSize()']]]
 ];

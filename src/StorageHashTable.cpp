@@ -10,7 +10,7 @@ StorageHashTable::StorageHashTable(const ByteArray array) {
   size_t entrySize = KEY_SIZE + sizeof(ptr_t);
   size_t withoutUsedSize = array.length() - sizeof(size_t);
   if (withoutUsedSize % entrySize != 0)
-    throw KVSException(KVSErrorType::TABLE_INVALID_BUILD_DATA);
+    throw KVSException(KVSErrorType::STORAGE_HASH_TABLE_INVALID_BUILD_DATA);
   size_t dataSize = withoutUsedSize / entrySize;
   data.resize(dataSize);
 
@@ -118,8 +118,8 @@ std::vector<Entry> StorageHashTable::getEntries() const noexcept {
 }
 
 void StorageHashTable::expand() {
-  size_t newSize = data.size() * TABLE_EXPANSION_FACTOR;
-  if (newSize > TABLE_MAX_SIZE)
+  size_t newSize = data.size() * STORAGE_HASH_TABLE_EXPANSION_FACTOR;
+  if (newSize > STORAGE_HASH_TABLE_MAX_SIZE)
     throw KVSException(KVSErrorType::SHARD_OVERFLOW);
 
   std::vector<Entry> oldData = getEntries();
