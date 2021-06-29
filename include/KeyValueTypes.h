@@ -8,21 +8,22 @@
 
 namespace kvs::utils {
 
-constexpr size_t VALUE_SIZE = 16;
+constexpr size_t VALUE_SIZE = 2048;
 constexpr size_t KEY_SIZE = 16;
 constexpr size_t CACHE_MAP_SIZE = 5000;
 constexpr double MAP_LOAD_FACTOR = 1.5;
 constexpr size_t SHARD_NUMBER = 4981;
 constexpr double MAX_OUTDATED_RECORDS_LOAD_FACTOR = 0.5;
-constexpr size_t BLOOM_FILTER_SIZE = 5000; // TODO
-constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER = 5; // TODO
-constexpr double TABLE_EXPANSION_FACTOR = 2;
-constexpr size_t TABLE_MAX_SIZE = 5000; // TODO
-
+constexpr size_t BLOOM_FILTER_SIZE = 19;
+constexpr size_t BLOOM_FILTER_HASH_FUNCTIONS_NUMBER = 2;
 constexpr size_t SHARD_EXPECTED_SIZE = 23;
+constexpr double STORAGE_HASH_TABLE_EXPANSION_FACTOR = 2;
 constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR = MAP_LOAD_FACTOR;
 constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE =
     SHARD_EXPECTED_SIZE * STORAGE_HASH_TABLE_LOAD_FACTOR;
+constexpr size_t STORAGE_HASH_TABLE_MAX_SIZE =
+    STORAGE_HASH_TABLE_EXPANSION_FACTOR * STORAGE_HASH_TABLE_EXPANSION_FACTOR *
+    STORAGE_HASH_TABLE_INITIAL_SIZE;
 
 const std::string STORAGE_DIRECTORY_PATH = "../data/";
 

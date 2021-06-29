@@ -1,8 +1,9 @@
 #include "KVS.h"
 
+#include <cassert>
 #include <chrono>
-#include <cstdint>
 #include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <limits>
 #include <random>
@@ -29,71 +30,76 @@ std::mt19937_64 gen(rd());
 std::uniform_int_distribution<char> charDistr(std::numeric_limits<char>::min(),
                                               std::numeric_limits<char>::max());
 constexpr uint32_t maxOpDistrRange = 1e6;
-constexpr double defaultRemoveOperationsRate =
-    0.4; // from write and remove operations
 std::uniform_int_distribution<uint32_t> opDistr(0, maxOpDistrRange);
 
-constexpr size_t defaultRecentKeysSize = 500;
+constexpr size_t DEFAULT_RECENT_KEYS_SIZE = CACHE_MAP_SIZE;
+double removeOperationsRate = 0.2; // between write and remove operations
 
 struct Stats {
-  uint64_t sumOperationsNanos = 0;
-  uint64_t sumReadOperationsNanos = 0;
-  uint64_t sumWriteOperationsNanos = 0;
+  uint32_t sumOperationsMicros = 0;
+  uint32_t sumReadOperationsMicros = 0;
+  uint32_t sumWriteOperationsMicros = 0;
 
-  uint64_t operationsCnt = 0;
-  uint64_t readOperationsCnt = 0;
-  uint64_t writeOperationsCnt = 0;
+  uint32_t operationsCnt = 0;
+  uint32_t readOperationsCnt = 0;
+  uint32_t writeOperationsCnt = 0;
 
-  uint64_t maxReadOperationNanos = 0;
-  uint64_t maxWriteOperationNanos = 0;
+  uint32_t maxReadOperationMicros = 0;
+  uint32_t maxWriteOperationMicros = 0;
 
-  uint64_t minReadOperationNanos = std::numeric_limits<uint64_t>::max();
-  uint64_t minWriteOperationNanos = std::numeric_limits<uint64_t>::max();
+  uint32_t minReadOperationMicros = std::numeric_limits<uint32_t>::max();
+  uint32_t minWriteOperationMicros = std::numeric_limits<uint32_t>::max();
 };
 
-void applyDuration(uint64_t duration, Stats& stats, uint8_t operationCode) {
-  stats.sumOperationsNanos += duration;
+void applyDuration(uint32_t duration, Stats& stats, uint8_t operationCode) {
+  stats.sumOperationsMicros += duration;
   ++stats.operationsCnt;
   if (operationCode == 0) {
     ++stats.readOperationsCnt;
-    stats.sumReadOperationsNanos += duration;
-    stats.maxReadOperationNanos = duration > stats.maxReadOperationNanos
-                                      ? duration
-                                      : stats.maxReadOperationNanos;
-    stats.minReadOperationNanos = duration < stats.minReadOperationNanos
-                                      ? duration
-                                      : stats.minReadOperationNanos;
-  } else if (operationCode == 2) {
+    stats.sumReadOperationsMicros += duration;
+    stats.maxReadOperationMicros = duration > stats.maxReadOperationMicros
+                                       ? duration
+                                       : stats.maxReadOperationMicros;
+    stats.minReadOperationMicros = duration < stats.minReadOperationMicros
+                                       ? duration
+                                       : stats.minReadOperationMicros;
+  } else { // read or write operation
     ++stats.writeOperationsCnt;
-    stats.sumWriteOperationsNanos += duration;
-    stats.maxWriteOperationNanos = duration > stats.maxWriteOperationNanos
-                                       ? duration
-                                       : stats.maxWriteOperationNanos;
-    stats.minWriteOperationNanos = duration < stats.minWriteOperationNanos
-                                       ? duration
-                                       : stats.minWriteOperationNanos;
+    stats.sumWriteOperationsMicros += duration;
+    stats.maxWriteOperationMicros = duration > stats.maxWriteOperationMicros
+                                        ? duration
+                                        : stats.maxWriteOperationMicros;
+    stats.minWriteOperationMicros = duration < stats.minWriteOperationMicros
+                                        ? duration
+                                        : stats.minWriteOperationMicros;
   }
 }
 
-void printAverageStats(std::ostream& outs, const Stats& stats) {
-  outs << "Benchmark stats in nanos:\n";
+void printCSVFormatAverageStats(std::ostream& outs, const Stats& stats) {
+  outs << stats.sumOperationsMicros / stats.operationsCnt << ","
+       << stats.sumReadOperationsMicros / stats.readOperationsCnt << ","
+       << stats.sumWriteOperationsMicros / stats.writeOperationsCnt << ",";
+}
 
-  outs << "avg operation = " << stats.sumOperationsNanos / stats.operationsCnt
+void printFullStats(std::ostream& outs, const Stats& stats) {
+  outs << "Benchmark stats in microseconds:\n";
+
+  outs << "avg operation = " << stats.sumOperationsMicros / stats.operationsCnt
        << "\n";
   outs << "avg read operation = "
-       << stats.sumReadOperationsNanos / stats.readOperationsCnt << "\n";
+       << stats.sumReadOperationsMicros / stats.readOperationsCnt << "\n";
   outs << "avg write operation = "
-       << stats.sumWriteOperationsNanos / stats.writeOperationsCnt << "\n";
+       << stats.sumWriteOperationsMicros / stats.writeOperationsCnt << "\n";
 
-  outs << "min/max read operation = " << stats.minReadOperationNanos << " / "
-       << stats.maxReadOperationNanos << "\n";
-  outs << "min/max write operation = " << stats.minWriteOperationNanos << " / "
-       << stats.maxWriteOperationNanos << "\n\n";
+  outs << "min/max read operation = " << stats.minReadOperationMicros << " / "
+       << stats.maxReadOperationMicros << "\n";
+  outs << "min/max write operation = " << stats.minWriteOperationMicros << " / "
+       << stats.maxWriteOperationMicros << "\n\n";
 }
 
 uint8_t generateRandomOperationCode(
     double readOperationsRate,
-    double removeOperationsRate = defaultRemoveOperationsRate) {
+    double removeOperationsRate = removeOperationsRate) {
   uint32_t num = opDistr(gen);
   uint32_t maxReadNum = maxOpDistrRange * readOperationsRate;
   if (num <= maxReadNum) {
@@ -149,7 +155,7 @@ KVS setupKVS(size_t setupElementsSize) {
     kvs.add(generateNewRandomKey(keys), generateRandomValue());
     // TODO: (?) make random operation
   }
-  std::cerr << "KVS set up finished\n";
+  //std::cerr << "KVS set up finished\n";
   return kvs;
 }
 
@@ -186,12 +192,12 @@ void testRandomAccess(size_t setupElementsSize,
     }
     }
     auto duration =
-        std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin)
+        std::chrono::duration_cast<std::chrono::microseconds>(end - begin)
             .count();
     applyDuration(duration, stats, operationCode);
   }
 
-  printAverageStats(std::cerr, stats);
+  printCSVFormatAverageStats(std::cerr, stats);
   clearUp();
 }
 
@@ -202,7 +208,7 @@ void testCacheAccessWithProbability(size_t setupElementsSize,
   KVS kvs = setupKVS(setupElementsSize);
 
   Stats stats{};
-  std::vector<Key> recentKeys(defaultRecentKeysSize);
+  std::vector<Key> recentKeys(DEFAULT_RECENT_KEYS_SIZE);
   size_t recentKeysSize = 0;
   size_t recentKeysPos = 0;
 
@@ -231,7 +237,7 @@ void testCacheAccessWithProbability(size_t setupElementsSize,
     }
     }
     auto duration =
-        std::chrono::duration_cast<std::chrono::nanoseconds>(end - begin)
+        std::chrono::duration_cast<std::chrono::microseconds>(end - begin)
             .count();
     applyDuration(duration, stats, operationCode);
 
@@ -248,30 +254,116 @@ void testCacheAccessWithProbability(size_t setupElementsSize,
     }
   }
 
-  printAverageStats(std::cerr, stats);
+  printCSVFormatAverageStats(std::cerr, stats);
   clearUp();
 }
 
+namespace disk {
+
+constexpr size_t ENTRY_SIZE = VALUE_SIZE + KEY_SIZE;
+std::string diskBenchmarkDirectoryPath = "../disk-benchmark/";
+size_t filesNumber = 1e4;
+size_t entriesInOneFile = 100;
+
+void setUpDiskBenchmarkDirectory() {
+  std::filesystem::create_directories(diskBenchmarkDirectoryPath);
+  for (size_t i = 0; i < filesNumber; ++i) {
+    std::ofstream file(diskBenchmarkDirectoryPath + std::to_string(i),
+                       std::ios::out | std::ios::binary | std::ios::app);
+    file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
+    for (size_t j = 0; j < entriesInOneFile; ++j) {
+      ByteArray bytes = generateRandomByteArray(ENTRY_SIZE);
+      file.write(bytes.get(), ENTRY_SIZE);
+    }
+    file.close();
+  }
+}
+
+void clearUpDiskBenchmarkDirectory() {
+  std::filesystem::remove_all(diskBenchmarkDirectoryPath);
+}
+
+std::pair<std::string, size_t> generateEntryLocationFromKey(const Key& key) {
+  assert(key.getBytes().length() >= 2 * sizeof(uint64_t));
+  size_t firstPart =
+      *reinterpret_cast<const uint64_t*>(key.getBytes().get()) % filesNumber;
+  size_t secondPart = *reinterpret_cast<const uint64_t*>(key.getBytes().get() +
+                                                         sizeof(uint64_t)) %
+                      entriesInOneFile;
+  return std::make_pair(diskBenchmarkDirectoryPath + std::to_string(firstPart),
+                        secondPart * ENTRY_SIZE);
+}
+
+void testDiskOperations(size_t benchmarkOperationsNumber,
+                        double readOperationsRate) {
+  Stats stats{};
+  ByteArray bytes = generateRandomByteArray(ENTRY_SIZE);
+
+  for (size_t i = 0; i < benchmarkOperationsNumber; ++i) {
+    Key key = generateRandomKey();
+    auto [filePath, offset] = generateEntryLocationFromKey(key);
+    uint8_t operationCode = generateRandomOperationCode(readOperationsRate);
+
+    std::chrono::high_resolution_clock::time_point begin;
+    std::chrono::high_resolution_clock::time_point end;
+    if (operationCode == 0) { // read
+      std::ifstream file(filePath, std::ios::in | std::ios::binary);
+      file.exceptions(std::ifstream::failbit | std::ifstream::badbit);
+      file.seekg(offset);
+      begin = std::chrono::high_resolution_clock::now();
+      file.read(bytes.get(), ENTRY_SIZE);
+      end = std::chrono::high_resolution_clock::now();
+      file.close();
+    } else { // write
+      std::fstream file(filePath,
+                        std::ios::in | std::ios::out | std::ios::binary);
+      file.exceptions(std::fstream::failbit | std::fstream::badbit);
+      file.seekp(offset);
+      begin = std::chrono::high_resolution_clock::now();
+      file.write(bytes.get(), ENTRY_SIZE);
+      file.close();
+      end = std::chrono::high_resolution_clock::now();
+    }
+    auto duration =
+        std::chrono::duration_cast<std::chrono::microseconds>(end - begin)
+            .count();
+    applyDuration(duration, stats, operationCode);
+  }
+  printCSVFormatAverageStats(std::cout, stats);
+}
+
+} // namespace disk
 } // namespace benchmark
+
+void testAll(size_t benchmarkOperationsNumber) {
+  size_t setupElementsSize = 10000;
+  double readOperationsRate = 0.2;
+  std::cout << benchmarkOperationsNumber << ",";
+  // benchmark::disk::testDiskOperations(benchmarkOperationsNumber,
+  //                                    readOperationsRate);
+  benchmark::testRandomAccess(setupElementsSize, benchmarkOperationsNumber,
+                              readOperationsRate);
+  benchmark::testCacheAccessWithProbability(
+      setupElementsSize, benchmarkOperationsNumber, readOperationsRate, 0.1);
+  benchmark::testCacheAccessWithProbability(
+      setupElementsSize, benchmarkOperationsNumber, readOperationsRate, 0.5);
+  benchmark::testCacheAccessWithProbability(
+      setupElementsSize, benchmarkOperationsNumber, readOperationsRate, 0.95);
+  std::cout << "\n";
+}
 
 int main() {
 
-  size_t setupElementsSize = 1000;
-  size_t benchmarkOperationsNumber = 1e4;
-  double readOperationsRate = 0.5;
+  benchmark::removeOperationsRate = 0.2; // between write and remove operations
 
-  benchmark::testRandomAccess(setupElementsSize, benchmarkOperationsNumber,
-                              readOperationsRate);
+  // benchmark::disk::setUpDiskBenchmarkDirectory();
+  testAll(1e4);
+  testAll(1e5);
+  testAll(3e5);
+  testAll(5e5);
+  testAll(8e5);
+  testAll(1e6);
+  // benchmark::disk::clearUpDiskBenchmarkDirectory();
 
-  double cacheAccessProbability = 0.7;
-  benchmark::testCacheAccessWithProbability(
-      setupElementsSize, benchmarkOperationsNumber, readOperationsRate,
-      cacheAccessProbability);
-
-  /*size_t fullMissesPeriod = 1000;
-  benchmark::testCacheAccessWithPeriodicFullMisses(
-      setupElementsSize, benchmarkOperationsNumber, readOperationsRate,
-      fullMissesPeriod);
-*/
   return 0;
 }
