@@ -262,7 +262,7 @@ namespace disk {
 
 constexpr size_t ENTRY_SIZE = VALUE_SIZE + KEY_SIZE;
 std::string diskBenchmarkDirectoryPath = "../disk-benchmark/";
-size_t filesNumber = 1e4;
+size_t filesNumber = 1e3;
 size_t entriesInOneFile = 100;
 
 void setUpDiskBenchmarkDirectory() {
@@ -339,8 +339,8 @@ void testAll(size_t benchmarkOperationsNumber) {
   size_t setupElementsSize = 10000;
   double readOperationsRate = 0.2;
   std::cout << benchmarkOperationsNumber << ",";
-  // benchmark::disk::testDiskOperations(benchmarkOperationsNumber,
-  //                                    readOperationsRate);
+  benchmark::disk::testDiskOperations(benchmarkOperationsNumber,
+                                      readOperationsRate);
   benchmark::testRandomAccess(setupElementsSize, benchmarkOperationsNumber,
                               readOperationsRate);
   benchmark::testCacheAccessWithProbability(
@@ -357,12 +357,10 @@ int main() {
   benchmark::removeOperationsRate = 0.2; // between write and remove operations
 
   // benchmark::disk::setUpDiskBenchmarkDirectory();
-  testAll(1e4);
-  testAll(1e5);
-  testAll(3e5);
-  testAll(5e5);
-  testAll(8e5);
-  testAll(1e6);
+  size_t steps = 10;
+  for (size_t i = 1; i < steps; ++i) {
+    testAll(i * 10000);
+  }
   // benchmark::disk::clearUpDiskBenchmarkDirectory();
 
   return 0;

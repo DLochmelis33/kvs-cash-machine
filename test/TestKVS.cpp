@@ -121,7 +121,7 @@ TEST_CASE("test KVS") {
 
   SUBCASE("stress test") {
     size_t setupElementsSize = 1e4;
-    size_t operationsNumber = 1e5;
+    size_t operationsNumber = 9e4;
 
     std::unordered_map<Key, Value> mapKVS;
     KVS kvs{};
