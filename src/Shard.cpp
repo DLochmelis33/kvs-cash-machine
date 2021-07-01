@@ -40,7 +40,7 @@ Entry Shard::writeValue(shard_index_t shardIndex, const Key& key,
                         const Value& value) {
   StorageHashTable storageHashTable{
       storage::readFile(getStorageHashTableFilePath(shardIndex))};
-  Ptr ptr = storageHashTable.get(key);
+  Ptr& ptr = storageHashTable.get(key);
   switch (ptr.getType()) {
 
   case PtrType::PRESENT: {
@@ -52,11 +52,9 @@ Entry Shard::writeValue(shard_index_t shardIndex, const Key& key,
     ++aliveValuesCnt;
 
     ptr.setValuePresent(true);
-    Entry updatedEntry{key, ptr};
-    storageHashTable.put(updatedEntry); // TODO: optimize
     storage::writeFile(getStorageHashTableFilePath(shardIndex),
                        storageHashTable.serializeToByteArray());
-    return updatedEntry;
+    return Entry{key, ptr};
   }
   case PtrType::EMPTY_PTR: {
     Storage storage(getValuesFilePath(shardIndex));
@@ -81,25 +79,30 @@ Entry Shard::writeValue(shard_index_t shardIndex, const Key& key,
 }
 
 Entry Shard::removeEntry(shard_index_t shardIndex, const Key& key) {
+  Entry entry = pushRemoveEntry(shardIndex, key);
+  if (entry.ptr.getType() == PtrType::PRESENT) {
+    decrementAliveValuesCnt();
+  }
+  return entry;
+}
+
+Entry Shard::pushRemoveEntry(shard_index_t shardIndex, const Key& key) {
   if (!filter.checkExist(key)) {
     return Entry{key};
   }
   StorageHashTable storageHashTable{
       storage::readFile(getStorageHashTableFilePath(shardIndex))};
-  Ptr ptr = storageHashTable.get(key);
+  Ptr& ptr = storageHashTable.get(key);
   switch (ptr.getType()) {
   case PtrType::DELETED:
     return Entry{key, ptr};
   case PtrType::EMPTY_PTR:
     return Entry{key};
   case PtrType::PRESENT: {
-    --aliveValuesCnt;
     ptr.setValuePresent(false);
-    Entry updatedEntry{key, ptr};
-    storageHashTable.put(updatedEntry); // TODO: optimize
     storage::writeFile(getStorageHashTableFilePath(shardIndex),
                        storageHashTable.serializeToByteArray());
-    return updatedEntry;
+    return Entry{key, ptr};
   }
   case PtrType::NONEXISTENT: {
     throw std::logic_error("NONEXISTENT is forbidden in StorageHashTable");

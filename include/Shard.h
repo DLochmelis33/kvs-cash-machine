@@ -49,6 +49,9 @@ public:
      */
   Entry removeEntry(shard_index_t shardIndex, const Key& key);
 
+  // TODO docs
+  Entry pushRemoveEntry(shard_index_t shardIndex, const Key& key);
+
   /**
      * @brief Read a Value directly from disk storage. Used when CacheMap entry is hit.
      *

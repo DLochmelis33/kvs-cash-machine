@@ -19,17 +19,16 @@ void KVS::pushOperation(Entry displaced) {
   switch (ptr.getType()) {
 
   case PtrType::DELETED: {
-    shards[shardIndex].removeEntry(shardIndex, key);
-    if (shards[shardIndex].isRebuildRequired(shardIndex)) {
-      rebuildShard(shardIndex);
-    }
+    shards[shardIndex].pushRemoveEntry(shardIndex, key);
     break;
   }
 
   case PtrType::PRESENT:
     [[fallthrough]];
+
   case PtrType::NONEXISTENT:
     break;
+
   case PtrType::EMPTY_PTR: {
     assert(false && "pushing EMPTY_PTR makes no sense");
   }
@@ -55,6 +54,7 @@ void KVS::add(const Key& key, const Value& value) {
 
   case PtrType::NONEXISTENT:
     [[fallthrough]];
+
   case PtrType::EMPTY_PTR: {
     std::optional<Entry> displaced = cacheMap.putOrDisplace(
         shards[shardIndex].writeValue(shardIndex, key, value));
@@ -78,6 +78,7 @@ std::optional<Value> KVS::get(const Key& key) {
 
   case PtrType::NONEXISTENT:
     [[fallthrough]];
+
   case PtrType::DELETED: {
     return std::optional<Value>();
   }
@@ -90,17 +91,18 @@ std::optional<Value> KVS::get(const Key& key) {
       std::optional<Entry> displaced = cacheMap.putOrDisplace(newEntry);
       if (displaced.has_value())
         pushOperation(displaced.value());
-
       break;
     }
 
     case PtrType::EMPTY_PTR:
       [[fallthrough]];
+
     case PtrType::DELETED: {
       std::optional<Entry> displaced = cacheMap.putOrDisplace(
           Entry(newEntry.key, Ptr(PtrType::NONEXISTENT)));
       if (displaced.has_value())
         pushOperation(displaced.value());
+      break;
     }
 
     case PtrType::NONEXISTENT: {
@@ -121,14 +123,19 @@ void KVS::remove(const Key& key) {
   case PtrType::PRESENT: {
     // lazy deletion
     ptr.setValuePresent(false);
+    shards[shardIndex].decrementAliveValuesCnt();
+    if (shards[shardIndex].isRebuildRequired(shardIndex)) {
+      rebuildShard(shardIndex);
+    }
     break;
   }
+
+  case PtrType::NONEXISTENT:
+    [[fallthrough]];
 
   case PtrType::DELETED:
     break;
 
-  case PtrType::NONEXISTENT:
-    [[fallthrough]];
   case PtrType::EMPTY_PTR: {
     Entry newEntry = shards[shardIndex].removeEntry(shardIndex, key);
     switch (newEntry.ptr.getType()) {
@@ -145,12 +152,12 @@ void KVS::remove(const Key& key) {
 
     case PtrType::DELETED:
       [[fallthrough]];
+
     case PtrType::EMPTY_PTR: {
       std::optional<Entry> displaced = cacheMap.putOrDisplace(
           Entry(newEntry.key, Ptr(PtrType::NONEXISTENT)));
       if (displaced.has_value())
         pushOperation(displaced.value());
-
       break;
     }
     }
