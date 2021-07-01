@@ -28,6 +28,8 @@ std\+::pair$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}, std\+::opt
 \begin{DoxyCompactList}\small\item\em Write a Value to this shard. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a2bddb2f39d82722f5d8d1bb47ad27f13}{remove\+Entry}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
 \begin{DoxyCompactList}\small\item\em Remove a Value from this shard. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a4a164d81d482709352fe412ce72db3f3}{push\+Remove\+Entry}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
+\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a4f8f4843559ac6c1e7ff339fa53afd62}{read\+Value\+Directly}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} ptr) const
 \begin{DoxyCompactList}\small\item\em Read a Value directly from disk storage. Used when Cache\+Map entry is hit. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a07c99ac2a9e9e1ddf938775ca110aa3f}{write\+Value\+Directly}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} ptr, const \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \&value)
@@ -153,6 +155,12 @@ Used by \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} when a deleted element in Cache\
 
 
 Check if a rebuild needs to be called. 
+
+\mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_a4a164d81d482709352fe412ce72db3f3}\label{classkvs_1_1shard_1_1Shard_a4a164d81d482709352fe412ce72db3f3}} 
+\index{kvs::shard::Shard@{kvs::shard::Shard}!pushRemoveEntry@{pushRemoveEntry}}
+\index{pushRemoveEntry@{pushRemoveEntry}!kvs::shard::Shard@{kvs::shard::Shard}}
+\doxysubsubsection{\texorpdfstring{pushRemoveEntry()}{pushRemoveEntry()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} kvs\+::shard\+::\+Shard\+::push\+Remove\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}}}]{shard\+Index,  }\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_ac968e0270380f308c16775ad9d1b074f}\label{classkvs_1_1shard_1_1Shard_ac968e0270380f308c16775ad9d1b074f}} 
 \index{kvs::shard::Shard@{kvs::shard::Shard}!readValue@{readValue}}

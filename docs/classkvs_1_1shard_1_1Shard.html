@@ -88,7 +88,7 @@ Collaboration diagram for kvs::shard::Shard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkvs_1_1shard_1_1Shard__coll__graph.png" border="0" usemap="#akvs_1_1shard_1_1Shard_coll__map" alt="Collaboration graph"/></div>
 <map name="akvs_1_1shard_1_1Shard_coll__map" id="akvs_1_1shard_1_1Shard_coll__map">
-<area shape="rect" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ..." alt="" coords="89,344,304,612"/>
+<area shape="rect" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ..." alt="" coords="89,344,304,627"/>
 <area shape="rect" title=" " alt="" coords="5,182,60,259"/>
 <area shape="rect" title=" " alt="" coords="166,182,227,259"/>
 <area shape="rect" href="classkvs_1_1bloom__filter_1_1BloomFilter.html" title="Bloom filter!!!" alt="" coords="261,160,383,281"/>
@@ -108,6 +108,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#a2bddb2f39d82722f5d8d1bb47ad27f13">removeEntry</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key)</td></tr>
 <tr class="memdesc:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a Value from this shard.  <a href="classkvs_1_1shard_1_1Shard.html#a2bddb2f39d82722f5d8d1bb47ad27f13">More...</a><br /></td></tr>
 <tr class="separator:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a164d81d482709352fe412ce72db3f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#a4a164d81d482709352fe412ce72db3f3">pushRemoveEntry</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key)</td></tr>
+<tr class="separator:a4a164d81d482709352fe412ce72db3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f8f4843559ac6c1e7ff339fa53afd62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkvs_1_1utils_1_1Value.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#a4f8f4843559ac6c1e7ff339fa53afd62">readValueDirectly</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <a class="el" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> ptr) const</td></tr>
 <tr class="memdesc:a4f8f4843559ac6c1e7ff339fa53afd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a Value directly from disk storage. Used when CacheMap entry is hit.  <a href="classkvs_1_1shard_1_1Shard.html#a4f8f4843559ac6c1e7ff339fa53afd62">More...</a><br /></td></tr>
 <tr class="separator:a4f8f4843559ac6c1e7ff339fa53afd62"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -405,6 +407,34 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Check if a rebuild needs to be called. </p>
+
+</div>
+</div>
+<a id="a4a164d81d482709352fe412ce72db3f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a164d81d482709352fe412ce72db3f3">&#9670;&nbsp;</a></span>pushRemoveEntry()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> kvs::shard::Shard::pushRemoveEntry </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a>&#160;</td>
+          <td class="paramname"><em>shardIndex</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;&#160;</td>
+          <td class="paramname"><em>key</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

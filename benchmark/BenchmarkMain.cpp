@@ -339,8 +339,6 @@ void testAll(size_t benchmarkOperationsNumber) {
   size_t setupElementsSize = 10000;
   double readOperationsRate = 0.2;
   std::cout << benchmarkOperationsNumber << ",";
-  benchmark::disk::testDiskOperations(benchmarkOperationsNumber,
-                                      readOperationsRate);
   benchmark::testRandomAccess(setupElementsSize, benchmarkOperationsNumber,
                               readOperationsRate);
   benchmark::testCacheAccessWithProbability(
@@ -349,6 +347,8 @@ void testAll(size_t benchmarkOperationsNumber) {
       setupElementsSize, benchmarkOperationsNumber, readOperationsRate, 0.5);
   benchmark::testCacheAccessWithProbability(
       setupElementsSize, benchmarkOperationsNumber, readOperationsRate, 0.95);
+  benchmark::disk::testDiskOperations(benchmarkOperationsNumber,
+                                      readOperationsRate);
   std::cout << "\n";
 }
 
@@ -356,12 +356,12 @@ int main() {
 
   benchmark::removeOperationsRate = 0.2; // between write and remove operations
 
-  // benchmark::disk::setUpDiskBenchmarkDirectory();
+  benchmark::disk::setUpDiskBenchmarkDirectory();
   size_t steps = 10;
   for (size_t i = 1; i < steps; ++i) {
     testAll(i * 10000);
   }
-  // benchmark::disk::clearUpDiskBenchmarkDirectory();
+  benchmark::disk::clearUpDiskBenchmarkDirectory();
 
   return 0;
 }
