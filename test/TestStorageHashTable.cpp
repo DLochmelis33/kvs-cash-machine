@@ -1,3 +1,5 @@
+#ifdef TEST_STORAGE_HASH_TABLE
+
 #include "StorageHashTable.h"
 #include "doctest.h"
 
@@ -145,9 +147,9 @@ TEST_CASE("test StorageHashTable") {
       srand(time(NULL));
 
       std::unordered_map<uint64_t, ptr_t> realMap;
-      StorageHashTable table(5000);
+      StorageHashTable table(STORAGE_HASH_TABLE_INITIAL_SIZE);
 
-      for (size_t ops = 0; ops < 15000; ops++) {
+      for (size_t ops = 0; ops < STORAGE_HASH_TABLE_MAX_SIZE; ops++) {
         uint64_t k = keyDistr(gen);
         ptr_t p = static_cast<unsigned char>(rand());
         if (p == Ptr::EMPTY_PTR_V)
@@ -170,41 +172,43 @@ TEST_CASE("test StorageHashTable") {
         }
       }
     }
+  }
 
-    SUBCASE("storing") {
-      StorageHashTable table(5);
+  SUBCASE("storing") {
+    StorageHashTable table(5);
 
-      SUBCASE("empty table") {
-        ByteArray serialized = table.serializeToByteArray();
-        StorageHashTable built(serialized);
-        CHECK(built.getEntries().size() == 0);
-      }
+    SUBCASE("empty table") {
+      ByteArray serialized = table.serializeToByteArray();
+      StorageHashTable built(serialized);
+      CHECK(built.getEntries().size() == 0);
+    }
 
-      SUBCASE("nonempty table") {
-        table.put(e1);
-        table.put(e2);
-        table.put(e3);
+    SUBCASE("nonempty table") {
+      table.put(e1);
+      table.put(e2);
+      table.put(e3);
 
-        ByteArray serialized = table.serializeToByteArray();
-        StorageHashTable built(serialized);
+      ByteArray serialized = table.serializeToByteArray();
+      StorageHashTable built(serialized);
 
-        CHECK(containsAll(built.getEntries(), {e1, e2, e3}));
-      }
+      CHECK(containsAll(built.getEntries(), {e1, e2, e3}));
+    }
 
-      SUBCASE("resized table") {
-        table.put(e1);
-        table.put(e2);
-        table.put(e3);
-        table.put(e4);
-        table.put(e5);
-        table.put(e6);
+    SUBCASE("resized table") {
+      table.put(e1);
+      table.put(e2);
+      table.put(e3);
+      table.put(e4);
+      table.put(e5);
+      table.put(e6);
 
-        ByteArray serialized = table.serializeToByteArray();
-        StorageHashTable built(serialized);
-        CHECK(containsAll(built.getEntries(), {e1, e2, e3, e4, e5, e6}));
-      }
+      ByteArray serialized = table.serializeToByteArray();
+      StorageHashTable built(serialized);
+      CHECK(containsAll(built.getEntries(), {e1, e2, e3, e4, e5, e6}));
     }
   }
 }
 
 } // namespace test_kvs::storage_hash_table
+
+#endif

@@ -21,7 +21,8 @@ StorageHashTable::StorageHashTable(const ByteArray array) {
         *reinterpret_cast<const ptr_t*>(array.get() + i * entrySize + KEY_SIZE);
     data[i] = Entry(key, Ptr(p));
   }
-  usedSize = *reinterpret_cast<const size_t*>(array.get() + withoutUsedSize);
+  memcpy(reinterpret_cast<char*>(&usedSize), array.get() + withoutUsedSize,
+         sizeof(usedSize));
 }
 
 ByteArray StorageHashTable::serializeToByteArray() const noexcept {

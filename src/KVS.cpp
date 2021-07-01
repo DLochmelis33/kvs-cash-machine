@@ -33,6 +33,9 @@ void KVS::pushOperation(Entry displaced) {
     assert(false && "pushing EMPTY_PTR makes no sense");
   }
   }
+
+  if(shards[shardIndex].isRebuildRequired(shardIndex))
+    rebuildShard(shardIndex);
 }
 
 void KVS::add(const Key& key, const Value& value) {
