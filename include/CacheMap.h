@@ -9,7 +9,7 @@ namespace kvs::cache_map {
 using namespace kvs::utils;
 
 /**
- * @brief Cache map. Is stored in RAM.
+ * @brief Cache map based on a hash table. Stored in RAM.
  *
  */
 class CacheMap final {
@@ -18,8 +18,8 @@ public:
   CacheMap(size_t size) noexcept;
 
   /**
-     * @brief Put Ptr by Key. If not enough space, displace a random Entry and return it. If an
-     * Entry with the given Key already exists, overwrite it.
+     * @brief Put the Entry into the map. If there isn't enough space, displace a random Entry and return it. If an
+     * Entry with the same Key already exists, overwrite it.
      *
      * @return Displaced Entry, if any.
      */

@@ -34,7 +34,7 @@ void KVS::pushOperation(Entry displaced) {
   }
   }
 
-  if(shards[shardIndex].isRebuildRequired(shardIndex))
+  if (shards[shardIndex].isRebuildRequired(shardIndex))
     rebuildShard(shardIndex);
 }
 
@@ -180,7 +180,11 @@ void KVS::rebuildShard(shard_index_t shardIndex) {
 }
 
 void KVS::clear() {
-  // TODO
+  throw std::logic_error("not implemented");
+
+  // from C++ with love
+  // this->~KVS();
+  // new (this) KVS();
 }
 
 } // namespace kvs

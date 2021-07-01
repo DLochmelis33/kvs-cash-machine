@@ -25,8 +25,8 @@ constexpr size_t STORAGE_HASH_TABLE_MAX_SIZE =
    STORAGE_HASH_TABLE_EXPANSION_FACTOR * STORAGE_HASH_TABLE_INITIAL_SIZE;
 
 // #define TEST_STORAGE_HASH_TABLE
-// constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE = 25000; // TODO debug
-// constexpr size_t STORAGE_HASH_TABLE_MAX_SIZE = 50000; // TODO debug
+// constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE = 25000;
+// constexpr size_t STORAGE_HASH_TABLE_MAX_SIZE = 50000;
 
 const std::string STORAGE_DIRECTORY_PATH = "../data/";
 
@@ -37,6 +37,10 @@ using seed_t = hash_t;
 using shard_index_t = uint16_t;
 using values_cnt_t = uint8_t;
 
+/**
+ * @brief The key type KVS operates with.
+ * 
+ */
 class Key final {
 public:
   explicit Key(ByteArray bytes = ByteArray{KEY_SIZE}) noexcept;
@@ -53,6 +57,10 @@ private:
 
 hash_t hashKey(const Key& key, seed_t seed = 0) noexcept;
 
+/**
+ * @brief The value type KVS operates with.
+ * 
+ */
 class Value final {
 public:
   explicit Value(ByteArray bytes = ByteArray(0));
@@ -73,42 +81,40 @@ struct KeyValue final {
 /**
  * @brief A convenience class to check Ptr's type.
  * 
- * PRESENT - this Ptr points to an actual value
- * DELETED - this Ptr points to a value that existed before, but now is deleted from KVS
- * SYNC_DELETED (deprecated, see NONEXSITENT) - this Ptr points to nowhere, was lazily deleted in CacheMap and then synced with the Shard
- * NONEXISTENT - this Ptr points to nowhere, but it was PRESENT before and the current corresponding Key is valid
- * EMPTY_PTR - this Ptr is equivalent to NULL
- *
- * NONEXISTENT is forbidden in StorageHashTable
+ * PRESENT - this Ptr points to an actual value.
+ * DELETED - this Ptr points to a value that existed before, but now is deleted from KVS.
+ * NONEXISTENT - this Ptr points to nowhere, but the corresponding Key definitely is not currently stored in the KVS. Is a special Ptr.
+ * EMPTY_PTR - this Ptr points to nowhere and should be treated as a NULL pointer. Is a special Ptr.
  *
  */
 enum class PtrType {
   PRESENT,
   DELETED,
   EMPTY_PTR,
-  NONEXISTENT /*, SYNC_DELETED */
+  NONEXISTENT
 };
 
 /**
- * @brief A pointer determining the position of the associated value in the values file. Also stores
+ * @brief A pointer determining the position of the associated Value in the values file. Also stores
  * information whether the associated value is present or deleted.
+ * 
+ * The position is internally stored in a ptr_t variable as the index of the Value. However, there are some other convenience methods to acces the data.
  *
  */
 class Ptr final {
 
 public:
   /**
-   * @brief Reserved values for specific pointers.
+   * @brief Reserved values for special pointers.
    *
    */
   static constexpr ptr_t EMPTY_PTR_V = 0b01111111;
   static constexpr ptr_t NONEXISTENT_V = 0b01111110;
-  // static constexpr ptr_t SYNC_DELETED_V = 0b01111101;
 
   /**
    * @brief Construct a new Ptr from \b raw \b data.
    * 
-   * To create a Ptr to some index, use Ptr(size_t, bool).
+   * To create a Ptr to some actual value, use Ptr(size_t, bool).
    * 
    * @param ptr 
    */
@@ -121,18 +127,21 @@ public:
   explicit Ptr(size_t offset, bool isPresent) noexcept;
 
   /**
-   * @brief Construct a new empty Ptr. // TODO docs
+   * @brief Construct a new special Ptr (see PtrType for details). Fails on trying to construct a non-special Ptr with this method.
    * 
    */
   explicit Ptr(PtrType type = PtrType::EMPTY_PTR) noexcept;
 
   /**
-   * @brief Get the actual index stored in this pointer.
+   * @brief Get the \b index stored in this pointer.
    *
    */
-  size_t get() const noexcept;
+  size_t getIndex() const noexcept;
 
-  // TODO docs
+  /**
+   * @brief Get the \b offset stored in this pointer. Equivalent to getIndex() * VALUE_SIZE.
+   * 
+   */
   size_t getOffset() const noexcept;
 
   /**
@@ -150,11 +159,13 @@ public:
   /**
    * @brief Set state for the Value associated with this Ptr.
    *
-   * @param isPresent
    */
   void setValuePresent(bool isPresent) noexcept;
 
-  // TODO docs
+  /**
+   * @brief Get the type of this pointer (see PtrType for details).
+   * 
+   */
   PtrType getType() const noexcept;
 
   bool operator==(const Ptr& other) const noexcept;
@@ -168,6 +179,9 @@ private:
 
 /**
  * @brief \b DO \b NOT \b CHANGE \b THIS \b !!!!!!!!!
+ * 
+ * A static object intended for passing a (non-const) reference to an EMPTY_PTR, kind of like a singleton. 
+ * Absolutely \b not intended to be changed during runtime.
  * 
  */
 static Ptr EMPTY_PTR = Ptr();

@@ -12,7 +12,9 @@ using namespace kvs::utils;
 /**
  * @brief The hash table that is stored on disk.
  * 
- * Operates in RAM, so can be used with any kind of storage via serializing.
+ * Operates in RAM, so can be used with any kind of storage via serializing to ByteArray.
+ * 
+ * Invariant: no NONEXISTENT Ptr-s are allowed to be stored in this table.
  *
  */
 class StorageHashTable final {
@@ -20,7 +22,7 @@ public:
   /**
    * @brief Deserialize a StorageHashTable from serializedStorageHashTable.
    * 
-   * @throws KVSException if the data is corrupted
+   * @throws KVSException if the data is corrupted.
    */
   explicit StorageHashTable(const ByteArray serializedStorageHashTable);
 
@@ -50,11 +52,10 @@ public:
   void put(const Entry& entry) noexcept;
 
   /**
-   * @brief Get all entries present in the map.
+   * @brief Get all entries \b present (i.e. those which Ptr is not EMPTY_PTR) in the map.
    * 
    * Used during rebuilding.
    * 
-   * @return std::vector<Entry> 
    */
   std::vector<Entry> getEntries() const noexcept;
 
