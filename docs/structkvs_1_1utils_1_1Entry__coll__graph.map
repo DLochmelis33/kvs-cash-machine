@@ -1,9 +1,9 @@
 <map id="kvs::utils::Entry" name="kvs::utils::Entry">
 <area shape="rect" id="node1" title="A wrapper for entries in hash tables (i.e. CacheMap and StorageHashTable)." alt="" coords="91,645,199,737"/>
-<area shape="rect" id="node2" href="$classkvs_1_1utils_1_1Key.html" title=" " alt="" coords="21,410,125,531"/>
+<area shape="rect" id="node2" href="$classkvs_1_1utils_1_1Key.html" title="The key type KVS operates with." alt="" coords="21,410,125,531"/>
 <area shape="rect" id="node3" href="$classkvs_1_1utils_1_1ByteArray.html" title="A wrapper for an array and its length." alt="" coords="5,145,140,267"/>
 <area shape="rect" id="node4" title=" " alt="" coords="45,5,100,83"/>
-<area shape="rect" id="node5" href="$classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated value in the values file. Also stores informatio..." alt="" coords="149,359,287,583"/>
+<area shape="rect" id="node5" href="$classkvs_1_1utils_1_1Ptr.html" title="A pointer determining the position of the associated Value in the values file. Also stores informatio..." alt="" coords="149,359,287,583"/>
 <area shape="rect" id="node6" title=" " alt="" coords="173,167,247,245"/>
 <area shape="rect" id="node7" title=" " alt="" coords="271,167,413,245"/>
 </map>

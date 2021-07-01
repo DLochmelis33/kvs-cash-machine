@@ -2,7 +2,7 @@
 \label{classkvs_1_1utils_1_1Ptr}\index{kvs::utils::Ptr@{kvs::utils::Ptr}}
 
 
-A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted.  
+A pointer determining the position of the associated \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} in the values file. Also stores information whether the associated value is present or deleted.  
 
 
 
@@ -27,11 +27,11 @@ Collaboration diagram for kvs\+::utils\+::Ptr\+:
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a142b5df7df0c1f3a95b1758854027c67}{Ptr}} (size\+\_\+t offset, bool is\+Present) noexcept
 \begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} pointing to the given offset and with the given is\+Present flag. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a96be8000d80c8a6b58888bba7ab430ef}{Ptr}} (\mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{Ptr\+Type}} type=\mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a89dfcc5d1486f1fb8d1e44a076aa6b9b}{Ptr\+Type\+::\+EMPTY\+\_\+\+PTR}}) noexcept
-\begin{DoxyCompactList}\small\item\em Construct a new empty \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. // TODO docs. \end{DoxyCompactList}\item 
-size\+\_\+t \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a1a3b4e65c545d399e047fda4e19f743a}{get}} () const noexcept
-\begin{DoxyCompactList}\small\item\em Get the actual index stored in this pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Construct a new special \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} (see Ptr\+Type for details). Fails on trying to construct a non-\/special \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} with this method. \end{DoxyCompactList}\item 
+size\+\_\+t \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a41bdbc61c09ab20d80509de884bc1a4c}{get\+Index}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get the {\bfseries{index}} stored in this pointer. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a91dfabc2c8af704e77316540ac69ece0}{get\+Offset}} () const noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Get the {\bfseries{offset}} stored in this pointer. Equivalent to \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a41bdbc61c09ab20d80509de884bc1a4c}{get\+Index()}} $\ast$ VALUE\+\_\+\+SIZE. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_ace450b5aa83e3dad4a2352c56684327a}{get\+Raw}} () const noexcept
 \begin{DoxyCompactList}\small\item\em Get the raw pointer data (including control bits). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a00cea94797c201fd95f0403928c1bf6e}{is\+Value\+Present}} () const noexcept
@@ -39,7 +39,7 @@ bool \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a00cea94797c201fd95f0403928c1bf6e
 void \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a1b6da0a4c23efdbeb2bc86bf005160d6}{set\+Value\+Present}} (bool is\+Present) noexcept
 \begin{DoxyCompactList}\small\item\em Set state for the \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} associated with this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{Ptr\+Type}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_aa31bfd800bc28d9568d1a4f50451f583}{get\+Type}} () const noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Get the type of this pointer (see Ptr\+Type for details). \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a7129ae45277f930b6ce881d668e23283}{operator==}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \&other) const noexcept
 \item 
 bool \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_abdc75b05c4e78fb1b930d00aeb4fb74b}{operator!=}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \&other) const noexcept
@@ -48,7 +48,7 @@ bool \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_abdc75b05c4e78fb1b930d00aeb4fb74b
 \begin{DoxyCompactItemize}
 \item 
 static constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_aa7c17d1e4214eaf834ec13350909cc90}{EMPTY\+\_\+\+PTR\+\_\+V}} = 0b01111111
-\begin{DoxyCompactList}\small\item\em Reserved values for specific pointers. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Reserved values for special pointers. \end{DoxyCompactList}\item 
 static constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a83596e1fe}{ptr\+\_\+t}} \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a2cc5d756442c14ae0186dc99b0ffbcc2}{NONEXISTENT\+\_\+V}} = 0b01111110
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
@@ -64,7 +64,9 @@ static constexpr \mbox{\hyperlink{namespacekvs_1_1utils_a3328f5d629385bc4333f74a
 
 
 \doxysubsection{Detailed Description}
-A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. 
+A pointer determining the position of the associated \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} in the values file. Also stores information whether the associated value is present or deleted. 
+
+The position is internally stored in a ptr\+\_\+t variable as the index of the \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}}. However, there are some other convenience methods to acces the data. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_ac3cd59f69a826d9127921be7c9afcb46}\label{classkvs_1_1utils_1_1Ptr_ac3cd59f69a826d9127921be7c9afcb46}} 
@@ -77,7 +79,7 @@ A pointer determining the position of the associated value in the values file. A
 
 Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} from {\bfseries{raw}} {\bfseries{data}}. 
 
-To create a \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} to some index, use \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a142b5df7df0c1f3a95b1758854027c67}{Ptr(size\+\_\+t, bool)}}.
+To create a \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} to some actual value, use \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a142b5df7df0c1f3a95b1758854027c67}{Ptr(size\+\_\+t, bool)}}.
 
 
 \begin{DoxyParams}{Parameters}
@@ -102,26 +104,30 @@ Construct a new \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} pointing to the
 
 
 
-Construct a new empty \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. // TODO docs. 
+Construct a new special \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} (see Ptr\+Type for details). Fails on trying to construct a non-\/special \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} with this method. 
 
 
 
 \doxysubsection{Member Function Documentation}
-\mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a1a3b4e65c545d399e047fda4e19f743a}\label{classkvs_1_1utils_1_1Ptr_a1a3b4e65c545d399e047fda4e19f743a}} 
-\index{kvs::utils::Ptr@{kvs::utils::Ptr}!get@{get}}
-\index{get@{get}!kvs::utils::Ptr@{kvs::utils::Ptr}}
-\doxysubsubsection{\texorpdfstring{get()}{get()}}
-{\footnotesize\ttfamily size\+\_\+t kvs\+::utils\+::\+Ptr\+::get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+\mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a41bdbc61c09ab20d80509de884bc1a4c}\label{classkvs_1_1utils_1_1Ptr_a41bdbc61c09ab20d80509de884bc1a4c}} 
+\index{kvs::utils::Ptr@{kvs::utils::Ptr}!getIndex@{getIndex}}
+\index{getIndex@{getIndex}!kvs::utils::Ptr@{kvs::utils::Ptr}}
+\doxysubsubsection{\texorpdfstring{getIndex()}{getIndex()}}
+{\footnotesize\ttfamily size\+\_\+t kvs\+::utils\+::\+Ptr\+::get\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
 
 
 
-Get the actual index stored in this pointer. 
+Get the {\bfseries{index}} stored in this pointer. 
 
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a91dfabc2c8af704e77316540ac69ece0}\label{classkvs_1_1utils_1_1Ptr_a91dfabc2c8af704e77316540ac69ece0}} 
 \index{kvs::utils::Ptr@{kvs::utils::Ptr}!getOffset@{getOffset}}
 \index{getOffset@{getOffset}!kvs::utils::Ptr@{kvs::utils::Ptr}}
 \doxysubsubsection{\texorpdfstring{getOffset()}{getOffset()}}
 {\footnotesize\ttfamily size\+\_\+t kvs\+::utils\+::\+Ptr\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Get the {\bfseries{offset}} stored in this pointer. Equivalent to \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr_a41bdbc61c09ab20d80509de884bc1a4c}{get\+Index()}} $\ast$ VALUE\+\_\+\+SIZE. 
 
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_ace450b5aa83e3dad4a2352c56684327a}\label{classkvs_1_1utils_1_1Ptr_ace450b5aa83e3dad4a2352c56684327a}} 
 \index{kvs::utils::Ptr@{kvs::utils::Ptr}!getRaw@{getRaw}}
@@ -138,6 +144,10 @@ Get the raw pointer data (including control bits).
 \index{getType@{getType}!kvs::utils::Ptr@{kvs::utils::Ptr}}
 \doxysubsubsection{\texorpdfstring{getType()}{getType()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53}{Ptr\+Type}} kvs\+::utils\+::\+Ptr\+::get\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Get the type of this pointer (see Ptr\+Type for details). 
 
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a00cea94797c201fd95f0403928c1bf6e}\label{classkvs_1_1utils_1_1Ptr_a00cea94797c201fd95f0403928c1bf6e}} 
 \index{kvs::utils::Ptr@{kvs::utils::Ptr}!isValuePresent@{isValuePresent}}
@@ -172,11 +182,6 @@ Check if this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to a prese
 Set state for the \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} associated with this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em is\+Present} & \\
-\hline
-\end{DoxyParams}
-
 
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a8f42c135534af5998f940dd8bb9f1fdc}\label{classkvs_1_1utils_1_1Ptr_a8f42c135534af5998f940dd8bb9f1fdc}} 
@@ -193,7 +198,7 @@ Set state for the \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} associate
 
 
 
-Reserved values for specific pointers. 
+Reserved values for special pointers. 
 
 \mbox{\Hypertarget{classkvs_1_1utils_1_1Ptr_a2cc5d756442c14ae0186dc99b0ffbcc2}\label{classkvs_1_1utils_1_1Ptr_a2cc5d756442c14ae0186dc99b0ffbcc2}} 
 \index{kvs::utils::Ptr@{kvs::utils::Ptr}!NONEXISTENT\_V@{NONEXISTENT\_V}}

@@ -10,17 +10,20 @@ namespace kvs::storage {
 using kvs::utils::ByteArray;
 
 /**
- * @brief Read the entire file.
+ * @brief Read the entire file. 
+ * 
+ * If the file is empty, returns a ByteArray of zero length.
  *
  */
-ByteArray readFile(std::string filename); // TODO docs: empty file is ok
+ByteArray readFile(std::string filename);
 
 /**
- * @brief Write the entire file. Create file if it's not created.
+ * @brief Overwrite the entire file - that is, truncate, write and close it. Create file if it doesn't exist.
+ * 
+ * Supports zero-length ByteArray.
  *
  */
 void writeFile(std::string filename, ByteArray bytes);
-// TODO docs: file is truncated if it exists, zero-length bytes is ok
 
 /**
  * @brief An abstraction for safely opening, reading, writing and closing files on disk.
@@ -30,8 +33,12 @@ void writeFile(std::string filename, ByteArray bytes);
  */
 class Storage final {
 public:
-  explicit Storage(
-      std::string filename); // TODO docs: use only for existent filename
+  /**
+   * @brief Construct a new Storage from the specified file. Fails if the file doesn't exist.
+   * 
+   * @throws KVSException if the file doesn't exist.
+   */
+  explicit Storage(std::string filename);
 
   /**
     * @brief Apply all changes to the file contents (if any) and close the file. All further operations with this Storage object are disallowed.
@@ -40,23 +47,31 @@ public:
   void close();
 
   /**
-     * @brief Read a part of file. // TODO docs: offset from the beggining; zero length is ok
+     * @brief Read a part of file. 
+     * 
+     * @param offset The offset from the beggining of the file.
+     * @param length The length of the part to read. Can be 0.
      *
      */
   ByteArray read(size_t offset, size_t length);
 
   /**
-     * @brief Write a part of file. // TODO docs: offset from the beggining; zero length is ok; if offset + bytes.length() > eof append
+     * @brief Write a part of file. If the specified part exceeds the end of file, extra data is appended.
      *
+     * @param offset The offset from the beggining of the file.
+     * @param length The length of the part to read. Can be 0.
+     * 
      */
   void write(size_t offset, ByteArray bytes);
 
   /**
     * @brief Append to end of file.
     * 
+    * Supports zero-length ByteArray.
+    * 
     * @return The size of file in bytes before appending.
     */
-  size_t append(ByteArray bytes); // TODO docs: zero length is ok
+  size_t append(ByteArray bytes);
 
 private:
   std::fstream file;

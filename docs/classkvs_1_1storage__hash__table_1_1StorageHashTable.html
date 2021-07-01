@@ -111,7 +111,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a5df2feda0ae3e314c77e30aa5bc5b3f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put an Entry into the table.  <a href="classkvs_1_1storage__hash__table_1_1StorageHashTable.html#a5df2feda0ae3e314c77e30aa5bc5b3f5">More...</a><br /></td></tr>
 <tr class="separator:a5df2feda0ae3e314c77e30aa5bc5b3f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73cb6562228c610b164aff1a4601ab94"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1storage__hash__table_1_1StorageHashTable.html#a73cb6562228c610b164aff1a4601ab94">getEntries</a> () const noexcept</td></tr>
-<tr class="memdesc:a73cb6562228c610b164aff1a4601ab94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all entries present in the map.  <a href="classkvs_1_1storage__hash__table_1_1StorageHashTable.html#a73cb6562228c610b164aff1a4601ab94">More...</a><br /></td></tr>
+<tr class="memdesc:a73cb6562228c610b164aff1a4601ab94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all entries <b>present</b> (i.e. those which Ptr is not EMPTY_PTR) in the map.  <a href="classkvs_1_1storage__hash__table_1_1StorageHashTable.html#a73cb6562228c610b164aff1a4601ab94">More...</a><br /></td></tr>
 <tr class="separator:a73cb6562228c610b164aff1a4601ab94"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -129,7 +129,8 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The hash table that is stored on disk. </p>
-<p>Operates in RAM, so can be used with any kind of storage via serializing. </p>
+<p>Operates in RAM, so can be used with any kind of storage via serializing to ByteArray.</p>
+<p>Invariant: no NONEXISTENT Ptr-s are allowed to be stored in this table. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a037bd3008c34a8bb8097e1bfe8219714"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a037bd3008c34a8bb8097e1bfe8219714">&#9670;&nbsp;</a></span>StorageHashTable() <span class="overload">[1/2]</span></h2>
@@ -158,7 +159,7 @@ Private Attributes</h2></td></tr>
 <p>Deserialize a <a class="el" href="classkvs_1_1storage__hash__table_1_1StorageHashTable.html" title="The hash table that is stored on disk.">StorageHashTable</a> from serializedStorageHashTable. </p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
-    <tr><td class="paramname"><a class="el" href="classkvs_1_1KVSException.html">KVSException</a></td><td>if the data is corrupted </td></tr>
+    <tr><td class="paramname"><a class="el" href="classkvs_1_1KVSException.html">KVSException</a></td><td>if the data is corrupted. </td></tr>
   </table>
   </dd>
 </dl>
@@ -306,9 +307,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Get all entries present in the map. </p>
-<p>Used during rebuilding.</p>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;Entry&gt; </dd></dl>
+<p>Get all entries <b>present</b> (i.e. those which Ptr is not EMPTY_PTR) in the map. </p>
+<p>Used during rebuilding. </p>
 
 </div>
 </div>

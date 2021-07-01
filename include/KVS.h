@@ -22,7 +22,7 @@ public:
   KVS();
 
   /**
-     * @brief Add a KeyValue to the storage.
+     * @brief Add a new record to the storage.
      *
      */
   void add(const Key& key, const Value& value);
@@ -43,7 +43,7 @@ public:
   std::optional<Value> get(const Key& key);
 
   /**
-     * @brief Clear the storage.
+     * @brief Clear the storage entirely.
      *
      */
   void clear();
@@ -69,7 +69,7 @@ private:
   CacheMap cacheMap;
 
   /**
-    * @brief When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard.
+    * @brief When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard. Use this method for that.
     * 
     * @param displaced 
     */

@@ -1,5 +1,5 @@
 <map id="kvs::cache_map::CacheMap" name="kvs::cache_map::CacheMap">
-<area shape="rect" id="node1" title="Cache map. Is stored in RAM." alt="" coords="29,160,213,296"/>
+<area shape="rect" id="node1" title="Cache map based on a hash table. Stored in RAM." alt="" coords="29,160,213,296"/>
 <area shape="rect" id="node2" title=" " alt="" coords="5,5,125,97"/>
 <area shape="rect" id="node3" title=" " alt="" coords="149,13,205,90"/>
 </map>

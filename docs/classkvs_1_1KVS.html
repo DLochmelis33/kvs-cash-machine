@@ -86,7 +86,7 @@ Collaboration diagram for kvs::KVS:</div>
 <div class="center"><img src="classkvs_1_1KVS__coll__graph.png" border="0" usemap="#akvs_1_1KVS_coll__map" alt="Collaboration graph"/></div>
 <map name="akvs_1_1KVS_coll__map" id="akvs_1_1KVS_coll__map">
 <area shape="rect" title="The class that provides an access to a key&#45;value storage." alt="" coords="190,359,311,524"/>
-<area shape="rect" href="classkvs_1_1cache__map_1_1CacheMap.html" title="Cache map. Is stored in RAM." alt="" coords="29,160,213,296"/>
+<area shape="rect" href="classkvs_1_1cache__map_1_1CacheMap.html" title="Cache map based on a hash table. Stored in RAM." alt="" coords="29,160,213,296"/>
 <area shape="rect" title=" " alt="" coords="5,5,125,97"/>
 <area shape="rect" title=" " alt="" coords="149,13,205,90"/>
 <area shape="rect" title=" " alt="" coords="237,182,365,274"/>
@@ -98,7 +98,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a534534fcda1c0bbb5c3fa81e7ffca235"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1KVS.html#a534534fcda1c0bbb5c3fa81e7ffca235">KVS</a> ()</td></tr>
 <tr class="separator:a534534fcda1c0bbb5c3fa81e7ffca235"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a217f1871a6b09944d85408803de01bf5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1KVS.html#a217f1871a6b09944d85408803de01bf5">add</a> (const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key, const <a class="el" href="classkvs_1_1utils_1_1Value.html">Value</a> &amp;value)</td></tr>
-<tr class="memdesc:a217f1871a6b09944d85408803de01bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a KeyValue to the storage.  <a href="classkvs_1_1KVS.html#a217f1871a6b09944d85408803de01bf5">More...</a><br /></td></tr>
+<tr class="memdesc:a217f1871a6b09944d85408803de01bf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a new record to the storage.  <a href="classkvs_1_1KVS.html#a217f1871a6b09944d85408803de01bf5">More...</a><br /></td></tr>
 <tr class="separator:a217f1871a6b09944d85408803de01bf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c8939cb3dd5832de711caeefed81115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1KVS.html#a7c8939cb3dd5832de711caeefed81115">remove</a> (const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key)</td></tr>
 <tr class="memdesc:a7c8939cb3dd5832de711caeefed81115"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove the Key and associated Value from storage. Lazy operation.  <a href="classkvs_1_1KVS.html#a7c8939cb3dd5832de711caeefed81115">More...</a><br /></td></tr>
@@ -107,7 +107,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0a71daf1abd056bc2032a60cda41dffc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Value associated with the Key.  <a href="classkvs_1_1KVS.html#a0a71daf1abd056bc2032a60cda41dffc">More...</a><br /></td></tr>
 <tr class="separator:a0a71daf1abd056bc2032a60cda41dffc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1805febc7b03075273809efbbca62f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1KVS.html#ae1805febc7b03075273809efbbca62f9">clear</a> ()</td></tr>
-<tr class="memdesc:ae1805febc7b03075273809efbbca62f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the storage.  <a href="classkvs_1_1KVS.html#ae1805febc7b03075273809efbbca62f9">More...</a><br /></td></tr>
+<tr class="memdesc:ae1805febc7b03075273809efbbca62f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear the storage entirely.  <a href="classkvs_1_1KVS.html#ae1805febc7b03075273809efbbca62f9">More...</a><br /></td></tr>
 <tr class="separator:ae1805febc7b03075273809efbbca62f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
@@ -116,7 +116,7 @@ Private Member Functions</h2></td></tr>
 <tr class="memdesc:ac4f35134777c7bb68fd869be2b1d8e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the shard with the given index.  <a href="classkvs_1_1KVS.html#ac4f35134777c7bb68fd869be2b1d8e13">More...</a><br /></td></tr>
 <tr class="separator:ac4f35134777c7bb68fd869be2b1d8e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37cf61d6279dd40bc7ef8df4d7005322"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1KVS.html#a37cf61d6279dd40bc7ef8df4d7005322">pushOperation</a> (<a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> displaced)</td></tr>
-<tr class="memdesc:a37cf61d6279dd40bc7ef8df4d7005322"><td class="mdescLeft">&#160;</td><td class="mdescRight">When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard.  <a href="classkvs_1_1KVS.html#a37cf61d6279dd40bc7ef8df4d7005322">More...</a><br /></td></tr>
+<tr class="memdesc:a37cf61d6279dd40bc7ef8df4d7005322"><td class="mdescLeft">&#160;</td><td class="mdescRight">When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard. Use this method for that.  <a href="classkvs_1_1KVS.html#a37cf61d6279dd40bc7ef8df4d7005322">More...</a><br /></td></tr>
 <tr class="separator:a37cf61d6279dd40bc7ef8df4d7005322"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
@@ -175,7 +175,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add a KeyValue to the storage. </p>
+<p>Add a new record to the storage. </p>
 
 </div>
 </div>
@@ -194,7 +194,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Clear the storage. </p>
+<p>Clear the storage entirely. </p>
 
 </div>
 </div>
@@ -243,7 +243,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard. </p>
+<p>When an entry is displaced from the CacheMap, the corresponding operation should be pushed to the shard. Use this method for that. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">displaced</td><td></td></tr>

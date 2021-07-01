@@ -6,13 +6,13 @@
 class \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}}
 \begin{DoxyCompactList}\small\item\em A wrapper for an array and its length. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}}
-\item 
+\begin{DoxyCompactList}\small\item\em The key type \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} operates with. \end{DoxyCompactList}\item 
 class \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}}
-\item 
+\begin{DoxyCompactList}\small\item\em The value type \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} operates with. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structkvs_1_1utils_1_1KeyValue}{Key\+Value}}
 \item 
 class \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}
-\begin{DoxyCompactList}\small\item\em A pointer determining the position of the associated value in the values file. Also stores information whether the associated value is present or deleted. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em A pointer determining the position of the associated \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} in the values file. Also stores information whether the associated value is present or deleted. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}
 \begin{DoxyCompactList}\small\item\em A wrapper for entries in hash tables (i.\+e. Cache\+Map and Storage\+Hash\+Table). \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
@@ -119,9 +119,7 @@ const std\+::string \mbox{\hyperlink{namespacekvs_1_1utils_ae5e2bb2e3084ebe05ab3
 
 A convenience class to check \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}\textquotesingle{}s type. 
 
-PRESENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to an actual value DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to a value that existed before, but now is deleted from \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} SYNC\+\_\+\+DELETED (deprecated, see NONEXSITENT) -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, was lazily deleted in Cache\+Map and then synced with the Shard NONEXISTENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, but it was PRESENT before and the current corresponding \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} is valid EMPTY\+\_\+\+PTR -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} is equivalent to NULL
-
-NONEXISTENT is forbidden in Storage\+Hash\+Table \begin{DoxyEnumFields}{Enumerator}
+PRESENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to an actual value. DELETED -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to a value that existed before, but now is deleted from \mbox{\hyperlink{classkvs_1_1KVS}{KVS}}. NONEXISTENT -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere, but the corresponding \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} definitely is not currently stored in the \mbox{\hyperlink{classkvs_1_1KVS}{KVS}}. Is a special \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. EMPTY\+\_\+\+PTR -\/ this \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} points to nowhere and should be treated as a NULL pointer. Is a special \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}}. \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{PRESENT@{PRESENT}!kvs::utils@{kvs::utils}}\index{kvs::utils@{kvs::utils}!PRESENT@{PRESENT}}}\mbox{\Hypertarget{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}\label{namespacekvs_1_1utils_a2109c4ca654740f8857bfd783ceadd53a720ff3fec5d13dcf3d3aec6d5726fc36}} 
 PRESENT&\\
 \hline

@@ -79,7 +79,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>A single part of <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. Contains a BloomFilter and loads hash tables into RAM from disk when necessary.  
+<p>A single part of <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from disk when necessary.  
  <a href="classkvs_1_1shard_1_1Shard.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Shard_8h_source.html">Shard.h</a>&gt;</code></p>
@@ -88,7 +88,7 @@ Collaboration diagram for kvs::shard::Shard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkvs_1_1shard_1_1Shard__coll__graph.png" border="0" usemap="#akvs_1_1shard_1_1Shard_coll__map" alt="Collaboration graph"/></div>
 <map name="akvs_1_1shard_1_1Shard_coll__map" id="akvs_1_1shard_1_1Shard_coll__map">
-<area shape="rect" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ..." alt="" coords="89,344,304,627"/>
+<area shape="rect" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ..." alt="" coords="89,344,304,627"/>
 <area shape="rect" title=" " alt="" coords="5,182,60,259"/>
 <area shape="rect" title=" " alt="" coords="166,182,227,259"/>
 <area shape="rect" href="classkvs_1_1bloom__filter_1_1BloomFilter.html" title="Bloom filter!!!" alt="" coords="261,160,383,281"/>
@@ -106,9 +106,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a4b904e68f840420769a1e76650f507c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write a Value to this shard.  <a href="classkvs_1_1shard_1_1Shard.html#a4b904e68f840420769a1e76650f507c5">More...</a><br /></td></tr>
 <tr class="separator:a4b904e68f840420769a1e76650f507c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#a2bddb2f39d82722f5d8d1bb47ad27f13">removeEntry</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key)</td></tr>
-<tr class="memdesc:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a Value from this shard.  <a href="classkvs_1_1shard_1_1Shard.html#a2bddb2f39d82722f5d8d1bb47ad27f13">More...</a><br /></td></tr>
+<tr class="memdesc:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove a Value from this shard and decrease aliveValuesCnt.  <a href="classkvs_1_1shard_1_1Shard.html#a2bddb2f39d82722f5d8d1bb47ad27f13">More...</a><br /></td></tr>
 <tr class="separator:a2bddb2f39d82722f5d8d1bb47ad27f13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a164d81d482709352fe412ce72db3f3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#a4a164d81d482709352fe412ce72db3f3">pushRemoveEntry</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key)</td></tr>
+<tr class="memdesc:a4a164d81d482709352fe412ce72db3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push the delayed removal operation onto disk.  <a href="classkvs_1_1shard_1_1Shard.html#a4a164d81d482709352fe412ce72db3f3">More...</a><br /></td></tr>
 <tr class="separator:a4a164d81d482709352fe412ce72db3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f8f4843559ac6c1e7ff339fa53afd62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkvs_1_1utils_1_1Value.html">Value</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#a4f8f4843559ac6c1e7ff339fa53afd62">readValueDirectly</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, <a class="el" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> ptr) const</td></tr>
 <tr class="memdesc:a4f8f4843559ac6c1e7ff339fa53afd62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read a Value directly from disk storage. Used when CacheMap entry is hit.  <a href="classkvs_1_1shard_1_1Shard.html#a4f8f4843559ac6c1e7ff339fa53afd62">More...</a><br /></td></tr>
@@ -141,11 +142,13 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:acfce9f7a423561d91367d0c635964283"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">storageDirectoryPath</a> = STORAGE_DIRECTORY_PATH</td></tr>
+<tr class="memdesc:acfce9f7a423561d91367d0c635964283"><td class="mdescLeft">&#160;</td><td class="mdescRight">The path to the directory that contains the internal files.  <a href="classkvs_1_1shard_1_1Shard.html#acfce9f7a423561d91367d0c635964283">More...</a><br /></td></tr>
 <tr class="separator:acfce9f7a423561d91367d0c635964283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:aced5ca8c8178a1d54148ad7585f561eb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#aced5ca8c8178a1d54148ad7585f561eb">Shard</a> () noexcept</td></tr>
+<tr class="memdesc:aced5ca8c8178a1d54148ad7585f561eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disallow to create <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> objects with constructors. Use <a class="el" href="classkvs_1_1shard_1_1ShardBuilder.html#a858dc60df2eb217fcc0b3a78690c7478" title="Create a Shard object.">ShardBuilder::createShard</a> instead.  <a href="classkvs_1_1shard_1_1Shard.html#aced5ca8c8178a1d54148ad7585f561eb">More...</a><br /></td></tr>
 <tr class="separator:aced5ca8c8178a1d54148ad7585f561eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc5b57019c116cbb5704eb84f335639b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1Shard.html#afc5b57019c116cbb5704eb84f335639b">Shard</a> (const std::vector&lt; <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &gt; &amp;storageHashTableEntries) noexcept</td></tr>
 <tr class="separator:afc5b57019c116cbb5704eb84f335639b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,7 +168,7 @@ Friends</h2></td></tr>
 <tr class="separator:a75f5d7eb5774c232dbb08b3c2a02dbd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>A single part of <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. Contains a BloomFilter and loads hash tables into RAM from disk when necessary. </p>
+<div class="textblock"><p>A single part of <a class="el" href="classkvs_1_1KVS.html" title="The class that provides an access to a key-value storage.">KVS</a> after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from disk when necessary. </p>
 <p>Instantiated via <a class="el" href="classkvs_1_1shard_1_1ShardBuilder.html">ShardBuilder</a> class static method. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aced5ca8c8178a1d54148ad7585f561eb"></a>
@@ -190,6 +193,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Disallow to create <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> objects with constructors. Use <a class="el" href="classkvs_1_1shard_1_1ShardBuilder.html#a858dc60df2eb217fcc0b3a78690c7478" title="Create a Shard object.">ShardBuilder::createShard</a> instead. </p>
 
 </div>
 </div>
@@ -436,6 +441,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Push the delayed removal operation onto disk. </p>
+<p>Basically same as <a class="el" href="classkvs_1_1shard_1_1Shard.html#a2bddb2f39d82722f5d8d1bb47ad27f13" title="Remove a Value from this shard and decrease aliveValuesCnt.">removeEntry()</a> except this one doesn't decrement the aliveValuesCnt. </p>
+
 </div>
 </div>
 <a id="ac968e0270380f308c16775ad9d1b074f"></a>
@@ -528,8 +536,8 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Remove a Value from this shard. </p>
-<p>Can also handle delayed removals.</p>
+<p>Remove a Value from this shard and decrease aliveValuesCnt. </p>
+<p>Can handle delayed removals.</p>
 <dl class="section return"><dt>Returns</dt><dd>The new Entry that corresponds to given Key. </dd></dl>
 
 </div>
@@ -699,6 +707,8 @@ Friends</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>The path to the directory that contains the internal files. </p>
 
 </div>
 </div>

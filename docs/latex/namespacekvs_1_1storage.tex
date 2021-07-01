@@ -11,7 +11,7 @@ class \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{Storage}}
 \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{namespacekvs_1_1storage_a3ad6708a61b915141b087e88f5839769}{read\+File}} (std\+::string filename)
 \begin{DoxyCompactList}\small\item\em Read the entire file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{namespacekvs_1_1storage_a556ac213670103a75191e4c11452394c}{write\+File}} (std\+::string filename, \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} bytes)
-\begin{DoxyCompactList}\small\item\em Write the entire file. Create file if it\textquotesingle{}s not created. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Overwrite the entire file -\/ that is, truncate, write and close it. Create file if it doesn\textquotesingle{}t exist. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -25,7 +25,7 @@ void \mbox{\hyperlink{namespacekvs_1_1storage_a556ac213670103a75191e4c11452394c}
 
 Read the entire file. 
 
-\mbox{\Hypertarget{namespacekvs_1_1storage_a556ac213670103a75191e4c11452394c}\label{namespacekvs_1_1storage_a556ac213670103a75191e4c11452394c}} 
+If the file is empty, returns a Byte\+Array of zero length. \mbox{\Hypertarget{namespacekvs_1_1storage_a556ac213670103a75191e4c11452394c}\label{namespacekvs_1_1storage_a556ac213670103a75191e4c11452394c}} 
 \index{kvs::storage@{kvs::storage}!writeFile@{writeFile}}
 \index{writeFile@{writeFile}!kvs::storage@{kvs::storage}}
 \doxysubsubsection{\texorpdfstring{writeFile()}{writeFile()}}
@@ -33,5 +33,6 @@ Read the entire file.
 
 
 
-Write the entire file. Create file if it\textquotesingle{}s not created. 
+Overwrite the entire file -\/ that is, truncate, write and close it. Create file if it doesn\textquotesingle{}t exist. 
 
+Supports zero-\/length Byte\+Array. 

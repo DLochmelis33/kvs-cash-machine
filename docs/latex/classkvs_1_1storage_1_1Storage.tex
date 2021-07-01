@@ -23,13 +23,13 @@ Collaboration diagram for kvs\+::storage\+::Storage\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a4912b2adf68d76a99f4772529741dad3}{Storage}} (std\+::string filename)
-\item 
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{Storage}} from the specified file. Fails if the file doesn\textquotesingle{}t exist. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a6fa129ebd4897a029c736bd141c2a48f}{close}} ()
 \begin{DoxyCompactList}\small\item\em Apply all changes to the file contents (if any) and close the file. All further operations with this \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{Storage}} object are disallowed. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a16417d140a6c8e88ae6d088747dd6f2a}{read}} (size\+\_\+t offset, size\+\_\+t length)
-\begin{DoxyCompactList}\small\item\em Read a part of file. // TODO docs\+: offset from the beggining; zero length is ok. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Read a part of file. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a8cba1c39408d86f6ab9170836b33bc7a}{write}} (size\+\_\+t offset, \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} bytes)
-\begin{DoxyCompactList}\small\item\em Write a part of file. // TODO docs\+: offset from the beggining; zero length is ok; if offset + bytes.\+length() $>$ eof append. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Write a part of file. If the specified part exceeds the end of file, extra data is appended. \end{DoxyCompactList}\item 
 size\+\_\+t \mbox{\hyperlink{classkvs_1_1storage_1_1Storage_a886d77329f632d3917532f72f3108562}{append}} (\mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}} bytes)
 \begin{DoxyCompactList}\small\item\em Append to end of file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
@@ -55,6 +55,15 @@ If any operation fails, throws a new \mbox{\hyperlink{classkvs_1_1KVSException}{
 
 
 
+Construct a new \mbox{\hyperlink{classkvs_1_1storage_1_1Storage}{Storage}} from the specified file. Fails if the file doesn\textquotesingle{}t exist. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em \mbox{\hyperlink{classkvs_1_1KVSException}{KVSException}}} & if the file doesn\textquotesingle{}t exist. \\
+\hline
+\end{DoxyExceptions}
+
+
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a886d77329f632d3917532f72f3108562}\label{classkvs_1_1storage_1_1Storage_a886d77329f632d3917532f72f3108562}} 
 \index{kvs::storage::Storage@{kvs::storage::Storage}!append@{append}}
@@ -65,6 +74,8 @@ If any operation fails, throws a new \mbox{\hyperlink{classkvs_1_1KVSException}{
 
 
 Append to end of file. 
+
+Supports zero-\/length Byte\+Array.
 
 \begin{DoxyReturn}{Returns}
 The size of file in bytes before appending. 
@@ -87,8 +98,15 @@ Apply all changes to the file contents (if any) and close the file. All further 
 
 
 
-Read a part of file. // TODO docs\+: offset from the beggining; zero length is ok. 
+Read a part of file. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset from the beggining of the file. \\
+\hline
+{\em length} & The length of the part to read. Can be 0. \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{classkvs_1_1storage_1_1Storage_a8cba1c39408d86f6ab9170836b33bc7a}\label{classkvs_1_1storage_1_1Storage_a8cba1c39408d86f6ab9170836b33bc7a}} 
 \index{kvs::storage::Storage@{kvs::storage::Storage}!write@{write}}
 \index{write@{write}!kvs::storage::Storage@{kvs::storage::Storage}}
@@ -97,8 +115,15 @@ Read a part of file. // TODO docs\+: offset from the beggining; zero length is o
 
 
 
-Write a part of file. // TODO docs\+: offset from the beggining; zero length is ok; if offset + bytes.\+length() $>$ eof append. 
+Write a part of file. If the specified part exceeds the end of file, extra data is appended. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & The offset from the beggining of the file. \\
+\hline
+{\em length} & The length of the part to read. Can be 0. \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}

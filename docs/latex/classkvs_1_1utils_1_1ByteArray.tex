@@ -23,7 +23,7 @@ Collaboration diagram for kvs\+::utils\+::Byte\+Array\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray_aa7c54a6c21218cc96aad5f5b008da5c5}{Byte\+Array}} (size\+\_\+t \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray_a3879011e3f9ad0105aa209938d2fe27c}{length}}) noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Create a new \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}}. \end{DoxyCompactList}\item 
 const char $\ast$ \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray_a524078d5ddb1f326b352c10964adec50}{get}} () const noexcept
 \item 
 char $\ast$ \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray_a9726714673ab30a970fabf297bb576e2}{get}} () noexcept
@@ -48,6 +48,10 @@ A wrapper for an array and its length.
 {\footnotesize\ttfamily kvs\+::utils\+::\+Byte\+Array\+::\+Byte\+Array (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [noexcept]}}
 
 
+
+Create a new \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray}{Byte\+Array}}. 
+
+Zero length is acceptable\+: the pointer returned from \mbox{\hyperlink{classkvs_1_1utils_1_1ByteArray_a9726714673ab30a970fabf297bb576e2}{get()}} methods will be valid, but dereferencing it will cause UB. 
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classkvs_1_1utils_1_1ByteArray_a524078d5ddb1f326b352c10964adec50}\label{classkvs_1_1utils_1_1ByteArray_a524078d5ddb1f326b352c10964adec50}} 

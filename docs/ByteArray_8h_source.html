@@ -76,27 +76,26 @@ $(function() {
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="namespacekvs_1_1utils.html">    5</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespacekvs_1_1utils.html">kvs::utils</a> {</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment">// TODO docs: empty length is ok, get methods also, but then ptr must not be deref</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classkvs_1_1utils_1_1ByteArray.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a> final {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5">ByteArray</a>(<span class="keywordtype">size_t</span> <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a3879011e3f9ad0105aa209938d2fe27c">length</a>) noexcept;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a524078d5ddb1f326b352c10964adec50">get</a>() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a524078d5ddb1f326b352c10964adec50">get</a>() noexcept;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a3879011e3f9ad0105aa209938d2fe27c">length</a>() <span class="keyword">const</span> noexcept;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">   23</a></span>&#160;  std::string <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">data</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;} <span class="comment">// namespace kvs::utils</span></div>
-<div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html">kvs::utils::ByteArray</a></div><div class="ttdoc">A wrapper for an array and its length.</div><div class="ttdef"><b>Definition:</b> ByteArray.h:12</div></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classkvs_1_1utils_1_1ByteArray.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a> final {</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5">ByteArray</a>(<span class="keywordtype">size_t</span> <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a3879011e3f9ad0105aa209938d2fe27c">length</a>) noexcept;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a524078d5ddb1f326b352c10964adec50">get</a>() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keywordtype">char</span>* <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a524078d5ddb1f326b352c10964adec50">get</a>() noexcept;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#a3879011e3f9ad0105aa209938d2fe27c">length</a>() <span class="keyword">const</span> noexcept;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">   28</a></span>&#160;  std::string <a class="code" href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">data</a>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;};</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <span class="comment">// namespace kvs::utils</span></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html">kvs::utils::ByteArray</a></div><div class="ttdoc">A wrapper for an array and its length.</div><div class="ttdef"><b>Definition:</b> ByteArray.h:11</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html_a3879011e3f9ad0105aa209938d2fe27c"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html#a3879011e3f9ad0105aa209938d2fe27c">kvs::utils::ByteArray::length</a></div><div class="ttdeci">size_t length() const noexcept</div><div class="ttdef"><b>Definition:</b> ByteArray.cpp:14</div></div>
 <div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html_a524078d5ddb1f326b352c10964adec50"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html#a524078d5ddb1f326b352c10964adec50">kvs::utils::ByteArray::get</a></div><div class="ttdeci">const char * get() const noexcept</div><div class="ttdef"><b>Definition:</b> ByteArray.cpp:10</div></div>
-<div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html_aa7c54a6c21218cc96aad5f5b008da5c5"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5">kvs::utils::ByteArray::ByteArray</a></div><div class="ttdeci">ByteArray(size_t length) noexcept</div><div class="ttdef"><b>Definition:</b> ByteArray.cpp:7</div></div>
-<div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html_af330cb71d4827eda6f834535d3473214"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">kvs::utils::ByteArray::data</a></div><div class="ttdeci">std::string data</div><div class="ttdef"><b>Definition:</b> ByteArray.h:23</div></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html_aa7c54a6c21218cc96aad5f5b008da5c5"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5">kvs::utils::ByteArray::ByteArray</a></div><div class="ttdeci">ByteArray(size_t length) noexcept</div><div class="ttdoc">Create a new ByteArray.</div><div class="ttdef"><b>Definition:</b> ByteArray.cpp:7</div></div>
+<div class="ttc" id="aclasskvs_1_1utils_1_1ByteArray_html_af330cb71d4827eda6f834535d3473214"><div class="ttname"><a href="classkvs_1_1utils_1_1ByteArray.html#af330cb71d4827eda6f834535d3473214">kvs::utils::ByteArray::data</a></div><div class="ttdeci">std::string data</div><div class="ttdef"><b>Definition:</b> ByteArray.h:28</div></div>
 <div class="ttc" id="anamespacekvs_1_1utils_html"><div class="ttname"><a href="namespacekvs_1_1utils.html">kvs::utils</a></div><div class="ttdef"><b>Definition:</b> ByteArray.h:5</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

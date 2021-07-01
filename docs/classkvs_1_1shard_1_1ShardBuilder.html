@@ -87,10 +87,10 @@ Collaboration diagram for kvs::shard::ShardBuilder:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a858dc60df2eb217fcc0b3a78690c7478"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classkvs_1_1shard_1_1Shard.html">Shard</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1ShardBuilder.html#a858dc60df2eb217fcc0b3a78690c7478">createShard</a> (<a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex)</td></tr>
-<tr class="memdesc:a858dc60df2eb217fcc0b3a78690c7478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> object.  <a href="classkvs_1_1shard_1_1ShardBuilder.html#a858dc60df2eb217fcc0b3a78690c7478">More...</a><br /></td></tr>
+<tr class="memdesc:a858dc60df2eb217fcc0b3a78690c7478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> object.  <a href="classkvs_1_1shard_1_1ShardBuilder.html#a858dc60df2eb217fcc0b3a78690c7478">More...</a><br /></td></tr>
 <tr class="separator:a858dc60df2eb217fcc0b3a78690c7478"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4834874510c2a1d82d4754dd1bddf930"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; <a class="el" href="classkvs_1_1shard_1_1Shard.html">Shard</a>, std::vector&lt; <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930">rebuildShard</a> (const <a class="el" href="classkvs_1_1shard_1_1Shard.html">Shard</a> &amp;shard, <a class="el" href="namespacekvs_1_1utils.html#a13db4e78a1fbfd9a5adaec1986834283">shard_index_t</a> shardIndex, const <a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html">kvs::cache_map::CacheMap</a> &amp;cacheMap)</td></tr>
-<tr class="memdesc:a4834874510c2a1d82d4754dd1bddf930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild the <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> according to delayed removals stored in CacheMap.  <a href="classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930">More...</a><br /></td></tr>
+<tr class="memdesc:a4834874510c2a1d82d4754dd1bddf930"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuild the <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> according to delayed removals stored in CacheMap.  <a href="classkvs_1_1shard_1_1ShardBuilder.html#a4834874510c2a1d82d4754dd1bddf930">More...</a><br /></td></tr>
 <tr class="separator:a4834874510c2a1d82d4754dd1bddf930"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -118,7 +118,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Create a <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> object. </p>
+<p>Create a <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> object. </p>
 <p>A factory method for consistency. </p>
 
 </div>
@@ -163,16 +163,16 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuild the <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> according to delayed removals stored in CacheMap. </p>
-<p>The old shard is modified, but it is intended to be removed with a new <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a>. The old <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> is disallowed to use after calling this method.</p>
+<p>Rebuild the <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> according to delayed removals stored in CacheMap. </p>
+<p>The old shard is modified, but it is intended to be removed with a new <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a>. The old <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> is disallowed to use after calling this method.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">shard</td><td>The <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> to rebuild. </td></tr>
+    <tr><td class="paramname">shard</td><td>The <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> to rebuild. </td></tr>
     <tr><td class="paramname">cacheMap</td><td>The CacheMap to read information about delayed removals from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>pair.first - The newly created <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk ...">Shard</a> to replace the old one. </dd>
+<dl class="section return"><dt>Returns</dt><dd>pair.first - The newly created <a class="el" href="classkvs_1_1shard_1_1Shard.html" title="A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from ...">Shard</a> to replace the old one. </dd>
 <dd>
 pair.second - Entries in CacheMap that have to be overwritten, including both entries with new ptrs and old removed entries with EMPTY_PTR. </dd></dl>
 

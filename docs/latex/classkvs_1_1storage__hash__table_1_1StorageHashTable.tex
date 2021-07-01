@@ -35,7 +35,7 @@ const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{class
 void \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTable_a5df2feda0ae3e314c77e30aa5bc5b3f5}{put}} (const \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \&entry) noexcept
 \begin{DoxyCompactList}\small\item\em Put an Entry into the table. \end{DoxyCompactList}\item 
 std\+::vector$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTable_a73cb6562228c610b164aff1a4601ab94}{get\+Entries}} () const noexcept
-\begin{DoxyCompactList}\small\item\em Get all entries present in the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Get all entries {\bfseries{present}} (i.\+e. those which Ptr is not EMPTY\+\_\+\+PTR) in the map. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -53,7 +53,9 @@ std\+::size\+\_\+t \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageH
 \doxysubsection{Detailed Description}
 The hash table that is stored on disk. 
 
-Operates in RAM, so can be used with any kind of storage via serializing. 
+Operates in RAM, so can be used with any kind of storage via serializing to Byte\+Array.
+
+Invariant\+: no NONEXISTENT Ptr-\/s are allowed to be stored in this table. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classkvs_1_1storage__hash__table_1_1StorageHashTable_a037bd3008c34a8bb8097e1bfe8219714}\label{classkvs_1_1storage__hash__table_1_1StorageHashTable_a037bd3008c34a8bb8097e1bfe8219714}} 
@@ -68,7 +70,7 @@ Deserialize a \mbox{\hyperlink{classkvs_1_1storage__hash__table_1_1StorageHashTa
 
 
 \begin{DoxyExceptions}{Exceptions}
-{\em \mbox{\hyperlink{classkvs_1_1KVSException}{KVSException}}} & if the data is corrupted \\
+{\em \mbox{\hyperlink{classkvs_1_1KVSException}{KVSException}}} & if the data is corrupted. \\
 \hline
 \end{DoxyExceptions}
 \mbox{\Hypertarget{classkvs_1_1storage__hash__table_1_1StorageHashTable_a6f3b13f043ee776925a57eb133007337}\label{classkvs_1_1storage__hash__table_1_1StorageHashTable_a6f3b13f043ee776925a57eb133007337}} 
@@ -128,14 +130,9 @@ The requested Ptr or EMPTY\+\_\+\+PTR, if no Entry with given Key is present.
 
 
 
-Get all entries present in the map. 
+Get all entries {\bfseries{present}} (i.\+e. those which Ptr is not EMPTY\+\_\+\+PTR) in the map. 
 
-Used during rebuilding.
-
-\begin{DoxyReturn}{Returns}
-std\+::vector$<$\+Entry$>$ 
-\end{DoxyReturn}
-\mbox{\Hypertarget{classkvs_1_1storage__hash__table_1_1StorageHashTable_a5df2feda0ae3e314c77e30aa5bc5b3f5}\label{classkvs_1_1storage__hash__table_1_1StorageHashTable_a5df2feda0ae3e314c77e30aa5bc5b3f5}} 
+Used during rebuilding. \mbox{\Hypertarget{classkvs_1_1storage__hash__table_1_1StorageHashTable_a5df2feda0ae3e314c77e30aa5bc5b3f5}\label{classkvs_1_1storage__hash__table_1_1StorageHashTable_a5df2feda0ae3e314c77e30aa5bc5b3f5}} 
 \index{kvs::storage\_hash\_table::StorageHashTable@{kvs::storage\_hash\_table::StorageHashTable}!put@{put}}
 \index{put@{put}!kvs::storage\_hash\_table::StorageHashTable@{kvs::storage\_hash\_table::StorageHashTable}}
 \doxysubsubsection{\texorpdfstring{put()}{put()}}

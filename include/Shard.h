@@ -11,7 +11,7 @@ namespace kvs::shard {
 using namespace kvs::utils;
 
 /**
- * @brief A single part of KVS after sharding. Contains a BloomFilter and loads hash tables into RAM from disk when necessary.
+ * @brief A single part of KVS after sharding. Contains a BloomFilter and loads StorageHashTable into RAM from disk when necessary.
  * 
  * Instantiated via ShardBuilder class static method.
  *
@@ -41,15 +41,20 @@ public:
                    const Value& value);
 
   /**
-     * @brief Remove a Value from this shard.
+     * @brief Remove a Value from this shard and decrease aliveValuesCnt.
      *
-     * Can also handle delayed removals.
+     * Can handle delayed removals.
      *
      * @return The new Entry that corresponds to given Key.
      */
   Entry removeEntry(shard_index_t shardIndex, const Key& key);
 
-  // TODO docs
+  /**
+   * @brief Push the delayed removal operation onto disk.
+   * 
+   * Basically same as removeEntry() except this one doesn't decrement the aliveValuesCnt.
+   * 
+   */
   Entry pushRemoveEntry(shard_index_t shardIndex, const Key& key);
 
   /**
@@ -92,7 +97,10 @@ public:
     */
   bool isRebuildRequired(shard_index_t shardIndex) const noexcept;
 
-  // TODO docs
+   /**
+    * @brief The path to the directory that contains the internal files.
+    * 
+    */
   static std::string storageDirectoryPath; // = STORAGE_DIRECTORY_PATH
 
   static std::string getShardDirectoryPath(shard_index_t shardIndex) noexcept;
@@ -103,7 +111,10 @@ public:
   getStorageHashTableFilePath(shard_index_t shardIndex) noexcept;
 
 private:
-  // TODO docs: description
+  /**
+   * @brief Disallow to create Shard objects with constructors. Use ShardBuilder::createShard instead.
+   * 
+   */
   explicit Shard() noexcept;
   explicit Shard(const std::vector<Entry>& storageHashTableEntries) noexcept;
 

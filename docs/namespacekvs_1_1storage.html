@@ -86,7 +86,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a3ad6708a61b915141b087e88f5839769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the entire file.  <a href="namespacekvs_1_1storage.html#a3ad6708a61b915141b087e88f5839769">More...</a><br /></td></tr>
 <tr class="separator:a3ad6708a61b915141b087e88f5839769"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a556ac213670103a75191e4c11452394c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacekvs_1_1storage.html#a556ac213670103a75191e4c11452394c">writeFile</a> (std::string filename, <a class="el" href="classkvs_1_1utils_1_1ByteArray.html">ByteArray</a> bytes)</td></tr>
-<tr class="memdesc:a556ac213670103a75191e4c11452394c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write the entire file. Create file if it's not created.  <a href="namespacekvs_1_1storage.html#a556ac213670103a75191e4c11452394c">More...</a><br /></td></tr>
+<tr class="memdesc:a556ac213670103a75191e4c11452394c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overwrite the entire file - that is, truncate, write and close it. Create file if it doesn't exist.  <a href="namespacekvs_1_1storage.html#a556ac213670103a75191e4c11452394c">More...</a><br /></td></tr>
 <tr class="separator:a556ac213670103a75191e4c11452394c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -107,6 +107,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Read the entire file. </p>
+<p>If the file is empty, returns a ByteArray of zero length. </p>
 
 </div>
 </div>
@@ -136,7 +137,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Write the entire file. Create file if it's not created. </p>
+<p>Overwrite the entire file - that is, truncate, write and close it. Create file if it doesn't exist. </p>
+<p>Supports zero-length ByteArray. </p>
 
 </div>
 </div>

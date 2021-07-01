@@ -25,20 +25,20 @@ Collaboration diagram for kvs\+::KVS\+:
 \mbox{\hyperlink{classkvs_1_1KVS_a534534fcda1c0bbb5c3fa81e7ffca235}{KVS}} ()
 \item 
 void \mbox{\hyperlink{classkvs_1_1KVS_a217f1871a6b09944d85408803de01bf5}{add}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key, const \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \&value)
-\begin{DoxyCompactList}\small\item\em Add a Key\+Value to the storage. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Add a new record to the storage. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1KVS_a7c8939cb3dd5832de711caeefed81115}{remove}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
 \begin{DoxyCompactList}\small\item\em Remove the Key and associated Value from storage. Lazy operation. \end{DoxyCompactList}\item 
 std\+::optional$<$ \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} $>$ \mbox{\hyperlink{classkvs_1_1KVS_a0a71daf1abd056bc2032a60cda41dffc}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
 \begin{DoxyCompactList}\small\item\em Get the Value associated with the Key. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1KVS_ae1805febc7b03075273809efbbca62f9}{clear}} ()
-\begin{DoxyCompactList}\small\item\em Clear the storage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Clear the storage entirely. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classkvs_1_1KVS_ac4f35134777c7bb68fd869be2b1d8e13}{rebuild\+Shard}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index)
 \begin{DoxyCompactList}\small\item\em Rebuilds the shard with the given index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1KVS_a37cf61d6279dd40bc7ef8df4d7005322}{push\+Operation}} (\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} displaced)
-\begin{DoxyCompactList}\small\item\em When an entry is displaced from the Cache\+Map, the corresponding operation should be pushed to the shard. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em When an entry is displaced from the Cache\+Map, the corresponding operation should be pushed to the shard. Use this method for that. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,7 +69,7 @@ The class that provides an access to a key-\/value storage.
 
 
 
-Add a Key\+Value to the storage. 
+Add a new record to the storage. 
 
 \mbox{\Hypertarget{classkvs_1_1KVS_ae1805febc7b03075273809efbbca62f9}\label{classkvs_1_1KVS_ae1805febc7b03075273809efbbca62f9}} 
 \index{kvs::KVS@{kvs::KVS}!clear@{clear}}
@@ -79,7 +79,7 @@ Add a Key\+Value to the storage.
 
 
 
-Clear the storage. 
+Clear the storage entirely. 
 
 \mbox{\Hypertarget{classkvs_1_1KVS_a0a71daf1abd056bc2032a60cda41dffc}\label{classkvs_1_1KVS_a0a71daf1abd056bc2032a60cda41dffc}} 
 \index{kvs::KVS@{kvs::KVS}!get@{get}}
@@ -102,7 +102,7 @@ The Value associated with the Key or nothing, if no such Value is present.
 
 
 
-When an entry is displaced from the Cache\+Map, the corresponding operation should be pushed to the shard. 
+When an entry is displaced from the Cache\+Map, the corresponding operation should be pushed to the shard. Use this method for that. 
 
 
 \begin{DoxyParams}{Parameters}

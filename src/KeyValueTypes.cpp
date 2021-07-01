@@ -75,10 +75,10 @@ Ptr::Ptr(PtrType type) noexcept {
   }
 }
 
-size_t Ptr::get() const noexcept { return ptr & ~CONTROL_MASK; }
+size_t Ptr::getIndex() const noexcept { return ptr & ~CONTROL_MASK; }
 
 size_t Ptr::getOffset() const noexcept {
-  return (ptr & ~CONTROL_MASK) * VALUE_SIZE;
+  return getIndex() * VALUE_SIZE;
 }
 
 ptr_t Ptr::getRaw() const noexcept { return ptr; }
@@ -99,8 +99,6 @@ PtrType Ptr::getType() const noexcept {
     return PtrType::EMPTY_PTR;
   if (ptr == NONEXISTENT_V)
     return PtrType::NONEXISTENT;
-  // if (ptr == SYNC_DELETED_V)
-  //   return PtrType::SYNC_DELETED;
 
   if (isValuePresent())
     return PtrType::PRESENT;

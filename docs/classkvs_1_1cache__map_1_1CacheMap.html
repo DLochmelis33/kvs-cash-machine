@@ -75,7 +75,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Cache map. Is stored in RAM.  
+<p>Cache map based on a hash table. Stored in RAM.  
  <a href="classkvs_1_1cache__map_1_1CacheMap.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="CacheMap_8h_source.html">CacheMap.h</a>&gt;</code></p>
@@ -84,7 +84,7 @@ Collaboration diagram for kvs::cache_map::CacheMap:</div>
 <div class="dyncontent">
 <div class="center"><img src="classkvs_1_1cache__map_1_1CacheMap__coll__graph.png" border="0" usemap="#akvs_1_1cache__map_1_1CacheMap_coll__map" alt="Collaboration graph"/></div>
 <map name="akvs_1_1cache__map_1_1CacheMap_coll__map" id="akvs_1_1cache__map_1_1CacheMap_coll__map">
-<area shape="rect" title="Cache map. Is stored in RAM." alt="" coords="29,160,213,296"/>
+<area shape="rect" title="Cache map based on a hash table. Stored in RAM." alt="" coords="29,160,213,296"/>
 <area shape="rect" title=" " alt="" coords="5,5,125,97"/>
 <area shape="rect" title=" " alt="" coords="149,13,205,90"/>
 </map>
@@ -95,7 +95,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8367dfd69488cbb94b13004c20c7ec7a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html#a8367dfd69488cbb94b13004c20c7ec7a">CacheMap</a> (size_t size) noexcept</td></tr>
 <tr class="separator:a8367dfd69488cbb94b13004c20c7ec7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:addecb4d639a2fbef10b379d8f9818821"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html#addecb4d639a2fbef10b379d8f9818821">putOrDisplace</a> (<a class="el" href="structkvs_1_1utils_1_1Entry.html">Entry</a> entry) noexcept</td></tr>
-<tr class="memdesc:addecb4d639a2fbef10b379d8f9818821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it.  <a href="classkvs_1_1cache__map_1_1CacheMap.html#addecb4d639a2fbef10b379d8f9818821">More...</a><br /></td></tr>
+<tr class="memdesc:addecb4d639a2fbef10b379d8f9818821"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put the Entry into the map. If there isn't enough space, displace a random Entry and return it. If an Entry with the same Key already exists, overwrite it.  <a href="classkvs_1_1cache__map_1_1CacheMap.html#addecb4d639a2fbef10b379d8f9818821">More...</a><br /></td></tr>
 <tr class="separator:addecb4d639a2fbef10b379d8f9818821"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18328805e042c27099c2d4d383b2fb16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classkvs_1_1utils_1_1Ptr.html">Ptr</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classkvs_1_1cache__map_1_1CacheMap.html#a18328805e042c27099c2d4d383b2fb16">get</a> (const <a class="el" href="classkvs_1_1utils_1_1Key.html">Key</a> &amp;key) noexcept</td></tr>
 <tr class="memdesc:a18328805e042c27099c2d4d383b2fb16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a Ptr by Key.  <a href="classkvs_1_1cache__map_1_1CacheMap.html#a18328805e042c27099c2d4d383b2fb16">More...</a><br /></td></tr>
@@ -116,7 +116,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a073b60994f73347ed5397cc890c05aa7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Cache map. Is stored in RAM. </p>
+<div class="textblock"><p>Cache map based on a hash table. Stored in RAM. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a8367dfd69488cbb94b13004c20c7ec7a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8367dfd69488cbb94b13004c20c7ec7a">&#9670;&nbsp;</a></span>CacheMap()</h2>
@@ -251,7 +251,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. </p>
+<p>Put the Entry into the map. If there isn't enough space, displace a random Entry and return it. If an Entry with the same Key already exists, overwrite it. </p>
 <dl class="section return"><dt>Returns</dt><dd>Displaced Entry, if any. </dd></dl>
 
 </div>

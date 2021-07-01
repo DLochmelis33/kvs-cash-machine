@@ -2,7 +2,7 @@
 \label{classkvs_1_1shard_1_1Shard}\index{kvs::shard::Shard@{kvs::shard::Shard}}
 
 
-A single part of \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads hash tables into RAM from disk when necessary.  
+A single part of \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads Storage\+Hash\+Table into RAM from disk when necessary.  
 
 
 
@@ -27,9 +27,9 @@ std\+::pair$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}}, std\+::opt
 \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a4b904e68f840420769a1e76650f507c5}{write\+Value}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key, const \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \&value)
 \begin{DoxyCompactList}\small\item\em Write a Value to this shard. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a2bddb2f39d82722f5d8d1bb47ad27f13}{remove\+Entry}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
-\begin{DoxyCompactList}\small\item\em Remove a Value from this shard. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Remove a Value from this shard and decrease alive\+Values\+Cnt. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a4a164d81d482709352fe412ce72db3f3}{push\+Remove\+Entry}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key)
-\item 
+\begin{DoxyCompactList}\small\item\em Push the delayed removal operation onto disk. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a4f8f4843559ac6c1e7ff339fa53afd62}{read\+Value\+Directly}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} ptr) const
 \begin{DoxyCompactList}\small\item\em Read a Value directly from disk storage. Used when Cache\+Map entry is hit. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a07c99ac2a9e9e1ddf938775ca110aa3f}{write\+Value\+Directly}} (\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}} shard\+Index, \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} ptr, const \mbox{\hyperlink{classkvs_1_1utils_1_1Value}{Value}} \&value)
@@ -55,12 +55,12 @@ static std\+::string \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a68e427443984e3
 \begin{DoxyCompactItemize}
 \item 
 static std\+::string \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_acfce9f7a423561d91367d0c635964283}{storage\+Directory\+Path}} = STORAGE\+\_\+\+DIRECTORY\+\_\+\+PATH
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The path to the directory that contains the internal files. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_aced5ca8c8178a1d54148ad7585f561eb}{Shard}} () noexcept
-\item 
+\begin{DoxyCompactList}\small\item\em Disallow to create \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} objects with constructors. Use \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder_a858dc60df2eb217fcc0b3a78690c7478}{Shard\+Builder\+::create\+Shard}} instead. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_afc5b57019c116cbb5704eb84f335639b}{Shard}} (const std\+::vector$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \&storage\+Hash\+Table\+Entries) noexcept
 \end{DoxyCompactItemize}
 \doxysubsection*{Private Attributes}
@@ -78,7 +78,7 @@ class \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a75f5d7eb5774c232dbb08b3c2a02d
 
 
 \doxysubsection{Detailed Description}
-A single part of \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads hash tables into RAM from disk when necessary. 
+A single part of \mbox{\hyperlink{classkvs_1_1KVS}{KVS}} after sharding. Contains a Bloom\+Filter and loads Storage\+Hash\+Table into RAM from disk when necessary. 
 
 Instantiated via \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder}{Shard\+Builder}} class static method. 
 
@@ -88,6 +88,10 @@ Instantiated via \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder}{Shard\+Buil
 \index{Shard@{Shard}!kvs::shard::Shard@{kvs::shard::Shard}}
 \doxysubsubsection{\texorpdfstring{Shard()}{Shard()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily kvs\+::shard\+::\+Shard\+::\+Shard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}, {\ttfamily [private]}, {\ttfamily [noexcept]}}
+
+
+
+Disallow to create \mbox{\hyperlink{classkvs_1_1shard_1_1Shard}{Shard}} objects with constructors. Use \mbox{\hyperlink{classkvs_1_1shard_1_1ShardBuilder_a858dc60df2eb217fcc0b3a78690c7478}{Shard\+Builder\+::create\+Shard}} instead. 
 
 \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_afc5b57019c116cbb5704eb84f335639b}\label{classkvs_1_1shard_1_1Shard_afc5b57019c116cbb5704eb84f335639b}} 
 \index{kvs::shard::Shard@{kvs::shard::Shard}!Shard@{Shard}}
@@ -162,7 +166,11 @@ Check if a rebuild needs to be called.
 \doxysubsubsection{\texorpdfstring{pushRemoveEntry()}{pushRemoveEntry()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} kvs\+::shard\+::\+Shard\+::push\+Remove\+Entry (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespacekvs_1_1utils_a13db4e78a1fbfd9a5adaec1986834283}{shard\+\_\+index\+\_\+t}}}]{shard\+Index,  }\item[{const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&}]{key }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_ac968e0270380f308c16775ad9d1b074f}\label{classkvs_1_1shard_1_1Shard_ac968e0270380f308c16775ad9d1b074f}} 
+
+
+Push the delayed removal operation onto disk. 
+
+Basically same as \mbox{\hyperlink{classkvs_1_1shard_1_1Shard_a2bddb2f39d82722f5d8d1bb47ad27f13}{remove\+Entry()}} except this one doesn\textquotesingle{}t decrement the alive\+Values\+Cnt. \mbox{\Hypertarget{classkvs_1_1shard_1_1Shard_ac968e0270380f308c16775ad9d1b074f}\label{classkvs_1_1shard_1_1Shard_ac968e0270380f308c16775ad9d1b074f}} 
 \index{kvs::shard::Shard@{kvs::shard::Shard}!readValue@{readValue}}
 \index{readValue@{readValue}!kvs::shard::Shard@{kvs::shard::Shard}}
 \doxysubsubsection{\texorpdfstring{readValue()}{readValue()}}
@@ -199,9 +207,9 @@ The read Value. If the Ptr points to a nonexistent Value, the behavior is undefi
 
 
 
-Remove a Value from this shard. 
+Remove a Value from this shard and decrease alive\+Values\+Cnt. 
 
-Can also handle delayed removals.
+Can handle delayed removals.
 
 \begin{DoxyReturn}{Returns}
 The new Entry that corresponds to given Key. 
@@ -266,6 +274,10 @@ A filter.
 \index{storageDirectoryPath@{storageDirectoryPath}!kvs::shard::Shard@{kvs::shard::Shard}}
 \doxysubsubsection{\texorpdfstring{storageDirectoryPath}{storageDirectoryPath}}
 {\footnotesize\ttfamily std\+::string kvs\+::shard\+::\+Shard\+::storage\+Directory\+Path = STORAGE\+\_\+\+DIRECTORY\+\_\+\+PATH\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The path to the directory that contains the internal files. 
 
 
 

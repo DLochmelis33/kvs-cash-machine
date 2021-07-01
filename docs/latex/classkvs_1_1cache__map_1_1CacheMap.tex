@@ -2,7 +2,7 @@
 \label{classkvs_1_1cache__map_1_1CacheMap}\index{kvs::cache\_map::CacheMap@{kvs::cache\_map::CacheMap}}
 
 
-Cache map. Is stored in RAM.  
+Cache map based on a hash table. Stored in RAM.  
 
 
 
@@ -25,7 +25,7 @@ Collaboration diagram for kvs\+::cache\+\_\+map\+::Cache\+Map\+:
 \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a8367dfd69488cbb94b13004c20c7ec7a}{Cache\+Map}} (size\+\_\+t size) noexcept
 \item 
 std\+::optional$<$ \mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} $>$ \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_addecb4d639a2fbef10b379d8f9818821}{put\+Or\+Displace}} (\mbox{\hyperlink{structkvs_1_1utils_1_1Entry}{Entry}} entry) noexcept
-\begin{DoxyCompactList}\small\item\em Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Put the Entry into the map. If there isn\textquotesingle{}t enough space, displace a random Entry and return it. If an Entry with the same Key already exists, overwrite it. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a18328805e042c27099c2d4d383b2fb16}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key) noexcept
 \begin{DoxyCompactList}\small\item\em Find a Ptr by Key. \end{DoxyCompactList}\item 
 const \mbox{\hyperlink{classkvs_1_1utils_1_1Ptr}{Ptr}} \& \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a5f5b8b3ba55dd233e7a98c7b3ff7ab50}{get}} (const \mbox{\hyperlink{classkvs_1_1utils_1_1Key}{Key}} \&key) const noexcept
@@ -42,7 +42,7 @@ size\+\_\+t \mbox{\hyperlink{classkvs_1_1cache__map_1_1CacheMap_a073b60994f73347
 
 
 \doxysubsection{Detailed Description}
-Cache map. Is stored in RAM. 
+Cache map based on a hash table. Stored in RAM. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classkvs_1_1cache__map_1_1CacheMap_a8367dfd69488cbb94b13004c20c7ec7a}\label{classkvs_1_1cache__map_1_1CacheMap_a8367dfd69488cbb94b13004c20c7ec7a}} 
@@ -91,7 +91,7 @@ The requested Ptr or EMPTY\+\_\+\+PTR, if no Entry with given Key is present.
 
 
 
-Put Ptr by Key. If not enough space, displace a random Entry and return it. If an Entry with the given Key already exists, overwrite it. 
+Put the Entry into the map. If there isn\textquotesingle{}t enough space, displace a random Entry and return it. If an Entry with the same Key already exists, overwrite it. 
 
 \begin{DoxyReturn}{Returns}
 Displaced Entry, if any. 
