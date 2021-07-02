@@ -1,4 +1,5 @@
 #include "Shard.h"
+#include "KVSException.h"
 #include "Storage.h"
 #include "StorageHashTable.h"
 
@@ -79,11 +80,29 @@ Entry Shard::writeValue(shard_index_t shardIndex, const Key& key,
 }
 
 Entry Shard::removeEntry(shard_index_t shardIndex, const Key& key) {
-  Entry entry = pushRemoveEntry(shardIndex, key);
-  if (entry.ptr.getType() == PtrType::PRESENT) {
-    decrementAliveValuesCnt();
+  if (!filter.checkExist(key)) {
+    return Entry{key};
   }
-  return entry;
+  StorageHashTable storageHashTable{
+      storage::readFile(getStorageHashTableFilePath(shardIndex))};
+  Ptr& ptr = storageHashTable.get(key);
+  switch (ptr.getType()) {
+  case PtrType::DELETED:
+    return Entry{key, ptr};
+  case PtrType::EMPTY_PTR:
+    return Entry{key};
+  case PtrType::PRESENT: {
+    --aliveValuesCnt;
+    ptr.setValuePresent(false);
+    storage::writeFile(getStorageHashTableFilePath(shardIndex),
+                       storageHashTable.serializeToByteArray());
+    return Entry{key, ptr};
+  }
+  case PtrType::NONEXISTENT: {
+    throw std::logic_error("NONEXISTENT is forbidden in StorageHashTable");
+  }
+  }
+  throw std::logic_error("unreachable");
 }
 
 Entry Shard::pushRemoveEntry(shard_index_t shardIndex, const Key& key) {
@@ -129,10 +148,14 @@ void Shard::incrementAliveValuesCnt() noexcept { ++aliveValuesCnt; }
 
 void Shard::decrementAliveValuesCnt() noexcept { --aliveValuesCnt; }
 
-bool Shard::isRebuildRequired(shard_index_t shardIndex) const noexcept {
-  values_cnt_t valuesCnt =
-      std::filesystem::file_size(getValuesFilePath(shardIndex)) / VALUE_SIZE;
-  return valuesCnt * MAX_OUTDATED_RECORDS_LOAD_FACTOR > aliveValuesCnt;
+bool Shard::isRebuildRequired(shard_index_t shardIndex) const {
+  try {
+    values_cnt_t valuesCnt =
+        std::filesystem::file_size(getValuesFilePath(shardIndex)) / VALUE_SIZE;
+    return valuesCnt * MAX_OUTDATED_RECORDS_LOAD_FACTOR > aliveValuesCnt;
+  } catch (const std::exception& exc) {
+    throw KVSException(KVSErrorType::FAILED_TO_GET_VALUES_FILE_SIZE);
+  }
 }
 
 Shard::Shard() noexcept : aliveValuesCnt{0}, filter{} {}
@@ -157,8 +180,5 @@ std::string
 Shard::getStorageHashTableFilePath(shard_index_t shardIndex) noexcept {
   return Shard::storageDirectoryPath + std::to_string(shardIndex) + "/index";
 }
-
-//  values_cnt_t aliveValuesCnt;
-//  BloomFilter filter;
 
 } // namespace kvs::shard

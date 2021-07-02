@@ -91,7 +91,8 @@ TEST_CASE("test ShardBuilder") {
     REQUIRE_FALSE(shard.isRebuildRequired(shardIndex));
 
     values_cnt_t removedValuesCnt = notUpdatedCacheMapRemovedEntriesCnt;
-    while (!shard.isRebuildRequired(shardIndex)) {
+    while (!shard.isRebuildRequired(shardIndex) &&
+           removedValuesCnt < valuesCnt) {
       elements[removedValuesCnt].first.ptr.setValuePresent(false);
       auto [entry, value] = elements[removedValuesCnt];
       Entry removeEntry = shard.removeEntry(shardIndex, entry.key);
@@ -163,4 +164,5 @@ TEST_CASE("test ShardBuilder") {
 
   clearTestDirectory();
 }
+
 } // namespace test_kvs::shard_builder

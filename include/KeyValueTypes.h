@@ -22,7 +22,7 @@ constexpr double STORAGE_HASH_TABLE_LOAD_FACTOR = MAP_LOAD_FACTOR;
 constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE =
     SHARD_EXPECTED_SIZE * STORAGE_HASH_TABLE_LOAD_FACTOR;
 constexpr size_t STORAGE_HASH_TABLE_MAX_SIZE =
-   STORAGE_HASH_TABLE_EXPANSION_FACTOR * STORAGE_HASH_TABLE_INITIAL_SIZE;
+    STORAGE_HASH_TABLE_EXPANSION_FACTOR * STORAGE_HASH_TABLE_INITIAL_SIZE;
 
 // #define TEST_STORAGE_HASH_TABLE
 // constexpr size_t STORAGE_HASH_TABLE_INITIAL_SIZE = 25000;
@@ -87,12 +87,7 @@ struct KeyValue final {
  * EMPTY_PTR - this Ptr points to nowhere and should be treated as a NULL pointer. Is a special Ptr.
  *
  */
-enum class PtrType {
-  PRESENT,
-  DELETED,
-  EMPTY_PTR,
-  NONEXISTENT
-};
+enum class PtrType { PRESENT, DELETED, EMPTY_PTR, NONEXISTENT };
 
 /**
  * @brief A pointer determining the position of the associated Value in the values file. Also stores
