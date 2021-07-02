@@ -25,6 +25,8 @@ const char* KVSException::what() const noexcept {
     return "Failed to create shard directory";
   case KVSErrorType::SHARD_REBUILDER_FAILED_TO_REPLACE_OLD_FILES:
     return "ShardRebuilder failed to move new shard files to old ones";
+  case KVSErrorType::FAILED_TO_GET_VALUES_FILE_SIZE:
+    return "Failed to get shard values file size";
   }
   return "<unsupported exception type>";
 }

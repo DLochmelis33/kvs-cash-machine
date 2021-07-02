@@ -95,13 +95,13 @@ public:
     * @brief Check if a rebuild needs to be called.
     * 
     */
-  bool isRebuildRequired(shard_index_t shardIndex) const noexcept;
+  bool isRebuildRequired(shard_index_t shardIndex) const;
 
-   /**
+  /**
     * @brief The path to the directory that contains the internal files.
     * 
     */
-  static std::string storageDirectoryPath; // = STORAGE_DIRECTORY_PATH
+  static std::string storageDirectoryPath;
 
   static std::string getShardDirectoryPath(shard_index_t shardIndex) noexcept;
 
