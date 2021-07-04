@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['basic_5fostream_815',['basic_ostream',['../classbasic__ostream.html',1,'']]],
-  ['bloomfilter_816',['BloomFilter',['../classkvs_1_1bloom__filter_1_1BloomFilter.html',1,'kvs::bloom_filter']]],
-  ['bytearray_817',['ByteArray',['../classkvs_1_1utils_1_1ByteArray.html',1,'kvs::utils']]]
+  ['cachemap_145',['CacheMap',['../classkvs_1_1cache__map_1_1CacheMap.html',1,'kvs::cache_map']]]
 ];

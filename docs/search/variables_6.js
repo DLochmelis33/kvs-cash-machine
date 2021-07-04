@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gnu_5ffile_5fline_1110',['gnu_file_line',['../structdoctest_1_1ContextOptions.html#aab894e731a6fc86cf095288ec7d0c0f2',1,'doctest::ContextOptions']]]
+  ['key_256',['key',['../structkvs_1_1utils_1_1KeyValue.html#ab1253c5edbf776b4c26de9d7cda57bce',1,'kvs::utils::KeyValue::key()'],['../structkvs_1_1utils_1_1Entry.html#a0f78d305f8af5355e30c2e9e8fabc157',1,'kvs::utils::Entry::key()']]],
+  ['key_5fsize_257',['KEY_SIZE',['../namespacekvs_1_1utils.html#addeb36ca6455ac8903f049050a74ac9d',1,'kvs::utils']]]
 ];

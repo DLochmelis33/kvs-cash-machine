@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['functype_1204',['funcType',['../namespacedoctest_1_1detail.html#a7b2c60631c5f4906b26acf2e6b0e6e45',1,'doctest::detail']]]
+  ['ptr_5ft_276',['ptr_t',['../namespacekvs_1_1utils.html#a3328f5d629385bc4333f74a83596e1fe',1,'kvs::utils']]]
 ];

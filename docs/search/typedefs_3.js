@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['no_1206',['no',['../namespacedoctest_1_1detail_1_1has__insertion__operator__impl.html#a2abd7cf8c326904d6f21a4ef7bddb8e1',1,'doctest::detail::has_insertion_operator_impl']]]
+  ['values_5fcnt_5ft_279',['values_cnt_t',['../namespacekvs_1_1utils.html#a9de0de755051dacc6e2530e016f2be70',1,'kvs::utils']]]
 ];

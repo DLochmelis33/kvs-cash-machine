@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['has_5finsertion_5foperator_829',['has_insertion_operator',['../structdoctest_1_1detail_1_1has__insertion__operator.html',1,'doctest::detail::has_insertion_operator&lt; T &gt;'],['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1has__insertion__operator.html',1,'doctest::detail::has_insertion_operator_impl::has_insertion_operator&lt; T &gt;']]]
+  ['shard_152',['Shard',['../classkvs_1_1shard_1_1Shard.html',1,'kvs::shard']]],
+  ['shardbuilder_153',['ShardBuilder',['../classkvs_1_1shard_1_1ShardBuilder.html',1,'kvs::shard']]],
+  ['storage_154',['Storage',['../classkvs_1_1storage_1_1Storage.html',1,'kvs::storage']]],
+  ['storagehashtable_155',['StorageHashTable',['../classkvs_1_1storage__hash__table_1_1StorageHashTable.html',1,'kvs::storage_hash_table']]]
 ];

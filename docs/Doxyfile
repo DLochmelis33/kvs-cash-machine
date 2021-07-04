@@ -43,3 +43,5 @@ HTML_OUTPUT             = .
 
 RECURSIVE               = YES
 INPUT                   = include src
+
+EXCLUDE = include/doctest.h

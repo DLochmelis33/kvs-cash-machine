@@ -1,22 +1,13 @@
 var searchData=
 [
-  ['basic_5fostream_17',['basic_ostream',['../classbasic__ostream.html',1,'']]],
-  ['binary_5fassert_18',['binary_assert',['../structdoctest_1_1detail_1_1ResultBuilder.html#ab3d55b158b3ae687f80bca94db6bb701',1,'doctest::detail::ResultBuilder::binary_assert()'],['../namespacedoctest_1_1detail.html#a570279a22ca888528e87a426853a0288',1,'doctest::detail::binary_assert()']]],
-  ['binary_5fname_19',['binary_name',['../structdoctest_1_1ContextOptions.html#a0590006b4d10296c9a697e32ff886f74',1,'doctest::ContextOptions']]],
-  ['bitset_20',['bitset',['../classkvs_1_1bloom__filter_1_1BloomFilter.html#a7d3e96dfc1b432706ff49cad92806e2b',1,'kvs::bloom_filter::BloomFilter']]],
-  ['bloom_5ffilter_5fhash_5ffunctions_5fnumber_21',['BLOOM_FILTER_HASH_FUNCTIONS_NUMBER',['../namespacekvs_1_1utils.html#a9a39b70a28445b61801f025a976bcdca',1,'kvs::utils']]],
-  ['bloom_5ffilter_5fsize_22',['BLOOM_FILTER_SIZE',['../namespacekvs_1_1utils.html#a681ae91ffea4696bc012ef7e2b4fc2ce',1,'kvs::utils']]],
-  ['bloomfilter_23',['BloomFilter',['../classkvs_1_1bloom__filter_1_1BloomFilter.html#a95a414856a10b324472cfbc1416150cb',1,'kvs::bloom_filter::BloomFilter::BloomFilter()'],['../classkvs_1_1bloom__filter_1_1BloomFilter.html',1,'kvs::bloom_filter::BloomFilter']]],
-  ['bloomfilter_2ecpp_24',['BloomFilter.cpp',['../BloomFilter_8cpp.html',1,'']]],
-  ['bloomfilter_2eh_25',['BloomFilter.h',['../BloomFilter_8h.html',1,'']]],
-  ['blue_26',['Blue',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92aada3ad8958b1319450cc20f3f8e5e2d6',1,'doctest::Color']]],
-  ['bright_27',['Bright',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a7659647d16a78c607f9bafaa207b9e07',1,'doctest::Color']]],
-  ['brightgreen_28',['BrightGreen',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a016090b96620a42a63dadf0265977664',1,'doctest::Color']]],
-  ['brightred_29',['BrightRed',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a236dfdbcd49d10dbf1a31f9e2947a671',1,'doctest::Color']]],
-  ['brightwhite_30',['BrightWhite',['../namespacedoctest_1_1Color.html#a32e9eaf6013139846e848af6e6cf2b92a4f80853796b4875d61ff5e4ad138492e',1,'doctest::Color']]],
-  ['buf_31',['buf',['../classdoctest_1_1String.html#a7e031ced488588936a540eba26facf67',1,'doctest::String']]],
-  ['bytearray_32',['ByteArray',['../classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5',1,'kvs::utils::ByteArray::ByteArray()'],['../classkvs_1_1utils_1_1ByteArray.html',1,'kvs::utils::ByteArray']]],
-  ['bytearray_2ecpp_33',['ByteArray.cpp',['../ByteArray_8cpp.html',1,'']]],
-  ['bytearray_2eh_34',['ByteArray.h',['../ByteArray_8h.html',1,'']]],
-  ['bytes_35',['bytes',['../classkvs_1_1utils_1_1Value.html#ae02240a752d5ccc5d6b9b4749f8ecd23',1,'kvs::utils::Value::bytes()'],['../classkvs_1_1utils_1_1Key.html#ac8689f99107c5d7b4332ea06077b9fd5',1,'kvs::utils::Key::bytes()']]]
+  ['bitset_3',['bitset',['../classkvs_1_1bloom__filter_1_1BloomFilter.html#a7d3e96dfc1b432706ff49cad92806e2b',1,'kvs::bloom_filter::BloomFilter']]],
+  ['bloom_5ffilter_5fhash_5ffunctions_5fnumber_4',['BLOOM_FILTER_HASH_FUNCTIONS_NUMBER',['../namespacekvs_1_1utils.html#a9a39b70a28445b61801f025a976bcdca',1,'kvs::utils']]],
+  ['bloom_5ffilter_5fsize_5',['BLOOM_FILTER_SIZE',['../namespacekvs_1_1utils.html#a681ae91ffea4696bc012ef7e2b4fc2ce',1,'kvs::utils']]],
+  ['bloomfilter_6',['BloomFilter',['../classkvs_1_1bloom__filter_1_1BloomFilter.html#a95a414856a10b324472cfbc1416150cb',1,'kvs::bloom_filter::BloomFilter::BloomFilter()'],['../classkvs_1_1bloom__filter_1_1BloomFilter.html',1,'kvs::bloom_filter::BloomFilter']]],
+  ['bloomfilter_2ecpp_7',['BloomFilter.cpp',['../BloomFilter_8cpp.html',1,'']]],
+  ['bloomfilter_2eh_8',['BloomFilter.h',['../BloomFilter_8h.html',1,'']]],
+  ['bytearray_9',['ByteArray',['../classkvs_1_1utils_1_1ByteArray.html#aa7c54a6c21218cc96aad5f5b008da5c5',1,'kvs::utils::ByteArray::ByteArray()'],['../classkvs_1_1utils_1_1ByteArray.html',1,'kvs::utils::ByteArray']]],
+  ['bytearray_2ecpp_10',['ByteArray.cpp',['../ByteArray_8cpp.html',1,'']]],
+  ['bytearray_2eh_11',['ByteArray.h',['../ByteArray_8h.html',1,'']]],
+  ['bytes_12',['bytes',['../classkvs_1_1utils_1_1Key.html#ac8689f99107c5d7b4332ea06077b9fd5',1,'kvs::utils::Key::bytes()'],['../classkvs_1_1utils_1_1Value.html#ae02240a752d5ccc5d6b9b4749f8ecd23',1,'kvs::utils::Value::bytes()']]]
 ];

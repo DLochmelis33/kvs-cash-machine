@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['is_5fcrash_1112',['is_crash',['../structdoctest_1_1TestCaseException.html#af30d801dae6dd2f4ea01690bbf5faeca',1,'doctest::TestCaseException']]],
-  ['is_5frunning_5fin_5ftest_1113',['is_running_in_test',['../namespacedoctest.html#a0b03060093b3894c976b6ae84e55f3f2',1,'doctest']]]
+  ['nonexistent_5fv_260',['NONEXISTENT_V',['../classkvs_1_1utils_1_1Ptr.html#a2cc5d756442c14ae0186dc99b0ffbcc2',1,'kvs::utils::Ptr']]]
 ];

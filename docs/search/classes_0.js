@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['any_5ft_812',['any_t',['../structdoctest_1_1detail_1_1has__insertion__operator__impl_1_1any__t.html',1,'doctest::detail::has_insertion_operator_impl']]],
-  ['approx_813',['Approx',['../classdoctest_1_1Approx.html',1,'doctest']]],
-  ['assertdata_814',['AssertData',['../structdoctest_1_1AssertData.html',1,'doctest']]]
+  ['bloomfilter_143',['BloomFilter',['../classkvs_1_1bloom__filter_1_1BloomFilter.html',1,'kvs::bloom_filter']]],
+  ['bytearray_144',['ByteArray',['../classkvs_1_1utils_1_1ByteArray.html',1,'kvs::utils']]]
 ];
